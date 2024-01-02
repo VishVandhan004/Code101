@@ -1,0 +1,263 @@
+1st Problem
+Input a number N. Display sum of N natural numbers(1+2+3....+N).
+Sample cases
+input :
+5
+output:
+15
+Explanation 1+2+3+4+5=15
+
+a = int(input())
+print(int(a*(a+1)/2))
+
+2nd Problem
+Input the circle radius R. Find and Display the area and perimeter of Circle
+Sample cases
+Case =1
+input =3
+output=28.27
+18.85'''
+
+import math
+n = int(input())
+area=math.pi*n*n
+perimeter=2*math.pi*n
+print(round(area,2))
+print(round(perimeter,2))
+
+3rd Problem
+Given a name which contains first and last name,print the output in the following order:
+Last Name,First Name
+Sample Test case:
+input =Ravula Ramesh
+output = Ramesh,Ravula
+
+str = input()
+str = str.replace(" ",",")
+index = str.index(",")
+print(str[index+1:],str[0:index],sep=",")
+
+4th Problem
+Write a program which accepts a sequence of comma-seperated numbers from user
+and generate a list and a tuple with those numbers.
+Sample test cases
+Example 1:
+input=10,20,30,40,50
+output=[10,20,30,40,50]
+(10,20,30,40,50)
+
+str = input()
+str = str.split(",")
+print(str)
+print(tuple(str))
+
+5th Problem
+Write a program that accepts an integer (n) 
+and computes the value of n+nn+nnn.
+If n is 5 the output should be 5+55+555=615
+Sample Test cases
+case =1
+input =5
+output=615
+Case =2
+input =3
+output=369
+
+n = int(input())
+a = str(n)
+b = a*2
+c = a*3
+print(int(a)+int(b)+int(c))
+
+6th Problem
+Input a string.Display all the lowercase characters.
+Example
+input=heLLo123World456kmiT
+output=heooeldmi
+
+s = input()
+output=''
+for c in s:
+    if c.islower():
+        output+=c
+print(output)        
+
+7th Problem
+Input file name with file extension.
+Display only file extension
+Example 1
+input=file1.txt
+output=txt
+Example 2
+input=notes.doc
+output=doc
+
+s=input().split(".")
+print(s[-1])
+
+8th Problem
+Given a list of numbers write a program to calculate the sum of odd and even numbers and print the samme.
+Accept from the user the count of numbers and the actual numbers,
+Example 1
+input=6
+5
+8
+4
+7
+9
+2
+output=14
+21
+
+a=int(input())
+sum=0
+esum=0
+for i in range(a):
+    b=int(input())
+    sum=sum+b
+    if(b%2==0):
+        esum=esum+b
+print(esum)
+print(sum-esum)
+
+9th Problem
+Given time in seconds, prints the time in days:hours:minutes:seconds
+Example
+input=25421
+output=0:7:3:41
+input=95467
+output=1:2:31:7
+input=86400
+output=1:0:0:0
+
+def time(sec):
+    days =sec//86400
+    hr=(sec % 86400)//3600
+    min=((sec % 86400)%3600)//60
+    sec=((sec%86400)%3600)%60
+    print(f"{days} :{hr}: {min}: {sec}")
+    
+n=int(input())
+time(n)
+
+10th Problem
+'''
+Input a Number N.
+Write a program to print the sum of the digits of N. 
+For example if the input is 123,
+the	result should be 6. (1+2+3)
+Test Cases:
+case=1
+input=123
+output=6
+case=2
+input=1205
+output=8
+'''
+
+n = int(input())    
+while(n>9):
+    sum = 0
+    while n>0:
+        temp = int(n%10)
+        sum = sum+temp
+        n = int(n//10)
+    n=sum
+print(n)
+
+11th Problem
+'''
+Input a String.
+Write a program to check if the input string is a palindrome or Not?
+Display 'Palindrome', if it is a palindrome.
+Display 'Not a Palindrome', if it is a not palindrome.
+Sample Test Case:
+case1:
+input=madam
+output=Palindrome
+case2:
+input=Hello
+output=Not a Palindrome
+'''
+
+a = input().split()
+b = a.reverse()
+if a!=b:
+    print("Not a Palindrome")
+else:
+    print("Palindrome")
+
+12th Problem
+''' Store student names and phone numbers in a dictionary. 
+Write a script to look up a student name  given the phone number.
+Input N.
+In Each line, Input Phone Number and Name with space seperation.
+Input for N students.
+Input a phone number
+Display corresponding Name. If number not found display 'Not Found'
+Sample Test Case:
+input=3
+1 Ravi
+2 Siddhart
+3 Manisha
+2
+output=Siddhart
+case=2
+111 John
+222 Jack
+333 James
+444
+output=Not Found '''
+
+n = int(input())
+d = {}
+for i in range(n):
+    phone, name = input().split()
+    d[phone] = name
+search_phone = input()
+if search_phone in d:
+    print(d[search_phone])
+else:
+    print("Not Found")
+
+13th Problem
+'''Write a script to generate and print a dictionary that contains a numbers
+(between m and n) in the form (x, x*x) where x ranges between m & n.
+Input M
+Input N
+Input Values from M to N(both are inclusive) in the for (x,x*x).
+Display Dictionary.
+Sample Test Case:
+Input: 1
+5
+output={1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+'''
+
+m = int(input())
+n = int(input())
+d = {}
+for x in range(m, n+1):
+    d[x] = x*x
+print(d)
+
+14th Problem
+'''
+Write a Python script to print the sum of all the values in a dictionary.
+Input N.
+Input N Lines.
+In Each line, Input Key and value with space seperation(Both are integers).
+Display sum of values.
+Test Case:
+Input=3
+1 10
+2 20
+3 30
+Output=60
+'''
+
+n = int(input())
+d = {}
+for i in range(n):
+    key, value = map(int, input().split())
+    d[key] = value
+print(sum(d.values()))

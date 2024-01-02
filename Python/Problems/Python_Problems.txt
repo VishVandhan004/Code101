@@ -261,3 +261,227 @@ for i in range(n):
     key, value = map(int, input().split())
     d[key] = value
 print(sum(d.values()))
+
+15th Problem
+''' Write a function add which takes variable parameters and it returns the sum
+  of all arguments which are integers.
+  example 1
+  input=1
+2
+a
+4
+output=7 '''
+
+def add(*nums):
+    return sum(num for num in nums if isinstance(num,int))
+i = int(input())
+j = int(input())
+s = input()
+k = int(input())
+print(add(i,j,s,k))
+
+16th Problem
+''' Create a function showStudent() which has student id, student name 
+  and marks as input. It should display all the data. If marks is missing it
+  should display 75.
+  input=1
+  abc
+  45
+  output=1 abc 45
+1 abc 75 '''
+
+def showStudent(id, name, marks = 75):    
+  #write your code
+  print(id,name,marks,sep=" ")
+id1=int(input())
+name=input()
+marks=int(input())
+showStudent(id1,name,marks)
+showStudent(id1,name)
+
+17th Problem
+'''Write a function mathOp() such that it can accept two variables and calculate
+  the addition, multiplication and subtraction of it. The result must be
+  returned a single return call.
+Example 1
+input = 10
+20
+output=30 200 -10 '''
+
+def mathOp(n1, n2):    
+    return n1+n2,n1*n2,n1-n2
+a=int(input())
+b=int(input())
+add, mult, subtract = mathOp(a,b)
+print(add, mult, subtract)
+
+18th Problem
+''' Write a script to get the maximum and minimum value in a dictionary.
+Example 1:
+input=1 2 3
+a b c
+output=c
+a '''
+
+def find_max_min_values(input_dict):
+    l=list(input_dict.keys())
+    l.sort()
+    a=l[0]
+    b=l[-1]
+    return input_dict[b],input_dict[a]
+list1 = list(input().split())
+list2 = list(input().split())
+my_dict =dict(zip(list1,list2))
+max_value, min_value = find_max_min_values(my_dict)
+if max_value is not None and min_value is not None:
+    print(max_value)
+    print(min_value)
+
+19th Problem
+'''Write a script to store a nested dictionary and print all its keys/values.
+input format : number of records
+              for each record id and name as key and value pair
+output format : display records 
+example 1:
+input = 2
+101
+abc
+102
+def
+1:
+  id: 101
+  name: abc
+2:
+  id: 102
+  name: def
+'''
+
+def print_nested_dict(nested_dict, indent=0):
+    #write your code here
+    for i in nested_dict:
+        print(i,end=":\n")
+        d=nested_dict[i]
+        for j in d:
+            print(j,d[j],sep=":")
+D = {}
+n = int(input())
+for i in range(1,n+1):
+    d={}
+    #for j in range(2):
+    d["id"] = input()
+    d["name"]=input()
+    D[i]=d
+print_nested_dict(D)
+
+20th Problem
+''' Write a program using functions to check if the input string is a palindrome or Not?
+     Display 'Palindrome', if it is a palindrome.
+     Display 'Not a Palindrome', if it is a not palindrome. 
+     Sample Test Case:
+     case1:
+     input=madam
+    output=Palindrome
+    case2:
+    input=Hello
+    output=Not a Palindrome '''
+
+s=input()
+def pal(s):
+    if(s==s[::-1]):
+        return True
+    else:
+        return False
+if(pal(s)):
+    print("Palindrome")
+else:
+    print("Not a Palindrome")
+
+21st Problem
+''' Store student names and phone numbers in a dictionary. 
+    Write a script using functions to look up a student name  given the phone number.
+    Input N.
+    In Each line, Input Phone Number and Name with space seperation.
+    Input for N students.
+    Input a phone number
+    Display corresponding Name. If number not found display 'Not Found'
+    Sample Test Case:
+    input=3
+    1 Ravi
+    2 Siddhart
+    3 Manisha
+    2
+    output=Siddhart
+    case=2
+    111 John
+    222 Jack
+    333 James
+    444
+    output=Not Found '''
+
+n=int(input())
+def name(n):
+    dict={}
+    for i in range(n):
+        str=input()
+        l=str.split(" ")
+        dict[l[0]]=l[1]
+    i=input()
+    if i in dict:
+        print(dict[i])
+    else:
+        print("Not Found")
+name(n)
+    
+22nd Problem
+'''Write a Python script using functions to print the sum of all the values in a dictionary.
+    Input N.
+    Input N Lines.
+    In Each line, Input Key and value with space seperation(Both are integers).
+    Display sum of values.
+    Test Case:
+    Input=3
+   1 10
+   2 20
+   3 30
+   Output=60 '''
+
+def sum(n):
+    dict={}
+    for i in range(n):
+        s=input()
+        l=s.split(" ")
+        dict.update({l[0]:l[1]})
+    arr=list(dict.values())
+    s=0
+    for i in arr:
+        s=s+int(i)
+    return s
+n=int(input())
+print(sum(n))        
+
+23rd Problem
+'''write a program ot print frequency of words in a given string
+example 
+input = hello world hello Qualcomm Training at Qualcomm
+output =hello 2
+world 1
+Qualcomm 2
+Training 1
+at 1 '''
+
+str=input()
+def count(str):
+    li=list(str.split(" "))
+    dict={}
+    for i in li:
+        if(i not in dict):
+            dict.update({i:1})
+        else:
+            a=dict.get(i)
+            dict.update({i:a+1})
+    for i in dict:
+        print(i,"",dict.get(i))
+count(str)
+    
+    
+        

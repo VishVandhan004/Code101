@@ -1,0 +1,355 @@
+Internet is nothing but the wire which connects the computers. Here one computer can be termed as a client(which sends requests and can get whatever they want) and server(which is open 24*7 and it serves the client).
+
+Web server is like a giant library where client goes and asks whatever he wants and the library(web server) provides him with whatever he wants..
+
+Let's say that you want to access www.google.com in your browser. Your browser will send a msg to the ISP(internet service provider) like ACT,Jio,Airtel and the ISP will send that msg to the DNS(Domain Name System). DNS will find out the IP address of the website you want. Once it will find the IP address, it will send it to you back using the ISP.
+
+After getting the IP address of that particular website through DNS, you can make the requests to the servers. In this case , you can get the IP address of the google website through DNS and after that you can make requests to the google servers to open the cricbuzz website in the google.
+
+Nslookup.io is a website which gives IP address of any website you want to access.
+
+To summarize, Internet is just a bunch of wires that connects up different computers. There are also some undersea cables that could connect all computers to the internet. you could find them in "submarine cable" website
+
+When you(client) sends a request to the server to access a particular website , you in return will get 3 files from the server. those are HTML,CSS,JScript.
+
+Even when you try to write shit by changing the values in the websites by clicking inspect, the website servers will not be changed and it will show the original shit only.
+
+HTML (Hypertext markup Language) is used to write the content of the website.
+
+Hyper text - it means that if we click on the text , it takes us to another page or another HTML file.
+
+We are about to learn HTML5...
+
+h1 tag can be used to show the largest text in the website..h2 is somewhat small than that of h2.. These heading tags are used to show the text.. These range from h1 to h6. even if you try to put h11, it doesn't do anything.
+
+br tag or line break is used to go to the next line or create space.. Its a self-closing tag. it has no closing tag
+
+hr tag is used to draw horizontal lines..
+
+p tag is the paragraph tag..
+
+ul tag is called an unordered list. we use <li></li> tag to get the bullets..
+
+We want the list but if we don't want the bullets, we can set the "list-style: none" in the CSS section..
+
+ol tag is used to create an ordered list. use <li></li> tag to get the numbers..
+
+"img src" tag is used to get an image and paste it in the html page and in src we can download the image and place it in the same folder as the HTML file. alt tag is used to tell what the image is all about.
+
+"a href" tag is also called as the anchor refernce tag which is used to go to another particular website when you click on it..EXP-> <a href=""></a>
+
+in HTML attributes, You could use 2 or more than 2 attributes in the tag , you just have to name them differently.. EXP-> <tag attibute=value anotherattribute=value> content </tag>
+
+you could use "strong" tag to show anything important..
+
+em tag is called emphasis tag. it's used to italicize a particular text and stresses on it...
+
+span tag is used to highlight or underline a particular part of the whole text. we will need to create a class in the <span></span> tag and style it in the CSS. It's an inline display element 
+
+we need to use table tag to create a fucking table. and we need to use tr tag to create the rows of the table. the td tag is the table data tag... we can use to store the data..
+
+TABLE-> table also has the thead, tfoot, tbody tags as well.we can use it to create the tables more efficiently.. th tags are used to create the columns in BOLD
+
+in "<head></head>" tag, info is not displayed to the user. important info is stored.
+
+in "<body></body>" tag, we will be writing all the shit and all the content about the website..
+
+HTML attribute gives more info about the HTML tag. If you consider -> <hr size-"3"> ,here hr tag is used with the size of 3.
+
+Instead of using the center tag( which is deprecated ), it is advised to keep the whole thing as body and in the CSS section,keep text-align as center. Like this ->  
+ body{
+  text-align:center;
+} Check MDN Docs too.....
+
+for comments ,just press ctrl+/
+
+Path of a file is required for the computer to check the location of the file in the hard-drive. It can usually direct the computer to a file or a folder..
+
+ABSOLUTE file path-> Its relative to the root of the computer.. It's generally what we have on the windows or mac. EXP-> (C:/jgigig/jnfjg/dgnnfg/gffgn.png)
+
+RELATIVE file path -> It is relative to where we are basically writing the code.Even if you change the folders, your path will still be valid.. They are a bit shorter.. To go to the directories, you could use single dot(same directory) and double dot(different directories). Relative path important to navigate to the correct location.. EXP-> ../ggdd/hi.txt
+
+the structure of HTML file is called HTML boilerplate.
+when we enter shift+! and then we enter that, we get the boilerplate.. we get some shit like "meta http-equiv". we can delete this because it is compatible with Internet explorer and you know IE is totally dead..
+
+DOCTYPE tells the browser that the code is written in HTML5. "<html></html>" In this we will be writing everything regarding the content . in "meta charset" tag, its used to ensure that the characters are displayed correctly. 
+
+EMOJIS -> windows key + .
+
+We could use the <form></form> tag to get those input in our code.. we need to place the <label></label> tag and in that we can place the <input> tag
+For example->
+<form>
+<label>Your Name:</label>
+<input type ="text">
+<label>Your Password:</label>
+<input type = "password" name="" value="">
+<input type="submit" name="">  ---> here we get the submit button..
+<input type="checkbox" name=""> ----> here we get the checkbox
+<input type="radio" name="">  ---> here we get the radio button
+<input type="file">          ---> here we can choose a file
+<input type="range">    --> here we get hover through a particular 
+<input type="date>           --> select a particular date
+</form>
+
+CSS- Cascading style sheets.. used to design the webpages and markup languages like HTML,XML,...............
+
+We need to place our css tags inside the <style></style> tag in the head section to design our webpages
+
+There is always some default css applied by your browser even before you start to design the websites
+
+While working with CSS, its important to work with documentation like MDN Docs and devdocs
+
+There are basically 3 types of CSS -> inline, Internal, External..
+
+Inline CSS -> If you want to target only 1 element, then it's actually useful
+
+Internal CSS -> If you want to target 1 webpages. keep it in the head tag and inside the head , keep the style tag and inside the style , you could start to use the css.
+
+External CSS -> If you have multiple webpages, you could basically create a .css file and do the stuff..
+
+if you have multiple HTML pages and you want to design them, it's better to create a single .css file(external CSS) and apply the designs rather than separately applying styles in each HTML pages.(internal CSS)
+
+to connect the HTML file and the css file we will be adding a keyword called "link". This is really helpful to link both the files
+
+If you want to debug your css codes , its better to use the chrome developer options in the chrome browser.. use chrome to design websites... 
+
+Syntax of CSS --->   selector {property : value; }  here selector(who do you want to change- is it h1 or h2 or WTF it is??) is the element you want to change, property(what do you want to change is it height or width or color or WTF it is??) is the type of elements and values are the measurements.. semicolon is important...
+
+Want to know what the fuck is CSS all about and what are the functions of diiferent words - go to MDN docs and type CSS keyword index..
+
+If you want emojis go to emojipedia website...
+
+The class attribute in the HTML allows us to differentiate between the same HTML elements. EXP -> if you have 2 images , we can simply add an attribute in the img tag. <img class="img1">, <img class ="img2">. You can use ".img1" and ".img2" for styling in CSS. everything is same.. If you want syntax ,here ->  .img1 {
+    background-color:red;  -->Only for example..
+} NOTE-> you can put 2 classes side by side to the same attribute. EXP-> <img class="img1 img2">
+
+There is also something called id attribute. It is somewhat same as the class attribute. The id attribute will considered rather than the normal tag attribute. Here -> Class and id attribute >>>> tag attribute
+
+There is also called something as "Universal selector". It basically selects everything.
+
+Class and id attributes will be implemented but not the tag attributes.. for the HTML elements
+
+We should use the id attribute if you would wish to have only one thing in your website like Heading or navigation bar. as there are only one heading or navigation bar, you could use the "id" attribute.
+We could only use id for once in a .html file.
+ Syntax-> <h1 id="head">Hi</h1> ->this is the one thing in CSS ->     #head {
+    color:blue; --> this is how you style in attribute
+} NOTE -> you can't name head again for the id attribute
+
+Pseudo classes - the classes which have different states. they basically have colon at the beginning. For exp->     :hover
+You could basically put that like this......  img:hover {
+ color:blue; ->if you hover the image,you get blue color
+}
+
+favicons are the icons you get next to the title of the website.. you can get it from the favivons.cc website.
+
+<div></div> tag is used to structure our website and we can set it according to our wish. we can place a particular thing in a box
+
+padding-> increases the size of the box and space too..
+width-> increases the width of your element
+height-> increases the height of your element
+border-width-> gives a border to the element
+margin -> it gives space between 2 other elements or   2 other boxes or divs..
+
+you hit inspect and go to an element you can see a box. it's called Box model styling. EXP-> go to a code,hit inspect and go to an element like h1 and check the box model and check the values of it.. WE can click on the styles , go to the div and change the styles temporarily
+
+display -> it has 4 different props.. It can have the ability to display the elements like <p></p> or h1,etc.. paragraph,h1 to h6, div, lists, forms, etc are block elements. width can be changed but not kept side by side..
+
+inline elements are spans, images, anchors. they can be kept side by side. width can't be changed..
+
+inline-block elements are used to place 2 elements side by side and it gives width too.
+
+Position props-> Static, Relative, Absolute, Fixed. When you are using css styling , do consider taking up these positioning props. Absolute can be prefered over relative
+
+When you try to insert any piece of HTML code, the static position is always considered to be default
+
+Relative position -> Item gets positioned to the relative position to its default position. You take the original position and make changes to it. so relative to its original position.
+
+Absolute position -> top left corner of webpage...
+
+Z-Index -> If you think your webpage as a graph and it has 3 axes - x, y, z.. We can consider the element as z direction and change it accordingly.. If you want to set an element behind another element, this could be useful..
+
+Fixed Position-> Position relative to top left corner of browser window..Even when you'll scroll, it doesn't give a shit. it still stays there.
+
+While creating or doing the font size of an element, it is important to convert px into rem. relative emphasis(rem) is used to keep the size of the font constant irrespective of how many changes or additions you made earlier..   
+
+Font has different props like -> weight, size, style, etc..
+
+1px = 1/96 of an inch or 0.26mm
+1pt = 1/72 of an inch or 0.35mm
+1em = 100% of parent (dependent on the size of parent)
+1rem = 100% of root (relative of em) (exp-> changing the root(html tag))..
+
+If you want to see the CSS tools of a particular website, open it in chrome and check the chrome developer tools , and check the CSS. on the extreme left you have an mouse icon, click that and you'll get the CSS. Go to the 3-dots and check overview summary.
+
+Each element in a webpage is a box itself..
+
+Use pesticide extension for development
+
+we can separate 2 different selectors via comma. exp->
+h1,h2 {
+   color:blue;
+}
+
+Only for a separate div(child) inside a div(parent), we could use something like ths , EXP->
+.box > p {
+    color:red;
+}  here we are changing the paragraph (only one), box is the class name of the div..
+
+descendant selector-> if you want to have same color of 2 or more elements, you could use this.. EXP->
+.box li {
+    color:blue,
+} here box is the class name of div and we are changing the color of lists...
+
+If we set an element's display to block, it occupies whole screen from right to left.. If we consider an other element and keep its display as inline, then both are going to be occupied in the same place..
+
+In inline block, we can store the elements next to each other..
+
+Float is another kind of interesting property, which is very helpful. We can basically set image like float and wrap the text beside it. Just like in newspaper, an image is given and the text are printed just beside it, this is also works same like that..
+
+In some cases, the text beside the img should be kept below the img only. If the img uses float property, it's kinda difficult to do that. we need to take that particular text in footer and in the css, we need to keep it as "clear:". it can be left or right..
+
+WEB-RESPONSIVE -> screen size is not constant. so we need to make our website in such a way that it can be responsive in all the screens. For that, we require CSS grid, CSS flexbox, media queries, Bootstrap..
+
+Media queries -> this is first type of web responsive shit. we can actually set the width in the css and the css applies only when the width will reach that particular value . exp-> 
+@media(max-width : 600px){
+color:red;
+} here the css will be applied only when the screen width reaches 600px or anything less than that but not more than that. 
+When the screen size reaches a particular value, then the media querie's CSS gets activated..
+It also has min-width too, that says anything from the min-width's measurements will be activated and shown. For suppose -> @media(min-width:600px){
+    h1{
+    color:red; 
+    } // when screen's width reaches 600px, from then it starts to change the color;
+}
+we can also combine it.
+@media(min-width:600px) and (max-width:900px)
+{
+    h1{
+        color:red;
+    }
+} here it is applicable to those screens betwwen 600px and 900px...
+In chrome developer tools, we can see how any particular website works in devices.
+
+CSS grid -> this is an another type of designing, where we can order or keep the elements in particular blocks or grids.. good for 2-D layouts...
+we can basically divide one webpage into different grids or different blocks.
+it's prescribed to use both flexbox and grid
+create a div of class container and in the css set the display as grid.
+grid-template-rows and grid-template-columns are used to create grids (basically measured in fr - fractional unit)
+if we fix the values of rows and columns, the screen doesn't become responsive
+exp-> grid-template-rows: 100px 200px
+  grid-column-rows:400px,800px
+we basically divide a single grid into 2 parts of rows of sizes 100 and 200 px so on.. that's how we can divivde the grids..
+if we keep auto in the values of columns, values can be easily fit as it can be responsive when shrunk.
+The same doesn't go with row. it instead turns into fit content...
+grid-template-rows : 1fr 2fr
+grid-template-columns: 1fr 2fr
+here what happens is, no mateer what size it is the the first column and first row will always be half of the second column and second row respectively even if you shrink the size.. this is by using fractional size
+g-t-r : 200px 400px;
+g-t-c: 200px minmax(400px,800px)
+what happens here is, when you try to shrink the screen the column size decreases but it stops after it reaches 400px. this is the minmax method.
+if you want to repeat some shit, do this
+g-t-r: repeat(2,200px);  
+this will repeat 200px 2 times..
+let's say that you have created 1 grid and in that you have 4 rectangles. you have alloted the sizes of 2 rectangles as the below code says->
+g-t-r : repeat(2,200px);
+g-t-c: repeat(1,100px);
+2 rectangles are in the given size but the other 2 rectangles aren't in order. for that set the auto-rows:x px; here x is the size you want. you can check more about it..
+gap:3rem -> this is used to create gap between the grid items..
+if you want to use grid-column, better use grid-column-start, grid-column-end. this specifies where does it actually start and end..
+if you basically want to put a div at the last, set the order as 1 in the CSS.
+grid-column: span 2   -> this basically alows one div to take up 2 columns in a grid.
+grid-row: span 2  -> this basically alows the div to take up 2 rows..
+If we want to maunally structure a div, we can do like the below ->
+these values(1,4,2,3) are actually visible at the chrome developer tools. go to the tools and check for grid and you will basically see a grid with some numbers.. +ve and -ve 
+grid-column-start: 1;
+grid-column-end: 4;
+grid-row-start: 2;
+grid-row-end:3;
+grid-area: 2/1/3/4 ;  // this is basically a short hand representation of the above 4 lines.
+
+CSS Flexbox -> good for 1-D layouts.. this is basically what we do in CSS.
+When we set our display to flex, the objects or the elements become just like a navigation bar..
+If you want your elements to be set in a row, you could use the "flex-direction : row". You could change it to column and it will be stacked one upon the other.
+"flex-basis" is required to increase the height of a single shit.
+Let's say that you wanted to change the order of the colours. you could set the css value of that particular div as "order:1". What happens here is, we will be setting the value of that element as 1st order.. You would basically arrange your colours in a particular format.
+Flex-Wrap -> this wrap is used to put some objects to the next line. if there are some objects adjacent to each other and when you run out of space, this wrap is used to place the objects on the next line.
+justify-content: center.   This is basically used to center a particular stuff exactly at the center.It will be at he center of the axis. Check mdn docs and you'll get to know more about 
+align-items: center -> used for centering a thing along with the above one.
+justify-content and stuff related to that..
+align-items: It's used to keep items either at the start or at the top or either at the bottom.. you can use something like flex-start or flex-end, center..
+align-self: align-self is used to change the positon of a single item out of the total container. if you want to change the position of one particular item out of the whole items, you could use align-self..
+align-content: it is somewhat similar to that of align-items. if you set the flex-wrap:wrap and you are using the align-content, then we can perfectly use the align-content.. it would decrease the width and sets up in the center..
+In flex display->
+Content width< width< flex-basis< min width/ max-width
+max width is like storing in one line...
+min width is stroring in multiple lines...
+flex-grow and flex-shrink. these 2 are kinda important to learn to deal with the accomodation of elements in the screen..
+flex-grow:0 and flex-shrink:1 -> what happens here is, we can shrink the width of the screen and the elements also get shrinked. The elements are set to min width at the beginning.(flex-basis)
+flex-grow:1 and flex-shrink:0 -> what happens here is, we can shrink the width of the screen and the elements get shrinked but only upto a certain limit..the elements are somewhat more than the min-width in the beginning..
+flex: 1 1 0; this is a shorthand method to write . first one is flex-grow, flex-shrink, flex-basis.
+
+WEB-DESIGN
+There are some principles for good designs to a website.
+color theory, UI(User interface), UX (User experience), Typography.
+Color Theory -> You need to be a little alert about the colors you choose while designing the website and make sure your selection makes sense..
+yellow- causes great attention.
+red- gives calm, eneregy, intensity
+green - freshness
+blue - stability and trust..
+purple-> women, feminity
+analogous colors -> mixing 2 colors
+Typography-> i have saved a bookmark called 'emotions behind fonts' do check it out...
+UI Design->  Important to get to the point, don't waste time. In UI, hierachy or color within a color is important to get to the exact details or to get to the point..
+UI is more about getting the attention of the viewer..
+People can't handle too long and too short. just hit the right spot.
+Alignment is also important...
+white space important too... it symbolizes professionalism..
+UX-> User experience is also very important. how does the user experiences the thing is nothing but UX. It has 5 things..->
+1. Simplicity -> keeps things simple but not complex and hard..
+2. Consistency-> keep different webpages of your website same. I mean if you have navigation bars in the 3 webpages, it is recomended to keep it in the same place but not in different places..
+3. Use F-layout-> if you have anything to br readable , make sure it's on the left side and images are on the rightside.. or Z-layout as well.
+4. Mobile responsive-> Make your website mobile respnsive as well. expereience should do well in mobile as well. Make sure that whole screen doesn't get occupied by image..
+
+BOOTSTRAP Framework
+It contains pre-made CSS files, which you can include in your project.. We just need to import all the stuff like buttons, nav bar, forms, etc..
+It's just an external CSS Framework..
+Disadvantage-> the code looks too big and does look odd
+We need to link it via CDN (Content delivery network). go to the website and you'll get the first link. keep it in the head section of the HTML.
+you'll also get the second link. paste it on the closing body tag.    "</body>"
+It has 12 column system
+it has a div container and in that we have a div row and in that we have a div column.
+all the cols have autofit functionality..
+we can name the coluns as col-1, col-2 ,etc to separately name them in the class and play around with them..
+col-sm-2 -> this means that the column will have dimension ratio 2 on desktop, on TV, etc.. if you don't allocate, they'll automatically distribute.. they take(2/12) size
+exp-> col-sm-12 col-md-8 col-lg-4. you could size a single div like this. this means, 
+the col must take size 12 (12/12) when it's large, size 8(8/12) when it's medium and size 4(4/12)in small
+when you try to shrink the size, you can use the above to play with the sizes.. just keep them in the class
+you could use different sizes by the breakpoint doc in the bootstrap website..
+Componenets of Bootstrap->
+Button -> pretty basic. go to bootstrap, go to docs, search button and take what you want.
+Cards-> used basically in e-commerce website. those rectangluar stuff is called cards. available in bootstrap.
+NavBar-> Nav bar is one of the most important stuff when it comes to building a website.. go to example section and you'll see even more fancy stuff.
+SVG-> it's really helpful to find out icons for your website 
+Carousel-> it's kinda important to show the images perfectly and must be in sync too. go to carousel in the docs and check that out..if you want to put the images evenly, do put that in a div and name it as "container".
+Footer-> if you want it, go to the examples, and try your own stuff bruh..
+Spacing -> giving space between objects. like mt(margin-top), mb(margin-bottom), y(padding-right), x(padding-left), etc.. 
+Want dark mode ?? -> add "data-bs-theme="dark"" in the opening html tag.. (data-bootstrap-theme is set to dark)
+ CHECK OUT BOOTSTRAP THEMES !!!!!!!
+what did you find,paid ? google free bootstrap themes.
+exp-> phoenix, etc..
+
+Sections are used to separate different sections of a website.. <section></section>
+
+gradient background is like getting some color animations.. It's in the tindog project website.Check it out.
+
+TINDOG PROJECT 
+in this project, we will be building website for dogs..
+Add the link for the bootstrap in the head section of html.
+Go to the bootstrap and we will look for the theme we want and we'll put that in the title section..
+Change the image to the apple phone with a dog image..
+Change the text according to your requirements...
+In the buttons, we want the svgs. so add some space and copy the path to add the icons.
+Add background ( we have done the gradient background), link the stylesheet. 
+we are only putting the background for section so put "gradient background" as class in the section
+if you have stuff like py(padding-y axis), adjust accordingly and set it to pt(padding-top).
+Go to bootstrap and get the features theme and keep it in a section..
+if you want a particular div to be contained (or small), create a div and name(class) it as container..

@@ -106,4 +106,48 @@ for bsdk in d:
 for key,value in d.items():
     print(key)
     print(value)    
-     
+# While-loop
+x = 0
+while x<5:
+    print(f'Value is:{x}')
+    x+=1
+  # pass keyword
+x = [1,2]
+for ko in x:
+    pass
+print('pass hogaya')     
+    # continue keyword
+str='kurchi'
+for l in str:
+    if l=='r':
+        continue
+    print(l)
+    # break keyword
+for l in str:
+    if l=='r':
+        break
+    print(l)    
+# Some important functions in py
+    # range()
+for num in range(0,10,2):
+    print(num)
+    # enumerate
+word='abcde'
+for index,letter in enumerate(word):
+    print(index)
+    print(letter)
+    # zip
+a = [1,2]
+b = ['a','b']
+for i in zip(a,b):
+    print(i)
+    # shuffle()
+from random import shuffle
+puka = [2,1,3,5,6,7]
+shuffle(puka)
+print(puka)
+    # randint
+from random import randint
+int = randint(0,10)
+print(int)
+# List Comprehensions

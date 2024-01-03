@@ -72,4 +72,14 @@ else:
 mylist = [69,2,3]
 for item in mylist:
     print(item)
+for num in mylist:
+    if num%2==0:
+        print(num)    
+    else:
+        print(f'Odd Number: {num}')  
+list_sum = 0
+for num in mylist:
+    list_sum=list_sum+num
+print(list_sum)            
+
      

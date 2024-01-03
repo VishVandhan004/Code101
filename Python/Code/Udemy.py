@@ -68,18 +68,42 @@ else:
     print('you are fucking kiddo')    
 
 # Looping Statements
-# for-loop
+# For-loop
 mylist = [69,2,3]
 for item in mylist:
     print(item)
+  # printing only even numbers    
 for num in mylist:
     if num%2==0:
         print(num)    
     else:
         print(f'Odd Number: {num}')  
+   # printing the list sum 
 list_sum = 0
 for num in mylist:
     list_sum=list_sum+num
-print(list_sum)            
-
+print(list_sum)   
+    # for-loop in strings
+str = 'Hello'
+for c in str:
+    print(c)   
+    # for-loop in tuples
+tup = (1,2,3)
+for item in tup:
+    print(item)
+     # tuple unpacking
+mlist = [(1,2),(3,4),(5,6)]
+for loud in mlist:
+    print(loud)
+for (a,b) in mlist:
+    print(a)
+    print(b)
+print(len(mlist))   
+    # for-loop in dictionaries
+d = {'k1':1,'k2':2,'k3':3}
+for bsdk in d:
+    print(bsdk)
+for key,value in d.items():
+    print(key)
+    print(value)    
      

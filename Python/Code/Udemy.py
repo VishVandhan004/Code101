@@ -151,3 +151,16 @@ from random import randint
 int = randint(0,10)
 print(int)
 # List Comprehensions
+l = [num**2 for num in range(0,11)]
+print(l)
+celcius = [20,35,40]
+fahrenheit = [((9/5)*temp+32) for temp in celcius]
+print(fahrenheit)
+# Functions
+def greet(name):
+    print("Hello"+" "+name)
+greet("Vishnu")
+def sum(a,b):
+    return a+b
+result = sum(2,3)
+print(result)       

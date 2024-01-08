@@ -30,3 +30,28 @@ console.log(c);
 c--;
 console.log(c); // Decrement
 console.log(c+=d);
+// Functions in JS
+function hello(){       // defining a function
+    console.log("hello bsdk");
+}
+hello();   // calling the function
+function getMilk() {   
+    console.log("leaveHouse");
+    console.log("moveRight");
+    console.log("moveRight");
+    console.log("moveUp");
+    console.log("moveUp");
+    console.log("moveUp");
+    console.log("moveUp");
+    console.log("moveRight");
+    console.log("moveRight");
+    console.log("moveLeft");
+    console.log("moveLeft");
+    console.log("moveDown");
+    console.log("moveDown");
+    console.log("moveDown");
+    console.log("moveDown");
+    console.log("moveLeft");
+    console.log("moveLeft");
+    console.log("enterHouse");
+  }

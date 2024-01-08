@@ -7,5 +7,6 @@ var fName = "angela";
 var lname = "yu";
 console.log(fName.length);
 console.log(fName+" "+lname);
+console.log(fName.slice(0,2));
 
  

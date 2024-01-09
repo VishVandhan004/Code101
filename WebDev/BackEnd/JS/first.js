@@ -53,7 +53,7 @@ function getMilk(money) {
   console.log("moveUp");
   console.log("moveRight");
   console.log("moveRight");
-  var nb = Math.floor(money/1.5);
+  var nb = Math.floor(money / 1.5);
   console.log("buy " + nb + " bottles of milk");
   console.log("moveLeft");
   console.log("moveLeft");
@@ -64,30 +64,59 @@ function getMilk(money) {
   console.log("moveLeft");
   console.log("moveLeft");
   console.log("enterHouse");
-  return money%1.5;    // remainder
+  return money % 1.5;    // remainder
 }
 var change = getMilk(10);
 console.log(change);
 // BMI Calculator
-function bmicalc(weight,height){
-  return Math.round(weight/(height*height));
+function bmicalc(weight, height) {
+  return Math.round(weight / (height * height));
 }
-console.log(bmicalc(65,1.8));
+console.log(bmicalc(65, 1.7));
 // Pseudo Random number generator
 var n = Math.random();
-n = n*6; // it considers numbers till 6 (range is 0 and 5, you would never get 6)
+n = n * 6; // it considers numbers till 6 (range is 0 and 5, you would never get 6)
 n = Math.floor(n) + 1; // here we will get from 1 to 6.
 console.log(n);
-var age = 69
-if(age == 20){
+var age = 29
+if (age <= 18) {
   console.log("poi chaduko")
 }
-else{
+if (age > 18 && age < 60) {
   console.log('ayna poi chaduko')
+}
+else {
+  console.log('paduko le inka, em chestav')
 }
 // difference between === and ==
 var q = 1;
 var w = '1';
 console.log(q === w); // checks datatype
 console.log(q == w);  // wtf is datatype??
+// Leap Year Challenge
+function isleap(year) {
+  if (year % 4 == 0) {
+    if (year % 100 == 0) {
+      if (year % 400 == 0) {
+        return "Leap year";
+      } else {
+        return "Not leap year"
+      }
+    } else {
+      return "Leap year"
+    }
+  } else {
+    return "Not leap year";
+  }
+}
+console.log(isleap(2000));
+// Arrays in JS
+var glist = ['smith','finch','clarke'];
+console.log(glist); // prints everything
+console.log(glist.length); // gives the length
+console.log(glist[0]);  // gives element by index
+console.log(glist.includes('david')); // there or not..
+
+
+
 

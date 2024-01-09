@@ -116,7 +116,30 @@ console.log(glist); // prints everything
 console.log(glist.length); // gives the length
 console.log(glist[0]);  // gives element by index
 console.log(glist.includes('david')); // there or not..
-
-
-
+// FIZZBUZZ
+let count = 1;
+let output = [];
+function fizzbuzz(){
+  if(count%3===0 && count%5===0){
+    output.push("FizzBuzz");  // if number divisible by 3,5
+  } else if(count%5===0){
+    output.push("Buzz");  // if number divisible by 5
+  } else if(count%3===0){
+    output.push("Fizz");  // if number divisible by 3
+  } else {
+    output.push(count);
+  }
+  count++;
+  console.log(output);
+}
+fizzbuzz();
+// random name generator
+var names = ["Angela", "Ben", "Jenny", "Michael", "Chloe"];
+function whosPaying(names) {
+  var len = names.length;
+  var n = Math.floor(Math.random() * len);
+  var random = names[n];
+  return random + " is going to buy lunch today.";
+}
+whosPaying(names);
 

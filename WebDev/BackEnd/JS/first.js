@@ -35,7 +35,15 @@ function hello() {       // defining a function
   console.log("hello bsdk");
 }
 hello();   // calling the function
-function getMilk(bottles) {
+function lifeInWeeks(age) {
+  var left = 90 - age;
+  var leftday = 365 * left;
+  var leftweek = 52 * left;
+  var leftmonth = 12 * left;
+  console.log("You have " + leftday + " days, " + leftweek + " weeks, and " + leftmonth + " months left.");
+}
+lifeInWeeks(56);
+function getMilk(money) {
   console.log("leaveHouse");
   console.log("moveRight");
   console.log("moveRight");
@@ -45,7 +53,8 @@ function getMilk(bottles) {
   console.log("moveUp");
   console.log("moveRight");
   console.log("moveRight");
-  console.log("buy " + bottles + " bottles of milk");
+  var nb = Math.floor(money/1.5);
+  console.log("buy " + nb + " bottles of milk");
   console.log("moveLeft");
   console.log("moveLeft");
   console.log("moveDown");
@@ -55,14 +64,30 @@ function getMilk(bottles) {
   console.log("moveLeft");
   console.log("moveLeft");
   console.log("enterHouse");
+  return money%1.5;    // remainder
 }
-getMilk(20);
-function lifeInWeeks(age) {
-  var left = 90 - age;
-  var leftday = 365 * left;
-  var leftweek = 52 * left;
-  var leftmonth = 12 * left;
-  console.log("You have " + leftday + " days, " + leftweek + " weeks, and " + leftmonth + " months left.");
+var change = getMilk(10);
+console.log(change);
+// BMI Calculator
+function bmicalc(weight,height){
+  return Math.round(weight/(height*height));
 }
-lifeInWeeks(56);
+console.log(bmicalc(65,1.8));
+// Pseudo Random number generator
+var n = Math.random();
+n = n*6; // it considers numbers till 6 (range is 0 and 5, you would never get 6)
+n = Math.floor(n) + 1; // here we will get from 1 to 6.
+console.log(n);
+var age = 69
+if(age == 20){
+  console.log("poi chaduko")
+}
+else{
+  console.log('ayna poi chaduko')
+}
+// difference between === and ==
+var q = 1;
+var w = '1';
+console.log(q === w); // checks datatype
+console.log(q == w);  // wtf is datatype??
 

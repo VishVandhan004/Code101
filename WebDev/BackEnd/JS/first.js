@@ -120,16 +120,18 @@ console.log(glist.includes('david')); // there or not..
 let count = 1;
 let output = [];
 function fizzbuzz(){
-  if(count%3===0 && count%5===0){
-    output.push("FizzBuzz");  // if number divisible by 3,5
-  } else if(count%5===0){
-    output.push("Buzz");  // if number divisible by 5
-  } else if(count%3===0){
-    output.push("Fizz");  // if number divisible by 3
-  } else {
-    output.push(count);
+  while(count<100){
+    if(count%3===0 && count%5===0){
+      output.push("FizzBuzz");  // if number divisible by 3,5
+    } else if(count%5===0){
+      output.push("Buzz");  // if number divisible by 5
+    } else if(count%3===0){
+      output.push("Fizz");  // if number divisible by 3
+    } else {
+      output.push(count);
+    }
+    count++;
   }
-  count++;
   console.log(output);
 }
 fizzbuzz();
@@ -142,4 +144,9 @@ function whosPaying(names) {
   return random + " is going to buy lunch today.";
 }
 whosPaying(names);
-
+// Loops in JS
+var i = 1;
+while(i<5){    // while-loop
+  console.log(i);
+  i++;
+}

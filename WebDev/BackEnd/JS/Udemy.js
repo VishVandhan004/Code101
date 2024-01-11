@@ -167,3 +167,10 @@ for(var i=0;i<2;i++){
   console.log("for loop");
 }
 // fibonacci challenge
+function fibonacciGenerator(n) {
+  var fib = [0, 1];
+  for (var i = 2; i < n; i++) {
+    fib[i] = fib[i - 1] + fib[i - 2];
+  }
+  return fib.slice(0, n);
+}

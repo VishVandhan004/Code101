@@ -164,3 +164,22 @@ def sum(a,b):
     return a+b
 result = sum(2,3)
 print(result)       
+#tuple unpacking using functions
+# normal zindagi
+stock = [('AAPL',400),('GOOG',200),('MSFT',300)]
+for ticker,item in stock:
+    print(ticker)
+    print(item)           #tuple unpacking
+# mentos zindagi
+work = [('Abby',400),('Gary',200),('Marnus',300)]
+def emp_c(work):
+    current_max=0
+    employee_m=''
+    for employee,hours in work:
+        if hours > current_max:
+             current_max=hours
+             employee_m=employee
+        else:
+            pass  
+    return (employee_m,current_max)
+emp_c(work) # it'll return the person with more work hours

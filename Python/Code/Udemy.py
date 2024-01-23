@@ -182,4 +182,30 @@ def emp_c(work):
         else:
             pass  
     return (employee_m,current_max)
-emp_c(work) # it'll return the person with more work hours
+print(emp_c(work)) # it'll return the person with more work hours
+# how to use shuffle function???
+exp = [1,2,3,4]
+from random import shuffle
+def slist(list):
+    shuffle(list)
+    return list
+result=slist(exp)
+print(result)
+# 3 CUP MONTE
+mlist = ['', 'O', '']
+shuffle(mlist)  # shuffle the list in-place
+def player_guess():
+    user_guess = ''
+    while user_guess not in ['0', '1', '2']:
+        user_guess = input('Pick a number b/w 0, 1, 2: ')
+    return user_guess
+myindex = player_guess()
+print(myindex)
+def check_guess(mlist, myindex):
+    # Convert myindex to an integer
+    myindex_int = int(myindex)
+    if mlist[myindex_int] == 'O':
+        print('correct')
+    else:
+        print('wrong')
+check_guess(mlist, myindex)  # use the same list variable

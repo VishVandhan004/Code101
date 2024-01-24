@@ -192,20 +192,23 @@ def slist(list):
 result=slist(exp)
 print(result)
 # 3 CUP MONTE
-mlist = ['', 'O', '']
-shuffle(mlist)  # shuffle the list in-place
-def player_guess():
-    user_guess = ''
-    while user_guess not in ['0', '1', '2']:
-        user_guess = input('Pick a number b/w 0, 1, 2: ')
-    return user_guess
-myindex = player_guess()
-print(myindex)
-def check_guess(mlist, myindex):
-    # Convert myindex to an integer
-    myindex_int = int(myindex)
-    if mlist[myindex_int] == 'O':
-        print('correct')
-    else:
-        print('wrong')
-check_guess(mlist, myindex)  # use the same list variable
+# mlist = ['', 'O', '']
+# shuffle(mlist)  # shuffle the list in-place
+# def player_guess():
+#     user_guess = ''
+#     while user_guess not in ['0', '1', '2']:
+#         user_guess = input('Pick a number b/w 0, 1, 2: ')
+#     return user_guess
+# myindex = player_guess()
+# print(myindex)
+# def check_guess(mlist, myindex):
+#     # Convert myindex to an integer
+#     myindex_int = myindex
+#     if mlist[myindex_int] == 'O':
+#         print('correct')
+#     else:
+#         print('wrong')
+# check_guess(mlist, myindex)  # use the same list variable
+# *ARGS AND **KWARGS
+def myfunc(*args):
+    return sum(args) # type: ignore

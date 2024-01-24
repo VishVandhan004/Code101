@@ -212,3 +212,33 @@ print(result)
 # *ARGS AND **KWARGS
 def myfunc(*args):
     return sum(args) # type: ignore
+def my(**kwargs):
+    print(kwargs)
+    if 'fruit' in kwargs:
+        print("It is {}".format(kwargs['fruit']))
+    else:
+        print('Nahi Maalum')
+my(fruit='apple')          
+# Combination of both args and kwargs
+def myfun(*args,**kwargs):
+    print(args) # it gives a tuple
+    print(kwargs) # it gives a dictionary
+    print('I have {} {}'.format(args[0],kwargs['fruit']))
+myfun(10,20,30,fruit='apple') 
+# EXAMPLE  
+def exp1(*args):
+    even_list = []
+    for num in args:
+        if num % 2 == 0:
+            even_list.append(num)
+    return even_list
+print(exp1(1,2,3,4,5,6))
+def exp2(s):
+    result = ""
+    for index, letter in enumerate(s):
+        if index % 2 == 0:
+            result += letter.lower()
+        else:
+            result += letter.upper()
+    return result
+print(exp2('India'))

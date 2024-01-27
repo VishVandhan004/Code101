@@ -338,7 +338,7 @@ if max_value is not None and min_value is not None:
     print(min_value)
 
 19th Problem
-'''Write a script to store a nested dictionary and print all its keys/values.
+Write a script to store a nested dictionary and print all its keys/values.
 input format : number of records
               for each record id and name as key and value pair
 output format : display records 
@@ -354,7 +354,6 @@ def
 2:
   id: 102
   name: def
-'''
 
 def print_nested_dict(nested_dict, indent=0):
     #write your code here

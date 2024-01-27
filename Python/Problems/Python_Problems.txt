@@ -374,7 +374,7 @@ for i in range(1,n+1):
 print_nested_dict(D)
 
 20th Problem
-''' Write a program using functions to check if the input string is a palindrome or Not?
+Write a program using functions to check if the input string is a palindrome or Not?
      Display 'Palindrome', if it is a palindrome.
      Display 'Not a Palindrome', if it is a not palindrome. 
      Sample Test Case:
@@ -383,7 +383,7 @@ print_nested_dict(D)
     output=Palindrome
     case2:
     input=Hello
-    output=Not a Palindrome '''
+    output=Not a Palindrome 
 
 s=input()
 def pal(s):
@@ -397,7 +397,7 @@ else:
     print("Not a Palindrome")
 
 21st Problem
-''' Store student names and phone numbers in a dictionary. 
+Store student names and phone numbers in a dictionary. 
     Write a script using functions to look up a student name  given the phone number.
     Input N.
     In Each line, Input Phone Number and Name with space seperation.
@@ -416,7 +416,7 @@ else:
     222 Jack
     333 James
     444
-    output=Not Found '''
+    output=Not Found 
 
 n=int(input())
 def name(n):
@@ -433,7 +433,7 @@ def name(n):
 name(n)
     
 22nd Problem
-'''Write a Python script using functions to print the sum of all the values in a dictionary.
+Write a Python script using functions to print the sum of all the values in a dictionary.
     Input N.
     Input N Lines.
     In Each line, Input Key and value with space seperation(Both are integers).
@@ -443,7 +443,7 @@ name(n)
    1 10
    2 20
    3 30
-   Output=60 '''
+   Output=60 
 
 def sum(n):
     dict={}
@@ -467,7 +467,7 @@ output =hello 2
 world 1
 Qualcomm 2
 Training 1
-at 1 '''
+at 1 
 
 str=input()
 def count(str):

@@ -460,7 +460,7 @@ n=int(input())
 print(sum(n))        
 
 23rd Problem
-'''write a program ot print frequency of words in a given string
+write a program ot print frequency of words in a given string
 example 
 input = hello world hello Qualcomm Training at Qualcomm
 output =hello 2

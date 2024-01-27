@@ -316,12 +316,12 @@ add, mult, subtract = mathOp(a,b)
 print(add, mult, subtract)
 
 18th Problem
-''' Write a script to get the maximum and minimum value in a dictionary.
+Write a script to get the maximum and minimum value in a dictionary.
 Example 1:
 input=1 2 3
 a b c
 output=c
-a '''
+a 
 
 def find_max_min_values(input_dict):
     l=list(input_dict.keys())

@@ -263,14 +263,12 @@ for i in range(n):
 print(sum(d.values()))
 
 15th Problem
-''' Write a function add which takes variable parameters and it returns the sum
-  of all arguments which are integers.
-  example 1
-  input=1
+Write a function add which takes variable parameters and it returns the sum of all arguments which are integers.
+input=1
 2
 a
 4
-output=7 '''
+output=7 
 
 def add(*nums):
     return sum(num for num in nums if isinstance(num,int))

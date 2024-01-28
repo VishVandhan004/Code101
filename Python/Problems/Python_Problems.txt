@@ -241,7 +241,6 @@ for x in range(m, n+1):
 print(d)
 
 14th Problem
-'''
 Write a Python script to print the sum of all the values in a dictionary.
 Input N.
 Input N Lines.
@@ -253,7 +252,6 @@ Input=3
 2 20
 3 30
 Output=60
-'''
 
 n = int(input())
 d = {}

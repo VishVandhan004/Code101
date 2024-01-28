@@ -281,14 +281,14 @@ k = int(input())
 print(add(i,j,s,k))
 
 16th Problem
-''' Create a function showStudent() which has student id, student name 
+Create a function showStudent() which has student id, student name 
   and marks as input. It should display all the data. If marks is missing it
   should display 75.
   input=1
   abc
   45
   output=1 abc 45
-1 abc 75 '''
+1 abc 75 
 
 def showStudent(id, name, marks = 75):    
   #write your code

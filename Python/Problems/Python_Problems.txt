@@ -300,13 +300,13 @@ showStudent(id1,name,marks)
 showStudent(id1,name)
 
 17th Problem
-'''Write a function mathOp() such that it can accept two variables and calculate
+Write a function mathOp() such that it can accept two variables and calculate
   the addition, multiplication and subtraction of it. The result must be
   returned a single return call.
 Example 1
 input = 10
 20
-output=30 200 -10 '''
+output=30 200 -10 
 
 def mathOp(n1, n2):    
     return n1+n2,n1*n2,n1-n2

@@ -1,4 +1,13 @@
 {
+<<<<<<< HEAD
     "python.analysis.autoImportCompletions": true,
     "python.analysis.typeCheckingMode": "basic"
+=======
+<<<<<<< HEAD
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "basic"
+=======
+    "python.analysis.autoImportCompletions": true
+>>>>>>> e128a089b1a22e0de389a35f18a47a21c229d476
+>>>>>>> 4e33747daabc04dd4bf307c9b0588595e8ad8763
 }

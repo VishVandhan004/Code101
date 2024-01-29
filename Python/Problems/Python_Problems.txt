@@ -241,7 +241,6 @@ for x in range(m, n+1):
 print(d)
 
 14th Problem
-'''
 Write a Python script to print the sum of all the values in a dictionary.
 Input N.
 Input N Lines.
@@ -253,7 +252,6 @@ Input=3
 2 20
 3 30
 Output=60
-'''
 
 n = int(input())
 d = {}
@@ -263,14 +261,12 @@ for i in range(n):
 print(sum(d.values()))
 
 15th Problem
-''' Write a function add which takes variable parameters and it returns the sum
-  of all arguments which are integers.
-  example 1
-  input=1
+Write a function add which takes variable parameters and it returns the sum of all arguments which are integers.
+input=1
 2
 a
 4
-output=7 '''
+output=7 
 
 def add(*nums):
     return sum(num for num in nums if isinstance(num,int))
@@ -281,14 +277,14 @@ k = int(input())
 print(add(i,j,s,k))
 
 16th Problem
-''' Create a function showStudent() which has student id, student name 
+Create a function showStudent() which has student id, student name 
   and marks as input. It should display all the data. If marks is missing it
   should display 75.
   input=1
   abc
   45
   output=1 abc 45
-1 abc 75 '''
+1 abc 75 
 
 def showStudent(id, name, marks = 75):    
   #write your code
@@ -300,13 +296,13 @@ showStudent(id1,name,marks)
 showStudent(id1,name)
 
 17th Problem
-'''Write a function mathOp() such that it can accept two variables and calculate
+Write a function mathOp() such that it can accept two variables and calculate
   the addition, multiplication and subtraction of it. The result must be
   returned a single return call.
 Example 1
 input = 10
 20
-output=30 200 -10 '''
+output=30 200 -10 
 
 def mathOp(n1, n2):    
     return n1+n2,n1*n2,n1-n2
@@ -316,12 +312,12 @@ add, mult, subtract = mathOp(a,b)
 print(add, mult, subtract)
 
 18th Problem
-''' Write a script to get the maximum and minimum value in a dictionary.
+Write a script to get the maximum and minimum value in a dictionary.
 Example 1:
 input=1 2 3
 a b c
 output=c
-a '''
+a 
 
 def find_max_min_values(input_dict):
     l=list(input_dict.keys())
@@ -338,7 +334,7 @@ if max_value is not None and min_value is not None:
     print(min_value)
 
 19th Problem
-'''Write a script to store a nested dictionary and print all its keys/values.
+Write a script to store a nested dictionary and print all its keys/values.
 input format : number of records
               for each record id and name as key and value pair
 output format : display records 
@@ -354,7 +350,6 @@ def
 2:
   id: 102
   name: def
-'''
 
 def print_nested_dict(nested_dict, indent=0):
     #write your code here
@@ -374,7 +369,7 @@ for i in range(1,n+1):
 print_nested_dict(D)
 
 20th Problem
-''' Write a program using functions to check if the input string is a palindrome or Not?
+Write a program using functions to check if the input string is a palindrome or Not?
      Display 'Palindrome', if it is a palindrome.
      Display 'Not a Palindrome', if it is a not palindrome. 
      Sample Test Case:
@@ -383,7 +378,7 @@ print_nested_dict(D)
     output=Palindrome
     case2:
     input=Hello
-    output=Not a Palindrome '''
+    output=Not a Palindrome 
 
 s=input()
 def pal(s):
@@ -397,7 +392,7 @@ else:
     print("Not a Palindrome")
 
 21st Problem
-''' Store student names and phone numbers in a dictionary. 
+Store student names and phone numbers in a dictionary. 
     Write a script using functions to look up a student name  given the phone number.
     Input N.
     In Each line, Input Phone Number and Name with space seperation.
@@ -416,7 +411,7 @@ else:
     222 Jack
     333 James
     444
-    output=Not Found '''
+    output=Not Found 
 
 n=int(input())
 def name(n):
@@ -433,7 +428,7 @@ def name(n):
 name(n)
     
 22nd Problem
-'''Write a Python script using functions to print the sum of all the values in a dictionary.
+Write a Python script using functions to print the sum of all the values in a dictionary.
     Input N.
     Input N Lines.
     In Each line, Input Key and value with space seperation(Both are integers).
@@ -443,7 +438,7 @@ name(n)
    1 10
    2 20
    3 30
-   Output=60 '''
+   Output=60 
 
 def sum(n):
     dict={}
@@ -460,14 +455,14 @@ n=int(input())
 print(sum(n))        
 
 23rd Problem
-'''write a program ot print frequency of words in a given string
+write a program ot print frequency of words in a given string
 example 
 input = hello world hello Qualcomm Training at Qualcomm
 output =hello 2
 world 1
 Qualcomm 2
 Training 1
-at 1 '''
+at 1 
 
 str=input()
 def count(str):
@@ -483,5 +478,19 @@ def count(str):
         print(i,"",dict.get(i))
 count(str)
     
-    
+24th Problem
+LEAP YEAR
+Given a year, determine whether it is a leap year. If it is a leap year, return the Boolean True, otherwise return False.
+Note that the code stub provided reads from STDIN and passes arguments to the is_leap function. It is only necessary to complete the is_leap function.
         
+def is_leap(year):
+    leap = False
+    if year%4==0:
+        leap = True
+        if year%100==0:
+            leap = False
+            if year%400==0:
+                leap = True
+    return leap            
+year = int(input())
+print(is_leap(year))

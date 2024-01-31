@@ -507,3 +507,18 @@ if __name__ == '__main__':
     first_name = input()
     last_name = input()
     print_full_name(first_name, last_name)
+
+26th Problem
+Chef defines a pair of positive integers (a,b) to be a Oneful Pair, if a+b+(a⋅b)=111
+
+# read the input as a string
+input_string = input()
+# split the string by space and convert to integers
+a, b = map(int, input_string.split())
+# check if the equation is true
+if a + b + (a * b) == 111:
+    # print Yes
+    print("Yes")
+else:
+    # print No
+    print("No")

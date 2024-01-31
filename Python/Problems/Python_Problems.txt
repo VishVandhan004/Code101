@@ -522,3 +522,17 @@ if a + b + (a * b) == 111:
 else:
     # print No
     print("No")
+
+27th Problem
+Given the participants' score sheet for your University Sports Day, you are required to find the runner-up score. You are given  scores. Store them in a list and find the score of the runner-up.
+Input Format
+5
+2 3 6 6 5
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    arr2 = list(set(arr))
+    arr3 = sorted(arr2)
+    print(arr3[-2])
+    

@@ -7816,7 +7816,6 @@ Input Format:
 Line-1:A string str[]
 Line-2: a character represents an alphabet.
 Output Format:
---------------
 Print a character which is the successor.
 Constraints:
  2 <= str.length<= 10^4

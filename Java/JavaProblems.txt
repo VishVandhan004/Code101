@@ -7821,11 +7821,9 @@ Constraints:
  2 <= str.length<= 10^4
 'alp' is a lowercase letter. 
 Sample Input-1:
----------------
 adghijl
 f 
 Sample Output-1:
----------------
 g
 Sample Input-2:
 ---------------

@@ -7813,7 +7813,6 @@ cyclic fashion. For example: Successor for alp='z' in str[]="bcd" is 'b'.
 Help Vishal to return the answer.
 Can you solve it in O(log(n)) complexity?
 Input Format:
--------------
 Line-1:A string str[]
 Line-2: a character represents an alphabet.
 Output Format:

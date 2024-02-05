@@ -535,4 +535,42 @@ if __name__ == '__main__':
     arr2 = list(set(arr))
     arr3 = sorted(arr2)
     print(arr3[-2])
-    
+
+28th Problem
+Given the names and grades for each student in a class of  students, store them in a nested list and print the name(s) of any student(s) having the second lowest grade.
+Note: If there are multiple students with the second lowest grade, order their names alphabetically and print each name on a new line.     The first line contains an integer, , the number of students.
+The  subsequent lines describe each student over  lines.
+- The first line contains a student's name.
+- The second line contains their grade.
+
+5
+Harry
+37.21
+Berry
+37.21
+Tina
+37.2
+Akriti
+41
+Harsh
+39 
+output -> 
+Berry
+Harry           
+
+if __name__ == '__main__':
+    students = []
+    n = int(input())
+    for _ in range(n):
+        name = input()
+        grade = float(input())
+        students.append([name, grade])
+    students.sort(key=lambda x: x[1])
+    second_lowest_grade = None
+    for i in range(1, n):
+        if students[i][1] > students[0][1]:
+            second_lowest_grade = students[i][1]
+            break
+    second_lowest_students = [student[0] for student in students if student[1] == second_lowest_grade]
+    for name in sorted(second_lowest_students):
+        print(name)

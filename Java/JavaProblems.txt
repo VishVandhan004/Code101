@@ -8536,8 +8536,7 @@ The diagonal from the top left corner to the bottom right corner of a the grid
  In each diagonal all the boxes are filled with the same number, 
  so the answer is True.
 
- import java.util.Scanner;
-
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -8559,3 +8558,5 @@ public class Main {
         System.out.println(result);
     }
 }
+
+190th Problem

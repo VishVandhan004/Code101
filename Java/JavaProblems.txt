@@ -8364,10 +8364,8 @@ pqsv pqrstuv
 Sample Output-1:
 true
 Sample Input-2:
----------------
 psr pqrst
 Sample Output-2:
-----------------
 false
 
 import java.util.Scanner;

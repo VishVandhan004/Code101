@@ -8360,10 +8360,8 @@ Line-1:Two space separeted strings
 Output Format:
 Print a boolean result.
 Sample Input-1:
----------------
 pqsv pqrstuv
 Sample Output-1:
-----------------
 true
 Sample Input-2:
 ---------------

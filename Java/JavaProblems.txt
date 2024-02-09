@@ -8514,7 +8514,6 @@ The diagonal from the top left corner to the bottom right corner of a the grid
  Your task is to check whether, each of the main diagonal all the boxes 
  are filled with same number or not. If filled with same, print true, Otherwise false.
  Input Format:
- -------------
  Line-1: Two integers M and N, size of the grid..
  Next M lines: N space separated integers, numbers filled in thr grid of boxes.
  Output Format:

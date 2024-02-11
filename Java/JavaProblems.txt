@@ -8319,13 +8319,10 @@ A number
 Sample Input-1:
 5
 Sample Output-1:
-----------------
 2
 Sample Input-2:
----------------
 8
 Sample Output-2:
-----------------
 3
 
 import java.util.Scanner;

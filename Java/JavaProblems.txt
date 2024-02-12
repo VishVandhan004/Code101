@@ -8273,16 +8273,12 @@ Line-1:Space separeted numbers
 Output Format:
 Print a number, index or -1
 Sample Input-1:
----------------
 4 3 2 1
 Sample Output-1:
-----------------
 2
 Sample Input-2:
----------------
 1 2 3 4 5 6 7 8 9
 Sample Output-2:
-----------------
 -1
 
 import java.util.Scanner;

@@ -8269,10 +8269,8 @@ Given a 0-indexed integer array nums,
 return the smallest index i of nums such that i mod 10 == nums[i], 
 or -1 if such index does not exist.
 Input Format:
--------------
 Line-1:Space separeted numbers
 Output Format:
---------------
 Print a number, index or -1
 Sample Input-1:
 ---------------

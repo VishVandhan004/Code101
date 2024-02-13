@@ -8218,10 +8218,8 @@ subsequences.
 A subsequence of array is a sequence that can be derived from the array by deleting some or no elements
 without changing the order of the remaining elements.
 Input Format:
--------------
 Line-1:A space seperated numbers, arr[]
 Output Format:
---------------
 A number 
 Sample Input-1:
 ---------------

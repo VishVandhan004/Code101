@@ -9063,3 +9063,174 @@ class Solution {
         }
     }
 }    
+
+208th Problem
+You are given a 0-indexed integer array nums of even length consisting of an equal number of positive and negative integers.
+You should rearrange the elements of nums such that the modified array follows the given conditions:
+Every consecutive pair of integers have opposite signs.
+For all integers with the same sign, the order in which they were present in nums is preserved.
+The rearranged array begins with a positive integer.
+Return the modified array after rearranging the elements to satisfy the aforementioned conditions.
+Example 1:
+Input: nums = [3,1,-2,-5,2,-4]
+Output: [3,-2,1,-5,2,-4]
+Explanation:
+The positive integers in nums are [3,1,2]. The negative integers are [-2,-5,-4].
+The only possible way to rearrange them such that they satisfy all conditions is [3,-2,1,-5,2,-4].
+Other ways such as [1,-2,2,-5,3,-4], [3,1,2,-2,-5,-4], [-2,3,-5,1,-4,2] are incorrect because they do not satisfy one or more conditions.  
+Example 2:
+Input: nums = [-1,1]
+Output: [1,-1]
+Explanation:
+1 is the only positive integer and -1 the only negative integer in nums.
+So nums is rearranged to [1,-1].
+
+class Solution {
+    public int[] rearrangeArray(int[] a) {
+        int n=a.length;
+        int []ans=new int[n];
+       int posIndex=0,negIndex=1;
+       for(int i=0;i<n;i++){
+           if(a[i]>0){
+               ans[posIndex]=a[i];
+               posIndex+=2;
+           }
+           else{
+               ans[negIndex]=a[i];
+               negIndex+=2;
+           }
+       }
+       return ans;
+
+    }
+}
+
+209th Problem
+You are given an integer array nums. The unique elements of an array are the elements that appear exactly once in the array.
+Return the sum of all the unique elements of nums.
+Example 1:
+Input: nums = [1,2,3,2]
+Output: 4
+Explanation: The unique elements are [1,3], and the sum is 4.
+Example 2:
+Input: nums = [1,1,1,1,1]
+Output: 0
+Explanation: There are no unique elements, and the sum is 0.
+
+class Solution {
+    public int sumOfUnique(int[] nums) {
+        int sum = 0;
+        HashSet<Integer> uniqueSet = new HashSet<>();
+        HashSet<Integer> nonUniqueSet = new HashSet<>();
+        for (int num : nums) {
+            if (!nonUniqueSet.contains(num)) {
+                if (!uniqueSet.contains(num)) {
+                    sum += num;
+                    uniqueSet.add(num);
+                } else {
+                    sum -= num;
+                    nonUniqueSet.add(num);
+                }
+            }
+        }
+        return sum;
+    }
+}
+
+210th Problem
+Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
+Example 1:
+Input: p = [1,2,3], q = [1,2,3]
+Output: true
+
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if(p==null && q==null){
+            return true;
+        }
+        else if(p==null || q==null){
+            return false;
+        }
+        else {
+            if(p.val == q.val){
+                return isSameTree(p.left,q.left) && isSameTree(p.right,q.right);
+            }
+        }
+        return false;
+    }
+}
+
+211st Problem
+Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
+Example 1:
+Input: root = [1,2,2,3,4,4,3]
+Output: true
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+     if(root == null){
+         return true;
+     }
+     return ismir(root.left,root.right);
+    }
+    public boolean ismir(TreeNode left, TreeNode right){
+        if(left == null && right == null){
+            return true;
+        }
+        if(left == null || right==null){
+            return false;
+        }
+        else{
+            if(left.val == right.val){
+                return ismir(left.left, right.right) && ismir(left.right,right.left);
+            } 
+        }
+        return false;
+    }
+}
+
+212nd Problem
+You are climbing a staircase. It takes n steps to reach the top.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+Example 1:
+Input: n = 2
+Output: 2
+Explanation: There are two ways to climb to the top.
+1. 1 step + 1 step
+2. 2 steps
+
+class Solution {
+    public int climbStairs(int n) {
+        int arr[] = new int[n+1];
+        if(n==0){
+            return 0;
+        }
+        else if(n == 1){
+            return 1;
+        }
+        else {
+            arr[0] = 1;
+            arr[1] = 1;
+            for(int i=2;i<=n;i++){
+                arr[i] = arr[i-1]+arr[i-2];
+            }
+        }
+        return arr[n];
+    }
+}

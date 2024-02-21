@@ -9816,7 +9816,6 @@ class Solution {
             // Move current pointer
             current = current.next;
         }
-        
         return head;
     }
 }

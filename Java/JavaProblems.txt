@@ -9782,3 +9782,41 @@ class Solution {
         }
     }
 }
+
+229th Problem
+Given the head of a linked list and an integer val, remove all the nodes of the linked list that has Node.val == val, and return the new head.
+Example 1:
+Input: head = [1,2,6,3,4,5,6], val = 6
+Output: [1,2,3,4,5]
+Example 2:
+Input: head = [], val = 1
+Output: []
+Example 3:
+Input: head = [7,7,7,7], val = 7
+Output: []
+
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        // Handle the case where the head itself has the value to be removed
+        while (head != null && head.val == val) {
+            head = head.next;
+        }
+        
+        ListNode current = head;
+        ListNode previous = null;
+        
+        while (current != null) {
+            if (current.val == val) {
+                // Skip current node
+                previous.next = current.next;
+            } else {
+                // Move previous pointer
+                previous = current;
+            }
+            // Move current pointer
+            current = current.next;
+        }
+        
+        return head;
+    }
+}

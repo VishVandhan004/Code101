@@ -9062,3 +9062,811 @@ class Solution {
         }
     }
 }    
+
+208th Problem
+You are given a 0-indexed integer array nums of even length consisting of an equal number of positive and negative integers.
+You should rearrange the elements of nums such that the modified array follows the given conditions:
+Every consecutive pair of integers have opposite signs.
+For all integers with the same sign, the order in which they were present in nums is preserved.
+The rearranged array begins with a positive integer.
+Return the modified array after rearranging the elements to satisfy the aforementioned conditions.
+Example 1:
+Input: nums = [3,1,-2,-5,2,-4]
+Output: [3,-2,1,-5,2,-4]
+Explanation:
+The positive integers in nums are [3,1,2]. The negative integers are [-2,-5,-4].
+The only possible way to rearrange them such that they satisfy all conditions is [3,-2,1,-5,2,-4].
+Other ways such as [1,-2,2,-5,3,-4], [3,1,2,-2,-5,-4], [-2,3,-5,1,-4,2] are incorrect because they do not satisfy one or more conditions.  
+Example 2:
+Input: nums = [-1,1]
+Output: [1,-1]
+Explanation:
+1 is the only positive integer and -1 the only negative integer in nums.
+So nums is rearranged to [1,-1].
+
+class Solution {
+    public int[] rearrangeArray(int[] a) {
+        int n=a.length;
+        int []ans=new int[n];
+       int posIndex=0,negIndex=1;
+       for(int i=0;i<n;i++){
+           if(a[i]>0){
+               ans[posIndex]=a[i];
+               posIndex+=2;
+           }
+           else{
+               ans[negIndex]=a[i];
+               negIndex+=2;
+           }
+       }
+       return ans;
+
+    }
+}
+
+209th Problem
+You are given an integer array nums. The unique elements of an array are the elements that appear exactly once in the array.
+Return the sum of all the unique elements of nums.
+Example 1:
+Input: nums = [1,2,3,2]
+Output: 4
+Explanation: The unique elements are [1,3], and the sum is 4.
+Example 2:
+Input: nums = [1,1,1,1,1]
+Output: 0
+Explanation: There are no unique elements, and the sum is 0.
+
+class Solution {
+    public int sumOfUnique(int[] nums) {
+        int sum = 0;
+        HashSet<Integer> uniqueSet = new HashSet<>();
+        HashSet<Integer> nonUniqueSet = new HashSet<>();
+        for (int num : nums) {
+            if (!nonUniqueSet.contains(num)) {
+                if (!uniqueSet.contains(num)) {
+                    sum += num;
+                    uniqueSet.add(num);
+                } else {
+                    sum -= num;
+                    nonUniqueSet.add(num);
+                }
+            }
+        }
+        return sum;
+    }
+}
+
+210th Problem
+Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
+Example 1:
+Input: p = [1,2,3], q = [1,2,3]
+Output: true
+
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if(p==null && q==null){
+            return true;
+        }
+        else if(p==null || q==null){
+            return false;
+        }
+        else {
+            if(p.val == q.val){
+                return isSameTree(p.left,q.left) && isSameTree(p.right,q.right);
+            }
+        }
+        return false;
+    }
+}
+
+211st Problem
+Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
+Example 1:
+Input: root = [1,2,2,3,4,4,3]
+Output: true
+
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+     if(root == null){
+         return true;
+     }
+     return ismir(root.left,root.right);
+    }
+    public boolean ismir(TreeNode left, TreeNode right){
+        if(left == null && right == null){
+            return true;
+        }
+        if(left == null || right==null){
+            return false;
+        }
+        else{
+            if(left.val == right.val){
+                return ismir(left.left, right.right) && ismir(left.right,right.left);
+            } 
+        }
+        return false;
+    }
+}
+
+212nd Problem
+You are climbing a staircase. It takes n steps to reach the top.
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+Example 1:
+Input: n = 2
+Output: 2
+Explanation: There are two ways to climb to the top.
+1. 1 step + 1 step
+2. 2 steps
+
+class Solution {
+    public int climbStairs(int n) {
+        int arr[] = new int[n+1];
+        if(n==0){
+            return 0;
+        }
+        else if(n == 1){
+            return 1;
+        }
+        else {
+            arr[0] = 1;
+            arr[1] = 1;
+            for(int i=2;i<=n;i++){
+                arr[i] = arr[i-1]+arr[i-2];
+            }
+        }
+        return arr[n];
+    }
+}
+
+213th Problem
+Alice and Bob take turns playing a game, with Alice starting first.
+Initially, there is a number n on the chalkboard. On each player's turn, that player makes a move consisting of:
+Choosing any x with 0 < x < n and n % x == 0.
+Replacing the number n on the chalkboard with n - x.
+Also, if a player cannot make a move, they lose the game.
+Return true if and only if Alice wins the game, assuming both players play optimally.
+Example 1:
+Input: n = 2
+Output: true
+Explanation: Alice chooses 1, and Bob has no more moves.
+Example 2:
+Input: n = 3
+Output: false
+Explanation: Alice chooses 1, Bob chooses 1, and Alice has no more moves.
+
+class Solution {
+    public boolean divisorGame(int n) {
+        return n%2==0;
+    }
+}
+
+214th Problem
+The Tribonacci sequence Tn is defined as follows: 
+T0 = 0, T1 = 1, T2 = 1, and Tn+3 = Tn + Tn+1 + Tn+2 for n >= 0.
+Given n, return the value of Tn.
+Example 1:
+Input: n = 4
+Output: 4
+Explanation:
+T_3 = 0 + 1 + 1 = 2
+T_4 = 1 + 1 + 2 = 4
+Example 2:
+Input: n = 25
+Output: 1389537
+
+class Solution {
+    public int tribonacci(int n) {
+        if (n == 0) {
+            return 0;
+        } else if (n == 1 || n == 2) {
+            return 1;
+        }
+        // Compute the Tribonacci number using the recurrence relation
+        int t0 = 0, t1 = 1, t2 = 1;
+        for (int i = 3; i <= n; i++) {
+            int tn = t0 + t1 + t2;
+            t0 = t1;
+            t1 = t2;
+            t2 = tn;
+        }
+        return t2;
+    }
+}
+
+215th Problem
+Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
+Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
+Change the array nums such that the first k elements of nums contain the elements which are not equal to val. 
+Example 1:
+Input: nums = [3,2,2,3], val = 3
+Output: 2, nums = [2,2,_,_]
+Explanation: Your function should return k = 2, with the first two elements of nums being 2.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+Example 2:
+Input: nums = [0,1,2,2,3,0,4,2], val = 2
+Output: 5, nums = [0,1,4,0,3,_,_,_]
+Explanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
+Note that the five elements can be returned in any order.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int k = 0; // Initialize the count of elements not equal to val
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != val) {
+                nums[k] = nums[i]; // Move the element to the front
+                k++; // Increment k
+            }
+        }
+        return k; // Return the count of valid elements
+    }
+}
+
+216th Problem
+A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+Given a string s, return true if it is a palindrome, or false otherwise.
+Example 1:
+Input: s = "A man, a plan, a canal: Panama"
+Output: true
+Explanation: "amanaplanacanalpanama" is a palindrome.
+Example 2:
+Input: s = "race a car"
+Output: false
+Explanation: "raceacar" is not a palindrome.
+Example 3:
+Input: s = " "
+Output: true
+Explanation: s is an empty string "" after removing non-alphanumeric characters.
+Since an empty string reads the same forward and backward, it is a palindrome.
+
+class Solution {
+    public boolean isPalindrome(String s) {
+        // Remove non-alphanumeric characters and convert to lowercase
+        StringBuilder cleaned = new StringBuilder();
+        for (char ch : s.toCharArray()) {
+            if (Character.isLetterOrDigit(ch)) {
+                cleaned.append(Character.toLowerCase(ch));
+            }
+        }
+
+        // Check if the cleaned string is a palindrome
+        int left = 0;
+        int right = cleaned.length() - 1;
+        while (left < right) {
+            if (cleaned.charAt(left) != cleaned.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+}
+
+217th Problem
+Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+Note that you must do this in-place without making a copy of the array.
+Example 1:
+Input: nums = [0,1,0,3,12]
+Output: [1,3,12,0,0]
+Example 2:
+Input: nums = [0]
+Output: [0]
+
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[j++] = nums[i];
+            }
+        }
+        for (int i = j; i < nums.length; i++) {
+            nums[i] = 0;
+        }
+    }
+}
+
+218th Problem
+Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+Symbol       Value
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
+For example, 2 is written as II in Roman numeral, just two one's added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
+Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
+I can be placed before V (5) and X (10) to make 4 and 9. 
+X can be placed before L (50) and C (100) to make 40 and 90. 
+C can be placed before D (500) and M (1000) to make 400 and 900.
+Given an integer, convert it to a roman numeral.
+Example 1:
+Input: num = 3
+Output: "III"
+Explanation: 3 is represented as 3 ones.
+Example 2:
+Input: num = 58
+Output: "LVIII"
+Explanation: L = 50, V = 5, III = 3.
+Example 3:
+Input: num = 1994
+Output: "MCMXCIV"
+Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+
+class Solution {
+    public String intToRoman(int num) {
+        StringBuilder result = new StringBuilder();
+        int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] symbols = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        for (int i = 0; i < values.length; i++) {
+            while (num >= values[i]) {
+                result.append(symbols[i]);
+                num -= values[i];
+            }
+        }
+        return result.toString();
+    }
+}
+
+219th Problem
+Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.
+Note: You must not use any built-in BigInteger library or convert the inputs to integer directly.
+Example 1:
+Input: num1 = "2", num2 = "3"
+Output: "6"
+Example 2:
+Input: num1 = "123", num2 = "456"
+Output: "56088"
+
+class Solution {
+    public String multiply(String num1, String num2) {
+        int m = num1.length();
+        int n = num2.length();
+        int[] result = new int[m + n]; 
+                for (int i = m - 1; i >= 0; i--) {
+            for (int j = n - 1; j >= 0; j--) {
+                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
+                int sum = mul + result[i + j + 1]; 
+                result[i + j] += sum / 10; 
+                result[i + j + 1] = sum % 10; 
+            }
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int digit : result) {
+            if (!(sb.length() == 0 && digit == 0)) { 
+                sb.append(digit);
+            }
+        }
+        
+        return sb.length() == 0 ? "0" : sb.toString();
+    }
+}
+
+220th Problem
+Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+Notice that the solution set must not contain duplicate triplets.
+Example 1:
+Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+Explanation: 
+nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
+nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
+nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
+The distinct triplets are [-1,0,1] and [-1,-1,2].
+Notice that the order of the output and the order of the triplets does not matter.
+Example 2:
+Input: nums = [0,1,1]
+Output: []
+Explanation: The only possible triplet does not sum up to 0.
+Example 3:
+Input: nums = [0,0,0]
+Output: [[0,0,0]]
+Explanation: The only possible triplet sums up to 0.
+
+import java.util.*;
+
+class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        Arrays.sort(nums); // Sort the array to easily handle duplicates
+        
+        List<List<Integer>> result = new ArrayList<>();
+        
+        for (int i = 0; i < nums.length - 2; i++) {
+            // Avoid duplicates
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            
+            int left = i + 1;
+            int right = nums.length - 1;
+            int target = -nums[i]; // Find two elements that sum up to -nums[i]
+            
+            while (left < right) {
+                int sum = nums[left] + nums[right];
+                
+                if (sum == target) {
+                    result.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    
+                    // Skip duplicates
+                    while (left < right && nums[left] == nums[left + 1]) {
+                        left++;
+                    }
+                    while (left < right && nums[right] == nums[right - 1]) {
+                        right--;
+                    }
+                    
+                    left++;
+                    right--;
+                } else if (sum < target) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
+        
+        return result;
+    }
+}
+
+221st Problem
+Write a function to find the longest common prefix string amongst an array of strings.
+If there is no common prefix, return an empty string "".
+Example 1:
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+Example 2:
+Input: strs = ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input strings.
+
+public class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+        
+        // Start with the first string as the initial prefix
+        String prefix = strs[0];
+        
+        // Iterate through the array of strings
+        for (int i = 1; i < strs.length; i++) {
+            // Keep reducing the prefix until it matches the current string
+            while (strs[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) {
+                    return ""; // If the prefix becomes empty, there's no common prefix
+                }
+            }
+        }
+        
+        return prefix;
+    }
+}
+
+222nd Problem
+Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.
+Example 1:
+Input: head = [1,1,2]
+Output: [1,2]
+Example 2:
+Input: head = [1,1,2,3,3]
+Output: [1,2,3]
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        if (head == null || head.next == null) {
+            return head; // If the list is empty or has only one element, no duplicates to remove
+        }
+        
+        ListNode current = head;
+        
+        while (current != null && current.next != null) {
+            if (current.val == current.next.val) {
+                current.next = current.next.next; // Skip the duplicate node
+            } else {
+                current = current.next; // Move to the next node
+            }
+        }
+        
+        return head;
+    }
+}
+
+223rd Problem
+Given the root of a binary tree, return its maximum depth.
+A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+Example 1:
+Input: root = [3,9,20,null,null,15,7]
+Output: 3
+Example 2:
+Input: root = [1,null,2]
+Output: 2
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0; // Base case: if the root is null, return 0
+        }
+        
+        int leftDepth = maxDepth(root.left); // Recursively find the maximum depth of the left subtree
+        int rightDepth = maxDepth(root.right); // Recursively find the maximum depth of the right subtree
+        
+        return Math.max(leftDepth, rightDepth) + 1; // Return the maximum depth among left and right subtrees plus 1 (for the current node)
+    }
+}
+
+224th Problem
+Given an integer array nums of length n and an integer target, find three integers in nums such that the sum is closest to target.
+Return the sum of the three integers.
+Example 1:
+Input: nums = [-1,2,1,-4], target = 1
+Output: 2
+Explanation: The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
+Example 2:
+Input: nums = [0,0,0], target = 1
+Output: 0
+Explanation: The sum that is closest to the target is 0. (0 + 0 + 0 = 0).
+
+import java.util.Arrays;
+class Solution {
+    public int threeSumClosest(int[] nums, int target) {
+        Arrays.sort(nums); // Sort the array to facilitate two-pointer approach
+        int closestSum = nums[0] + nums[1] + nums[2]; // Initialize with the sum of the first three elements
+        for (int i = 0; i < nums.length - 2; i++) {
+            int left = i + 1; // Pointer for the element after nums[i]
+            int right = nums.length - 1; // Pointer for the last element
+            while (left < right) {
+                int sum = nums[i] + nums[left] + nums[right]; // Calculate the current sum
+                // Update closestSum if the current sum is closer to the target
+                if (Math.abs(sum - target) < Math.abs(closestSum - target)) {
+                    closestSum = sum;
+                }
+                if (sum < target) {
+                    left++; // Move the left pointer to increase the sum
+                } else if (sum > target) {
+                    right--; // Move the right pointer to decrease the sum
+                } else {
+                    return sum; // If the sum is equal to target, return immediately
+                }
+            }
+        }
+        return closestSum;
+    }
+}
+
+225th Problem
+Given an integer n, return true if it is a power of two. Otherwise, return false.
+An integer n is a power of two, if there exists an integer x such that n == 2x.
+Example 1:
+Input: n = 1
+Output: true
+Explanation: 2^0 = 1
+Example 2:
+Input: n = 16
+Output: true
+Explanation: 2^4 = 16
+Example 3:
+Input: n = 3
+Output: false
+
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+        return n > 0 && (n & (n - 1)) == 0;
+    }
+}
+
+226th Problem
+Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
+Example 1:
+Input: nums = [3,0,1]
+Output: 2
+Explanation: n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.
+Example 2:
+Input: nums = [0,1]
+Output: 2
+Explanation: n = 2 since there are 2 numbers, so all numbers are in the range [0,2]. 2 is the missing number in the range since it does not appear in nums.
+Example 3:
+Input: nums = [9,6,4,2,3,5,7,0,1]
+Output: 8
+Explanation: n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.
+
+class Solution {
+    public int missingNumber(int[] nums) {
+        int n = nums.length;
+        // Calculate the sum of numbers from 0 to n
+        int expectedSum = n * (n + 1) / 2;
+        // Calculate the sum of elements in the array
+        int actualSum = 0;
+        for (int num : nums) {
+            actualSum += num;
+        }
+        // The missing number is the difference between the expected sum and the actual sum
+        return expectedSum - actualSum;
+    }
+}
+
+227th Problem
+Write an algorithm to determine if a number n is happy.
+A happy number is a number defined by the following process:
+Starting with any positive integer, replace the number by the sum of the squares of its digits.
+Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
+Those numbers for which this process ends in 1 are happy.
+Return true if n is a happy number, and false if not.
+Example 1:
+Input: n = 19
+Output: true
+Explanation:
+12 + 92 = 82
+82 + 22 = 68
+62 + 82 = 100
+12 + 02 + 02 = 1
+Example 2:
+Input: n = 2
+Output: false
+
+class Solution {
+    public boolean isHappy(int n) {
+        int slow = n;
+        int fast = n;
+        do {
+            slow = sumOfSquares(slow);
+            fast = sumOfSquares(sumOfSquares(fast));
+        } while (slow != fast);
+
+        return slow == 1;
+    }
+    private int sumOfSquares(int n) {
+        int sum = 0;
+        while (n > 0) {
+            int digit = n % 10;
+            sum += digit * digit;
+            n /= 10;
+        }
+        return sum;
+    }
+}
+
+228th Problem
+Write a function that reverses a string. The input string is given as an array of characters s.
+You must do this by modifying the input array in-place with O(1) extra memory.
+Example 1:
+Input: s = ["h","e","l","l","o"]
+Output: ["o","l","l","e","h"]
+Example 2:
+Input: s = ["H","a","n","n","a","h"]
+Output: ["h","a","n","n","a","H"]
+
+class Solution {
+    public void reverseString(char[] s) {
+        int left = 0;
+        int right = s.length - 1;
+        while (left < right) {
+            // Swap characters at left and right positions
+            char temp = s[left];
+            s[left] = s[right];
+            s[right] = temp;
+            // Move pointers towards the center
+            left++;
+            right--;
+        }
+    }
+}
+
+229th Problem
+Given the head of a linked list and an integer val, remove all the nodes of the linked list that has Node.val == val, and return the new head.
+Example 1:
+Input: head = [1,2,6,3,4,5,6], val = 6
+Output: [1,2,3,4,5]
+Example 2:
+Input: head = [], val = 1
+Output: []
+Example 3:
+Input: head = [7,7,7,7], val = 7
+Output: []
+
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        // Handle the case where the head itself has the value to be removed
+        while (head != null && head.val == val) {
+            head = head.next;
+        }
+        
+        ListNode current = head;
+        ListNode previous = null;
+        
+        while (current != null) {
+            if (current.val == val) {
+                // Skip current node
+                previous.next = current.next;
+            } else {
+                // Move previous pointer
+                previous = current;
+            }
+            // Move current pointer
+            current = current.next;
+        }
+        return head;
+    }
+}
+
+230th Problem
+Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.
+Example 1:
+Input: nums = [1,2,3,1], k = 3
+Output: true
+Example 2:
+Input: nums = [1,0,1,1], k = 1
+Output: true
+Example 3:
+Input: nums = [1,2,3,1,2,3], k = 2
+Output: false
+
+import java.util.*;
+class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap<>();
+        
+        for (int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            if (map.containsKey(num)) {
+                int prevIndex = map.get(num);
+                if (i - prevIndex <= k) {
+                    return true;
+                }
+            }
+            map.put(num, i);
+        }
+        return false;
+    }
+}
+
+231st Problem
+ANAGRAMS
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+An Anagram is a word or phrase formed by rerranging the letters of a different word or phrase, typically using all the original letters exactly once.
+Example 1:
+Input: s = "anagram", t = "nagaram"
+Output: true
+Example 2:
+Input: s = "rat", t = "car"
+Output: false
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        char[] sp=s.toCharArray();
+        char[] sk=t.toCharArray();
+        Arrays.sort(sp);
+        Arrays.sort(sk);
+        return (new String(sp)).equals(new String(sk));
+    }
+}

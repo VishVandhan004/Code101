@@ -4702,15 +4702,12 @@ Explanation:
 14 => 1 + 4 = 5
 Answer is 5
 Sample Input-2:
----------------
 765
 Sample Output-2:
-----------------
 9
 
 import java.util.*;
-class test
-{
+class test {
     static int rsum(int n)
     {
         int sum=0;

@@ -4690,7 +4690,6 @@ Repeat this procedure until N becomes a single digit number.
 Your task is to help the students to perform the above steps and 
 print the resultant single digit number N.
 Input Format:
--------------
 An integer, number N.
 Output Format:
 --------------

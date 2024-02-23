@@ -4692,13 +4692,10 @@ print the resultant single digit number N.
 Input Format:
 An integer, number N.
 Output Format:
---------------
 Print an integer result.
 Sample Input-1:
----------------
 95
 Sample Output-1:
-----------------
 5
 Explanation: 
 ------------

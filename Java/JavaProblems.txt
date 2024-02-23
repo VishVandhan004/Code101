@@ -4698,7 +4698,6 @@ Sample Input-1:
 Sample Output-1:
 5
 Explanation: 
-------------
 95 => 9 + 5 = 14
 14 => 1 + 4 = 5
 Answer is 5

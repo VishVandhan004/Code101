@@ -5252,14 +5252,9 @@ Input Format:
 A string, consists of 0's and 1's.
 Output Format:
 Print an integer result.
-Sample Input:
---------------
 01001100001111101101010101111000
 Sample Output:
----------------
 17
-Sample Input:
---------------
 11110010111011011011011111100110
 Sample Output:
 22

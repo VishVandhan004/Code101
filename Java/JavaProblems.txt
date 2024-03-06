@@ -5316,7 +5316,6 @@ Sample Input:
 38
 33
 Sample Output:
---------------
 75
 67
 40

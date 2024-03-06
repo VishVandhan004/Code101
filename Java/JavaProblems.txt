@@ -5264,7 +5264,6 @@ Sample Input:
 --------------
 11110010111011011011011111100110
 Sample Output:
---------------
 22
 
 import java.util.*;
@@ -5305,7 +5304,6 @@ grade = 29 do not round (result is less than 40)
 grade = 57 do not round (60 - 57 is 3 or higher)
 Given the initial value of  for each of Sam's  students, write code to automate the rounding process.
 Input Format:
--------------
 Line 1: The number of students.
 Line 2: Each line  of the  subsequent lines contains a single integer, grades[i].
 Sample Input:

@@ -5249,10 +5249,8 @@ class test
 You are provided with a string composed of binary digits, and 
 your task is to write a method that calculates the count of set bits within it. 
 Input Format:
--------------------
 A string, consists of 0's and 1's.
 Output Format:
--------------------
 Print an integer result.
 Sample Input:
 --------------

@@ -5309,7 +5309,6 @@ Input Format:
 Line 1: The number of students.
 Line 2: Each line  of the  subsequent lines contains a single integer, grades[i].
 Sample Input:
--------------
 4
 73
 67

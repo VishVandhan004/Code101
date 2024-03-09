@@ -4631,17 +4631,13 @@ pqqprs
 Sample Output-1:
 rs
 Explanation:
--------------
 Initially , Delete two 'q's then the word will be 'pprs'. Now Delete two 'p's 
 then the word will be rs.
 Sample Input-2:
----------------
 pqqqprrs
 Sample Output-2:
-----------------
 pqps
 Explanation:
--------------
 Initially , Delete two 'q's then the word will be 'pqprrs'. Now Delete two 'r's
 then the word will be pqps.
 

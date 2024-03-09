@@ -4620,20 +4620,15 @@ repeated until the word has no two adjacent characters are same.
 You task is to help Arjun to perform the above task and Return the final word
 obtained.
 Input Format:
--------------
 Line-1: A string represents the word.
 Output Format:
---------------
 Return a string or empty string.
 Constraints:
-------------   
     1 <= word.length <= 10^5   
     word consists only lower case letters.
 Sample Input-1:
----------------
 pqqprs
 Sample Output-1:
-----------------
 rs
 Explanation:
 -------------

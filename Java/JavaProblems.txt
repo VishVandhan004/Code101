@@ -10765,12 +10765,9 @@ Explanation: There are no characters that appear twice in s.
 
 class Solution {
     public int maxLengthBetweenEqualCharacters(String s) {
-
         Map<Character, Integer> firstOccur = new HashMap<>();
         int ans = -1;
-
         for(int i = 0; i < s.length(); i++) {
-
             if(firstOccur.containsKey(s.charAt(i))) {
                 ans = Math.max(ans, i - firstOccur.get(s.charAt(i)) - 1);
             }

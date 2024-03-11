@@ -10794,7 +10794,6 @@ Output:  "bcad"
 Explanation: The characters "b", "c", and "a" from order dictate the order for the characters in s. The character "d" in s does not appear in order, so its position is flexible.
 
 import java.util.HashMap;
-
 class Solution {
     public String customSortString(String order, String s) {
         StringBuilder result = new StringBuilder();

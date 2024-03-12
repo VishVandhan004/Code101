@@ -10903,12 +10903,10 @@ Input: arr = [4,3,1,1,3,3,2], k = 3
 Output: 2
 Explanation: Remove 4, 2 and either one of the two 1s or three 3s. 1 and 3 will be left.
 
-
 class Solution {
     public int findLeastNumOfUniqueInts(int[] arr, int k) {
         Map<Integer, Integer> mp = new HashMap<>();
         for (int a : arr) mp.put(a, mp.getOrDefault(a, 0) + 1);
-        
         List<Integer> v = new ArrayList<>();
         int cnt = 0;
         for (int a : mp.values()) {

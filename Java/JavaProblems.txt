@@ -10857,7 +10857,6 @@ Output: [1,2,4]
 Example 3:
 Input: head = [1,2,3,-3,-2]
 Output: [1]
-
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -10868,6 +10867,7 @@ Output: [1]
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+
 class Solution {
     public ListNode removeZeroSumSublists(ListNode head) {
         if(head == null)return head;

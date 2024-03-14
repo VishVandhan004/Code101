@@ -11017,30 +11017,32 @@ Explanation: The 4 subarrays are bolded and underlined below:
 [1,0,1,0,1]
 [1,0,1,0,1]
 
+import java.util.*;
+
 class Solution {
     public int numSubarraysWithSum(int[] nums, int goal) {
-        int count = 0;
-        int sum = 0;
-        int left1 = 0;
-        int left2 = 0;
-        
-        for (int right = 0; right < nums.length; right++) {
-            sum += nums[right];
-            
-            while (left1 <= right && sum > goal) {
-                sum -= nums[left1];
-                left1++;
+        int i = 0, count = 0, res = 0;
+        for (int j = 0; j < nums.length; ++j) {
+            if (nums[j] == 1) {
+                goal--;
+                count = 0;
             }
             
-            while (left2 <= right && sum >= goal) {
-                sum -= nums[left2];
-                left2++;
-                if (sum == goal) {
-                    count++;
-                }
+            while (goal == 0 && i <= j) {
+                goal += nums[i];
+                i++;
+                count++;
+                if (i > j - goal + 1)
+                    break;
             }
+            
+            while (goal < 0) {
+                goal += nums[i];
+                i++;
+            }
+            
+            res += count;
         }
-        
-        return count;
+        return res;
     }
 }

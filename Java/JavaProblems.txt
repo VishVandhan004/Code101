@@ -5343,13 +5343,10 @@ Example
 S = SOSTOT
 The original message was SOSSOS. Two of the message's characters were changed in transit.
 Input Format:
--------------
 Line 1: A single string, S.
 Output Format:
--------------
 Line 1: An integer.
 Sample Input 1:
----------------
 SOSSPSSQSSOR
 Sample Output 1:
 ---------------

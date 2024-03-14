@@ -5404,11 +5404,9 @@ If The Lift is overloaded, it will not move.
 Your task is to find out the maximum number of persons can use the Lift,
 without any overloading issue
 Input Format:
--------------
 Line-1: An integer N, number of persons
 Line-2: N space separated integers, weights of the persons.
 Output Format:
---------------
 Print an integer, max num of persons canuse the lift.
 Sample Input-1:
 ---------------

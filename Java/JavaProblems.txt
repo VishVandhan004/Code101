@@ -11052,7 +11052,6 @@ class Solution {
             answer[i] = prefixProduct[i] * suffixProduct;
             suffixProduct *= nums[i];
         }
-        
         return answer;
     }
 }

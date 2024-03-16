@@ -8127,11 +8127,9 @@ f
 Sample Output-1:
 g
 Sample Input-2:
----------------
 abcdefghi
 j
 Sample Output-2:
-----------------
 a
 
 import java.util.*;

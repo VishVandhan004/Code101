@@ -8122,11 +8122,9 @@ Line-2: a character represents an alphabet.
 Output Format:
 Print a character which is the successor. 
 Sample Input-1:
----------------
 adghijl
 f 
 Sample Output-1:
-----------------
 g
 Sample Input-2:
 ---------------

@@ -11109,7 +11109,6 @@ class Solution {
             i++;
         }
         result.add(newInterval); // Add merged interval
-        
         // Add remaining intervals
         while (i < intervals.length) {
             result.add(intervals[i]);

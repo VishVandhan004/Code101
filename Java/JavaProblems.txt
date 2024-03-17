@@ -11084,8 +11084,6 @@ Insert newInterval into intervals such that intervals is still sorted in ascendi
 
 Return intervals after the insertion.
 
-Note that you don't need to modify intervals in-place. You can make a new array and return it.
-
  
 
 Example 1:

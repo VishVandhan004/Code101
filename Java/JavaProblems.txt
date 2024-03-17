@@ -11089,14 +11089,11 @@ Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]
 Output: [[1,2],[3,10],[12,16]]
 Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
 
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.*;
 class Solution {
     public int[][] insert(int[][] intervals, int[] newInterval) {
         List<int[]> result = new ArrayList<>();
         int i = 0;
-        
         // Add all intervals before newInterval that don't overlap
         while (i < intervals.length && intervals[i][1] < newInterval[0]) {
             result.add(intervals[i]);

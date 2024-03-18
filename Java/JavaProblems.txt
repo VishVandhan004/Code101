@@ -11128,12 +11128,8 @@ Explanation: The balloons can be burst by 2 arrows:
 Example 2:
 Input: points = [[1,2],[3,4],[5,6],[7,8]]
 Output: 4
-Explanation: One arrow needs to be shot for each balloon for a total of 4 arrows.
-Example 3:
-Input: points = [[1,2],[2,3],[3,4],[4,5]]
-Output: 2
-Explanation: The balloons can be burst by 2 arrows:
-- Shoot an arrow at x = 2, bursting the balloons [1,2] 
+Explanation: One arrow needs to be shot for each balloon for a total of 4 arrows
+ 
 class Solution {
     static void quicksort(int[][] points,int low,int high)
     {

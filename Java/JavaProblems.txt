@@ -11198,24 +11198,19 @@ Input: tasks = ["A","C","A","B","D","B"], n = 1
 Output: 6
 Explanation: A possible sequence is: A -> B -> C -> D -> A -> B.
 
-import java.util.Arrays;
-
+import java.util.*;
 class Solution {
     public int leastInterval(char[] tasks, int n) {
         int[] frequencies = new int[26]; // Assuming only capital letters from A to Z
         for (char task : tasks) {
             frequencies[task - 'A']++;
         }
-        
         Arrays.sort(frequencies);
-        
         int maxFrequency = frequencies[25] - 1; // Maximum frequency of a task
         int idleSlots = maxFrequency * n; // Number of idle slots
-        
         for (int i = 24; i >= 0 && frequencies[i] > 0; i--) {
             idleSlots -= Math.min(frequencies[i], maxFrequency);
         }
-        
         return idleSlots > 0 ? idleSlots + tasks.length : tasks.length;
     }
 }

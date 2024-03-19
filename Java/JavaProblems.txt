@@ -11196,7 +11196,6 @@ After completing task A, you must wait two cycles before doing A again. The same
 Example 2:
 Input: tasks = ["A","C","A","B","D","B"], n = 1
 Output: 6
-
 Explanation: A possible sequence is: A -> B -> C -> D -> A -> B.
 
 With a cooling interval of 1, you can repeat a task after just one other task

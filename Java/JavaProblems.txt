@@ -11241,7 +11241,6 @@ class Solution {
     public ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) {
         ListNode prev = list1, temp1 = list1, curr = list1;
         a--; // Adjust a to match zero-based indexing
-        
         // Traverse list1 to find the node at position (a-1)
         while (temp1 != null && a-- > 0) {
             temp1 = temp1.next;

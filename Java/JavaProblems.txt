@@ -11214,3 +11214,5 @@ class Solution {
         return idleSlots > 0 ? idleSlots + tasks.length : tasks.length;
     }
 }
+
+279th Problem

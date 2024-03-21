@@ -11272,7 +11272,6 @@ Example 2:
 Input: head = [1,2]
 Output: [2,1]
 Example 3:
-
 Input: head = []
 Output: []
 

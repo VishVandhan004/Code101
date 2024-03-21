@@ -11262,3 +11262,5 @@ class Solution {
         return list1; // Return the head of list1
     }
 }
+
+280th Problem

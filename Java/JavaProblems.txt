@@ -11298,7 +11298,6 @@ class Solution {
         ListNode prev = null;
         ListNode current = head;
         ListNode nextNode = null;
-        
         while (current != null) {
             nextNode = current.next; // Store the next node
             current.next = prev; // Reverse the pointer

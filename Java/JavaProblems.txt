@@ -11379,8 +11379,4 @@ Output: [1,5,2,4,3]
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
-    public void reorderList(ListNode head) {
-        
-    }
-}
+c

@@ -11370,8 +11370,6 @@ Example 2:
 Input: head = [1,2,3,4,5]
 Output: [1,5,2,4,3]
 /**
- * e(int val, ListNode next) { this.val = val; this.next = next; }
- * } */
 
 /**
  * Definition for singly-linked list.

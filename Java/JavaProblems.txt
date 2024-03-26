@@ -11457,7 +11457,6 @@ class Solution {
         arr[i] = arr[j];
         arr[j] = temp;
     }
-    
     public int firstMissingPositive(int[] nums) {
         int n = nums.length;
         // Place each positive integer i at index i-1 if possible
@@ -11471,8 +11470,7 @@ class Solution {
             if (nums[i] != i + 1) {
                 return i + 1;
             }
-        }
-        
+        }   
         // If all positive integers from 1 to n are present, return n + 1
         return n + 1;
     }

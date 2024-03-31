@@ -11734,3 +11734,22 @@ Example 2:
 Input: nums = [1,1,1,1], minK = 1, maxK = 1
 Output: 10
 Explanation: Every subarray of nums is a fixed-bound subarray. There are 10 possible subarrays.
+
+class Solution {
+    public long countSubarrays(int[] nums, int minK, int maxK) {
+        int minI = -1, maxI = -1, left = -1, right = 0;
+        long count = 0;
+        while(right < nums.length){
+            if(nums[right] < minK || nums[right] > maxK){
+                minI = right;
+                maxI = right;
+                left = right;
+            }
+            minI = nums[right] == minK ? right : minI;
+            maxI = nums[right] == maxK ?  right : maxI;
+            count += Math.min(minI, maxI) - left;
+            right++;
+        }
+        return count;
+    }
+}

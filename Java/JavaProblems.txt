@@ -5037,7 +5037,6 @@ Line 1: A number
 Sample Input 1:
 14
 Sample Output 1:
-----------------
 6
 Explanation: 
 Step 1) 14 is even; divide by 2 and obtain 7. 

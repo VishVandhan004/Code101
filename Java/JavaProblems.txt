@@ -5034,7 +5034,6 @@ otherwise, you have to subtract 1 from it.
 Input Format:
 Line 1: A number
 Output Format:
---------------
 Line 1: A number
 Sample Input 1:
 ---------------

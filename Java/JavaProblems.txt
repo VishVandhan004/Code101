@@ -5035,7 +5035,6 @@ Line 1: A number
 Output Format:
 Line 1: A number
 Sample Input 1:
----------------
 14
 Sample Output 1:
 ----------------

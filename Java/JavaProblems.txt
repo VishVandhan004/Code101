@@ -11743,3 +11743,5 @@ class Solution {
         return count;
     }
 }
+
+292nd Problem

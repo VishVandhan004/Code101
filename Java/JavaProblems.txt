@@ -11785,3 +11785,272 @@ class Solution {
         return true;
     }
 }
+
+293rd Problem
+Mary has the result of test conducted in her subject English in the form of a list. She wants to reward the student who has got highest marks. Your task is to help Mary find the highest marks.
+case=1
+input=8
+2 45 8 11 17 28 31 5
+output=45	
+Explanation:
+Input: line one is number of elements in list, followed by their values, 
+followed by the target element.
+Output: 45, the largest element in the list.
+
+import java.util.*;
+class Solution {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int max=arr[0]; 
+        for(int i=0;i<n;i++){
+            if(arr[i]>max){
+                max = arr[i];
+            }
+        }
+        System.out.println(max);
+    }
+}
+
+294th Problem
+Joe is having a list of elements; he wants to reverse the list of elements. Your task is to help Joe with his task.
+case=1
+input=4
+2 5 3 1
+output=[1, 3, 5, 2]
+Explanation:
+Input: line one is number of elements in list, followed by their values 
+Output: list in reverse order
+
+import java.util.*;
+class Solution {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        ArrayList<Integer> al = new ArrayList<Integer>();
+        for(int i=n-1;i>=0;i--){
+            al.add(arr[i]);
+        }
+        System.out.print(al);
+    }
+}
+
+295th Problem
+Mark is a student of 5th grade. His teacher Rebecca gives him a list of elements and asks him to check whether the elements in the list are in ascending order. He has to return true if the list is in ascending order, else return false. Your task is to help Mark in his task.case=1input=42 5 10 15output=trueExplanation:Input: line one is number of elements in list, followed by their values Output:true, since the elements are in ascending order
+
+import java.util.*;
+class Solution{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int flag=1;
+        for(int i=0;i<n-1;i++){
+             if(arr[i]>arr[i+1]){
+                flag=0;
+                break;
+            }
+        }
+        if(flag==1){
+            System.out.println("true");
+        }
+        else {
+        System.out.println("false");
+      }
+    }
+}
+
+296th Problem
+Stephen is a student of 6th grade. His teacher Jane gives him a list of elements and asks him to check whether the elements in the list are either in ascending or descending order. He has to return 1 when the list is ascending order, 2 for descending order, 0 for neither ascending or descending order. Your task is to help Stephen in his task.
+case=1
+input=4
+2 5 10 15 
+output=1	
+Explanation:
+Input: line one is number of elements in list, followed by their values 
+Output: 1, the list is in ascending order
+case=2
+input=4
+2 5 15 10 
+output=0
+Explanation:
+Input: line one is number of elements in list, followed by their values 
+Output:1, the list is neither in ascending nor descending order
+case=3
+input=3
+8 4 1
+output=2
+Explanation:
+Inpu:t line one is number of elements in list, followed by their values 
+Output: 1, the list is in descending order
+
+import java.util.*;
+class Solution {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int asc=1,des=1;
+        for(int i=0;i<n-1;i++){
+            if(arr[i]<arr[i+1]){
+                des=0;
+            }else{
+                asc=0;
+            }
+        }
+        if(asc==1){
+            System.out.println("1");
+        }
+        else if(des==1){
+            System.out.println("2");
+        }
+        else{
+            System.out.println("0");
+        }
+    }
+}
+
+297th Problem
+Imagine you are developing a student grading system for a school,
+where each student's scores in a particular subject are stored in 
+an array. 
+-To generate meaningful reports and analyze student 
+ performance, it's essential to sort these scores in ascending order.
+-Your task is to implement a feature that sorts the scores in ascending 
+ order.
+Input Format:
+--------------------------
+Line-1:Integer N
+Line-2:Space seperated integers
+Output Format:
+----------------------------
+Print the array
+Sample Testcase:1
+------------------------------
+input=6
+-5 -9 8 12 1 3 
+output=-9 -5 1 3 8 12
+
+import java.util.*;
+class Solution {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+       for(int i=0;i<n-1;i++){
+           for(int j=i+1;j<n;j++){
+               if(arr[i]>arr[j])
+               {
+               int temp;
+               temp=arr[i];
+               arr[i] = arr[j];
+               arr[j] = temp;
+               }
+           }
+       }
+       for(int i=0;i<n;i++){
+           System.out.print(arr[i]+ " ");
+       }
+    }
+}
+
+298th Problem
+Consider a scenario where you are developing a quiz platform for students. Each quiz question has multiple-choice answers,and the student's response to each question is stored in an array. 
+-Your task is to compare the student's response array with the correct answer array to determine if the student answered the questions correctly or not.
+Note: If there are repetitions, then counts of repeated answers should be the same for two arrays to be equal.
+Input Format:
+-------------------------
+Line-1:Space seperated integers
+Line-2&3:Array elements
+Output Format:
+----------------------------
+Boolen value
+Sample Testcase:1
+-----------------------
+Sample Testcase:1
+----------------------- 
+input=5 5
+1 2 3 4 5
+1 2 3 4 5
+output=Yes
+
+import java.util.*;
+class Solution {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        int arr1[] = new int[n1];
+        int arr2[] = new int[n2];
+        for(int i=0;i<n1;i++){
+            arr1[i] = sc.nextInt();
+        }
+        for(int i=0;i<n2;i++){
+            arr2[i] = sc.nextInt();
+        }
+        int flag = 1;
+        if(n1!=n2){
+            flag = 0;
+            System.out.println("No");
+        }
+        for(int i=0;i<n1;i++){
+            if(arr1[i] != arr2[i]){
+                flag=0;
+                System.out.println("No");
+                break;
+            }
+        }
+        if(flag==1){
+            System.out.println("Yes");
+        }
+    }
+}
+
+299th Problem
+Imagine you're building a scheduling application for a company's 
+shift management system. Each employee's shift schedule is 
+stored in an array of integers, where each element represents
+the employee's shift for a particular day. 
+-Your task is to implement a feature that allows rotating the shift schedule to the left by a specified number of positions,accommodating changes in employee availability or preferences.
+Sample Testcase:1
+-----------------------
+input=4
+7 8 9 10
+3
+output=10 7 8 9
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int k = sc.nextInt();
+        for(int i=k;i<n;i++){
+            System.out.println(arr[i]+" ");
+        }
+        for(int i=0;i<k;i++){
+            System.out.println(arr[i]+" ");
+        }
+    }
+}

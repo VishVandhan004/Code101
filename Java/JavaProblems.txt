@@ -12111,31 +12111,26 @@ class Solution {
     }
 }
 
-magine you are developing an inventory management system for 
+301st Problem
+Imagine you are developing an inventory management system for 
 a warehouse. The warehouse receives shipments of products in bulk, 
 and each product is assigned a unique identifier represented by 
 integers in an array. However, due to data entry errors or duplicate
 shipments, the array may contain duplicate product identifiers.
-
 -Your task is to remove these duplicates from the array in-place and 
  then print the number of unique products available in the inventory.
-
 Input Format:
 -------------------------
 Line-1: Size of array
 line-2: Array elements
-
 Output Format:
 ----------------------------
 Print unique products
-
-
 Sample Testcase:1
 -----------------------
 input=3
 1 1 2
 output=1 2
-
 
 import java.util.*;
 class Solution {
@@ -12156,36 +12151,30 @@ class Solution {
     }
 }
 
+302nd Problem
 An automobile company manufactures both a two wheeler (TW) and a four wheeler(FW). 
 A company manager wants to make the production of both types of vehicle
 according to the given data below:
-
 1st data, Total number of vehicle (two-wheeler + four-wheeler)=v
 2nd data, Total number of wheels = W
 The task is to find how many two-wheelers as well as four-wheelers need to
 manufacture as per the given data.
-
 Note:Print “INVALID INPUT” , if inputs did not meet the constraints.
-
 Input Format
 ----------------------
 First Input line – Accept value of V.
 Second Input line- Accept value for W.
-
 Output Format
 ----------------------
 Integer or Print “INVALID INPUT” , if inputs did not meet the constraints.
-
 Sample Testcase:1
 -----------------------------
 Input=200 540  -> Value of V&W
 Output=130 70
-
 Explanation:
 ---------------------------------
 130+70 = 200 vehicles
 (70*4)+(130*2)= 540 wheels
-
 Constraints :
 ---------------------
 2<=W
@@ -12211,15 +12200,14 @@ class Solution {
   }
 }
 
+303rd Problem
 A parking lot in a mall has RxC number of parking spaces. 
 Each parking space will either be  empty(0) or full(1). 
 The status (0/1) of a parking space is represented as the element of the matrix.
 The task is to find index of the row(R) in the parking lot that has the most 
 of the parking spaces full(1).
-
 Note : RxC- Size of the matrix
 Elements of the matrix M should be only 0 or 1.
-
 Sample Testcase:1
 --------------------------------
 Input=3 3
@@ -12227,7 +12215,6 @@ Input=3 3
 1 1 0 
 1 1 1 
 output=3  
-
 Explanation:
 ----------------------------------
 Row 3 has maximum number of 1’s
@@ -12260,40 +12247,33 @@ class Solution{
     }
 }
 
-
+304th Problem
 Given an integer array Arr of size N the task is to find the count 
 of elements whose value is greater than all of its prior elements.
-
 Note : 1st element of the array should be considered in the count of the result.
-
 Sample Testcase:1
 ----------------------------------
 input=5
 7 4 8 2 9
 output=3
-
 Explanation:
 ----------------------------
 As 7 is the first element, it will consider in the result.
 8 and 9 are also the elements that are greater than all of its previous elements.
 Since total of  3 elements is present in the array that meets the condition.
 Hence the output = 3.
-
 5 -> Value of N, represents size of Arr
 7-> Value of Arr[0]
 4 -> Value of Arr[1]
 8-> Value of Arr[2]
 2-> Value of Arr[3]
 9-> Value of Arr[4]
-
 Output=3
-
 Sample Testcase:2
 ----------------------------------
 input=5
 3 4 5 8 9
 output=5
-
 Explanation:
 ----------------------------
 5   -> Value of N, represents size of Arr
@@ -12302,12 +12282,9 @@ Explanation:
 5 -> Value of Arr[2]
 8 -> Value of Arr[3]
 9 -> Value of Arr[4]
-
 Output : 
 5
-
 Constraints
-
 1<=N<=20
 1<=Arr[i]<=10000
 
@@ -12332,16 +12309,14 @@ class Solution {
     }
 }
 
+305th Problem
 Imagine you are developing a task management system for a team,
 where each task is represented by an integer identifier in an array. 
 Sometimes, tasks are completed or cancelled and need to be removed 
 from the system. 
-
 -Your task is to implement a feature that removes 
  all occurrences of a specific task identifier (val) from the 
  array in-place and returns the count of remaining active tasks.
- 
-
 Sample Testcase:1
 -----------------------
 input=4

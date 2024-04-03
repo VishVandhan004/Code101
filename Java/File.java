@@ -14,5 +14,6 @@ class File {
         for(int i=0;i<k;i++){
             System.out.println(arr[i]+" ");
         }
+        sc.close();
     }
 }

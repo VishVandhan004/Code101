@@ -11973,16 +11973,12 @@ Consider a scenario where you are developing a quiz platform for students. Each 
 -Your task is to compare the student's response array with the correct answer array to determine if the student answered the questions correctly or not.
 Note: If there are repetitions, then counts of repeated answers should be the same for two arrays to be equal.
 Input Format:
--------------------------
 Line-1:Space seperated integers
 Line-2&3:Array elements
 Output Format:
-----------------------------
 Boolen value
 Sample Testcase:1
------------------------
 Sample Testcase:1
------------------------ 
 input=5 5
 1 2 3 4 5
 1 2 3 4 5

@@ -12150,22 +12150,17 @@ The task is to find how many two-wheelers as well as four-wheelers need to
 manufacture as per the given data.
 Note:Print “INVALID INPUT” , if inputs did not meet the constraints.
 Input Format
-----------------------
 First Input line – Accept value of V.
 Second Input line- Accept value for W.
 Output Format
-----------------------
 Integer or Print “INVALID INPUT” , if inputs did not meet the constraints.
 Sample Testcase:1
------------------------------
 Input=200 540  -> Value of V&W
 Output=130 70
 Explanation:
----------------------------------
 130+70 = 200 vehicles
 (70*4)+(130*2)= 540 wheels
 Constraints :
----------------------
 2<=W
 W%2=0
 V<W

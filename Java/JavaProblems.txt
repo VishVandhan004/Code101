@@ -12023,7 +12023,6 @@ stored in an array of integers, where each element represents
 the employee's shift for a particular day. 
 -Your task is to implement a feature that allows rotating the shift schedule to the left by a specified number of positions,accommodating changes in employee availability or preferences.
 Sample Testcase:1
------------------------
 input=4
 7 8 9 10
 3

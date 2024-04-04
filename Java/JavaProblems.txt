@@ -12355,3 +12355,239 @@ class Solution {
         return max;
     }
 }
+
+307th Problem
+John is provided with two list of elements; he is told by him manager to merge 
+the elements from the two list into one list. Your task is to help John in his 
+task.
+Note: Use only arrays, no collections classes
+case=1
+input=3
+10 12 15
+4
+103 125 134 62
+output=[10, 12, 15, 103, 125, 134, 62]
+Explanation:
+Input: line one is number of elements in list1, followed by their values, 
+followed by number of elements in list2, followed by their values. 
+Output: is the merged list having both list1 and list2
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        int arr1[] = new int[n1];
+        for(int i=0;i<n1;i++){
+            arr1[i] = sc.nextInt();
+        }
+        int n2 = sc.nextInt();
+        int arr2[] = new int[n2];
+        for(int i=0;i<n2;i++){
+            arr2[i] = sc.nextInt();
+        }
+        int n3=n1+n2;
+        int c=0;
+        int arr3[] = new int[n3];
+       for(int i=0;i<n1;i++){
+           arr3[c++]=arr1[i];
+       }
+       for(int i=0;i<n2;i++){
+           arr3[c++]=arr2[i];
+       }
+       for(int i=0;i<n3;i++){
+           System.out.println(arr3[i]);
+       }
+    }
+}
+
+308th Problem
+Joe is having a string; he wants to find out whether the string is a palindrome. Your task is to help Joe in his task.
+case=1
+input=madam
+output=true
+Explanation:
+Input: line one is string.
+Output: true, the string is a palindrome
+
+import java.util.*;
+class Solution {
+    public static boolean pal(String str){
+        // if(str.length()==1){
+        //     return true;
+        // }
+        // else{
+        //     if(str.charAt(0)==str.charAt(str.length()-1)){
+        //         return pal(str.substring(1,str.length()-1));
+        //     }
+        //     return false;
+        // }
+        int lp=0;
+        int rp=str.length()-1;
+        boolean ispal = true;
+        while(lp<=rp){
+            if(str.charAt(lp)!=str.charAt(rp)){
+                ispal = false;
+                break;
+            } else {
+                lp++;
+                rp--;
+            }
+            return ispal;
+        }
+        return ispal;
+    }
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        System.out.print(pal(str));
+    }
+}
+
+309th Problem
+Molly is given a list of elements sorted in ascending order and a target value. 
+She wants to find whether the target is present in the list. Your task is to 
+help Molly in her task.
+case=1
+input=8
+2 5 8 11 17 28 31 45
+28
+output=5	
+Explanation:
+Input: line one is number of elements in list, followed by their values, 
+followed by the target element.
+Output: 5, the index of found element in the list.
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int search = sc.nextInt();
+        int low=0;
+        int high=n-1;
+        int a=0;
+        while(low<=high){
+        int mid=low+((high-low)/2);
+         if(arr[mid]==search){
+             System.out.print(mid);
+             a++;
+             break;
+         }
+         else if(arr[mid]<search){
+             low=mid+1;
+         }
+         else{
+             high=mid-1;
+         }
+       }
+       if(a==0) System.out.print(-1);
+    }
+}
+
+310th Problem
+Alex has a string s1 and Martha has a string s2. Alex wants to know whether 
+the string s1 is a part of s2. If yes, then he wants to know the index at which 
+s1 occurs in S, else it should return -1. Your task is to help Alex in his task.
+Note: Do not use build-in indexOf() method of String class.
+case=1
+input=lo hello
+output=3
+Explanation:
+Input line one is string s1 followed by string s2
+Output=3, the starting location of s1 in s2
+
+import java.util.Scanner;
+public class SubstringIndex {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String s1 = scanner.next();
+        String s2 = scanner.next();
+        int index = findSubstringIndex(s1, s2);
+        System.out.println(index);
+    }
+    public static int findSubstringIndex(String s1, String s2) {
+        int s1Length = s1.length();
+        int s2Length = s2.length();   
+        for (int i = 0; i <= s2Length - s1Length; i++) {
+            int j;
+            for (j = 0; j < s1Length; j++) {
+                if (s2.charAt(i + j) != s1.charAt(j)) {
+                    break;
+                }
+            }
+            if (j == s1Length) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+
+311th Problem
+Mary and John each have an integer array nums1 and nums2 respectively, sorted 
+in ascending order. Peter wants to join these two arrays into single array 
+sorted in ascending order. Peter does not want to have a separate array for the 
+result and wants to use Mary’s integer array nums1 for the join. To accommodate 
+this, nums1 has a length of m + n, where the first m elements denote the 
+elements that should be joined, and the last n elements are set to 0 and should 
+be ignored. nums2 has length of n. Your task is to help Peter in his task.
+Sample test case
+case=1
+input=6
+3
+1 2 3 0 0 0
+3
+2 5 6
+output=[1, 2, 2, 3, 5, 6]
+Explanation: Line1 is the number of combined elements of both nums1 and nums2, 
+followed by number elements of nums1 (i.e. m), followed by values of nums1, 
+followed by number of elements of nums2 (i.e. n), followed by values of nums2.
+
+import java.util.Arrays;
+import java.util.Scanner;
+public class MergeSortedArrays {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of elements in nums1: ");
+        int m = scanner.nextInt();
+        int[] nums1 = new int[m];
+        System.out.println("Enter the elements of nums1:");
+        for (int i = 0; i < m; i++) {
+            nums1[i] = scanner.nextInt();
+        }
+        System.out.print("Enter the number of elements in nums2: ");
+        int n = scanner.nextInt();
+        int[] nums2 = new int[n];
+        System.out.println("Enter the elements of nums2:");
+        for (int i = 0; i < n; i++) {
+            nums2[i] = scanner.nextInt();
+        }
+        merge(nums1, m, nums2, n);
+        System.out.println("Merged sorted array: " + Arrays.toString(nums1));
+    }
+    public static void merge(int[] nums1, int m, int[] nums2, int n) {
+        int index1 = m - 1;
+        int index2 = n - 1;
+        int mergedIndex = m + n - 1;
+        while (index1 >= 0 && index2 >= 0) {
+            if (nums1[index1] > nums2[index2]) {
+                nums1[mergedIndex] = nums1[index1];
+                index1--;
+            } else {
+                nums1[mergedIndex] = nums2[index2];
+                index2--;
+            }
+            mergedIndex--;
+        }
+        while (index2 >= 0) {
+            nums1[mergedIndex] = nums2[index2];
+            index2--;
+            mergedIndex--;
+        }
+    }
+}

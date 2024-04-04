@@ -11933,7 +11933,6 @@ an array.
 -Your task is to implement a feature that sorts the scores in ascending 
  order.
 Input Format:
---------------------------
 Line-1:Integer N
 Line-2:Space seperated integers
 Output Format:

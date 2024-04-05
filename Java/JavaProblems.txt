@@ -12610,3 +12610,19 @@ Output: ""
 Explanation: We have many possible scenarios, and all lead to the same answer. For example:
 "abBAcC" --> "aAcC" --> "cC" --> ""
 "abBAcC" --> "abBA" --> "aA" --> ""
+
+class Solution {
+    public String makeGood(String s) {
+        int n = s.length();
+        StringBuilder sb = new StringBuilder();
+        for(char curr : s.toCharArray()){
+            char peek = sb.length() > 0 ? sb.charAt(sb.length() - 1) : '1';
+            if(Math.abs(peek - curr) == 32  && sb.length() > 0){
+                sb.deleteCharAt(sb.length() - 1);
+            }else{
+                sb.append(curr);
+            }
+        }
+        return sb.toString();
+    }
+}

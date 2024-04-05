@@ -7952,7 +7952,6 @@ Return the number of distinct possible ways to win the game.
 Constraints:
     1 <= N <= 45
 Input Format:
--------------
 Line-1: An Integer N represents number of levels.
 Output Format:
 --------------

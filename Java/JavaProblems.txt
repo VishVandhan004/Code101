@@ -7956,7 +7956,6 @@ Line-1: An Integer N represents number of levels.
 Output Format:
 Print an integer.
 Sample Input-1:
----------------
 2 
 Sample Output-1:
 ----------------

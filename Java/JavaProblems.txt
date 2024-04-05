@@ -7958,17 +7958,13 @@ Print an integer.
 Sample Input-1:
 2 
 Sample Output-1:
-----------------
 2
 Explanation:
-------------
 1. 1-level+ 1-level =2
 2. 2 levels in one step.   
 Sample Input-2:
----------------
 4  
 Sample Output-2:
-----------------
 5
 Explanation:
 ------------

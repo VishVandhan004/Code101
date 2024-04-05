@@ -12250,7 +12250,6 @@ Hence the output = 3.
 9-> Value of Arr[4]
 Output=3
 Sample Testcase:2
-----------------------------------
 input=5
 3 4 5 8 9
 output=5

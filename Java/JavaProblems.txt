@@ -1,5 +1,5 @@
 1st Problem
-Given an list of decimal numbers and an desired number, return the twin values in a such that their sum equals the desired number..
+Given an list of decimal numbers and an desired number, return the twin values in a such that their sum equals the desired number
 You can make the assumption that every input has exactly one answer, and you can avoid using the same element more than once.
 4
 1 8 11 15

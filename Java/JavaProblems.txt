@@ -233,7 +233,7 @@ class Solution {
 }
 
 8th Problem 
-Bob given a task to Babe, i.e, Babe has to detect unique value in a given set of values by Bob
+Bob given a task to Babe, i.e Babe has to detect unique value in a given set of values by Bob
 input=
 8
 12 25 8 12 43 5 8 43

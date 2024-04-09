@@ -5833,7 +5833,7 @@ class PrintNumbers{
 }
 
 132nd Problem
-/* you are solving a puzzle, which is to find product of two integers without 
+you are solving a puzzle, which is to find product of two integers without 
 using multiplication operator and without using any loops.
 Using your programming skills can you solve this with a java program.
 Example1 :
@@ -5841,7 +5841,7 @@ input =4 5
 output=20
 Example 2:
 input=6 15
-output=90 */
+output=90 
 
 import java.util.*;
 class ProductOfTwo{

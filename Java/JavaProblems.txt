@@ -1,5 +1,5 @@
 1st Problem
-Given an list of decimal numbers and an desired number, return the twin values in a such that their sum equals the desired number..
+Given an list of decimal numbers and an desired number, return the twin values in a such that their sum equals the desired number
 You can make the assumption that every input has exactly one answer, and you can avoid using the same element more than once.
 4
 1 8 11 15
@@ -233,7 +233,7 @@ class Solution {
 }
 
 8th Problem 
-Bob given a task to Babe, i.e, Babe has to detect unique value in a given set of values by Bob
+Bob given a task to Babe, i.e Babe has to detect unique value in a given set of values by Bob
 input=
 8
 12 25 8 12 43 5 8 43
@@ -638,7 +638,7 @@ The difference between the number of chocolates in the packet with maximum choco
 Examples:
 Input : arr[] = {7, 3, 2, 4, 9, 12, 56} , m = 3 
 Output: Minimum Difference is 2 
-Explanation:
+Explanation
 We have seven packets of chocolates and we need to pick three packets for 3 students 
 If we pick 2, 3 and 4, we get the minimum difference between maximum and minimum packet sizes.
 Input : arr[] = {3, 4, 1, 9, 56, 7, 9, 12} , m = 5 
@@ -5031,17 +5031,9 @@ class test
 Given an integer num, return the number of steps to reduce it to zero.
 In one step, if the current number is even, you have to divide it by 2, 
 otherwise, you have to subtract 1 from it.
-Input Format:
--------------
-Line 1: A number
-Output Format:
---------------
-Line 1: A number
 Sample Input 1:
----------------
 14
 Sample Output 1:
-----------------
 6
 Explanation: 
 Step 1) 14 is even; divide by 2 and obtain 7. 
@@ -5051,10 +5043,8 @@ Step 4) 3 is odd; subtract 1 and obtain 2.
 Step 5) 2 is even; divide by 2 and obtain 1. 
 Step 6) 1 is odd; subtract 1 and obtain 0.
 Sample Input 2:
----------------
 8
 Sample Output 2: 
-----------------
 4
 Explanation: 
 Step 1) 8 is even; divide by 2 and obtain 4. 
@@ -7962,29 +7952,21 @@ Return the number of distinct possible ways to win the game.
 Constraints:
     1 <= N <= 45
 Input Format:
--------------
 Line-1: An Integer N represents number of levels.
 Output Format:
---------------
 Print an integer.
 Sample Input-1:
----------------
 2 
 Sample Output-1:
-----------------
 2
 Explanation:
-------------
 1. 1-level+ 1-level =2
 2. 2 levels in one step.   
 Sample Input-2:
----------------
 4  
 Sample Output-2:
-----------------
 5
 Explanation:
-------------
 1. 1-level + 1-level + 1-level + 1-level = 4
 2. 1-level + 1-level + 2-levels = 4
 3. 1-level + 2-levels + 1-level = 4
@@ -11370,14 +11352,6 @@ Example 2:
 Input: head = [1,2,3,4,5]
 Output: [1,5,2,4,3]
 /**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * } */
 
 /**
  * Definition for singly-linked list.
@@ -11414,3 +11388,1230 @@ class Solution {
 }
 
 283rd Problem
+Given an integer array nums of length n where all the integers of nums are in the range [1, n] and each integer appears once or twice, return an array of all the integers that appears twice.
+You must write an algorithm that runs in O(n) time and uses only constant extra space.
+Example 1:
+Input: nums = [4,3,2,7,8,2,3,1]
+Output: [2,3]
+Example 2:
+Input: nums = [1,1,2]
+Output: [1]
+Example 3:
+Input: nums = [1]
+Output: []
+
+class Solution {
+    public List<Integer> findDuplicates(int[] nums) {
+     List<Integer> res = new ArrayList<Integer>();
+     int[]count = new int[nums.length+1];
+     for(int freq : nums) 
+            count[freq]++;
+     for( int i =1 ; i <= nums.length ; i++)
+    {
+        if(count[i] == 2){
+            res.add(i);
+        }
+     }
+     return res;  
+    }
+}
+
+284th Problem
+Given an unsorted integer array nums. Return the smallest positive integer that is not present in nums.
+You must implement an algorithm that runs in O(n) time and uses O(1) auxiliary space.
+Example 1:
+Input: nums = [1,2,0]
+Output: 3
+Explanation: The numbers in the range [1,2] are all in the array.
+Example 2:
+Input: nums = [3,4,-1,1]
+Output: 2
+Explanation: 1 is in the array but 2 is missing.
+Example 3:
+Input: nums = [7,8,9,11,12]
+Output: 1
+Explanation: The smallest positive integer 1 is missing.
+
+class Solution {
+    // Function to swap elements in the array
+    private void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    public int firstMissingPositive(int[] nums) {
+        int n = nums.length;
+        // Place each positive integer i at index i-1 if possible
+        for (int i = 0; i < n; i++) {
+            while (nums[i] > 0 && nums[i] <= n && nums[i] != nums[nums[i] - 1]) {
+                swap(nums, i, nums[i] - 1);
+            }
+        }
+        // Find the first missing positive integer
+        for (int i = 0; i < n; i++) {
+            if (nums[i] != i + 1) {
+                return i + 1;
+            }
+        }   
+        // If all positive integers from 1 to n are present, return n + 1
+        return n + 1;
+    }
+}
+
+285th Problem
+Given an array of integers nums and an integer k, return the number of contiguous subarrays where the product of all the elements in the subarray is strictly less than k.
+Example 1:
+Input: nums = [10,5,2,6], k = 100
+Output: 8
+Explanation: The 8 subarrays that have product less than 100 are:
+[10], [5], [2], [6], [10, 5], [5, 2], [2, 6], [5, 2, 6]
+Note that [10, 5, 2] is not included as the product of 100 is not strictly less than k.
+Example 2:
+Input: nums = [1,2,3], k = 0
+Output: 0
+
+class Solution {
+    public int numSubarrayProductLessThanK(int[] nums, int k) {
+        if (k <= 1) return 0;
+        int count = 0;
+        int product = 1;
+        int left = 0;
+        for (int right = 0; right < nums.length; right++) {
+            product *= nums[right];
+            while (product >= k) {
+                product /= nums[left];
+                left++;
+            }
+            count += right - left + 1;
+        }
+        return count;
+    }
+}
+
+286th Problem
+You are given an integer array nums and an integer k.
+The frequency of an element x is the number of times it occurs in an array.
+An array is called good if the frequency of each element in this array is less than or equal to k.
+Return the length of the longest good subarray of nums.
+A subarray is a contiguous non-empty sequence of elements within an array.
+Example 1:
+Input: nums = [1,2,3,1,2,3,1,2], k = 2
+Output: 6
+Explanation: The longest possible good subarray is [1,2,3,1,2,3] since the values 1, 2, and 3 occur at most twice in this subarray. Note that the subarrays [2,3,1,2,3,1] and [3,1,2,3,1,2] are also good.
+It can be shown that there are no good subarrays with length more than 6.
+Example 2:
+Input: nums = [1,2,1,2,1,2,1,2], k = 1
+Output: 2
+Explanation: The longest possible good subarray is [1,2] since the values 1 and 2 occur at most once in this subarray. Note that the subarray [2,1] is also good.
+It can be shown that there are no good subarrays with length more than 2.
+
+class Solution {
+    public int maxSubarrayLength(int[] nums, int k) {
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        for (int num : nums) {
+            min = Math.min(min, num);
+            max = Math.max(max, num);
+        }
+        int[] frequencies = new int[max - min + 1];
+        int left = 0;
+        int maxWindow = 0;
+        for (int right = 0; right < nums.length; right++) {
+            frequencies[nums[right] - min]++;
+            while (frequencies[nums[right] - min] > k) {
+                frequencies[nums[left] - min]--;
+
+                left++;
+            }
+            maxWindow = Math.max(maxWindow, right - left + 1);
+        }
+        return maxWindow;
+    }
+}
+
+287th Problem
+You start with an initial power of power, an initial score of 0, and a bag of tokens given as an integer array tokens, where each tokens[i] denotes the value of tokeni.
+Your goal is to maximize the total score by strategically playing these tokens. In one move, you can play an unplayed token in one of the two ways (but not both for the same token):
+Face-up: If your current power is at least tokens[i], you may play tokeni, losing tokens[i] power and gaining 1 score.
+Face-down: If your current score is at least 1, you may play tokeni, gaining tokens[i] power and losing 1 score.
+Return the maximum possible score you can achieve after playing any number of tokens.
+Example 1:
+Input: tokens = [100], power = 50
+Output: 0
+Explanation: Since your score is 0 initially, you cannot play the token face-down. You also cannot play it face-up since your power (50) is less than tokens[0] (100).
+Example 2:
+Input: tokens = [200,100], power = 150
+Output: 1
+Explanation: Play token1 (100) face-up, reducing your power to 50 and increasing your score to 1.
+There is no need to play token0, since you cannot play it face-up to add to your score. The maximum score achievable is 1.
+
+class Solution {
+    public int bagOfTokensScore(int[] tokens, int power) {
+        Arrays.sort(tokens);
+        int l=0,r=tokens.length-1;
+        int score=0,maxScore=0;
+        while(l<=r){
+            if(tokens[l]<=power){
+                power -=tokens[l];
+                score++;
+                l++;
+               maxScore=Math.max(score,maxScore); 
+            }else if(score>0){
+                power += tokens[r];
+                r--;
+                score--;
+            }else{
+                break;
+            }
+        }
+        return maxScore;
+    }
+}
+
+288th Problem
+Given a string s consisting only of characters 'a', 'b', and 'c'. You are asked to apply the following algorithm on the string any number of times:
+Pick a non-empty prefix from the string s where all the characters in the prefix are equal.
+Pick a non-empty suffix from the string s where all the characters in this suffix are equal.
+The prefix and the suffix should not intersect at any index.
+The characters from the prefix and suffix must be the same.
+Delete both the prefix and the suffix.
+Return the minimum length of s after performing the above operation any number of times (possibly zero times).
+Example 1:
+Input: s = "ca"
+Output: 2
+Explanation: You can't remove any characters, so the string stays as is.
+Example 2:
+Input: s = "cabaabac"
+Output: 0
+Explanation: An optimal sequence of operations is:
+- Take prefix = "c" and suffix = "c" and remove them, s = "abaaba".
+- Take prefix = "a" and suffix = "a" and remove them, s = "baab".
+- Take prefix = "b" and suffix = "b" and remove them, s = "aa".
+- Take prefix = "a" and suffix = "a" and remove them, s = "".
+
+class Solution {
+    public int minimumLength(String s) {
+        int left = 0;
+        int right = s.length() - 1;
+        while (left < right && s.charAt(left) == s.charAt(right)) {
+            char current = s.charAt(left);
+            while (left <= right && s.charAt(left) == current) {
+                left++;
+            }
+            while (right >= left && s.charAt(right) == current) {
+                right--;
+            }
+        }
+        return right - left + 1;
+    }
+}
+
+289th Problem
+You are given an integer array nums and a positive integer k.
+Return the number of subarrays where the maximum element of nums appears at least k times in that subarray.
+A subarray is a contiguous sequence of elements within an array.
+Example 1:
+Input: nums = [1,3,2,3,3], k = 2
+Output: 6
+Explanation: The subarrays that contain the element 3 at least 2 times are: [1,3,2,3], [1,3,2,3,3], [3,2,3], [3,2,3,3], [2,3,3] and [3,3].
+Example 2:
+Input: nums = [1,4,2,1], k = 3
+Output: 0
+Explanation: No subarray contains the element 4 at least 3 times.
+
+class Solution {
+    public long countSubarrays(int[] nums, int k) {
+        long res = 0;
+        int max = 0, count = 0, n = nums.length;
+        for (int num : nums)
+            max = Math.max(max, num);
+        int l = 0;
+        for (int r = 0; r < n; r++) {
+            if (nums[r] == max)
+                count++;
+            while (count >= k) {
+                res += n - r;
+                if (nums[l] == max)
+                    count--;
+                l++;
+            }
+        }
+        return res;
+    }
+}
+
+290th Problem
+Given an integer array nums and an integer k, return the number of good subarrays of nums.
+A good array is an array where the number of different integers in that array is exactly k.
+For example, [1,2,3,1,2] has 3 different integers: 1, 2, and 3.
+A subarray is a contiguous part of an array.
+Example 1:
+Input: nums = [1,2,1,2,3], k = 2
+Output: 7
+Explanation: Subarrays formed with exactly 2 different integers: [1,2], [2,1], [1,2], [2,3], [1,2,1], [2,1,2], [1,2,1,2]
+Example 2:
+Input: nums = [1,2,1,3,4], k = 3
+Output: 3
+Explanation: Subarrays formed with exactly 3 different integers: [1,2,1,3], [2,1,3], [1,3,4].
+
+class Solution {
+    public int subarraysWithKDistinct(int[] nums, int k) {
+        int n = nums.length;
+        int i = 0;
+        int j = 0;
+        int count = 0;
+        int ans = 0;
+        int []arr = new int[n + 1];
+        while(j < n){
+            arr[nums[j]]++;
+            if(arr[nums[j]] == 1){
+                count++;
+            }
+            while(count > k){
+                arr[nums[i]]--;
+                if(arr[nums[i]] == 0){
+                    count--;
+                }
+                i++;
+            }
+            if(count == k){
+                int val = i;
+                while(count == k){
+                    ans++;
+                    int num = nums[val];
+                    arr[num]--;
+                    if(arr[num] == 0){
+                        count--;
+                    }
+                    val++;
+                }
+                val--;
+                while(val >= i){
+                    int num = nums[val];
+                    arr[num]++;
+                    if(arr[num] == 1){
+                        count++;
+                    }
+                    val--;
+                } 
+            }
+            j++;
+        }
+        return ans;
+    }
+}
+
+291st Problem
+You are given an integer array nums and two integers minK and maxK.
+A fixed-bound subarray of nums is a subarray that satisfies the following conditions:
+The minimum value in the subarray is equal to minK.
+The maximum value in the subarray is equal to maxK.
+Return the number of fixed-bound subarrays.
+A subarray is a contiguous part of an array.
+Example 1:
+Input: nums = [1,3,5,2,7,5], minK = 1, maxK = 5
+Output: 2
+Explanation: The fixed-bound subarrays are [1,3,5] and [1,3,5,2].
+Example 2:
+Input: nums = [1,1,1,1], minK = 1, maxK = 1
+Output: 10
+Explanation: Every subarray of nums is a fixed-bound subarray. There are 10 possible subarrays.
+
+class Solution {
+    public long countSubarrays(int[] nums, int minK, int maxK) {
+        int minI = -1, maxI = -1, left = -1, right = 0;
+        long count = 0;
+        while(right < nums.length){
+            if(nums[right] < minK || nums[right] > maxK){
+                minI = right;
+                maxI = right;
+                left = right;
+            }
+            minI = nums[right] == minK ? right : minI;
+            maxI = nums[right] == maxK ?  right : maxI;
+            count += Math.min(minI, maxI) - left;
+            right++;
+        }
+        return count;
+    }
+}
+
+292nd Problem
+Given two strings s and t, determine if they are isomorphic.
+Two strings s and t are isomorphic if the characters in s can be replaced to get t.
+All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.
+Example 1:
+Input: s = "egg", t = "add"
+Output: true
+Example 2:
+Input: s = "foo", t = "bar"
+Output: false
+Example 3:
+Input: s = "paper", t = "title"
+Output: true
+
+class Solution {
+    public boolean isIsomorphic(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        int l = s.length();
+        int[] map1 = new int[256];
+        int[] map2 = new int[256];
+        for (int i = 0; i < l; i++) {
+            char ch1 = s.charAt(i);
+            char ch2 = t.charAt(i);
+            if (map1[ch1]>0) {
+                if (map1[ch1] != ch2) {
+                    return false;
+                } 
+            } else {
+                if (map2[ch2]==1) {
+                    return false;
+                } else {
+                    map1[ch1]=ch2;
+                    map2[ch2]=1;
+                }
+            }
+        }
+        return true;
+    }
+}
+
+293rd Problem
+Mary has the result of test conducted in her subject English in the form of a list. She wants to reward the student who has got highest marks. Your task is to help Mary find the highest marks.
+case=1
+input=8
+2 45 8 11 17 28 31 5
+output=45	
+Explanation:
+Input: line one is number of elements in list, followed by their values, 
+followed by the target element.
+Output: 45, the largest element in the list.
+
+import java.util.*;
+class Solution {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int max=arr[0]; 
+        for(int i=0;i<n;i++){
+            if(arr[i]>max){
+                max = arr[i];
+            }
+        }
+        System.out.println(max);
+    }
+}
+
+294th Problem
+Joe is having a list of elements; he wants to reverse the list of elements. Your task is to help Joe with his task.
+case=1
+input=4
+2 5 3 1
+output=[1, 3, 5, 2]
+Explanation:
+Input: line one is number of elements in list, followed by their values 
+Output: list in reverse order
+
+import java.util.*;
+class Solution {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        ArrayList<Integer> al = new ArrayList<Integer>();
+        for(int i=n-1;i>=0;i--){
+            al.add(arr[i]);
+        }
+        System.out.print(al);
+    }
+}
+
+295th Problem
+Mark is a student of 5th grade. His teacher Rebecca gives him a list of elements and asks him to check whether the elements in the list are in ascending order. He has to return true if the list is in ascending order, else return false. Your task is to help Mark in his task.case=1input=42 5 10 15output=trueExplanation:Input: line one is number of elements in list, followed by their values Output:true, since the elements are in ascending order
+
+import java.util.*;
+class Solution{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int flag=1;
+        for(int i=0;i<n-1;i++){
+             if(arr[i]>arr[i+1]){
+                flag=0;
+                break;
+            }
+        }
+        if(flag==1){
+            System.out.println("true");
+        }
+        else {
+        System.out.println("false");
+      }
+    }
+}
+
+296th Problem
+Stephen is a student of 6th grade. His teacher Jane gives him a list of elements and asks him to check whether the elements in the list are either in ascending or descending order. He has to return 1 when the list is ascending order, 2 for descending order, 0 for neither ascending or descending order. Your task is to help Stephen in his task.
+case=1
+input=4
+2 5 10 15 
+output=1	
+Explanation:
+Input: line one is number of elements in list, followed by their values 
+Output: 1, the list is in ascending order
+case=2
+input=4
+2 5 15 10 
+output=0
+Explanation:
+Input: line one is number of elements in list, followed by their values 
+Output:1, the list is neither in ascending nor descending order
+case=3
+input=3
+8 4 1
+output=2
+Explanation:
+Inpu:t line one is number of elements in list, followed by their values 
+Output: 1, the list is in descending order
+
+import java.util.*;
+class Solution {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int asc=1,des=1;
+        for(int i=0;i<n-1;i++){
+            if(arr[i]<arr[i+1]){
+                des=0;
+            }else{
+                asc=0;
+            }
+        }
+        if(asc==1){
+            System.out.println("1");
+        }
+        else if(des==1){
+            System.out.println("2");
+        }
+        else{
+            System.out.println("0");
+        }
+    }
+}
+
+297th Problem
+Imagine you are developing a student grading system for a school,
+where each student's scores in a particular subject are stored in 
+an array. 
+-To generate meaningful reports and analyze student 
+ performance, it's essential to sort these scores in ascending order.
+-Your task is to implement a feature that sorts the scores in ascending 
+ order.
+Input Format:
+Line-1:Integer N
+Line-2:Space seperated integers
+Output Format:
+Print the array
+Sample Testcase:1
+input=6
+-5 -9 8 12 1 3 
+output=-9 -5 1 3 8 12
+
+import java.util.*;
+class Solution {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+       for(int i=0;i<n-1;i++){
+           for(int j=i+1;j<n;j++){
+               if(arr[i]>arr[j])
+               {
+               int temp;
+               temp=arr[i];
+               arr[i] = arr[j];        // Bubble Sort
+               arr[j] = temp;
+               }
+           }
+       }
+       for(int i=0;i<n;i++){
+           System.out.print(arr[i]+ " ");
+       }
+    }
+}
+
+298th Problem
+Consider a scenario where you are developing a quiz platform for students. Each quiz question has multiple-choice answers,and the student's response to each question is stored in an array. 
+-Your task is to compare the student's response array with the correct answer array to determine if the student answered the questions correctly or not.
+Note: If there are repetitions, then counts of repeated answers should be the same for two arrays to be equal.
+Input Format:
+Line-1:Space seperated integers
+Line-2&3:Array elements
+Output Format:
+Boolen value
+Sample Testcase:1
+Sample Testcase:1
+input=5 5
+1 2 3 4 5
+1 2 3 4 5
+output=Yes
+
+import java.util.*;
+class Solution {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        int arr1[] = new int[n1];
+        int arr2[] = new int[n2];
+        for(int i=0;i<n1;i++){
+            arr1[i] = sc.nextInt();
+        }
+        for(int i=0;i<n2;i++){
+            arr2[i] = sc.nextInt();
+        }
+        int flag = 1;
+        if(n1!=n2){
+            flag = 0;
+            System.out.println("No");
+        }
+        for(int i=0;i<n1;i++){
+            if(arr1[i] != arr2[i]){
+                flag=0;
+                System.out.println("No");
+                break;
+            }
+        }
+        if(flag==1){
+            System.out.println("Yes");
+        }
+    }
+}
+
+299th Problem
+Imagine you're building a scheduling application for a company's 
+shift management system. Each employee's shift schedule is 
+stored in an array of integers, where each element represents
+the employee's shift for a particular day. 
+-Your task is to implement a feature that allows rotating the shift schedule to the left by a specified number of positions,accommodating changes in employee availability or preferences.
+Sample Testcase:1
+input=4
+7 8 9 10
+3
+output=10 7 8 9
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int k = sc.nextInt();
+        for(int i=k;i<n;i++){
+            System.out.println(arr[i]+" ");
+        }
+        for(int i=0;i<k;i++){
+            System.out.println(arr[i]+" ");
+        }
+    }
+}
+
+300th Problem
+Given an m x n grid of characters board and a string word, return true if word exists in the grid.
+The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.
+Example 1:
+Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCCED"
+Output: true
+Example 2:
+Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "SEE"
+Output: true
+Example 3:
+Input: board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], word = "ABCB"
+Output: false
+
+class Solution {
+    public boolean exist(char[][] board, String word) {
+        int m = board.length, n = board[0].length;
+        if(m*n < word.length()) return false;
+        char[] wrd = word.toCharArray();
+        int[] boardd = new int[128];
+        for(int i=0; i<m; ++i){
+            for(int j=0; j<n; ++j){
+                ++boardd[board[i][j]];
+            }
+        }
+        for(char ch:wrd){
+            if(--boardd[ch] < 0) return false;
+        }
+        if(boardd[wrd[0]] > boardd[wrd[wrd.length-1]]) reverse(wrd);
+        for(int i=0; i<m; ++i){
+            for(int j=0; j<n; ++j){
+                if(wrd[0] == board[i][j] && found(board, i, j, wrd, new boolean[m][n], 0)) return true;
+            }
+        }
+        return false;
+    }
+    private void reverse(char[] word){
+        int n = word.length;
+        for(int i=0; i<n/2; ++i){
+            char temp = word[i];
+            word[i] = word[n-i-1];
+            word[n-i-1] = temp;
+        }
+    }
+    private static final int[] dirs = {0, -1, 0, 1, 0};
+    private boolean found(char[][] board, int row, int col, char[] word, boolean[][] visited, int index){
+        if(index == word.length) return true;
+        if(row<0 || col<0 || row == board.length || col == board[0].length || board[row][col] != word[index] || visited[row][col]) return false;
+        visited[row][col] = true;
+        for(int i=0; i<4; ++i){
+            if(found(board, row+dirs[i], col+dirs[i+1], word, visited, index+1)) return true;
+        }
+        visited[row][col] = false;
+        return false;
+    }
+}
+
+301st Problem
+Imagine you are developing an inventory management system for 
+a warehouse. The warehouse receives shipments of products in bulk, 
+and each product is assigned a unique identifier represented by 
+integers in an array. However, due to data entry errors or duplicate
+shipments, the array may contain duplicate product identifiers.
+-Your task is to remove these duplicates from the array in-place and 
+ then print the number of unique products available in the inventory.
+Input Format:
+Line-1: Size of array
+line-2: Array elements
+Output Format:
+Print unique products
+Sample Testcase:1
+input=3
+1 1 2
+output=1 2
+
+import java.util.*;
+class Solution {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        Set<Integer> s = new HashSet<>();
+        for(int i=0;i<n;i++){
+            s.add(arr[i]);
+        }
+        for(int ele:s){
+            System.out.println(s);
+        }
+    }
+}
+
+302nd Problem
+An automobile company manufactures both a two wheeler (TW) and a four wheeler(FW). 
+A company manager wants to make the production of both types of vehicle
+according to the given data below:
+1st data, Total number of vehicle (two-wheeler + four-wheeler)=v
+2nd data, Total number of wheels = W
+The task is to find how many two-wheelers as well as four-wheelers need to
+manufacture as per the given data.
+Note:Print “INVALID INPUT” , if inputs did not meet the constraints.
+Input Format
+First Input line – Accept value of V.
+Second Input line- Accept value for W.
+Output Format
+Integer or Print “INVALID INPUT” , if inputs did not meet the constraints.
+Sample Testcase:1
+Input=200 540  -> Value of V&W
+Output=130 70
+Explanation:
+130+70 = 200 vehicles
+(70*4)+(130*2)= 540 wheels
+Constraints :
+2<=W
+W%2=0
+V<W
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int v = sc.nextInt();
+    int w = sc.nextInt();
+    //x+y=v
+    //2x+4y=w;
+    if(v<w && w%2==0 && 2<=w)
+    {
+        int ans = (w-2*v)/2;
+        System.out.println(v-ans+" "+ans);
+    }
+    else {
+        System.out.print("INVALID INPUT");
+    }   
+  }
+}
+
+303rd Problem
+A parking lot in a mall has RxC number of parking spaces. 
+Each parking space will either be  empty(0) or full(1). 
+The status (0/1) of a parking space is represented as the element of the matrix.
+The task is to find index of the row(R) in the parking lot that has the most 
+of the parking spaces full(1).
+Note : RxC- Size of the matrix
+Elements of the matrix M should be only 0 or 1.
+Sample Testcase:1
+Input=3 3
+0 1 0
+1 1 0 
+1 1 1 
+output=3  
+Explanation:
+Row 3 has maximum number of 1’s
+
+import java.util.*;
+class Solution{
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int r = sc.nextInt();
+        int c = sc.nextInt();
+        int arr[][] = new int[r][c];
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        int k=0;
+        int max=Integer.MIN_VALUE;
+        for(int i=0;i<r;i++){
+            int sum=0; // this value keeps on changing, so kept outside
+            for(int j=0;j<c;j++){
+                sum = sum+arr[i][j];
+                if(sum>max){
+                    max = sum;
+                    k=i;
+                }
+            }
+        }
+        System.out.println(k+1);
+    }
+}
+
+304th Problem
+Given an integer array Arr of size N the task is to find the count 
+of elements whose value is greater than all of its prior elements.
+Note : 1st element of the array should be considered in the count of the result.
+Sample Testcase:1
+input=5
+7 4 8 2 9
+output=3
+Explanation:
+As 7 is the first element, it will consider in the result.
+8 and 9 are also the elements that are greater than all of its previous elements.
+Since total of  3 elements is present in the array that meets the condition.
+Hence the output = 3.
+5 -> Value of N, represents size of Arr
+7-> Value of Arr[0]
+4 -> Value of Arr[1]
+8-> Value of Arr[2]
+2-> Value of Arr[3]
+9-> Value of Arr[4]
+Output=3
+Sample Testcase:2
+input=5
+3 4 5 8 9
+output=5
+Explanation:
+5   -> Value of N, represents size of Arr
+3  -> Value of Arr[0]
+4 -> Value of Arr[1]
+5 -> Value of Arr[2]
+8 -> Value of Arr[3]
+9 -> Value of Arr[4]
+Output : 
+5
+Constraints
+1<=N<=20
+1<=Arr[i]<=10000
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+     int n = sc.nextInt();
+     int arr[] = new int[n];
+     for(int i=0;i<n;i++){
+         arr[i] = sc.nextInt();
+     }
+     int max=arr[0];
+     int count=1;
+     for(int i=0;i<n;i++){
+         if(arr[i]>max){
+             max=arr[i];
+             count++;
+         }
+     }
+     System.out.println(count);
+    }
+}
+
+305th Problem
+Imagine you are developing a task management system for a team,
+where each task is represented by an integer identifier in an array. 
+Sometimes, tasks are completed or cancelled and need to be removed 
+from the system. 
+-Your task is to implement a feature that removes 
+ all occurrences of a specific task identifier (val) from the 
+ array in-place and returns the count of remaining active tasks.
+Sample Testcase:1
+input=4
+3 2 2 3
+3
+output=2
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int count=0;
+        int val = sc.nextInt();
+        for(int i=0;i<n;i++){
+            if(arr[i]==val){
+                count++;
+            }
+        }
+        System.out.println(n-count);
+    }
+}
+
+306th Problem
+A string is a valid parentheses string (denoted VPS) if it meets one of the following:
+It is an empty string "", or a single character not equal to "(" or ")",
+It can be written as AB (A concatenated with B), where A and B are VPS's, or
+It can be written as (A), where A is a VPS.
+We can similarly define the nesting depth depth(S) of any VPS S as follows:
+depth("") = 0
+depth(C) = 0, where C is a string with a single character not equal to "(" or ")".
+depth(A + B) = max(depth(A), depth(B)), where A and B are VPS's.
+depth("(" + A + ")") = 1 + depth(A), where A is a VPS.
+For example, "", "()()", and "()(()())" are VPS's (with nesting depths 0, 1, and 2), and ")(" and "(()" are not VPS's.
+Given a VPS represented as string s, return the nesting depth of s.
+Example 1:
+Input: s = "(1+(2*3)+((8)/4))+1"
+Output: 3
+Explanation: Digit 8 is inside of 3 nested parentheses in the string.
+Example 2:
+Input: s = "(1)+((2))+(((3)))"
+Output: 3
+
+class Solution {
+    public int maxDepth(String s) {
+        int count=0,max=0;
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)=='(') count++;
+            max=Math.max(count,max);
+            if(s.charAt(i)==')') count--;
+        }
+        return max;
+    }
+}
+
+307th Problem
+John is provided with two list of elements; he is told by him manager to merge 
+the elements from the two list into one list. Your task is to help John in his 
+task.
+Note: Use only arrays, no collections classes
+case=1
+input=3
+10 12 15
+4
+103 125 134 62
+output=[10, 12, 15, 103, 125, 134, 62]
+Explanation:
+Input: line one is number of elements in list1, followed by their values, 
+followed by number of elements in list2, followed by their values. 
+Output: is the merged list having both list1 and list2
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        int arr1[] = new int[n1];
+        for(int i=0;i<n1;i++){
+            arr1[i] = sc.nextInt();
+        }
+        int n2 = sc.nextInt();
+        int arr2[] = new int[n2];
+        for(int i=0;i<n2;i++){
+            arr2[i] = sc.nextInt();
+        }
+        int n3=n1+n2;
+        int c=0;
+        int arr3[] = new int[n3];
+       for(int i=0;i<n1;i++){
+           arr3[c++]=arr1[i];
+       }
+       for(int i=0;i<n2;i++){
+           arr3[c++]=arr2[i];
+       }
+       for(int i=0;i<n3;i++){
+           System.out.println(arr3[i]);
+       }
+    }
+}
+
+308th Problem
+Joe is having a string; he wants to find out whether the string is a palindrome. Your task is to help Joe in his task.
+case=1
+input=madam
+output=true
+Explanation:
+Input: line one is string.
+Output: true, the string is a palindrome
+
+import java.util.*;
+class Solution {
+    public static boolean pal(String str){
+        // if(str.length()==1){
+        //     return true;
+        // }
+        // else{
+        //     if(str.charAt(0)==str.charAt(str.length()-1)){
+        //         return pal(str.substring(1,str.length()-1));
+        //     }
+        //     return false;
+        // }
+        int lp=0;
+        int rp=str.length()-1;
+        boolean ispal = true;
+        while(lp<=rp){
+            if(str.charAt(lp)!=str.charAt(rp)){
+                ispal = false;
+                break;
+            } else {
+                lp++;
+                rp--;
+            }
+            return ispal;
+        }
+        return ispal;
+    }
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        System.out.print(pal(str));
+    }
+}
+
+309th Problem
+Molly is given a list of elements sorted in ascending order and a target value. 
+She wants to find whether the target is present in the list. Your task is to 
+help Molly in her task.
+case=1
+input=8
+2 5 8 11 17 28 31 45
+28
+output=5	
+Explanation:
+Input: line one is number of elements in list, followed by their values, 
+followed by the target element.
+Output: 5, the index of found element in the list.
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int search = sc.nextInt();
+        int low=0;
+        int high=n-1;
+        int a=0;
+        while(low<=high){
+        int mid=low+((high-low)/2);
+         if(arr[mid]==search){
+             System.out.print(mid);
+             a++;
+             break;
+         }
+         else if(arr[mid]<search){
+             low=mid+1;
+         }
+         else{
+             high=mid-1;
+         }
+       }
+       if(a==0) System.out.print(-1);
+    }
+}
+
+310th Problem
+Alex has a string s1 and Martha has a string s2. Alex wants to know whether 
+the string s1 is a part of s2. If yes, then he wants to know the index at which 
+s1 occurs in S, else it should return -1. Your task is to help Alex in his task.
+Note: Do not use build-in indexOf() method of String class.
+case=1
+input=lo hello
+output=3
+Explanation:
+Input line one is string s1 followed by string s2
+Output=3, the starting location of s1 in s2
+
+import java.util.Scanner;
+public class SubstringIndex {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String s1 = scanner.next();
+        String s2 = scanner.next();
+        int index = findSubstringIndex(s1, s2);
+        System.out.println(index);
+    }
+    public static int findSubstringIndex(String s1, String s2) {
+        int s1Length = s1.length();
+        int s2Length = s2.length();   
+        for (int i = 0; i <= s2Length - s1Length; i++) {
+            int j;
+            for (j = 0; j < s1Length; j++) {
+                if (s2.charAt(i + j) != s1.charAt(j)) {
+                    break;
+                }
+            }
+            if (j == s1Length) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+
+311th Problem
+Mary and John each have an integer array nums1 and nums2 respectively, sorted 
+in ascending order. Peter wants to join these two arrays into single array 
+sorted in ascending order. Peter does not want to have a separate array for the 
+result and wants to use Mary’s integer array nums1 for the join. To accommodate 
+this, nums1 has a length of m + n, where the first m elements denote the 
+elements that should be joined, and the last n elements are set to 0 and should 
+be ignored. nums2 has length of n. Your task is to help Peter in his task.
+Sample test case
+case=1
+input=6
+3
+1 2 3 0 0 0
+3
+2 5 6
+output=[1, 2, 2, 3, 5, 6]
+Explanation: Line1 is the number of combined elements of both nums1 and nums2, 
+followed by number elements of nums1 (i.e. m), followed by values of nums1, 
+followed by number of elements of nums2 (i.e. n), followed by values of nums2.
+
+import java.util.Arrays;
+import java.util.Scanner;
+public class MergeSortedArrays {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of elements in nums1: ");
+        int m = scanner.nextInt();
+        int[] nums1 = new int[m];
+        System.out.println("Enter the elements of nums1:");
+        for (int i = 0; i < m; i++) {
+            nums1[i] = scanner.nextInt();
+        }
+        System.out.print("Enter the number of elements in nums2: ");
+        int n = scanner.nextInt();
+        int[] nums2 = new int[n];
+        System.out.println("Enter the elements of nums2:");
+        for (int i = 0; i < n; i++) {
+            nums2[i] = scanner.nextInt();
+        }
+        merge(nums1, m, nums2, n);
+        System.out.println("Merged sorted array: " + Arrays.toString(nums1));
+    }
+    public static void merge(int[] nums1, int m, int[] nums2, int n) {
+        int index1 = m - 1;
+        int index2 = n - 1;
+        int mergedIndex = m + n - 1;
+        while (index1 >= 0 && index2 >= 0) {
+            if (nums1[index1] > nums2[index2]) {
+                nums1[mergedIndex] = nums1[index1];
+                index1--;
+            } else {
+                nums1[mergedIndex] = nums2[index2];
+                index2--;
+            }
+            mergedIndex--;
+        }
+        while (index2 >= 0) {
+            nums1[mergedIndex] = nums2[index2];
+            index2--;
+            mergedIndex--;
+        }
+    }
+}
+
+312th Problem
+Given a string s of lower and upper case English letters.
+A good string is a string which doesn't have two adjacent characters s[i] and s[i + 1] where:
+0 <= i <= s.length - 2
+s[i] is a lower-case letter and s[i + 1] is the same letter but in upper-case or vice-versa.
+To make the string good, you can choose two adjacent characters that make the string bad and remove them. You can keep doing this until the string becomes good.
+Return the string after making it good. The answer is guaranteed to be unique under the given constraints.
+Notice that an empty string is also good.
+Example 1:
+Input: s = "leEeetcode"
+Output: "leetcode"
+Explanation: In the first step, either you choose i = 1 or i = 2, both will result "leEeetcode" to be reduced to "leetcode".
+Example 2:
+Input: s = "abBAcC"
+Output: ""
+Explanation: We have many possible scenarios, and all lead to the same answer. For example:
+"abBAcC" --> "aAcC" --> "cC" --> ""
+"abBAcC" --> "abBA" --> "aA" --> ""
+
+class Solution {
+    public String makeGood(String s) {
+        int n = s.length();
+        StringBuilder sb = new StringBuilder();
+        for(char curr : s.toCharArray()){
+            char peek = sb.length() > 0 ? sb.charAt(sb.length() - 1) : '1';
+            if(Math.abs(peek - curr) == 32  && sb.length() > 0){
+                sb.deleteCharAt(sb.length() - 1);
+            }else{
+                sb.append(curr);
+            }
+        }
+        return sb.toString();
+    }
+}

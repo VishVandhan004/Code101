@@ -12490,7 +12490,7 @@ Explanation:
 Input line one is string s1 followed by string s2
 Output=3, the starting location of s1 in s2
 
-import java.util.Scanner;
+import java.util.*;
 public class SubstringIndex {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

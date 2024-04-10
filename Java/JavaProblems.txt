@@ -1,5 +1,5 @@
 1st Problem
-Given an list of decimal numbers and an desired number, return the twin values in a such that their sum equals the desired number..
+Given an list of decimal numbers and an desired number, return the twin values in a such that their sum equals the desired number
 You can make the assumption that every input has exactly one answer, and you can avoid using the same element more than once.
 4
 1 8 11 15
@@ -233,7 +233,7 @@ class Solution {
 }
 
 8th Problem 
-Bob given a task to Babe, i.e, Babe has to detect unique value in a given set of values by Bob
+Bob given a task to Babe, i.e Babe has to detect unique value in a given set of values by Bob
 input=
 8
 12 25 8 12 43 5 8 43
@@ -638,7 +638,7 @@ The difference between the number of chocolates in the packet with maximum choco
 Examples:
 Input : arr[] = {7, 3, 2, 4, 9, 12, 56} , m = 3 
 Output: Minimum Difference is 2 
-Explanation:
+Explanation
 We have seven packets of chocolates and we need to pick three packets for 3 students 
 If we pick 2, 3 and 4, we get the minimum difference between maximum and minimum packet sizes.
 Input : arr[] = {3, 4, 1, 9, 56, 7, 9, 12} , m = 5 
@@ -5823,7 +5823,7 @@ class PrintNumbers{
 }
 
 132nd Problem
-/* you are solving a puzzle, which is to find product of two integers without 
+you are solving a puzzle, which is to find product of two integers without 
 using multiplication operator and without using any loops.
 Using your programming skills can you solve this with a java program.
 Example1 :
@@ -5831,7 +5831,7 @@ input =4 5
 output=20
 Example 2:
 input=6 15
-output=90 */
+output=90 
 
 import java.util.*;
 class ProductOfTwo{

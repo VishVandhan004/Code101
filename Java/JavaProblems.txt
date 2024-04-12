@@ -11294,8 +11294,7 @@ Output: true
 Example 2:
 Input: head = [1,2]
 Output: false
-/*
-  Definition for singly-linked list.
+/* Definition for singly-linked list.
   public class ListNode {
       int val;
       ListNode next;

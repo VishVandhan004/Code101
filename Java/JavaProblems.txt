@@ -11296,7 +11296,7 @@ Input: head = [1,2]
 Output: false
 /*
   Definition for singly-linked list.
- * public class ListNode {
+  public class ListNode {
  *     int val;
  *     ListNode next;
  *     ListNode() {}

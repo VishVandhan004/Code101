@@ -4037,7 +4037,6 @@ The sum of the values on these two coins should equal a specified target value.
 Your goal is to determine the indices (positions) of these two coins within the bag. 
 It is guaranteed that there is exactly one solution to this problem, and each coin can only be used once. 
 Input Format:
--------------------
 Line-1: A number, size of the array
 Line-2: N line separated integers, coins[]
 Line-3: A number, target sum

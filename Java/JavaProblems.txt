@@ -11120,8 +11120,7 @@ class Solution {
             int mid=(low+high)/2;
             int pivot=points[mid][1];
             while(true){
-                while(points[i][1]<pivot)
-                {
+                while(points[i][1]<pivot) {
                     i++;
                 }
                 while(points[j][1]>pivot)

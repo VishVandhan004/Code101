@@ -11113,7 +11113,7 @@ Output: 4
 Explanation: One arrow needs to be shot for each balloon for a total of 4 arrows
  
 class Solution {
-    static void quicksort(int[][] points,int low,int high){
+    static void quicksort(int[][] points,int low,int high) {
         if(low<high)
         {
             int i=low;

@@ -4041,7 +4041,6 @@ Line-1: A number, size of the array
 Line-2: N line separated integers, coins[]
 Line-3: A number, target sum
 Output Format:
--------------------
 Line-1: Space separated two numbers, indices
 Sample Input:
 --------------

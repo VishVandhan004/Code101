@@ -12660,3 +12660,5 @@ public int timeRequiredToBuy(int[] tickets, int k) {
         return time;
     }
 }
+
+315th Problem

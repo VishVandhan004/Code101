@@ -12694,3 +12694,78 @@ class Solution {
                 return sumTree(root,0);
     }
 }
+
+Alex is having a list of integers. He wants to find the median of the elements 
+in the list. Your task is to help Alex in his task.
+Sample test case
+case=1
+input=7
+2 3 4 1 5 6 7
+output=4.0
+case=2
+input=4
+3 4 1 2
+output=2.5
+import java.util.*;
+class Solution {
+    public static float median(int n,int arr[]){
+        Arrays.sort(arr);
+        if(n%2==0){
+            float ans=arr[(n/2)-1] + arr[(n/2)];
+            return ans/2;
+        }
+        else{
+            return arr[n/2];
+        }
+    }
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println((float)median(n,arr));
+    }
+}
+Alex is having a list of integers. He wants to find the first missing positive 
+integer in the list. If he finds there are no missing positive integer, then he 
+has to find the number that is to added. Your task is to help Alex in his task.
+
+Sample test case
+case=1
+input=4
+3 4 -1 1
+output=2
+
+case=2
+input=3
+1 2 0
+output=3
+
+import java.util.*;
+class Solution {
+    public static int miss(int n,int arr[]){
+        Arrays.sort(arr);
+        for(int i=0;i<n-1;i++){
+            if(arr[i]>0){
+                if(arr[i+1]!=(arr[i]+1)){
+                    return arr[i]+1;
+                }
+                else{
+                    continue;
+                }
+            }
+        }
+        return arr[n-1]+1;
+    }
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(miss(n,arr));
+    }
+}

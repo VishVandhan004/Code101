@@ -12733,7 +12733,6 @@ class Solution {
 Alex is having a list of integers. He wants to find the first missing positive 
 integer in the list. If he finds there are no missing positive integer, then he 
 has to find the number that is to added. Your task is to help Alex in his task.
-
 Sample test case
 case=1
 input=4

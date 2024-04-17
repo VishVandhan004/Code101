@@ -12817,6 +12817,7 @@ Output: "adz"
 Example 3:
 Input: root = [2,2,1,null,1,0,null,0]
 Output: "abc"
+
 class Solution {
     String smallestString = "~"; // Initialize with a value that will be replaced
     public String smallestFromLeaf(TreeNode root) {

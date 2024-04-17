@@ -12811,9 +12811,6 @@ As a reminder, any shorter prefix of a string is lexicographically smaller.
 
 For example, "ab" is lexicographically smaller than "aba".
 A leaf of a node is a node that has no children.
-
- 
-
 Example 1:
 Input: root = [0,1,2,3,4,3,4]
 Output: "dba"

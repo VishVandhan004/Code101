@@ -12817,3 +12817,26 @@ Output: "adz"
 Example 3:
 Input: root = [2,2,1,null,1,0,null,0]
 Output: "abc"
+class Solution {
+    String smallestString = "~"; // Initialize with a value that will be replaced
+    public String smallestFromLeaf(TreeNode root) {
+        dfs(root, new StringBuilder());
+        return smallestString;
+    }
+    private void dfs(TreeNode node, StringBuilder path) {
+        if (node == null) {
+            return;
+        }   
+        path.append((char)('a' + node.val)); // Convert node value to character and append to path
+        if (node.left == null && node.right == null) { // Check if it's a leaf node
+            String currentString = path.reverse().toString(); // Reverse path to get the string from leaf to root
+            if (currentString.compareTo(smallestString) < 0) { // Compare with current smallest string
+                smallestString = currentString;
+            }
+            path.reverse(); // Reverse back for backtracking
+        }
+        dfs(node.left, path); // Traverse left subtree
+        dfs(node.right, path); // Traverse right subtree
+        path.deleteCharAt(path.length() - 1); // Backtrack: remove last character
+    }
+}

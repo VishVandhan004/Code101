@@ -12843,8 +12843,7 @@ class Solution {
 }
 
 320th Problem
-Peter is having a list of integers. He was to store the sum all the previous 
-numbers to each index in the array. Your task is to help Peter in his task.
+Peter is having a list of integers. He was to store the sum all the previous numbers to each index in the array. Your task is to help Peter in his task.
 Note: Once you get the solution in whatever approach you use, try to get the 
 solution using recursion.
 

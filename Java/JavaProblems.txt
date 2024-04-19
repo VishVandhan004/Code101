@@ -12889,3 +12889,91 @@ Explanation:
 2nd row (descending) = (2,3)
 3rd row (ascending) = (4,2), (4,1) (4,3), (2,1)
 4th row (descending) = (2,3)
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int r = sc.nextInt();
+        int c = sc.nextInt();
+        int arr[][] = new int[r][c];
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                arr[i][j]=sc.nextInt();
+            }
+        }
+        int count=0;
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c-1;j++){
+                for(int k=j+1;k<c;k++){
+                    if(i%2==0 && arr[i][j] > arr[i][k] || i%2!=0 && arr[i][j] < arr[i][k]){
+                        count++;
+                    }
+                }
+            }
+        }
+        System.out.println(count);
+    }
+}
+John wants to find the nth term of a given series. The series starts with zero 
+and one as the first two elements respectively. The value for any other term is 
+the sum of its previous two terms. Given a number n, help John find the value 
+of the nth term.
+Note: You must use only recursive approach
+input=2
+output=1
+Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.
+
+input=3
+output=2
+Explanation: F(3) = F(2) + F(1) = 1 + 1 = 2.
+
+import java.util.*;
+class Solution {
+    public static int nterm(int n){
+        if(n==0) return 0;
+        else if(n==1) return 1;
+        else return nterm(n-1)+nterm(n-2);
+    }
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(nterm(n));
+    }
+}
+
+Molly gives an integer n to her friend Rebecca and ask her to find if n is a 
+power of two. Rebecca has to return true if n is a power of two, otherwise she 
+has to return false. An integer is power of two, if there exist an integer x 
+such that n is equal to 2^x.
+
+Note: Can you solve it without loops or recursion?
+
+Sample test case
+case=1
+input=4
+output=true
+
+case=3
+input=0
+output=false
+
+import java.util.*;
+class Solution {
+    public static boolean power(int n){
+        if(n==0) return false;
+        if(n==1) return true;
+        if(n%2==0){
+            return power(n/2);
+        }
+        else{
+            return false;
+        }
+            return false;
+    }
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(power(n));
+    }
+}

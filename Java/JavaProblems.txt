@@ -12943,6 +12943,7 @@ class Solution {
     }
 }
 
+323rd Problem
 Molly gives an integer n to her friend Rebecca and ask her to find if n is a 
 power of two. Rebecca has to return true if n is a power of two, otherwise she 
 has to return false. An integer is power of two, if there exist an integer x 

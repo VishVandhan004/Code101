@@ -4078,8 +4078,7 @@ public class Solution {
 
 101st Problem
 A English teacher, would like to present a language challenge. Imagine you have a sentence written with words and spaces. Your task is to determine the length of the final word in this sentence. A word, in this context, is defined as a group of characters without any spaces in between. Your goal is to find the length of the very last word in this sentence.
-Input Format:-------------
-Line-1: A string, represents a sentence
+Iing, represents a sentence
 Output Format:-
 -Line-2: An integer result, represents the lenght of last wordSample 
 Input:--------------"Hello World"

@@ -12925,7 +12925,6 @@ Note: You must use only recursive approach
 input=2
 output=1
 Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.
-
 input=3
 output=2
 Explanation: F(3) = F(2) + F(1) = 1 + 1 = 2.

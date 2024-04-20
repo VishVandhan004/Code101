@@ -13031,3 +13031,36 @@ Example 3:
 Input: s = "))(("
 Output: ""
 Explanation: An empty string is also valid.
+
+class Solution {
+    public String minRemoveToMakeValid(String s) {
+        char[] temp = s.toCharArray();
+        int balance = 0;
+        for (int i = 0; i < temp.length;i++) {
+           if (temp[i] == ')') {
+                if (balance - 1 < 0) {
+                    temp[i] = '0';
+                } else {
+                    balance--;
+                }
+           } else if (temp[i] == '(') {
+                balance++;
+           }
+        }
+        int index = temp.length - 1;
+        while (balance != 0 && index >= 0) {
+            if (temp[index] == '(') {
+                temp[index] = '0';
+                balance--;
+            }
+            index--;
+        }
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < temp.length;i++) {
+            if (temp[i] != '0') {
+                result.append(temp[i]);
+            }
+        }   
+        return result.toString();
+    }
+}

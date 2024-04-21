@@ -4347,7 +4347,6 @@ paper
 title
 output = hurray
 Explanation:
-----------------
 'p' is replaced with 't', 'a' is with 'i', 'e' is with 'l', and 'r' with 'e'.
 input = 
 memo 

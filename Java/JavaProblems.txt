@@ -4957,7 +4957,6 @@ Sample Input2:
 -1
 -1
 Sample Output1:
---------------
 -1
 Explanation: There are no missing ranges since there are no missing numbers.
 NOTE: Print -1 for boundary conditions

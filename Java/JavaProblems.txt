@@ -4936,7 +4936,6 @@ that accurately identifies all the absent student IDs.
 These ranges should cover every missing ID within the given range 
 and should not include any of the present student IDs in the ranges.
 Input Format:
--------------
 Line 1: start range
 Line 2: end range
 Line 3: Space separated id's

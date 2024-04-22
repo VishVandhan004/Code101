@@ -13136,7 +13136,6 @@ order by start index.
 case=1
 input=aabbbcc
 output=[[2, 4]]
-
 Explanation: The group having 3 or more consecutive characters is bbb and its 
 interval is [2, 4]
 

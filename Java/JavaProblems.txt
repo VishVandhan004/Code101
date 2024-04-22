@@ -12958,7 +12958,6 @@ class Solution {
         else{
             return false;
         }
-            return false;
     }
     public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -13089,5 +13088,101 @@ class Solution {
             }
         }
         return false;
+    }
+}
+
+327th Problem
+Bob is an expert in cryptography. His boss Alan gives him a string S in an 
+encoded form and an integer array indices of string S length. He asks Bob to 
+decode the String S by moving each character at ith position in S, to indices[i]
+position in decoded string. Your task is to help Bob in his task.
+
+case =1
+input =aeilmmor
+6 1 5 7 2 0 3 4
+output =memorial
+
+case =2
+input =aidin
+4 3 2 0 1
+output =india
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = "";
+        String st[] = sc.nextLine().split("");
+        String nu[] = sc.nextLine().split(" ");
+        int[] n = new int[nu.length];
+        for(int i=0;i<nu.length;i++){
+        n[i] = Integer.parseInt(nu[i]);
+        }
+        for(int i=0;i<st.length;i++){
+            for(int j=0;j<st.length;j++){
+                if(i==n[j]){
+                    System.out.print(st[j]);
+                }
+            }
+        }
+    }
+}
+
+John is having a string and wants to form consecutive groups of the same 
+character. A group is identified by an interval, which is the start and end 
+indices (inclusive) of the group. John is only interested in groups that has 3 
+or more characters. 
+Your task is to help John identify every interval of these groups in increasing
+order by start index.
+
+Sample test case
+
+case=1
+input=aabbbcc
+output=[[2, 4]]
+
+Explanation: The group having 3 or more consecutive characters is bbb and its 
+interval is [2, 4]
+
+case=2
+input=aaaabccc
+output=[[0, 3], [5, 7]]
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        intervals(s);
+    }
+    public static void intervals(String s){
+        List<List<Integer>> l = new ArrayList<>();
+        int count = 0;
+        int p1=0;
+        int p2=0;
+        while (p2 < s.length()){
+            
+            if (s.charAt(p1)==s.charAt(p2)){
+                p2++;
+                count++;
+            } 
+            else{
+                if(count>=3){
+                    List<Integer> temp = new ArrayList<>();
+                    temp.add(p1);
+                    temp.add(p2 - 1);
+                    l.add(temp);
+                }
+                count=0;
+                p1=p2;
+            }
+        }
+        if(count>=3){
+            List<Integer> temp = new ArrayList<>();
+            temp.add(p1);
+            temp.add(p2-1);
+            l.add(temp);
+        }
+        System.out.println(l);
     }
 }

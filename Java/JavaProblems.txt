@@ -13126,6 +13126,7 @@ class Solution {
     }
 }
 
+328th Problem
 John is having a string and wants to form consecutive groups of the same 
 character. A group is identified by an interval, which is the start and end 
 indices (inclusive) of the group. John is only interested in groups that has 3 

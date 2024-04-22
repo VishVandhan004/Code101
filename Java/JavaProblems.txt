@@ -13096,7 +13096,6 @@ Bob is an expert in cryptography. His boss Alan gives him a string S in an
 encoded form and an integer array indices of string S length. He asks Bob to 
 decode the String S by moving each character at ith position in S, to indices[i]
 position in decoded string. Your task is to help Bob in his task.
-
 case =1
 input =aeilmmor
 6 1 5 7 2 0 3 4

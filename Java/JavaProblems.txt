@@ -13133,7 +13133,6 @@ indices (inclusive) of the group. John is only interested in groups that has 3
 or more characters. 
 Your task is to help John identify every interval of these groups in increasing
 order by start index.
-
 Sample test case
 
 case=1

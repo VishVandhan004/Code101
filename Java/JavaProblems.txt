@@ -5075,14 +5075,11 @@ Input Format:
 Line-1: Two integers N and K, number of switches, and more number of switches to be ON
 Line-2: N space separated integers, only 0's and 1's.
 Output Format:
---------------
 Print a boolean value.
 Sample Input-1:
----------------
 5 1
 1 0 0 0 1
 Sample Output-1:
-----------------
 true
 Sample Input-2:
 ---------------

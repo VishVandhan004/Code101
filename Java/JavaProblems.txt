@@ -13214,7 +13214,17 @@ Example 2:
 Input: root = []
 Output: []
 Example 3:
-
 Input: root = [1]
 Output: [1]
- 
+
+/
+class Solution {
+    List<Integer> list = new ArrayList<>();
+    public List<Integer> inorderTraversal(TreeNode root) {
+        if(root==null) return new ArrayList<>();
+        inorderTraversal(root.left);
+        list.add(root.val);
+        inorderTraversal(root.right);
+        return list;
+    }
+}

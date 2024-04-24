@@ -13236,3 +13236,17 @@ Example 3:
 
 Input: left = 1, right = 2147483647
 Output: 0
+
+class Solution {
+    public int rangeBitwiseAnd(int left, int right) {
+        int shift = 0;
+        // Find the common prefix of binary representation
+        while (left < right) {
+            left >>= 1;
+            right >>= 1;
+            shift++;
+        }
+        // Shift back to obtain the final result
+        return left << shift;
+    }
+}

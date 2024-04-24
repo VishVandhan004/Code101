@@ -5416,7 +5416,7 @@ in all the races or not.
 NOTE: If a race starts at time 'a' ends at time 'b', 
 another race can start at 'b'.
 Input Format:
--------------
+---------
 Line-1: An integer N, number of races Ajith has to participate.
 Next N lines: Two space separated integers, start and end time of each race.
 Output Format:

@@ -13281,8 +13281,6 @@ There are a set of boxes and each box has a number.
 Rajiv arranged these set of boxes in an array. arr[i] is the number written 
 on ith box. Your task is to return "true" if arr[i]==arr[j], otherwise 
 return "false".
-Sample test case
-
 case=1
 input=4
 4 2 3 4 5

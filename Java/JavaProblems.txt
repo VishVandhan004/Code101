@@ -13247,6 +13247,7 @@ class Solution {
     }
 }
 
+332nd Problem
 Given a container with N+1 balls with a number print on them.
 Numbers are between 0 to N, there is no repetition of numbers.
 

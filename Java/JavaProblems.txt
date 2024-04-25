@@ -13257,6 +13257,7 @@ case=2
 input=9
 3 7 6 2 5 4 9 1 0 
 output=8
+
 import java.util.*;
 class Solution {
     public static void main (String[] args) {

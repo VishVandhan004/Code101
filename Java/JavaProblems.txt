@@ -13253,7 +13253,6 @@ case=1
 input=4
 3 0 1 4
 output=2
-
 case=2
 input=9
 3 7 6 2 5 4 9 1 0 

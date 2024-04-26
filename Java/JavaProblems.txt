@@ -5766,7 +5766,7 @@ class Product {
 }
 
 131st Problem
-/* You are attending an interview interviewer asked you to print 1 to n numbers 
+You are attending an interview interviewer asked you to print 1 to n numbers 
 without using loops when given an integer N.
 input format : an integer n
 Examples:

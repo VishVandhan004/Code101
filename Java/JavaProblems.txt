@@ -5691,7 +5691,7 @@ class test
 }
 
 129th Problem
-/* The school management has planned few games for students to improve their 
+The school management has planned few games for students to improve their 
 mathematical skills,one such game is group of students are placed in a row, 
 first student holds a number 0, second student holds a number 1, and 
 the task is remaining students have to hold the number which is equal to 

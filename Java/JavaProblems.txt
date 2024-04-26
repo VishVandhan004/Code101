@@ -5731,7 +5731,7 @@ class Game {
 }
 
 130th Problem
-/*  In a primary school mathematics teacher has given a task to students, i.e multiply all the integers between 1 to n and give the final product.With a pen and paper, this process has taken much more time,and you are thier computer teacher can you help students by giving a program to solve this task.
+In a primary school mathematics teacher has given a task to students, i.e multiply all the integers between 1 to n and give the final product.With a pen and paper, this process has taken much more time,and you are thier computer teacher can you help students by giving a program to solve this task.
 input format = integer
 output format = integer
 	Example 1:

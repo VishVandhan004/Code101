@@ -5742,7 +5742,7 @@ output format = integer
 	output=720
 	Example 3:
 	input=8
-	output=40320 */
+	output=40320 
 
 import java.util.*;
 class Product {

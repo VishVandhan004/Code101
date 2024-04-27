@@ -5829,7 +5829,7 @@ class ProductOfTwo{
 }
 
 133rd Problem
-you are writing an exam, the question is to test a given string is palindrome or not, but the constraints are,  should not use builtin functions like reverse and any loops. 
+you are writing an exam, the question is to test a given string is palindrome or not, but the constraints are, should not use builtin functions like reverse and any loops. 
 Example 1:
 input=abcdedcba
 output=true

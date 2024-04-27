@@ -6085,7 +6085,7 @@ Example 2:
 Input: 2 2
 3 2 
 1 0
-Output: 0 */
+Output: 0
 
 import java.util.*;
 class CountNegative 

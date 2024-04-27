@@ -5835,7 +5835,7 @@ input=abcdedcba
 output=true
 Example 2:
 input=abcdefdcba
-output=false *
+output=false
 
 import java.util.*;
 class StringPalindrome {

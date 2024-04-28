@@ -6155,7 +6155,7 @@ output =5 10
 30 35
 35 40
 40 45
-45 50 */
+45 50 *
 
 import java.util.*;
 public class FindPairsWithDifference 

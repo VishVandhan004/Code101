@@ -7649,7 +7649,7 @@ Print all Prime numbers between 1 to <n>
 *Line #1*: An **integer** <n>        { $-10^4 < n < 10^7$ }
 ### Output Format
 For each test case, print the **prime numbers**<number> separated by space in between, 
-from **0** to given number **n**.
+from **0** to given number **n**
 input = 100
 output = 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
 

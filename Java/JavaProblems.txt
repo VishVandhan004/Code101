@@ -7776,7 +7776,7 @@ input=8
 output=21
 case=3
 input=5
-output=5 *
+output=5
 
 import java.util.*;
 class dpFib {

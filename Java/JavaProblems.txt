@@ -6126,7 +6126,7 @@ class CountNegative
 }
 
 140th Problem
-/Mr. Ram is working in a manufacturing industry where items with different weights are manufactured.
+Mr. Ram is working in a manufacturing industry where items with different weights are manufactured.
 His duty is to pick pairs of items whose weight difference is equal to 'k'. 
 Can you help him with a program? The condition is not to use extra space.
 input format:an integer number n

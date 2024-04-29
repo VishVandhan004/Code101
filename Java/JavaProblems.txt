@@ -7802,7 +7802,6 @@ class dpFib {
 
 175th Problem
 Write Java program to find factorial using Dynamic Programing
-Sample Test Cases:
 case=1
 input=5
 output=120

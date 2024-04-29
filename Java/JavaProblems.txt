@@ -7808,7 +7808,7 @@ input=5
 output=120
 case=2
 input=3
-output=6 */
+output=6 *
 
 import java.util.*;
 class dpFact {

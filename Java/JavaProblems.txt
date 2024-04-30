@@ -7922,7 +7922,6 @@ class CountLargerNodes {
 Sharath is playing a game where there are N levels. Inorder to win the game 
 he has to reach Nth level. The rule book explains "In one step you can either cross one level or two levels".
 Return the number of distinct possible ways to win the game.
-Constraints:1 <= N <= 45
 Input Format:
 Line-1: An Integer N represents number of levels.
 Output Format:

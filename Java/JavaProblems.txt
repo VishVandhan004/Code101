@@ -7857,7 +7857,6 @@ class BinaryTreeNode {
 class Solution {
     public int largerNodes(BinaryTreeNode root) 
     {
-        //  WRITE YOUR CODE HERE
         int count[]=new int[1];
         largerNodes(root,count,Integer.MIN_VALUE);
         return count[0];

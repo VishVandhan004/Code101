@@ -8067,7 +8067,6 @@ Assume that alphabets can be considered in cyclic fashion.
 For example: Successor for alp='z' in str[]="bcd" is 'b'.
 Input Format:
 Line-1:A string str[]
-Line-2: a character represents an alphabet.
 Print a character which is the successor. 
 Sample Input-1:
 adghijl

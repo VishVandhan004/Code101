@@ -8019,7 +8019,7 @@ output = Nine Thousand Nine Hundred Ninty Nine
 input = 2000
 output = Two Thousand
 
-import java.util.Scann;
+import java.util.Sc;
 public class Solution {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);

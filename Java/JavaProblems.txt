@@ -8065,8 +8065,6 @@ The alphabets in the given string str[] are all lowercase letters and always in 
 A successor of 'alp' is the next smallest alphabet exist in the string str[] which is greater than 'alp'.
 Assume that alphabets can be considered in cyclic fashion.
 For example: Successor for alp='z' in str[]="bcd" is 'b'.
-Line-1:A string str[]
-Print a character which is the successor. 
 Sample Input-1:
 adghijl
 f 

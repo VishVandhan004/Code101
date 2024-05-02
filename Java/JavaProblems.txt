@@ -8085,7 +8085,6 @@ public class Solution {
         char successor = findSuccessor(str, alp);
         System.out.println(successor);
     }
-
     public static char findSuccessor(String str, char alp) {
         for (char c : str.toCharArray()) {
             if (c > alp) {

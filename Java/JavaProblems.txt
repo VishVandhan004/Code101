@@ -8197,7 +8197,7 @@ Sample Input-2:
 Sample Output-2:
 3
 
-import java.util.Sc;
+import java.util.S;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

@@ -8327,7 +8327,7 @@ The arrangements are [bgbr, bgrb, brbg, brgb, gbrb, rbgb]
 Input:  2 3 1
 Output:10
 The arrangements are [bgbrbr, bgrbrb, brbgbr, brbgrb, brbrbg, brbrgb, 
-brgbrb, gbrbrb, rbgbrb, rbrbgb] *
+brgbrb, gbrbrb, rbgbrb, rbrbgb] 
 
 import java.util.*;
 public class Arrangement {

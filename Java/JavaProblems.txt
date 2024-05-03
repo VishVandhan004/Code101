@@ -8317,7 +8317,7 @@ public class Solution {
 }
 
 188th Problem
-/*Given r red, b blue, and g green balls, find the total number of arrangements
+/Given r red, b blue, and g green balls, find the total number of arrangements
 in a row such that no two balls of the same color end up together.
 input format : three integers (first integer is for r second is b and last is for g)
 output format : integer number

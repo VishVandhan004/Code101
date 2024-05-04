@@ -11527,7 +11527,7 @@ Pick a non-empty suffix from the string s where all the characters in this suffi
 The prefix and the suffix should not intersect at any index.
 The characters from the prefix and suffix must be the same.
 Delete both the prefix and the suffix.
-Return the minimum length of s after performing the above operation any number of times (possibly zero times).
+Return the minimum length of s after performing the above operation any number of times (possibly zero times)
 Example 1:
 Input: s = "ca"
 Output: 2

@@ -11731,7 +11731,7 @@ class Solution {
 
 293rd Problem
 Mary has the result of test conducted in her subject English in the form of a list. She wants to reward the student who has got highest marks. Your task is to help Mary find the highest marks.
-ca
+c
 input=8
 2 45 8 11 17 28 31 5
 output=45	

@@ -11734,7 +11734,7 @@ Mary has the result of test conducted in her subject English in the form of a li
 input=8
 2 45 8 11 17 28 31 5
 output=45	
-Expl
+Ex
 Input: line one is number of elements in list, followed by their values, 
 followed by the target element.
 Output: 45, the largest element in the list.

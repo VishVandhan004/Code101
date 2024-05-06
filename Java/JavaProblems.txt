@@ -12052,7 +12052,6 @@ integers in an array. However, due to data entry errors or duplicate
 shipments, the array may contain duplicate product identifiers.
 Your task is to remove these duplicates from the array in-place and 
 then print the number of unique products available in the inventory.
-
 Line-1: Size of array
 line-2: Array elements
 Output Format:

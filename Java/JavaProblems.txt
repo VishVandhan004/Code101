@@ -12230,7 +12230,7 @@ Sometimes, tasks are completed or cancelled and need to be removed
 from the system. 
 Your task is to implement a feature that removes 
 all occurrences of a specific task identifier (val) from the 
- array in-place and returns the count of remaining active tasks.
+array in-place and returns the count of remaining active tasks.
 Sample Testcase:1
 input=4
 3 2 2 3

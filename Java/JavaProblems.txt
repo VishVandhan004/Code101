@@ -12228,7 +12228,7 @@ Imagine you are developing a task management system for a team,
 where each task is represented by an integer identifier in an array. 
 Sometimes, tasks are completed or cancelled and need to be removed 
 from the system. 
--Your task is to implement a feature that removes 
+Your task is to implement a feature that removes 
  all occurrences of a specific task identifier (val) from the 
  array in-place and returns the count of remaining active tasks.
 Sample Testcase:1

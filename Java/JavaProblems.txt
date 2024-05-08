@@ -12334,10 +12334,8 @@ class Solution {
 
 308th Problem
 Joe is having a string; he wants to find out whether the string is a palindrome. Your task is to help Joe in his task.
-case=1
 input=madam
 output=true
-Output: true, the st
 
 import java.util.*;
 class Solution {

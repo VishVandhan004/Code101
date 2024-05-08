@@ -12337,7 +12337,7 @@ Joe is having a string; he wants to find out whether the string is a palindrome.
 case=1
 input=madam
 output=true
-Input: line one is string.
+Input: line one is s
 Output: true, the string is a palindrome
 
 import java.util.*;

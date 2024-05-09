@@ -12380,7 +12380,7 @@ input=8
 2 5 8 11 17 28 31 45
 28
 output=5	
-Explanation:
+Explanation
 Input: line one is number of elements in list, followed by their values, 
 followed by the target element.
 Output: 5, the index of found element in the list.

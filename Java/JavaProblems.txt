@@ -12381,8 +12381,7 @@ input=8
 28
 output=5	
 Input: line one is nu
-followed by the target element.
-Output: 5, the index of found element in the list.
+followed by the target elemen
 
 import java.util.*;
 class Solution {

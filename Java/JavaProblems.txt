@@ -12420,7 +12420,7 @@ Note: Do not use build-in indexOf() method of String class.
 case=1
 input=lo hello
 output=3
-Explanati
+Explana
 Input line one is string s1 followed by string s2
 Output=3, the starting location of s1 in s2
 

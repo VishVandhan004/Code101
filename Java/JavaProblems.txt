@@ -12420,8 +12420,7 @@ Note: Do not use build-in indexOf() method of String class.
 case=1
 input=lo hello
 output=3
-Input line one is string s1 followed by st
-Ou
+Input line one is
 
 import java.util.*;
 public class SubstringIndex {

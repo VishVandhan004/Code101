@@ -12421,7 +12421,7 @@ case=1
 input=lo hello
 output=3
 Input line one is string s1 followed by st
-Output=3, the starting 
+Output=3, the st
 
 import java.util.*;
 public class SubstringIndex {

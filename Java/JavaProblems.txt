@@ -12464,7 +12464,7 @@ input=6
 3
 2 5 6
 output=[1, 2, 2, 3, 5, 6]
-followed by number elements of nums1 ( 
+followed by number el 
 followed by number of elements of nums2 (i.e. n), followed by values of nums2.
 
 import java.util.Arrays;

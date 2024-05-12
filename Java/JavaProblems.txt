@@ -9798,8 +9798,7 @@ Explanation: The longest palindrome that can be built is "a", whose length is 1.
 
 class Solution {
     public int longestPalindrome(String s) {
-        int[] frequency = new int[128];
-        
+        int[] frequency = new int[128]; 
         for (char c : s.toCharArray()) {
             frequency[c]++;
         } 

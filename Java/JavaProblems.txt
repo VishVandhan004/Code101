@@ -9506,7 +9506,7 @@ class Solution {
         
         int leftDepth = maxDepth(root.left); // Recursively find the maximum depth of the left subtree
         int rightDepth = maxDepth(root.right); // Recursively find the maximum depth of the right subtree
-        
+    
         return Math.max(leftDepth, rightDepth) + 1; // Return the maximum depth among left and right subtrees plus 1 (for the current node)
     }
 }

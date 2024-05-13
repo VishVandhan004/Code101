@@ -9487,7 +9487,7 @@ Output: 2
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
- *     TreeNode left;
+      TreeNode left;
       TreeNode right;
      TreeNode() {}
      TreeNode(int val) { this.val = val; }
@@ -9495,7 +9495,7 @@ Output: 2
          this.val = val;
          this.left = left;
           this.right = right;
- *     }
+      }
  * }
  */
 class Solution {

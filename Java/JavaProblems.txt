@@ -9496,8 +9496,7 @@ Output: 2
          this.left = left;
           this.right = right;
       }
-  }
- */
+  }*/
 class Solution {
     public int maxDepth(TreeNode root) {
         if (root == null) {

@@ -13309,7 +13309,6 @@ John gives his daughter Anni, a list of characters and asks her to reverse the
 characters in list, he wants her to do this in-place without using any extra 
 memory. Your task is to help John in his task.
 Note: You should not use any String API.
-
 Sample test case
 case=1
 input=batch-A

@@ -13303,3 +13303,144 @@ class Solution {
         System.out.println(nopair(arr));
     }
 }
+
+ohn gives his daughter Anni, a list of characters and asks her to reverse the 
+characters in list, he wants her to do this in-place without using any extra 
+memory. Your task is to help John in his task.
+Note: You should not use any String API.
+
+Sample test case
+case=1
+input=batch-A
+output=A-hctab
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        System.out.println(reverse(str));
+    }
+    public static String reverse(String s){
+            int len = s.length();
+            String result = "";
+            for(int i=len-1;i>=0;i--){
+            result = result+s.charAt(i);
+        }
+        return result;
+    }
+}
+
+Bob is given a positive number n by his teacher Mary and told to print all the 
+from 1 to n (inclusive), based on the following rules.
+
+a)	if number n is divisible by 3, print Fizz
+b)	if number n is divisible by 5, print Buzz
+c)	if number n is divisible by 3 and 5, just print FizzBuzz
+
+Your task is to help Bob in his task.
+
+Sample test cases
+
+case=1
+input=15
+output=1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+
+output : 
+1,2,4,7,8,11,13,14 are not divisible by 3 or 5 , so print same numbers
+3,6,9,12 divisible by 3 so print Fizz instead of actual numbers
+5,10 divisible by 5 so print Buzz instead of actual numbers 5 or 10
+15 divisible by 3 & 5 so print FizzBuzz instead of actual number 15
+
+case=2
+input=6
+output=1
+2
+Fizz
+4
+Buzz
+Fizz
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=1;i<=n;i++){
+            if (i%3==0 && i%5==0){
+                System.out.println("FizzBuzz");
+            }
+            else if(i%3==0){
+                System.out.println("Fizz");
+            }
+            else if(i%5==0){
+                System.out.println("Buzz");
+            }
+            else {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+Ms Saina is given a task.
+She needs your help to complete the task.
+
+The Task is defined as follows:
+    - She is given a word W.
+    - She needs to find all the vowels in W from left to right.
+      and arrange them from right to left in the word W.
+
+Your task is to modify the word W according to the above steps.
+ANd print the resultant word.
+
+NOTE: 
+Vowels are [a,e,i,o,u].
+W contains only lowwercase letters.
+
+Sample test cases 
+
+case =1
+input =divide
+output =devidi
+
+Explanation:
+------------
+the order of vowels from left to right in W are : i, i, e
+After arrange them from right to left order, the word is : devidi 
+
+case =2
+input =bluestar
+output =blaestur
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int i=0;
+        int j = str.length()-1;
+        while(i<j){
+            if(str.charAt(i) == 'a'|| 'e' || 'i' || 'o'|| 'u' && str.charAt(j)=='a'||'e'||'i'||'o'||'u'){
+                char temp;
+                temp = str.charAt(i);
+                str.charAt(i) = str.charAt(j);
+                str.charAt(j) = temp;
+            }
+        }
+        System.out.println(str);
+    }
+}

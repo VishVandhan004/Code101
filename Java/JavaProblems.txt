@@ -13395,19 +13395,15 @@ class Solution {
 337th Problem
 Ms Saina is given a task.
 She needs your help to complete the task.
-
 The Task is defined as follows:
     - She is given a word W.
     - She needs to find all the vowels in W from left to right.
       and arrange them from right to left in the word W.
-
 Your task is to modify the word W according to the above steps.
 ANd print the resultant word.
-
 NOTE: 
 Vowels are [a,e,i,o,u].
 W contains only lowwercase letters.
-
 Sample test cases 
 
 case =1

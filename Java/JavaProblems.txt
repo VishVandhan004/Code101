@@ -13334,15 +13334,11 @@ class Solution {
 336th Problem
 Bob is given a positive number n by his teacher Mary and told to print all the 
 from 1 to n (inclusive), based on the following rules.
-
 a)	if number n is divisible by 3, print Fizz
 b)	if number n is divisible by 5, print Buzz
 c)	if number n is divisible by 3 and 5, just print FizzBuzz
-
 Your task is to help Bob in his task.
-
 Sample test cases
-
 case=1
 input=15
 output=1
@@ -13360,13 +13356,11 @@ Fizz
 13
 14
 FizzBuzz
-
 output : 
 1,2,4,7,8,11,13,14 are not divisible by 3 or 5 , so print same numbers
 3,6,9,12 divisible by 3 so print Fizz instead of actual numbers
 5,10 divisible by 5 so print Buzz instead of actual numbers 5 or 10
 15 divisible by 3 & 5 so print FizzBuzz instead of actual number 15
-
 case=2
 input=6
 output=1

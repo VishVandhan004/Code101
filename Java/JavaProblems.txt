@@ -13438,3 +13438,144 @@ public class VowelArrangement {
         return "aeiou".contains(String.valueOf(c));
     }
 }
+
+338th Problem
+Rotate a number by 180 degrees.
+case=1
+input=9006
+output=true
+case=2
+input=806
+output=false
+case=3
+input=619
+output=true
+
+import java.util.Scanner;
+public class RotatedNumberCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+        boolean result = isRotatedSame(num);
+        System.out.println("Is the number rotated same? " + result);
+        scanner.close();
+    }
+    public static boolean isRotatedSame(int num) {
+        int originalNum = num;
+        int rotatedNum = 0;
+        while (num > 0) {
+            int digit = num % 10;
+            if (digit == 2 || digit == 3 || digit == 4 || digit == 5 || digit == 6 || digit == 7 || digit == 9) {
+                // Invalid digit for rotation
+                return false;
+            }
+            rotatedNum = rotatedNum * 10 + digit;
+            num /= 10;
+        }
+        return rotatedNum == originalNum;
+    }
+}
+
+339th Problem
+First non-repeating character in a string.......
+case=1
+input=abbcdeb
+output=0
+case=2
+input=abcdaddefbgd
+output=2
+case=3
+input=bbcc
+output=-1
+case=4
+input=bcccbe
+output=5
+
+import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
+public class FirstNonRepeatingIndex {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        int result = findFirstNonRepeatingIndex(input);
+        if (result != -1) {
+            System.out.println("Index of the first non-repeating character: " + result);
+        } else {
+            System.out.println("No non-repeating character found.");
+        }
+        scanner.close();
+    }
+    public static int findFirstNonRepeatingIndex(String s) {
+        Map<Character, Integer> charCount = new HashMap<>();
+        for (char c : s.toCharArray()) {
+            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+        }
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (charCount.get(c) == 1) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+
+340th Problem
+case=1
+input=paper
+title
+output=true
+case=2
+input=memo
+demo
+output=false
+case =3
+input=abcdefghijklmnopqrstuvwxyz
+qwertyuiopasdfghjklzxcvbnm
+output=true
+case =4
+input=abbcccddddeeeee
+ghhgggiiiikkkkk
+output=false
+case =5
+input=memorialcollege
+tutorialcollugu
+output=true
+
+
+import java.util.Scanner;
+public class WordDerivationCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the first word: ");
+        String s1 = scanner.nextLine();
+        System.out.print("Enter the second word: ");
+        String s2 = scanner.nextLine();
+        boolean result = check(s1, s2);
+        System.out.println("Can the second word be derived from the first word? " + result);
+        scanner.close();
+    }
+    public static boolean check(String s1, String s2) {
+        int len1 = s1.length();
+        int len2 = s2.length();
+        if (len1 != len2) {
+            return false;
+        }
+        // Create a frequency map for the characters in the first word
+        int[] charCount = new int[26]; // Assuming lowercase English letters
+        for (char c : s1.toCharArray()) {
+            charCount[c - 'a']++;
+        }
+        // Check if the second word can be derived from the first word
+        for (char c : s2.toCharArray()) {
+            if (charCount[c - 'a'] == 0) {
+                return false; // Character not found or already used up
+            }
+            charCount[c - 'a']--;
+        }
+        return true;
+    }
+}

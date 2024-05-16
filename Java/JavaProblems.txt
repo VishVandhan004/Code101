@@ -13545,7 +13545,6 @@ input=memorialcollege
 tutorialcollugu
 output=true
 
-
 import java.util.Scanner;
 public class WordDerivationCheck {
     public static void main(String[] args) {

@@ -13331,6 +13331,7 @@ class Solution {
     }
 }
 
+336th Problem
 Bob is given a positive number n by his teacher Mary and told to print all the 
 from 1 to n (inclusive), based on the following rules.
 

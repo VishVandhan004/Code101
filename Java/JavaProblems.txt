@@ -13416,39 +13416,37 @@ input =bluestar
 output =blaestur
 
 import java.util.*;
-class Solution {
-    public static void main (String[] args) {
+public class Solution {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        char [] ch = str.toCharArray();
-        int i=0;
-        int j=str.length()-1;
-        while(i<j){
-            if((str.charAt(i)=='a' ||str.charAt(i)=='e' ||str.charAt(i)=='i' ||str.charAt(i)=='o' ||str.charAt(i)=='u') 
-        && (str.charAt(j)=='a' ||str.charAt(j)=='e' ||str.charAt(j)=='i' ||str.charAt(j)=='o' ||str.charAt(j)=='u'))
-        {
-            char temp=ch[i];
-            ch[i]=ch[j];
-            ch[j]=temp;
-            i++;j--;
-        }
-        else if(str.charAt(i)=='a' ||str.charAt(i)=='e' ||str.charAt(i)=='i' ||str.charAt(i)=='o' ||str.charAt(i)=='u')
-        {
-            j--;
-        }
-        else if(str.charAt(j)=='a' ||str.charAt(j)=='e' ||str.charAt(j)=='i' ||str.charAt(j)=='o' ||str.charAt(j)=='u')
-        {
-            i++;
-        }
-        else
-        {
-            i++;
-            j--;
-        }
-        }
-        for( i=0;i<ch.length;i++){
-            System.out.print(ch[i]);
-        }
+        char[] ch = str.toCharArray();
+        int left = 0, right = str.length() - 1;
+        // Two-pointer approach to reverse vowels
+        while (left < right) {
+            // Move left pointer to the next vowel
+            while (left < right && !isVowel(ch[left])) {
+                left++;
+            }
+            // Move right pointer to the previous vowel
+            while (left < right && !isVowel(ch[right])) {
+                right--;
+            }
+            // Swap the vowels
+            if (left < right) {
+                char temp = ch[left];
+                ch[left] = ch[right];
+                ch[right] = temp;
+                left++;
+                right--;
+            }
+        }   
+        // Convert the character array back to a string and print the result
+        System.out.println(new String(ch));
+    }
+    // Helper function to check if a character is a vowel
+    private static boolean isVowel(char c) {
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
     }
 }
 

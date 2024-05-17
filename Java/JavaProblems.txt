@@ -13600,7 +13600,6 @@ who is getting the least salary and the employee who is getting the highest
 salary. To moderate the salary, he asks Peter, his accountant to skip these 
 two salaries and find the average salary of remaining employees (precision to 
 two decimal places). Help Peter in his task.
-
 input=4
 25505 30000 15000 40000
 output=27752.50

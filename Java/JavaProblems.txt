@@ -13416,26 +13416,40 @@ case =2
 input =bluestar
 output =blaestur
 
-import java.util.Scanner;
-public class VowelArrangement {
-    public static void main(String[] args) {
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
-        StringBuilder result = new StringBuilder();
-
-        // Iterate through the string from right to left
-        for (int i = str.length() - 1; i >= 0; i--) {
-            char c = str.charAt(i);
-            if (isVowel(c)) {
-                // Append vowels to the result
-                result.append(c);
-            }
+        char [] ch = str.toCharArray();
+        int i=0;
+        int j=str.length()-1;
+        while(i<j){
+            if((str.charAt(i)=='a' ||str.charAt(i)=='e' ||str.charAt(i)=='i' ||str.charAt(i)=='o' ||str.charAt(i)=='u') 
+        && (str.charAt(j)=='a' ||str.charAt(j)=='e' ||str.charAt(j)=='i' ||str.charAt(j)=='o' ||str.charAt(j)=='u'))
+        {
+            char temp=ch[i];
+            ch[i]=ch[j];
+            ch[j]=temp;
+            i++;j--;
         }
-        System.out.println(result.toString());
-    }
-    // Helper method to check if a character is a vowel
-    private static boolean isVowel(char c) {
-        return "aeiou".contains(String.valueOf(c));
+        else if(str.charAt(i)=='a' ||str.charAt(i)=='e' ||str.charAt(i)=='i' ||str.charAt(i)=='o' ||str.charAt(i)=='u')
+        {
+            j--;
+        }
+        else if(str.charAt(j)=='a' ||str.charAt(j)=='e' ||str.charAt(j)=='i' ||str.charAt(j)=='o' ||str.charAt(j)=='u')
+        {
+            i++;
+        }
+        else
+        {
+            i++;
+            j--;
+        }
+        }
+        for( i=0;i<ch.length;i++){
+            System.out.print(ch[i]);
+        }
     }
 }
 
@@ -13576,5 +13590,121 @@ public class WordDerivationCheck {
             charCount[c - 'a']--;
         }
         return true;
+    }
+}
+
+James is the CEO of MegaSoft company. He wants to moderate the average salary 
+of his employees. He thinks there is a huge gap in the salary of the employee 
+who is getting the least salary and the employee who is getting the highest 
+salary. To moderate the salary, he asks Peter, his accountant to skip these 
+two salaries and find the average salary of remaining employees (precision to 
+two decimal places). Help Peter in his task.
+
+input=4
+25505 30000 15000 40000
+output=27752.50
+Explanation:
+Input: line one is the number of input values, followed by their values
+Output: 3000, the average value after ignoring the lowest and highest value is 
+(30000+25505)/2 = 27752.50
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int sum = 0;
+        int max=0;
+        int min=0;
+        min = arr[0];
+        for(int i=0;i<n;i++){
+            if(arr[i]>max){
+                max = arr[i];
+            }
+            if(arr[i]<=min){
+                min=arr[i];
+            }
+        }
+        for(int i=0;i<n;i++){
+            sum = sum+arr[i];
+        }
+        double avg = sum-min-max;
+        int num = n-2;
+        System.out.println(avg/num);
+    }
+}
+
+John wants to find the nth term of a given series. The series starts with zero 
+and one as the first two elements respectively. The value for any other term is
+the sum of its previous two terms. Given a number n, help John find the value 
+of the nth term.
+
+Note: You must use only recursive approach
+input=2
+output=1
+Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.
+
+input=3
+output=2
+Explanation: F(3) = F(2) + F(1) = 1 + 1 = 2.
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(sum(n));
+    }
+    public static int sum(int n){
+        if(n==0){
+            return 0;
+        }
+        else if(n==1){
+            return 1;
+        }
+        return sum(n-1)+sum(n-2);
+    }
+}
+
+Peter wants to implement a function powerFun(x, n), which calculates x raised 
+to the power of n (i.e. x^n). Your task is to help Peter implement his task.
+
+Note: You must use only recursive approach
+
+Sample test case
+
+case=1
+input=2.00000 10
+output=1024.00000
+
+case=2
+input=2.10000 3
+output=9.26100
+
+case=3
+input=2.00000 -2
+output=0.25000
+
+Note: Use only recursive approach
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double x = sc.nextDouble();
+        int n = sc.nextInt();
+        System.out.println(String.format("%.5f",power(x,n)));
+    }
+    public static double power(double x, int n){
+        if(n==0){
+            return 1;
+        }
+        if(n<0){
+            return (1/x*power(x,n+1));
+        }
+            return x*power(x,n-1);
     }
 }

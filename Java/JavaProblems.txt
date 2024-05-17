@@ -13538,6 +13538,7 @@ public class FirstNonRepeatingIndex {
 }
 
 340th Problem
+2 words are taken as an input. Show that the 2nd word is derived from the 1st word.........
 case=1
 input=paper
 title
@@ -13638,6 +13639,7 @@ class Solution {
     }
 }
 
+342nd Problem
 John wants to find the nth term of a given series. The series starts with zero 
 and one as the first two elements respectively. The value for any other term is
 the sum of its previous two terms. Given a number n, help John find the value 

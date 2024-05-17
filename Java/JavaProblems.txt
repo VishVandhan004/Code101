@@ -13670,6 +13670,7 @@ class Solution {
     }
 }
 
+343rd Problem
 Peter wants to implement a function powerFun(x, n), which calculates x raised 
 to the power of n (i.e. x^n). Your task is to help Peter implement his task.
 

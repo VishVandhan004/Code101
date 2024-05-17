@@ -13673,23 +13673,17 @@ class Solution {
 343rd Problem
 Peter wants to implement a function powerFun(x, n), which calculates x raised 
 to the power of n (i.e. x^n). Your task is to help Peter implement his task.
-
 Note: You must use only recursive approach
-
 Sample test case
-
 case=1
 input=2.00000 10
 output=1024.00000
-
 case=2
 input=2.10000 3
 output=9.26100
-
 case=3
 input=2.00000 -2
 output=0.25000
-
 Note: Use only recursive approach
 
 import java.util.*;

@@ -13593,6 +13593,7 @@ public class WordDerivationCheck {
     }
 }
 
+341st Problem
 James is the CEO of MegaSoft company. He wants to moderate the average salary 
 of his employees. He thinks there is a huge gap in the salary of the employee 
 who is getting the least salary and the employee who is getting the highest 

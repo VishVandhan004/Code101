@@ -13409,7 +13409,7 @@ case =1
 input =divide
 output =devidi
 Explanation:
-------------
+--
 the order of vowels from left to right in W are : i, i, e
 After arrange them from right to left order, the word is : devidi 
 case =2

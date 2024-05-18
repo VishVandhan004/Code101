@@ -13515,7 +13515,6 @@ public class FirstNonRepeatingIndex {
         } else {
             System.out.println("No non-repeating character found.");
         }
-        scanner.close();
     }
     public static int findFirstNonRepeatingIndex(String s) {
         Map<Character, Integer> charCount = new HashMap<>();

@@ -13511,9 +13511,7 @@ public class FirstNonRepeatingIndex {
         String input = scanner.nextLine();
         int result = findFirstNonRepeatingIndex(input);
         if (result != -1) {
-            System.out.println("Index of the first non-repeating character: " + result);
-        } else {
-            System.out.println("No non-repeating character found.");
+            System.out.println(result);
         }
     }
     public static int findFirstNonRepeatingIndex(String s) {

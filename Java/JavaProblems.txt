@@ -13503,7 +13503,7 @@ case=4
 input=bcccbe
 output=5
 
-import java.util.S;
+import java.util.*;
 public class FirstNonRepeatingIndex {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

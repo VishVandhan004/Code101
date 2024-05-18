@@ -13505,7 +13505,6 @@ output=5
 
 import java.util.Scanner;
 import java.util.HashMap;
-import java.util.Map;
 public class FirstNonRepeatingIndex {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

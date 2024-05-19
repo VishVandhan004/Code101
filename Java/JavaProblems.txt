@@ -13462,7 +13462,7 @@ case=3
 input=619
 output=true
 
-import java.util.Sc;
+import java.util.S;
 public class RotatedNumberCheck {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

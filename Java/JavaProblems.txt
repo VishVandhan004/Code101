@@ -13469,7 +13469,7 @@ public class RotatedNumberCheck {
         System.out.print("Enter a number: ");
         int num = scanner.nextInt();
         boolean result = isRotatedSame(num);
-        System.out.println("Is the number rotated same? " + result);
+        System.out.println(result);
     }
     public static boolean isRotatedSame(int num) {
         int originalNum = num;

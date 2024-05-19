@@ -13470,7 +13470,7 @@ public class RotatedNumberCheck {
         int num = scanner.nextInt();
         boolean result = isRotatedSame(num);
         System.out.println("Is the number rotated same? " + result);
-        scanner.clo
+        sc
     }
     public static boolean isRotatedSame(int num) {
         int originalNum = num;

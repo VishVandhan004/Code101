@@ -13749,6 +13749,7 @@ Example 3:
 Input: s = "1111"
 Output: 2
 Explanation: You need two operations to reach "0101" or "1010".
+
 class Solution {
     public int minOperations(String s) {
         int count1 = 0, count2 = 0;

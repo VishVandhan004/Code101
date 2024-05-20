@@ -13741,7 +13741,6 @@ The string is called alternating if no two adjacent characters are equal. For ex
 Return the minimum number of operations needed to make s alternating.
 
  
-
 Example 1:
 
 Input: s = "0100"

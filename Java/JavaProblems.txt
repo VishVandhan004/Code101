@@ -13974,7 +13974,6 @@ at addition. Ranjit, their manager gives them a number and asks them to perform
 multiplication and addition respectively for each digit in the given number. 
 Ranjit then finds the result by subtracting the result of addition from the 
 result of multiplication. Your task is to help Ranjit compute the result.
-
 Sample Test case
 case=1
 input=782

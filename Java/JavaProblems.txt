@@ -13812,6 +13812,7 @@ class Solution
     }
 }
 
+347th Problem
 Martha makes her class students stand in a line and marks each student with 
 number from 1to n, for each student the values is incremented by one. The first 
 student is marked '1' and next student is marked '2' and so on. She asks John, 
@@ -13854,9 +13855,8 @@ class Solution {
     }
 }
 
-/*
+348th Problem
 Given the root of a Binary Tree, return the level-order traversal of the tree.
-
 Sample test case:
 Input=1 2 3 -1 5 -1 7
 
@@ -13879,7 +13879,6 @@ class TreeNode
         right = null;
     }
 }
-*/
 
 import java.util.*;
 class Solution
@@ -13908,13 +13907,12 @@ class Solution
     }
 }
 
+349th Problem
 Convert a decimal to binary through recursion. 
-
 Sample test case
 case=1
 input=8
 output=1000
-
 
 import java.util.*;
 class Solution {
@@ -13933,6 +13931,7 @@ class Solution {
     }
 }
 
+350th Problem
 An alien spaceship runs out of fuel and wants to refuel at planet earth. 
 It sends its fuel requirement to Earth in form of encrypted number. 
 At Earth, the message has to be decrypted by finding the number of 1’s that 
@@ -13940,12 +13939,10 @@ occur in the binary format of the number. The total number of 1’s is the
 number of barrels of fuel requirement by the spaceship. 
 Alex, a scientist at earth has to decode the message and inform the fuel 
 requirement to his manager. Help Alex in decoding the message.
-
 Sample test case
 case=1
 input=7
 output=3
-
 Explanation: The input 7, in binary is 111, and has 3 ones. 
 Therefore, the result is 3 barrels of fuel
 
@@ -13971,6 +13968,7 @@ class Solution {
     }
 }
 
+351st Problem
 Ram and Shyam are friends. Ram is good at multiplication, while Shyam is good 
 at addition. Ranjit, their manager gives them a number and asks them to perform 
 multiplication and addition respectively for each digit in the given number. 

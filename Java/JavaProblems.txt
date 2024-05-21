@@ -13772,9 +13772,7 @@ class Solution {
 }
 
 346th Problem
-/*
 Given the root of a Binary Tree, return the in-order traversal of the tree.
-
 Sample test case:
 Input=1 2 3 -1 5 -1 7
 
@@ -13797,7 +13795,6 @@ class TreeNode
         right = null;
     }
 }
-*/
 
 import java.util.*;
 class Solution

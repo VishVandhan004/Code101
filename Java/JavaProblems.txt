@@ -13978,11 +13978,11 @@ Sample Test case
 case=1
 input=782
 output=95
-
-Explanation: 
+Explanation:
 Product of digits = 7*8*2 = 112
 Sum of digits = 7+8+2= 17
 Result = 112 - 17 = 95
+
 import java.util.*;
 class Solution {
     public static void main (String[] args) {

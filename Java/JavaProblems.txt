@@ -13770,3 +13770,432 @@ class Solution {
         return Math.min(count1, count2);
     }
 }
+
+/*
+Given the root of a Binary Tree, return the in-order traversal of the tree.
+
+Sample test case:
+Input=1 2 3 -1 5 -1 7
+
+      1
+     / \
+    2   3
+     \   \
+      5   7
+      
+Output=[2, 5, 1, 3, 7]
+
+class TreeNode
+{
+    public int data;
+    public TreeNode left, right;
+    public TreeNode(int data)
+    {
+        this.data = data;
+        left = null;
+        right = null;
+    }
+}
+*/
+
+import java.util.*;
+class Solution
+{
+    List <Integer> l = new ArrayList<>();
+    public List<Integer> inOrder(TreeNode root)
+    {
+        //Implement Your Code here
+        if(root!=null){
+            inOrder(root.left);
+            l.add(root.data);
+            inOrder(root.right);
+        }
+        return l;
+    }
+}
+
+Martha makes her class students stand in a line and marks each student with 
+number from 1to n, for each student the values is incremented by one. The first 
+student is marked '1' and next student is marked '2' and so on. She asks John, 
+her assistant to count the number of students who are marked with odd value 
+from a given start and end value (inclusive of both start and the end). 
+Your task is to help John find the count.
+
+input=2
+5 9
+output=3
+Explanation:
+Input line one is the number of input values, followed by the start and end value
+Output is 3, the odd values between 5 and 9 are [5,7,9]
+
+input=2
+6 8
+output=1
+Explanation:
+Input line one is the number of input values, followed by the start and end value
+Output is 1, the odd values between 6 and 8 are [7]
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=0;i<n;i++){
+        int s = sc.nextInt();
+        int e = sc.nextInt();
+        System.out.println(counter(s,e));
+        }
+    }
+    public static int counter(int s, int e){
+        int count=0;
+        for(int i=s;i<=e;i++){
+            if(i%2!=0){
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+/*
+Given the root of a Binary Tree, return the level-order traversal of the tree.
+
+Sample test case:
+Input=1 2 3 -1 5 -1 7
+
+      1
+     / \
+    2   3
+     \   \
+      5   7
+      
+Output=[1, 2, 3, 5, 7]
+
+class TreeNode
+{
+    public int data;
+    public TreeNode left, right;
+    public TreeNode(int data)
+    {
+        this.data = data;
+        left = null;
+        right = null;
+    }
+}
+*/
+
+import java.util.*;
+class Solution
+{
+    public List<Integer> levelOrder(TreeNode root)
+    {
+        //Implement Your Code here
+        List<Integer> l = new ArrayList<>();
+        if(root==null){
+        return l;
+       }
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        while(!q.isEmpty())
+        {
+            TreeNode node = q.poll();
+            l.add(node.data);
+            if(node.left!=null){
+                q.add(node.left);
+            }
+            if(node.right!=null){
+                q.add(node.right);
+            }
+        }
+        return l;
+    }
+}
+
+Convert a decimal to binary through recursion. 
+
+Sample test case
+case=1
+input=8
+output=1000
+
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(decimal(n));
+    }
+    public static String decimal(int n){
+        if(n==0 || n==1){
+            return Integer.toString(n);
+        }
+        else{
+            return decimal(n/2)+(n%2);
+        }
+    }
+}
+
+An alien spaceship runs out of fuel and wants to refuel at planet earth. 
+It sends its fuel requirement to Earth in form of encrypted number. 
+At Earth, the message has to be decrypted by finding the number of 1’s that 
+occur in the binary format of the number. The total number of 1’s is the 
+number of barrels of fuel requirement by the spaceship. 
+Alex, a scientist at earth has to decode the message and inform the fuel 
+requirement to his manager. Help Alex in decoding the message.
+
+Sample test case
+case=1
+input=7
+output=3
+
+Explanation: The input 7, in binary is 111, and has 3 ones. 
+Therefore, the result is 3 barrels of fuel
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(fuel(n));
+    }
+    public static int fuel(int n){
+        int count=0;
+        if(n==0){
+            return 0;
+        }
+        if(n==1){
+            count++;
+        }
+        else{
+            count = fuel(n/2)+(n%2);
+        }
+        return count;
+    }
+}
+
+Ram and Shyam are friends. Ram is good at multiplication, while Shyam is good 
+at addition. Ranjit, their manager gives them a number and asks them to perform 
+multiplication and addition respectively for each digit in the given number. 
+Ranjit then finds the result by subtracting the result of addition from the 
+result of multiplication. Your task is to help Ranjit compute the result.
+
+Sample Test case
+case=1
+input=782
+output=95
+
+Explanation: 
+Product of digits = 7*8*2 = 112
+Sum of digits = 7+8+2= 17
+Result = 112 - 17 = 95
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(result(n));
+    }
+    public static int result(int n){
+        int sum=0;
+        int product=1;
+        int rem;
+        if(n==0){
+            return 1;
+        }
+        while(n>0){
+            rem=n%10;
+            n=n/10;
+            sum=sum+rem;
+            product=product*rem;
+        }
+        return product-sum;
+    }
+}
+
+Mark is a class 9 student. His class teacher Betty, gives him a match box 
+containing match sticks of variable lengths. Betty asks Mark to form an 
+object in the form of a triangle and return the maximum value that can 
+be formed from those match sticks. If he cannot form the given object, 
+he has to communicate back to Betty by sending a value 0.
+
+case=1
+input=5
+7 2 3 4 12
+output=9
+
+Explanation:
+Input: line1 is number of elements, followed by value for the elements in line2
+Output: 9
+import java.util.*;
+class Solution{
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(value(arr,n));
+    }
+    public static int value(int [] arr, int n){
+        int per=0;
+        // for(int i=0;i<arr.length;i++){
+        //     for(int j=i;j<arr.length-1;j++){
+        //     int temp;
+        //     temp=arr[j];
+        //     arr[j]=arr[j+1];
+        //     arr[j+1]=temp;   
+        //     }
+        // }
+        Arrays.sort(arr);
+        for(int i=n-1;i>=2;i--){
+            if(arr[i]<arr[i-1]+arr[i-2]) {
+                per = arr[i]+arr[i-1]+arr[i-2];
+                break;
+            }
+        }
+        return per;
+    }
+} 
+King Arthur is stuck in battlefield and sends message to his general David to 
+rescue him. The message has the king’s location “base” (x,y) on a map which 
+is in the form of cartesian coordinate system. David’s army units are placed 
+at different location (x1, y1), (x2, y2) … (xn, yn) on the map. David has to 
+figure out the minimum distance between the “base” and the army units and 
+dispatch the unit which is the closest. The distance between the base and the 
+unit is calculated as absolute distance between the points and base location,
+i.e. for first point (x1,y1), absolute distance is |x1-x| + |y1-y\, for second 
+point (x2,y2), it will be |x2-x| + |y2-y\ and so on.
+
+The army unit has to be on the same line (horizontal or vertical) with that of
+the “base” location for the dispatch i.e. the x1 value has to match with x or
+y1 value has to match with y. 
+Given a list of location of army units and the kings location (base), David has
+the provide the index of the unit he plans to dispatch. If two units have the 
+same distance from the “base”, he has to provide the index of the unit that 
+comes first in the list. If there are no units that can be dispatched then 
+return -1. Your task is to help David in his task.
+
+Input: 6
+1 1
+2 3
+3 1
+2 4
+1 2
+4 4
+3 4 (base)
+Output: 3
+
+
+Explanation:
+Input: line1 is number of points, followed by value for those points, followed 
+by base point (x,y)
+Output: 3
+
+In the given points, only [3,1], [2,4] and [4,4] are valid. Of the valid points, 
+[2,4] and [4,4] have the smallest valid distance from base location, with a 
+distance of 1. [2,4] has the smallest index, so return 3.
+
+case=2
+input=5
+2 3
+3 1
+2 4
+1 2
+4 4
+3 4
+output=2
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[][] = new int[n][2];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<2;j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+        System.out.println(dist(arr,n,x,y));
+    }
+    public static int dist(int[][] arr, int n, int x, int y){
+        int min=Integer.MAX_VALUE;
+        int ind=-1;
+        for(int i=0;i<n;i++){
+            int X=arr[i][0];
+            int Y=arr[i][1];
+            if(x==X || y==Y)
+            {
+                int d = Math.abs(X-x)+Math.abs(Y-y);
+                if(min>d){
+                    min=d;
+                    ind=i;
+                }
+            }
+        }
+        return ind;
+    }
+}
+Davis is the CEO of AgroTech company. He shares his company's growth figures 
+for last few years with Alan, his financial adviser, and seek his advice on 
+diversification. The company makes profit when the growth is a positive value, 
+loss when it is negative and no-profit no-loss when it is zero. Alan multiplies 
+the growth figures and computes the result. If the result is positive, he 
+suggests “1” for diversification, if result is negative, he suggests “-1” for 
+no diversification and if result is zero, he suggests “0” to postpone the 
+decision by a month.
+Your task is to help Alan project the company's diversification decision. 
+
+Sample test case
+
+case=1
+input=5
+-2 3 4 -1 2
+output=1
+
+Explanation:
+Input: line1 is number of years, followed by value for each year
+Output: 1 (the multiplication of values in array is 48, which is a positive 
+number, hence return 1)
+
+case=2
+input=5
+-2 3 4 1 2
+output=-1
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        int [] arr = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        System.out.println(count(arr,n));
+    }
+    public static int count(int arr[], int n){
+        int count=0;
+        int pos=0;
+        for(int i=0;i<n;i++){
+            if(arr[i]==0){
+                return 0;
+            }
+            else if(arr[i]<0){
+                count++;
+            }
+            else {
+                pos++;
+            }
+        }
+            if(count%2!=0){
+                return -1;
+            }
+            else {
+                return 1;
+            }
+        }
+}

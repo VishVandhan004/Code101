@@ -1,39 +1,27 @@
 import java.util.*;
-
-public class Solution {
-    public static void main(String[] args) {
+class Solution {
+    public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();
-        char[] ch = str.toCharArray();
-        
-        int left = 0, right = str.length() - 1;
-        
-        // Two-pointer approach to reverse vowels
-        while (left < right) {
-            // Move left pointer to the next vowel
-            while (left < right && !isVowel(ch[left])) {
-                left++;
-            }
-            // Move right pointer to the previous vowel
-            while (left < right && !isVowel(ch[right])) {
-                right--;
-            }
-            // Swap the vowels
-            if (left < right) {
-                char temp = ch[left];
-                ch[left] = ch[right];
-                ch[right] = temp;
-                left++;
-                right--;
+        int n = sc.nextInt();
+        System.out.println(fuel(n));
+    }
+    public static int fuel(int n){
+        int count=0;
+        if(n==0){
+            return 0;
+        }
+        // if(n==1){
+        //     count++;
+        // }
+        // else{
+        //     count = fuel(n/2)+(n%2);
+        // }
+        // return count;
+        while(n>0){
+            if(n & (n-1) > 0){
+
             }
         }
-        
-        // Convert the character array back to a string and print the result
-        System.out.println(new String(ch));
-    }
-
-    // Helper function to check if a character is a vowel
-    private static boolean isVowel(char c) {
-        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+        return count;
     }
 }

@@ -10,17 +10,11 @@ class Solution {
         if(n==0){
             return 0;
         }
-        // if(n==1){
-        //     count++;
-        // }
-        // else{
-        //     count = fuel(n/2)+(n%2);
-        // }
-        // return count;
-        while(n>0){
-            if(n & (n-1) > 0){
-
-            }
+        if(n==1){
+            count++;
+        }
+        else{
+            count = fuel(n/2)+(n%2);
         }
         return count;
     }

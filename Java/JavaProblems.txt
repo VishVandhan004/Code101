@@ -14007,20 +14007,20 @@ class Solution {
     }
 }
 
+352nd Problem
 Mark is a class 9 student. His class teacher Betty, gives him a match box 
 containing match sticks of variable lengths. Betty asks Mark to form an 
 object in the form of a triangle and return the maximum value that can 
 be formed from those match sticks. If he cannot form the given object, 
 he has to communicate back to Betty by sending a value 0.
-
 case=1
 input=5
 7 2 3 4 12
 output=9
-
 Explanation:
 Input: line1 is number of elements, followed by value for the elements in line2
 Output: 9
+
 import java.util.*;
 class Solution{
     public static void main (String[] args) {

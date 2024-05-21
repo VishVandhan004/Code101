@@ -14063,7 +14063,6 @@ dispatch the unit which is the closest. The distance between the base and the
 unit is calculated as absolute distance between the points and base location,
 i.e. for first point (x1,y1), absolute distance is |x1-x| + |y1-y\, for second 
 point (x2,y2), it will be |x2-x| + |y2-y\ and so on.
-
 The army unit has to be on the same line (horizontal or vertical) with that of
 the “base” location for the dispatch i.e. the x1 value has to match with x or
 y1 value has to match with y. 
@@ -14072,7 +14071,6 @@ the provide the index of the unit he plans to dispatch. If two units have the
 same distance from the “base”, he has to provide the index of the unit that 
 comes first in the list. If there are no units that can be dispatched then 
 return -1. Your task is to help David in his task.
-
 Input: 6
 1 1
 2 3
@@ -14082,17 +14080,13 @@ Input: 6
 4 4
 3 4 (base)
 Output: 3
-
-
 Explanation:
 Input: line1 is number of points, followed by value for those points, followed 
 by base point (x,y)
 Output: 3
-
 In the given points, only [3,1], [2,4] and [4,4] are valid. Of the valid points, 
 [2,4] and [4,4] have the smallest valid distance from base location, with a 
 distance of 1. [2,4] has the smallest index, so return 3.
-
 case=2
 input=5
 2 3
@@ -14136,6 +14130,8 @@ class Solution {
         return ind;
     }
 }
+
+354th Problem
 Davis is the CEO of AgroTech company. He shares his company's growth figures 
 for last few years with Alan, his financial adviser, and seek his advice on 
 diversification. The company makes profit when the growth is a positive value, 
@@ -14145,19 +14141,15 @@ suggests “1” for diversification, if result is negative, he suggests “-1�
 no diversification and if result is zero, he suggests “0” to postpone the 
 decision by a month.
 Your task is to help Alan project the company's diversification decision. 
-
 Sample test case
-
 case=1
 input=5
 -2 3 4 -1 2
 output=1
-
 Explanation:
 Input: line1 is number of years, followed by value for each year
 Output: 1 (the multiplication of values in array is 48, which is a positive 
 number, hence return 1)
-
 case=2
 input=5
 -2 3 4 1 2

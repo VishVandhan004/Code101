@@ -14265,6 +14265,8 @@ class Solution {
         return max;
      }
 }
+
+357th Problem
 Mr John doe is working with Numbers.
 He is given a number N. He wants to check whether N,
 obeys the following conditions or not:
@@ -14272,36 +14274,27 @@ obeys the following conditions or not:
 	- Add set N value to P as N=P.
 	- and repeat the process until the N equals 1 or 
 	if N loops endlessly in a cycle without having 1. 
-
 Your task is to check whether N becomes 1 or Not.
 If yes, print "true", otherwise print "false".
-
 Note: A^B indicates A to power of B.
-
 Input Format:
 -------------
 An integer N
-
-Output Format:
+Output Format
 --------------
 Print a boolean value.
-
-
 Sample Input-1:
 ---------------
 19
-
 Sample Output-1:
 ----------------
 true
-
 Explanation:
 ------------
 1^2 + 9^2 = 82
 8^2 + 2^2 = 68
 6^2 + 8^2 = 100
 1^2 + 0^2 + 0^2 = 1
-
 case =1
 input =19
 output =true

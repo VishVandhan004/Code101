@@ -14525,22 +14525,20 @@ class Solution {
         System.out.print(r);
     }
 }
+
+362nd Problem
 Prasad is given a list of integers nums[]. He like odd numbers and like to form 
 odd length consecutive subsets possible and compute the sum of all such subsets. 
 Your task is to help Prasad in his task.
-
 Sample test case1
 input = 5
 2 5 4 6 1
 output =73
-
 The possible subsets are.
 [2] = 2, [5] = 5, [4] = 4, [6] = 6, [1]=1
 [2,5,4] = 11, [5,4,6] = 15, [4,6,1] = 11
 [2,5,4,6,1] = 18
 Finally, total sum is:  2 + 5 + 4 + 6 + 1 + 11 + 15 + 11 + 18 = 73
-
-
 Input Format:
 -------------
 Line-1: An integer N, number of integers.

@@ -14376,6 +14376,7 @@ class Solution {
     }
 }
 
+359th Problem
 King Vijay and Pratap love to play game which is similar to a chessboard, only 
 that board dimension can be different. During the play, the queen’s position 
 for both players is on the two central diagonals. They can kill all the chess 
@@ -14384,32 +14385,24 @@ contain. While computing the sum the intersection value of the diagonals should
 be considered only once. Given a board of size n*n size which is filled with 
 chess pieces represented by their value, your task is to return the sum of all 
 these values.
-
 Input Format:
 -------------
 Line-1 -> An integer N, size of square board.
 Next N lines -> N space separated integers 
-
 Output Format:
 --------------
 Print the diagonal sum.
-
-
 Sample Input-1:
 ---------------
 3
 2 3 5
 6 1 4
 8 7 9
-
-
 Sample Output-1:
 ----------------
 25
-
 Explanation: diagonal-1 + diagonal-2 (exclude intersection-5) = 
 (2+1+9) + (5+8) = 25
-
 Sample Input-2:
 ---------------
 4
@@ -14417,14 +14410,11 @@ Sample Input-2:
 1 2 3 4
 1 2 3 4
 1 2 3 4
-
 Sample Output-2:
 ----------------
 20
-
 Explanation: diagonal-1 + diagonal-2 (exclude intersection) = 
 (1+2+3+4) + (4+3+2+1) = 20
-
 
 import java.util.*;
 class Solution {
@@ -14451,25 +14441,22 @@ class Solution {
     }
 }
 
-/*
+360th Problem
 David gives a box of chocolates to Alex, the chocolates are arranged in the 
 form of a m*n grid. Alex’s has to carry the box of chocolates in a bag which 
 has a dimension of r*c grid. David uses a technique to convert the box of 
 chocolates to fit in Alex’s bag. If David is not able to convert the box of 
 chocolate to the size of Alex’s bag, he has to return an empty grid. Your task 
 is to help David in his task.
-
 Input: = 2 3
 1 3 5
 2 4 6
 3 2
 Output: =[[1, 3], [5, 2], [4, 6]]
-
 Explanation:
 Input: line1 is value for m and n, followed by their values in subsequent lines, f
 inally the values for i and j.
 Output: [[1, 2], [3, 4], [5, 6]] (since, new values for row=3 and column=2)
-*/
 
 import java.util.*;
 class Solution

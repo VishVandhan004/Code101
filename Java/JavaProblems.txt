@@ -14328,10 +14328,7 @@ class Solution {
     }
 }
 
-<<<<<<< HEAD
 358th Problem
-=======
->>>>>>> 157f7fbe6ed78bb609bdea25cadc91a8ffc84ad8
 Michael gifted his daughter Julie a robot. The robot is programmed to jump a 
 fixed length of distance. Julie wants to construct a toy bridge with some 
 gaps. Given a list of values that represent the step number on the bridge, 
@@ -14341,19 +14338,15 @@ the robot can jump will be the common difference between the values of the
 steps. If the robot crosses the bridge successfully, return true, else return 
 false.  
 Your task is to help Julie complete in her task.
-
 Input: 4
 3 5 9 7 
 Output: true
-
 Explanation:
 Input: line1 is number of elements, followed by their value in next line
 Output: true (the common difference is 2)
-
 Input: 4
 3 5 1 8
 Output: false
-
 Sample test case
 case=1
 input=4

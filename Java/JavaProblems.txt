@@ -14480,21 +14480,20 @@ class Solution
         return newm;
     }
 }
+
+361st Problem
 Professor Bessy is the favorite among the students. She teaches by using simple 
 games for learning. Her students James and Martha are given a string, their 
 task is to take one character at a time and write it on the board alternatively. 
 Upon reaching the end of the string, the remaining characters from the other 
 string is written in the same order on the board. The final string is shared 
 with the class. Your task is to help Professor Bessy find the final string.
-
 Input: 2
 hello world
 Output: hweolrllod
-
 Input: 2
 wild animal
 output: wainlidmal
-
 Sample Testcase
 case=1
 input=2

@@ -14327,3 +14327,266 @@ class Solution {
         return sum;
     }
 }
+
+358th Problem
+Michael gifted his daughter Julie a robot. The robot is programmed to jump a 
+fixed length of distance. Julie wants to construct a toy bridge with some 
+gaps. Given a list of values that represent the step number on the bridge, 
+help Julie constructs the bridge by re-arranging the steps, so that the robot 
+can jump on those steps and cross the bridge successfully. The fixed distance 
+the robot can jump will be the common difference between the values of the 
+steps. If the robot crosses the bridge successfully, return true, else return 
+false.  
+Your task is to help Julie complete in her task.
+
+Input: 4
+3 5 9 7 
+Output: true
+
+Explanation:
+Input: line1 is number of elements, followed by their value in next line
+Output: true (the common difference is 2)
+
+Input: 4
+3 5 1 8
+Output: false
+
+Sample test case
+case=1
+input=4
+3 5 9 7
+output=true
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        Arrays.sort(arr);
+        System.out.println(check(arr,n));
+    }
+    public static boolean check(int[] arr, int n){
+        int diff=arr[1]-arr[0];
+        for(int i=2;i<n;i++){
+            if(arr[i]-arr[i-1]!=diff){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+King Vijay and Pratap love to play game which is similar to a chessboard, only 
+that board dimension can be different. During the play, the queen’s position 
+for both players is on the two central diagonals. They can kill all the chess 
+pieces on the diagonal and collect the sum of the values that each chess piece 
+contain. While computing the sum the intersection value of the diagonals should 
+be considered only once. Given a board of size n*n size which is filled with 
+chess pieces represented by their value, your task is to return the sum of all 
+these values.
+
+Input Format:
+-------------
+Line-1 -> An integer N, size of square board.
+Next N lines -> N space separated integers 
+
+Output Format:
+--------------
+Print the diagonal sum.
+
+
+Sample Input-1:
+---------------
+3
+2 3 5
+6 1 4
+8 7 9
+
+
+Sample Output-1:
+----------------
+25
+
+Explanation: diagonal-1 + diagonal-2 (exclude intersection-5) = 
+(2+1+9) + (5+8) = 25
+
+Sample Input-2:
+---------------
+4
+1 2 3 4
+1 2 3 4
+1 2 3 4
+1 2 3 4
+
+Sample Output-2:
+----------------
+20
+
+Explanation: diagonal-1 + diagonal-2 (exclude intersection) = 
+(1+2+3+4) + (4+3+2+1) = 20
+
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[][] = new int[n][n];
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println(csum(arr,n));
+    }
+    public static int csum(int[][] arr, int n){
+        int sum=0;
+        for(int i=0;i<n;i++){
+            sum = sum+arr[i][i];
+            if(i!=n-i-1){
+                sum = sum+arr[i][n-i-1];
+            }
+        }
+        return sum;
+    }
+}
+
+/*
+David gives a box of chocolates to Alex, the chocolates are arranged in the 
+form of a m*n grid. Alex’s has to carry the box of chocolates in a bag which 
+has a dimension of r*c grid. David uses a technique to convert the box of 
+chocolates to fit in Alex’s bag. If David is not able to convert the box of 
+chocolate to the size of Alex’s bag, he has to return an empty grid. Your task 
+is to help David in his task.
+
+Input: = 2 3
+1 3 5
+2 4 6
+3 2
+Output: =[[1, 3], [5, 2], [4, 6]]
+
+Explanation:
+Input: line1 is value for m and n, followed by their values in subsequent lines, f
+inally the values for i and j.
+Output: [[1, 2], [3, 4], [5, 6]] (since, new values for row=3 and column=2)
+*/
+
+import java.util.*;
+class Solution
+{
+    public int[][] matrixReshape(int[][] nums, int r, int c)
+    {
+        // Implement your code here
+        int[][] newm = new int[r][c];
+        int m = nums.length;
+        int n = nums[0].length;
+        int k=0;
+        if((n*m)!=(r*c)){
+            return new int[0][0];
+        }
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                newm[k/c][k%c] = nums[i][j];
+                k++;
+            }
+        }
+        return newm;
+    }
+}
+Professor Bessy is the favorite among the students. She teaches by using simple 
+games for learning. Her students James and Martha are given a string, their 
+task is to take one character at a time and write it on the board alternatively. 
+Upon reaching the end of the string, the remaining characters from the other 
+string is written in the same order on the board. The final string is shared 
+with the class. Your task is to help Professor Bessy find the final string.
+
+Input: 2
+hello world
+Output: hweolrllod
+
+Input: 2
+wild animal
+output: wainlidmal
+
+Sample Testcase
+case=1
+input=2
+hello world
+output=hweolrllod
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String str1 = sc.next();
+        String str2 = sc.next();
+        StringBuilder r = new StringBuilder();
+        int x = Math.min(str1.length(),str2.length());
+        int y = Math.max(str1.length(),str2.length());
+        for(int i=0;i<x;i++){
+            r.append(str1.charAt(i));
+            r.append(str2.charAt(i));
+        }
+        for(int i=x;i<y;i++){
+            if(y==str1.length()){
+                r.append(str1.charAt(i));
+            }
+            if(y==str2.length()){
+                r.append(str2.charAt(i));
+            }
+        }
+        System.out.print(r);
+    }
+}
+Prasad is given a list of integers nums[]. He like odd numbers and like to form 
+odd length consecutive subsets possible and compute the sum of all such subsets. 
+Your task is to help Prasad in his task.
+
+Sample test case1
+input = 5
+2 5 4 6 1
+output =73
+
+The possible subsets are.
+[2] = 2, [5] = 5, [4] = 4, [6] = 6, [1]=1
+[2,5,4] = 11, [5,4,6] = 15, [4,6,1] = 11
+[2,5,4,6,1] = 18
+Finally, total sum is:  2 + 5 + 4 + 6 + 1 + 11 + 15 + 11 + 18 = 73
+
+
+Input Format:
+-------------
+Line-1: An integer N, number of integers.
+Line-2: N space separated integers, nums[].
+
+Output Format:
+--------------
+Print an integer, the sum.
+
+
+Sample Input 2:
+---------------
+5
+1 4 2 5 3
+
+Sample Output:
+----------------
+58
+
+Explanation:
+------------
+From the given list of integers, possible subsets are.
+[1] = 1, [4] = 4, [2] = 2, [5] = 5, [3] = 3,
+[1,4,2] = 7,	[4,2,5] = 11,	[2,5,3] = 10
+[1,4,2,5,3] = 15
+Finally, total sum is:  1 + 4 + 2 + 5 + 3 + 7 + 11 + 10 + 15 = 58
+
+case =1
+input =5
+2 5 4 6 1
+output =73

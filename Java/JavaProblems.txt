@@ -14565,6 +14565,7 @@ input =5
 2 5 4 6 1
 output =73
 
+363rd Problem
 Bablu is playing a word puzzle game.
 Initially, puzzle conatins a word S, you need to form another word 'T' using 'S'.
 

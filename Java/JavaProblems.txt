@@ -14564,3 +14564,90 @@ case =1
 input =5
 2 5 4 6 1
 output =73
+
+Bablu is playing a word puzzle game.
+Initially, puzzle conatins a word S, you need to form another word 'T' using 'S'.
+
+The game rules are as follows:
+	1. You can jumble the letters in the given word as your need.
+	2. You can add only one letter to the jumbled word at any position.
+	
+You are given two words, S and T.
+Your  task is to find and print the newly added character to S to form T.
+
+Sample test case
+case =1
+input =2
+ram marg
+output =g
+
+case =2
+input =2
+av ava
+output =a
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String s1 = sc.next();
+        String s2 = sc.next();
+        int x = 0;
+        for(int i=0;i<s1.length();i++){
+            x^=s1.charAt(i);
+        }
+        for(int i=0;i<s2.length();i++){
+            x^=s2.charAt(i);
+        }
+        System.out.println((char)x);
+    }
+}
+Mr.Short is a poet. He writes his poems in a special book. The specialty of the 
+book is that it can only takes small letters. If he tries to write in 
+"large letter", it automatically changes to its equivalent small letter in the 
+book. Given a string, your task is to help the book perform the conversion.
+
+Note: Do not use string conversion functions.
+
+Sample test case
+case=1
+input=PoeT
+output=poet
+
+case=2
+input=small
+output=small
+
+import java.util.*;
+class Solution {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.next();
+        System.out.println(check(s1));
+    }
+    public static String check(String s){
+     for(int i=0;i<s.length();i++){
+            if(63< (int)s.charAt(i) && (int)s.charAt(i) < 97){
+                return s;
+            }
+        }
+        return s;
+    }
+}
+CIA need to send a secret code to its army fighting with terrorists in Syria. 
+The code is a string that is formed from numeric digits and special character 
+'$'. To decrypt the code, the characters are mapped to smaller case character 
+of English language. Digits 1 to 9 represent characters from 'a'-'i', and 
+digits 10$ to 26$ represent characters from 'j'-'z'. Given a string which is 
+a secret code, your task is to decode and print the decoded value.
+
+Sample test case
+
+case=1
+input=110$12
+output=ajab
+
+case=2
+input=11$21$26
+output=kubf

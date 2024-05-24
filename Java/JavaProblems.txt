@@ -14573,13 +14573,11 @@ The game rules are as follows:
 	2. You can add only one letter to the jumbled word at any position.
 You are given two words, S and T.
 Your  task is to find and print the newly added character to S to form T.
-
 Sample test case
 case =1
 input =2
 ram marg
 output =g
-
 case =2
 input =2
 av ava

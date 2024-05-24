@@ -14631,6 +14631,8 @@ class Solution {
         return s;
     }
 }
+
+365th Problem
 CIA need to send a secret code to its army fighting with terrorists in Syria. 
 The code is a string that is formed from numeric digits and special character 
 '$'. To decrypt the code, the characters are mapped to smaller case character 

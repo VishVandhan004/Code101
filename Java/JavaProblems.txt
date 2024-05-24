@@ -14565,6 +14565,29 @@ input =5
 2 5 4 6 1
 output =73
 
+import java.util.Scanner;
+public class OddLengthSubsetsSum {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        int[] nums = new int[N];
+        for (int i = 0; i < N; i++) {
+            nums[i] = scanner.nextInt();
+        }
+        int totalSum = 0;
+        for (int start = 0; start < N; start++) {
+            int currentSum = 0;
+            for (int end = start; end < N; end++) {
+                currentSum += nums[end];
+                if ((end - start) % 2 == 0) { // Check if the length is odd
+                    totalSum += currentSum;
+                }
+            }
+        }
+        System.out.println(totalSum);
+    }
+}
+
 363rd Problem
 Bablu is playing a word puzzle game.
 Initially, puzzle conatins a word S, you need to form another word 'T' using 'S'.

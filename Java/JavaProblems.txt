@@ -14540,7 +14540,7 @@ The possible subsets are.
 [2,5,4,6,1] = 18
 Finally, total sum is:  2 + 5 + 4 + 6 + 1 + 11 + 15 + 11 + 18 = 73
 Input Format:
-------
+-
 Line-1: An integer N, number of integers.
 Line-2: N space separated integers, nums[].
 Output Format:

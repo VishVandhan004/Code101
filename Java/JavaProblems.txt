@@ -14691,7 +14691,6 @@ public class SecretCodeDecoder {
                 }
             }
         }
-        
         return decoded.toString();
     }
     public static void main(String[] args) {

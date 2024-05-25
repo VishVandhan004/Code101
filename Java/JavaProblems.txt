@@ -14539,7 +14539,6 @@ The possible subsets are.
 [2,5,4] = 11, [5,4,6] = 15, [4,6,1] = 11
 [2,5,4,6,1] = 18
 Finally, total sum is:  2 + 5 + 4 + 6 + 1 + 11 + 15 + 11 + 18 = 73
- separated integers, nums[].
 Output Format:
 --------------
 Print an integer, the sum.

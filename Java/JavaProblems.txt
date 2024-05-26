@@ -14544,7 +14544,7 @@ Sample Input 2:
 1 4 2 5 3
 Sample Output:
 58
-Explanati
+Explan
 From the given list of integers, possible subsets are.
 [1] = 1, [4] = 4, [2] = 2, [5] = 5, [3] = 3,
 [1,4,2] = 7,	[4,2,5] = 11,	[2,5,3] = 10

@@ -14745,17 +14745,16 @@ public class Solution {
     }
 }
 
+367th Problem
 John is given two numbers N and M, What is the maximum index John can reach, 
 starting from 0th index in an array of natural numbers, 
 arr[] (i.e. 1, 2, 3, 4, 5, …), in N steps, without placing himself at index 
 M at any point.
 maxIndex = curIndex + step
-
 Sample test case
 case=1
 input=3 3
 output=4
-
 Explanation:
 Step 1:
 curIndex = 0

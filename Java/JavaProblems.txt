@@ -14817,13 +14817,10 @@ Alan is given a grid of size m*n, where m is the number of rows and n number of
 columns. He wants to fill the gird with numbers, starting from 1 to total number 
 of cells i.e. m*n in the form of a spiral and return the filled in grid. 
 Your task is to help Alan in his task.
-
 Sample Test Case
-
 case=1
 input=4 4
 output=[[1, 2, 3, 4], [12, 13, 14, 5], [11, 16, 15, 6], [10, 9, 8, 7]]
-
 case=2
 input=3 4
 output=[[1, 2, 3, 4], [10, 11, 12, 5], [9, 8, 7, 6]]

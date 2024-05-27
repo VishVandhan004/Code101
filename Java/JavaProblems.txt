@@ -14689,3 +14689,62 @@ public class Solution {
         System.out.println(decodedValue);
     }
 }
+
+Derbi is a good systems side programmer, he developed a compiler for strings. 
+The compiler converts alphabet "B" as "B", "[]" as "o" and "[ld]" as "ld". 
+Given a string, consisting of the above alphabets in any order, return the 
+compiler translated string in the original order.
+
+Input: B[][][ld]
+Output: Boold
+
+Input: []B[] [ld][][ld]
+Output: oBoldold
+
+Sample test case
+case=1
+input=1
+B[][][ld]
+output=Boold
+
+import java.util.Scanner;
+public class Solution {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        String output = compileString(input);
+        System.out.println(output);
+    }
+
+    public static String compileString(String input) {
+        StringBuilder result = new StringBuilder();
+        StringBuilder temp = new StringBuilder();
+        boolean insideBrackets = false;
+        
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+            
+            if (ch == '[') {
+                insideBrackets = true;
+                temp = new StringBuilder();
+                temp.append(ch);
+            } else if (ch == ']') {
+                temp.append(ch);
+                insideBrackets = false;
+                String tempStr = temp.toString();
+                if (tempStr.equals("[]")) {
+                    result.append("o");
+                } else if (tempStr.equals("[ld]")) {
+                    result.append("ld");
+                }
+            } else {
+                if (insideBrackets) {
+                    temp.append(ch);
+                } else {
+                    result.append(ch);
+                }
+            }
+        }
+        return result.toString();
+    }
+}

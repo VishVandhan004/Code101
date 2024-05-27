@@ -14802,14 +14802,11 @@ team to check if the words are arranged in sorted order (as in dictionary), and
 should follow the order given for each character. Given the test, it should 
 return true if the words are sorted as per above rule, else return false. 
 Your task is to help Rajiv in conducting the test.
-
 Sample test case
-
 case=1
 input=habbit letout
 hlabcdefgijkmnopqrstuvwzxy
 output=true
-
 case=2
 input=hat lad
 hlabcdefgijkmnopqrstuvwzxy

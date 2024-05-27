@@ -14812,6 +14812,53 @@ input=hat lad
 hlabcdefgijkmnopqrstuvwzxy
 output=false
 
+import java.util.Scanner;
+public class WordSortChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the words separated by spaces:");
+        String inputWords = scanner.nextLine();
+
+        System.out.println("Enter the character order:");
+        String charOrder = scanner.nextLine();
+
+        boolean result = checkWordOrder(inputWords, charOrder);
+
+        System.out.println("Output: " + result);
+    }
+
+    public static boolean checkWordOrder(String inputWords, String charOrder) {
+        String[] words = inputWords.split(" ");
+        
+        for (int i = 0; i < words.length - 1; i++) {
+            if (!isSorted(words[i], words[i + 1], charOrder)) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+
+    public static boolean isSorted(String word1, String word2, String charOrder) {
+        int minLength = Math.min(word1.length(), word2.length());
+        
+        for (int i = 0; i < minLength; i++) {
+            int index1 = charOrder.indexOf(word1.charAt(i));
+            int index2 = charOrder.indexOf(word2.charAt(i));
+            
+            if (index1 < index2) {
+                return true;
+            } else if (index1 > index2) {
+                return false;
+            }
+        }
+        
+        return word1.length() <= word2.length();
+    }
+}
+
+
 369th Problem
 Alan is given a grid of size m*n, where m is the number of rows and n number of 
 columns. He wants to fill the gird with numbers, starting from 1 to total number 

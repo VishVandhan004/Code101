@@ -1,21 +1,34 @@
 import java.util.*;
-class Solution {
-    public static void main (String[] args) {
+public class Solution {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        System.out.println(fuel(n));
+        String words = sc.nextLine();
+        String order = sc.nextLine();
+        System.out.println(sortedWords(words, order));
+        // System.out.println(sortedWords("habbit letout", "hlabcdefgijkmnopqrstuvwzxy")); // true
+        // System.out.println(sortedWords("hat lad", "hlabcdefgijkmnopqrstuvwzxy")); // false
+        // System.out.println(sortedWords("ladder lad", "abcdefghijklmnopqrstuvwzxy")); // false
+        // System.out.println(sortedWords("lad ladder", "abcdefghijklmnopqrstuvwzxy")); // true
+        // System.out.println(sortedWords("ape apeal bat", "abcdefghijklmnopqrstuvwzxy")); // false
     }
-    public static int fuel(int n){
-        int count=0;
-        if(n==0){
-            return 0;
+
+    public static boolean sortedWords(String words, String order) {
+        String[] wordArray = words.split(" ");
+        for (int i = 0; i < wordArray.length - 1; i++) {
+            if (!isSorted(wordArray[i], wordArray[i + 1], order)) {
+                return false;
+            }
         }
-        if(n==1){
-            count++;
+        return true;
+    }
+
+    public static boolean isSorted(String word1, String word2, String order) {
+        int min = Math.min(word1.length(), word2.length());
+        for (int i = 0; i < min; i++) {
+            if (order.charAt(word1.charAt(i) - 'a') > order.charAt(word2.charAt(i) - 'a')) {
+                return false;
+            }
         }
-        else{
-            count = fuel(n/2)+(n%2);
-        }
-        return count;
+        return true;
     }
 }

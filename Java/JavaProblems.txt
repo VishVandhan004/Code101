@@ -15013,12 +15013,12 @@ class Solution
         System.out.print(al.get(mid/2));
     }
 }
-/*
+
+372nd Problem
 Peter wants to rise in the organization’s hierarchy to the top position. 
 Currently he is at the least position in the hierarchy. Given the top 
 position of the organization’s hierarchy as root of a binary tree, return 
 how far away is Peter’s position in the organization.
-
 Sample test case1:
 Input=
 

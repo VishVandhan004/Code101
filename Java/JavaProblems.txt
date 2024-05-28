@@ -15036,6 +15036,7 @@ Input=
     2     3
 
 Output=2
+
 class TreeNode
 {
     public int data;
@@ -15047,8 +15048,6 @@ class TreeNode
         right = null;
     }
 }
-*/
-
 import java.util.*;
 class Solution
 {

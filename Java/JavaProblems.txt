@@ -15117,30 +15117,26 @@ class Solution
         return leftsum;
      }
 }
+
+374th Problem
 Implement a class MyQueue which represents a queue using only two stacks. The 
 implemented class MyQueue should support all the functions of a normal queue 
 i.e. enqueue, dequeue, front, and isempty.
-
 Implement the MyQueue class:
-
 enqueue(x): add element x to the queue.
 dequeue(): Removes the element from the front of the queue and returns it.
 front(): Returns the element at the front of the queue.
 isempty(): Returns true if the queue is empty, false otherwise.
-
 Note:
 You must use only standard operations of a stack, i.e push, pop, peek and 
 isempty operations are valid.
-
 Sample test cases
-
 case=1
 input=3
 enqueue 1 enqueue 2 enqueue 3
 output=[1, 2, 3]
 Explanation: Operation enqueue followed by the value. 
 Three values are added in queue.
-
 case=2
 input=4
 enqueue 1 enqueue 2 enqueue 3 dequeue -1
@@ -15148,7 +15144,6 @@ output=[2, 3]
 Explanation: Operation enqueue followed by the value, 
 followed by dequeue followed by -1 representing there is no parameter for deque. 
 Only two values are remaining in queue.
-
 case=3
 input=5
 enqueue 1 enqueue 2 enqueue 3 dequeue -1 dequeue -1
@@ -15156,12 +15151,10 @@ output=[3]
 Explanation: Operation enqueue followed by the value, followed by dequeue 
 followed by -1 representing there is no parameter for deque. Only one values 
 are remaining in queue.
-
 case=4
 input=6
 enqueue 1 enqueue 2 enqueue 3 dequeue -1 dequeue -1 enqueue 4
 output=[3, 4]
-
 case=5
 input=4
 enqueue 1 enqueue 2 enqueue 3 front -1
@@ -15169,8 +15162,6 @@ output=[1]
 Explanation: Operation enqueue followed by the value, followed by front 
 followed by -1 representing there is no parameter for front. The first element 
 in the queue is displayed.
-
-
 case=6
 input=4
 enqueue 1 enqueue 2 enqueue 3 isempty -1
@@ -15178,7 +15169,6 @@ output=false
 Explanation: Operation enqueue followed by the value, followed by isempty 
 followed by -1 representing there is no parameter for isempty. As the queue is 
 not empty, it displays false.
-
 case=7
 input=5
 enqueue 1 enqueue 2 dequeue -1 dequeue -1 isempty -1
@@ -15186,6 +15176,8 @@ output=true
 Explanation: Operation enqueue followed by the value, followed by isempty 
 followed by -1 representing there is no parameter for isempty. As the queue is 
 empty, it displays true.
+
+
 Mr. Alan, the professor in computer science, gives an assignment to his 
 student Mark. He gives a list of values and ask Mark to sort the list based 
 on the number of one’s in the binary representation of each value. If there 

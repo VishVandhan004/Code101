@@ -15144,3 +15144,142 @@ class Solution
         return leftsum;
      }
 }
+Implement a class MyQueue which represents a queue using only two stacks. The 
+implemented class MyQueue should support all the functions of a normal queue 
+i.e. enqueue, dequeue, front, and isempty.
+
+Implement the MyQueue class:
+
+enqueue(x): add element x to the queue.
+dequeue(): Removes the element from the front of the queue and returns it.
+front(): Returns the element at the front of the queue.
+isempty(): Returns true if the queue is empty, false otherwise.
+
+Note:
+You must use only standard operations of a stack, i.e push, pop, peek and 
+isempty operations are valid.
+
+Sample test cases
+
+case=1
+input=3
+enqueue 1 enqueue 2 enqueue 3
+output=[1, 2, 3]
+Explanation: Operation enqueue followed by the value. 
+Three values are added in queue.
+
+case=2
+input=4
+enqueue 1 enqueue 2 enqueue 3 dequeue -1
+output=[2, 3]
+Explanation: Operation enqueue followed by the value, 
+followed by dequeue followed by -1 representing there is no parameter for deque. 
+Only two values are remaining in queue.
+
+case=3
+input=5
+enqueue 1 enqueue 2 enqueue 3 dequeue -1 dequeue -1
+output=[3]
+Explanation: Operation enqueue followed by the value, followed by dequeue 
+followed by -1 representing there is no parameter for deque. Only one values 
+are remaining in queue.
+
+case=4
+input=6
+enqueue 1 enqueue 2 enqueue 3 dequeue -1 dequeue -1 enqueue 4
+output=[3, 4]
+
+case=5
+input=4
+enqueue 1 enqueue 2 enqueue 3 front -1
+output=[1]
+Explanation: Operation enqueue followed by the value, followed by front 
+followed by -1 representing there is no parameter for front. The first element 
+in the queue is displayed.
+
+
+case=6
+input=4
+enqueue 1 enqueue 2 enqueue 3 isempty -1
+output=false
+Explanation: Operation enqueue followed by the value, followed by isempty 
+followed by -1 representing there is no parameter for isempty. As the queue is 
+not empty, it displays false.
+
+case=7
+input=5
+enqueue 1 enqueue 2 dequeue -1 dequeue -1 isempty -1
+output=true
+Explanation: Operation enqueue followed by the value, followed by isempty 
+followed by -1 representing there is no parameter for isempty. As the queue is 
+empty, it displays true.
+Mr. Alan, the professor in computer science, gives an assignment to his 
+student Mark. He gives a list of values and ask Mark to sort the list based 
+on the number of one’s in the binary representation of each value. If there 
+are more than one value which has same number of one’s, the sorting for those 
+values, should be in the original order of list. Your task is to help Mark in 
+his task. 
+
+Note: Each value in the list will be in the range of 1 to 10000.
+
+Sample test case
+
+case=1
+input=5
+1 2 3 4 5
+output=[1, 2, 4, 3, 5]
+Explanation: [1, 2, 4] is the only integer with 1 bits.
+[3, 5] have 2 bits.
+The sorted array by bits is [1, 2, 4, 3, 5]
+
+case=2
+input=5
+2 4 3 5 8
+output=[2, 4, 8, 3, 5]
+import java.util.*;
+
+import java.util.*;
+public class Solution {
+    public static List<Integer> sortBySetBitCount(int[] arr) {
+        int[] bitCounts = new int[33];
+        for (int num : arr) {
+            int setBits = countSetBits(num);
+            bitCounts[setBits]++;
+        }
+        int[] startIndices = new int[33];
+        int curr = 0;
+        for (int i = 0; i < 33; i++) {
+            startIndices[i] = curr;
+            curr += bitCounts[i];
+        }
+        List<Integer> result = new ArrayList<>(arr.length);
+        Arrays.sort(arr);
+        for (int num : arr) {
+            int setBits = countSetBits(num);
+            int index = startIndices[setBits]++;
+            while (index >= result.size()) {
+                result.add(null); 
+            }
+            result.set(index, num); 
+        }
+        return result;
+    }
+    private static int countSetBits(int n) {
+        int count = 0;
+        while (n != 0) {
+            count += n & 1;
+            n >>= 1;
+        }
+        return count;
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
+        List<Integer> sortedList = sortBySetBitCount(arr);
+        System.out.println(sortedList);
+    }
+}

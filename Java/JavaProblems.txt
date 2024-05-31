@@ -15411,6 +15411,36 @@ output=[BOHAHB, ERINIE,    D]
 
 Explanation: Each word is arranged column-wise, note that for the 
 last word "   D", there are no trailing spaces after 'D'.
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String sentence = scanner.nextLine();
+        String[] words = sentence.split(" ");
+        int maxLength = 0;
+        for (String word : words) {
+            maxLength = Math.max(maxLength, word.length());
+        }
+
+        StringBuilder[] columns = new StringBuilder[maxLength];
+        for (int i = 0; i < maxLength; i++) {
+            columns[i] = new StringBuilder();
+        }
+        for (String word : words) {
+            for (int i = 0; i < word.length(); i++) {
+                columns[i].append(word.charAt(i));
+            }
+        }
+        StringBuilder result = new StringBuilder();
+        for (StringBuilder column : columns) {
+            String newWord = column.toString().trim();
+            result.append(newWord).append(" ");
+        }
+
+        System.out.println("[" + result.toString().trim() + "]");
+    }
+}
+
 
 Alan is a school teacher and decides to conducts a game with his students. 
 He gives an English sentence to his student John and wants to know whether 

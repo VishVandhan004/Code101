@@ -15413,26 +15413,20 @@ the sentence has all the vowels and consonants. The vowels and consonants
 can be either lower case or upper case. If it contains all the vowels and 
 consonants, John has to say true, else false. 
 Your task is to help John in his task.
-
 Note: The input may contain whitespaces.
-
 Sample test case
-
 case=1
 input=xif boj weNslukcG Mzhary VT PDQnO
 output=true
-
 Explanation 
 The given input line contains all the vowels and consonants
- 
 case=2
 input=cbA ufghD IJklM nOpqrsTuv ZxyW
 output=false
-
 Explanation 
 The given input line does not contain the vowel ‘e’. 
 
-
+379th Problem
 Mr. Albert is mathematics teacher for grade 9. He conducts a test for his 
 students to know IQ level of the class. In the test, he places some spherical 
 mud pots, few of them are empty and remaining have a chocolate. He arranges 

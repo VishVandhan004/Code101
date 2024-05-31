@@ -15282,7 +15282,6 @@ case=2
 input=5
 2 4 3 5 8
 output=[2, 4, 8, 3, 5]
-import java.util.*;
 
 import java.util.*;
 class Solution

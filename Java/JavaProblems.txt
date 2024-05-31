@@ -15327,12 +15327,11 @@ class Solution
     }  
 }
 
+376th Problem
 Peter is an accountant at CodeSoft company. He has to calculate the tax to be 
 paid by the company to the government. He has been given a list of values and 
 few ranges. The total tax is calculated by adding all the values in the given 
 range (both inclusive) from the list. You task is to help Peter in his task.
-
-
 Sample Input:
 ---------------
 7 3
@@ -15340,12 +15339,10 @@ Sample Input:
 0 2
 2 5
 0 5
-
 Sample Output:
 ----------------
 [1, 0, 1]
 Explanation: The range 0-2 will sum to 1, 2-5 will sum 0 and 0-5 will sum 1
-
 Sample test case
 case =1
 input =7 3
@@ -15354,6 +15351,7 @@ input =7 3
 2 5
 0 5
 output =[1, 0, 1] 
+
 import java.util.*;
 class Solution {
     public static void main(String[] args) {

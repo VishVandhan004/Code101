@@ -15385,6 +15385,8 @@ class Solution {
         return prefixSum[right + 1] - prefixSum[left];
     }
 }
+
+377th Problem
 Mark has the weird habit of reading a sentence by arranging the words in the 
 sentence one below the other and read them column-wise in the same order. 
 Given a sentence, your task is to return the list of words thus formed, 
@@ -15393,22 +15395,18 @@ following the below rules
 2. Trailing space are not allowed in the new words
 3. The sentence contains only upper-case English letters
 4. There is only a single space between any two words
-
 Sample test cases
-
 case=1
 input=THE WAR HIT BOY
 output=[TWHB, HAIO, ERTY]
-
 Explanation: Each word is arranged column-wise. 
-
 case=2
 input=BE OR HI AND HI BE
 output=[BOHAHB, ERINIE,    D]
-
 Explanation: Each word is arranged column-wise, note that for the 
 last word "   D", there are no trailing spaces after 'D'.
 
+378th Problem
 Alan is a school teacher and decides to conducts a game with his students. 
 He gives an English sentence to his student John and wants to know whether 
 the sentence has all the vowels and consonants. The vowels and consonants 

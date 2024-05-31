@@ -15436,7 +15436,6 @@ for pot with chocolate. To know whether a pot contains a chocolate, the pot has
 to be broken. He tells the class to find the location of the pot that contains 
 the first chocolate with minimum number of broken pots. 
 Your task is to help the students in their task.
-
 Input: n = 5, potWithChocolate = 4
 Output: 2
 Explanation:
@@ -15445,15 +15444,12 @@ breakPot(2) -> No Chocolate
 breakPot(3) -> No Chocolate
 breakPot(4) -> Found Chocloate
 breakPot(5) -> Found Chocloate
-
 Then 4 pot are broken to know the pot with first chocolate, if done in a 
 linear manner. If the solution if done optimally, the output will be 2.
-
 Sample test case
 case=1
 input=5 4
 output=2
-
 case=3
 input=15 7
 output=4

@@ -15461,15 +15461,11 @@ public class VowelConsonantChecker {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the sentence: ");
         String sentence = scanner.nextLine();
-        scanner.close();
-
         // Convert the sentence to lowercase for easier comparison
         String lowercaseSentence = sentence.toLowerCase();
-
         // Initialize arrays to track the presence of vowels and consonants
         boolean[] vowels = new boolean[5]; // a, e, i, o, u
         boolean[] consonants = new boolean[21]; // b to z (excluding vowels)
-
         // Check each character in the sentence
         for (char ch : lowercaseSentence.toCharArray()) {
             if (ch >= 'a' && ch <= 'z') {
@@ -15482,19 +15478,15 @@ public class VowelConsonantChecker {
                 }
             }
         }
-
         // Check if all vowels and consonants are present
         boolean allVowelsPresent = true;
         boolean allConsonantsPresent = true;
-
         for (boolean vowel : vowels) {
             allVowelsPresent &= vowel;
         }
-
         for (boolean consonant : consonants) {
             allConsonantsPresent &= consonant;
         }
-
         // Determine the final result
         boolean result = allVowelsPresent && allConsonantsPresent;
         System.out.println("Output: " + result);

@@ -15414,7 +15414,6 @@ public class ColumnWordArrangement {
         String sentence = scanner.nextLine();
         // Split the sentence into words
         String[] words = sentence.split(" ");
-
         // Initialize an array to store the column-wise arrangement
         StringBuilder[] columns = new StringBuilder[words[0].length()];
         for (int i = 0; i < columns.length; i++) {
@@ -15455,6 +15454,53 @@ input=cbA ufghD IJklM nOpqrsTuv ZxyW
 output=false
 Explanation 
 The given input line does not contain the vowel ‘e’. 
+
+import java.util.Scanner;
+public class VowelConsonantChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the sentence: ");
+        String sentence = scanner.nextLine();
+        scanner.close();
+
+        // Convert the sentence to lowercase for easier comparison
+        String lowercaseSentence = sentence.toLowerCase();
+
+        // Initialize arrays to track the presence of vowels and consonants
+        boolean[] vowels = new boolean[5]; // a, e, i, o, u
+        boolean[] consonants = new boolean[21]; // b to z (excluding vowels)
+
+        // Check each character in the sentence
+        for (char ch : lowercaseSentence.toCharArray()) {
+            if (ch >= 'a' && ch <= 'z') {
+                if ("aeiou".contains(String.valueOf(ch))) {
+                    // Mark the vowel as present
+                    vowels[ch - 'a'] = true;
+                } else {
+                    // Mark the consonant as present
+                    consonants[ch - 'b'] = true;
+                }
+            }
+        }
+
+        // Check if all vowels and consonants are present
+        boolean allVowelsPresent = true;
+        boolean allConsonantsPresent = true;
+
+        for (boolean vowel : vowels) {
+            allVowelsPresent &= vowel;
+        }
+
+        for (boolean consonant : consonants) {
+            allConsonantsPresent &= consonant;
+        }
+
+        // Determine the final result
+        boolean result = allVowelsPresent && allConsonantsPresent;
+        System.out.println("Output: " + result);
+    }
+}
+
 
 379th Problem
 Mr. Albert is mathematics teacher for grade 9. He conducts a test for his 

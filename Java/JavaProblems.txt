@@ -15553,7 +15553,7 @@ case=3
 input=15 7
 output=4
 
-import java.util.Sca;
+import java.util.S;
 public class ChocolatePotLocation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

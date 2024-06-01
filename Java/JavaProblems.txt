@@ -15567,7 +15567,6 @@ class ChocolatePotLocation {
         int result = -1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
-
             if (mid <= potWithChocolate) {
                 // The first chocolate is in the right half
                 result = mid;

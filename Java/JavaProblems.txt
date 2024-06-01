@@ -15554,7 +15554,7 @@ input=15 7
 output=4
 
 import java.util.*;
-public class ChocolatePotLocation {
+publiclass ChocolatePotLocation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the total number of pots: ");

@@ -15487,7 +15487,7 @@ output=false
 Explanation 
 The given input line does not contain the vowel ‘e’. 
 
-import java.util.;
+import java.util.*;
 public class VowelConsonantChecker {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

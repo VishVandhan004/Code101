@@ -15585,9 +15585,7 @@ Peter is taking a coding exam for campus placement. In the test, he is given
 an English sentence and was asked to reverse every word in the sentence while 
 maintaining the original order of the words. 
 Your task is to help Peter in his task.
-
 Note: You should not use any String API.
-
 Sample test case
 case=1
 input=Let’s Rock 

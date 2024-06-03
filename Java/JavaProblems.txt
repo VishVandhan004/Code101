@@ -15658,15 +15658,12 @@ class Solution
 Mark gives his student Andrew a string and ask him to find a sub-string that is 
 the longest that can be found without any repeating characters. 
 Your task is to help Andrew in his task.
-
 Sample test case
 case=1
 input=bcabcacc
 output=3
-
 Explanation: The longest substring without any repeating characters is “bca” 
 and has a length of 3.
-
 case=2
 input=aaaaaa
 output=1

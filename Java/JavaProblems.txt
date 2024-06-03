@@ -15615,14 +15615,13 @@ class Main {
     }
 }
 
+381st Problem
 Amber is given a list of values which are stored using a linked list. George, 
 his friend asks him to remove nth value from the end of this list. Given the 
 head of the list, Amber has to remove the nth value and return the head of the 
 list. Your task is to help Amber in his task.
-
 Note: Once the head is returned, display of list is taken care of, you need not
 implement the display of list.
-
 Sample test case
 case=1
 input=5

@@ -15580,3 +15580,97 @@ class ChocolatePotLocation {
     }
 }
 
+Peter is taking a coding exam for campus placement. In the test, he is given 
+an English sentence and was asked to reverse every word in the sentence while 
+maintaining the original order of the words. 
+Your task is to help Peter in his task.
+
+Note: You should not use any String API.
+
+Sample test case
+case=1
+input=Let’s Rock 
+output=s’teL kcoR
+
+import java.util.*;
+class Main {
+    public static String reverse(String s){
+        int l = s.length()-1;
+        String result="";
+        for(int i=l;i>=0;i--)
+        {
+        result = result+s.charAt(i);
+        }
+        return result;
+    }
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String[] words = str.split(" ");
+        String[] rw = new String[words.length];
+        for(int i=0;i<words.length;i++){
+            rw[i] = reverse(words[i]);
+        }
+        String result = String.join(" ",rw);
+        System.out.println(result);
+    }
+}
+/*
+Amber is given a list of values which are stored using a linked list. George, 
+his friend asks him to remove nth value from the end of this list. Given the 
+head of the list, Amber has to remove the nth value and return the head of the 
+list. Your task is to help Amber in his task.
+
+Note: Once the head is returned, display of list is taken care of, you need not
+implement the display of list.
+
+Sample test case
+case=1
+input=5
+1 2 3 4 5
+2
+output=[1, 2, 3, 5]
+
+class ListNode
+{
+    int val;
+    ListNode next;
+    ListNode() {}
+    ListNode(int val)
+    {
+        this.val = val;
+    }
+    ListNode(int val, ListNode next)
+    {
+        this.val = val;
+        this.next = next;
+    }
+}
+
+*/
+
+import java.util.*;
+class Solution
+{
+    public ListNode deleteNode(ListNode head, int n)
+    {
+        // Implement your code here
+        
+    }
+}
+Mark gives his student Andrew a string and ask him to find a sub-string that is 
+the longest that can be found without any repeating characters. 
+Your task is to help Andrew in his task.
+
+Sample test case
+case=1
+input=bcabcacc
+output=3
+
+Explanation: The longest substring without any repeating characters is “bca” 
+and has a length of 3.
+
+case=2
+input=aaaaaa
+output=1
+

@@ -15644,7 +15644,6 @@ class ListNode
     }
 }
 
-
 import java.util.*;
 class Solution
 {
@@ -15654,6 +15653,8 @@ class Solution
         
     }
 }
+
+382nd Problem
 Mark gives his student Andrew a string and ask him to find a sub-string that is 
 the longest that can be found without any repeating characters. 
 Your task is to help Andrew in his task.

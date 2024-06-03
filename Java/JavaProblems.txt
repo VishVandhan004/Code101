@@ -15644,7 +15644,6 @@ class ListNode
     }
 }
 
-*
 
 import java.util.*;
 class Solution

@@ -15614,7 +15614,7 @@ class Main {
         System.out.println(result);
     }
 }
-/*
+
 Amber is given a list of values which are stored using a linked list. George, 
 his friend asks him to remove nth value from the end of this list. Given the 
 head of the list, Amber has to remove the nth value and return the head of the 

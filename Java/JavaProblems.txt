@@ -15650,7 +15650,29 @@ class Solution
     public ListNode deleteNode(ListNode head, int n)
     {
         // Implement your code here
-        
+         // Create a dummy node to handle edge cases
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        // Initialize fast and slow pointers
+        ListNode fast = dummy;
+        ListNode slow = dummy;
+
+        // Move fast pointer n steps ahead
+        for (int i = 0; i <= n; i++) {
+            fast = fast.next;
+        }
+
+        // Move both pointers until fast reaches the end
+        while (fast != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+
+        // Remove the nth node from the end
+        slow.next = slow.next.next;
+
+        return dummy.next; // Return the updated head
     }
 }
 
@@ -15667,4 +15689,36 @@ and has a length of 3.
 case=2
 input=aaaaaa
 output=1
+import java.util.*;
+
+public class LongestSubstringWithoutRepeatingChars {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        scanner.close();
+
+        int maxLength = findLongestSubstring(input);
+        System.out.println("Output: " + maxLength);
+    }
+
+    public static int findLongestSubstring(String s) {
+        int n = s.length();
+        int maxLength = 0;
+        int left = 0; // Left pointer of the sliding window
+        Map<Character, Integer> charIndexMap = new HashMap<>(); // Character to index mapping
+
+        for (int right = 0; right < n; right++) {
+            char c = s.charAt(right);
+            if (charIndexMap.containsKey(c)) {
+                // Update left pointer to skip repeating character
+                left = Math.max(left, charIndexMap.get(c) + 1);
+            }
+            charIndexMap.put(c, right); // Update character index
+            maxLength = Math.max(maxLength, right - left + 1);
+        }
+
+        return maxLength;
+    }
+}
 

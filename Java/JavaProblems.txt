@@ -15657,7 +15657,6 @@ class Solution
         // Initialize fast and slow pointers
         ListNode fast = dummy;
         ListNode slow = dummy;
-
         // Move fast pointer n steps ahead
         for (int i = 0; i <= n; i++) {
             fast = fast.next;

@@ -15647,8 +15647,7 @@ class ListNode
 import java.util.*;
 class Solution
 {
-    public ListNode deleteNode(ListNode head, int n)
-    {
+    public ListNode deleteNode(ListNode head, int n) {
         // Implement your code here
          // Create a dummy node to handle edge cases
         ListNode dummy = new ListNode(0);

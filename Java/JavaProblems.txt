@@ -15689,36 +15689,72 @@ and has a length of 3.
 case=2
 input=aaaaaa
 output=1
+
 import java.util.*;
-
-public class LongestSubstringWithoutRepeatingChars {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a string: ");
-        String input = scanner.nextLine();
-        scanner.close();
-
-        int maxLength = findLongestSubstring(input);
-        System.out.println("Output: " + maxLength);
-    }
-
-    public static int findLongestSubstring(String s) {
-        int n = s.length();
-        int maxLength = 0;
-        int left = 0; // Left pointer of the sliding window
-        Map<Character, Integer> charIndexMap = new HashMap<>(); // Character to index mapping
-
-        for (int right = 0; right < n; right++) {
-            char c = s.charAt(right);
-            if (charIndexMap.containsKey(c)) {
-                // Update left pointer to skip repeating character
-                left = Math.max(left, charIndexMap.get(c) + 1);
+public class Main {
+    public static int check(String s) {
+        char[] arr = s.toCharArray();
+        int l = 0;
+        int max = 0;
+        HashSet<Character> hs = new HashSet<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (!hs.contains(arr[i])) {
+                hs.add(arr[i]);
+                max = Math.max(max, i - l + 1);
+            } else {
+                while (hs.contains(arr[i])) {
+                    hs.remove(arr[l]);
+                    l++;
+                }
+                hs.add(arr[i]);
             }
-            charIndexMap.put(c, right); // Update character index
-            maxLength = Math.max(maxLength, right - left + 1);
         }
-
-        return maxLength;
+        return max;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        System.out.println(check(str));
     }
 }
 
+*
+Peter is taking a coding exam for campus placement. In the test, he is given an English sentence and was asked to reverse every word in the sentence while maintaining the original order of the words. Your task is to help Peter in his task.
+Note: You should not use any String API and split() method.
+Sample test case
+case=1
+input=Let’s Rock 
+output=s’teL kcoR */
+
+import java.util.*;
+class Solution
+{
+    public String reverseWords(String s) {
+        char res[]=s.toCharArray();
+        int start=0;
+        for(int end=0;end<res.length;end++)
+        {
+            if(res[end]==' ' || end==s.length()-1)
+            {
+                if(end==res.length-1)
+                {
+                    end++;
+                }
+                reverse(res,start,end-1);
+                start=end+1;    
+            }
+        }
+        return String.valueOf(res);
+    }
+    static void reverse(char arr[],int start,int end)
+    {
+        while(start<=end)
+        {
+            char temp=arr[start];
+            arr[start]=arr[end];
+            arr[end]=temp;
+            start++;
+            end--;
+        }
+    }
+}

@@ -15653,7 +15653,6 @@ class Solution
          // Create a dummy node to handle edge cases
         ListNode dummy = new ListNode(0);
         dummy.next = head;
-
         // Initialize fast and slow pointers
         ListNode fast = dummy;
         ListNode slow = dummy;

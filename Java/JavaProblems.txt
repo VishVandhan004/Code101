@@ -15838,7 +15838,8 @@ class test
         {
             dfs(arr,x,y,old,num);
             
-        }return arr;
+        }
+        return arr;
     }
     static void dfs(int [][]arr,int x,int y,int old,int num) {
         if(arr[x][y]==old)

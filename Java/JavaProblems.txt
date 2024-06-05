@@ -15751,3 +15751,84 @@ class Solution
         }
     }
 }
+
+Bob is given a list of distinct numbers in the form of an array. He is asked to 
+find the number of ways the numbers in the list can be arranged. 
+Your task is to help Bob in his task.
+
+Sample test case
+
+input=3
+1 2 3
+output=[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+
+input=2
+0 1
+output=[[0, 1], [1, 0]]
+
+import java.util.*;
+class Main {
+    public static List<List<Integer>> perm(int[] nums){
+        List<List<Integer>> l = new ArrayList<>();
+        rec(nums,0,l);
+        return l;
+    }
+    public static void rec(int nums[],int idx, List<List<Integer>> result){
+        if(idx==nums.length){
+            List<Integer> cur = new ArrayList<>();
+            for(int num:nums){
+                cur.add(num);
+            }
+            result.add(cur);
+            return;
+    }
+    for(int i=idx;i<nums.length;i++){
+        swap(nums,idx,i);
+        rec(nums,idx+1,result);
+        swap(nums,idx,i);
+    }
+ }
+ public static void swap(int[] nums, int i, int j){
+     int temp = nums[i];
+     nums[i] = nums[j];
+     nums[j] = temp;
+ }
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int nums[] = new int[n];
+        for(int i=0;i<n;i++){
+            nums[i] = sc.nextInt();
+        }
+        System.out.print(perm(nums));
+    }
+}
+John has a grid consisting of m rows and n columns. Each cell of the grid has 
+a value stored in it. Given a starting cell 'x' (row, column), and a 
+new value 'y', he wants to change the values in the grid with the 'y' based on 
+the below constraints
+
+1. Consider the starting cell 'x', plus any cell connected four-directionally 
+(top, bottom, right, left) to 'x' having the same value as that of the 'x', 
+plus any cell connected four-directionally to those cell (also with the same 
+value as 'x') and so on, replace with the new value 'y'. 
+Your task is to help John in his task.
+
+Sample test case
+case=1
+input=3 3
+3 3 3
+3 3 0
+3 0 3
+1 1
+4
+output=[[4, 4, 4], [4, 4, 0], [4, 0, 3]]
+
+case=2
+input=2 3
+3 3 3
+3 3 3
+0 0
+3
+output=[[3, 3, 3], [3, 3, 3]]
+

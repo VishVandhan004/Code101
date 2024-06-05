@@ -15807,13 +15807,11 @@ John has a grid consisting of m rows and n columns. Each cell of the grid has
 a value stored in it. Given a starting cell 'x' (row, column), and a 
 new value 'y', he wants to change the values in the grid with the 'y' based on 
 the below constraints
-
 1. Consider the starting cell 'x', plus any cell connected four-directionally 
 (top, bottom, right, left) to 'x' having the same value as that of the 'x', 
 plus any cell connected four-directionally to those cell (also with the same 
 value as 'x') and so on, replace with the new value 'y'. 
 Your task is to help John in his task.
-
 Sample test case
 case=1
 input=3 3

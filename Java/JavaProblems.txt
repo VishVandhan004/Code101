@@ -15832,8 +15832,7 @@ output=[[3, 3, 3], [3, 3, 3]]
 import java.util.*;
 class test
 {
-    static int [][] SetNewValue(int [][] arr,int x, int y,int num)
-    {
+    static int [][] SetNewValue(int [][] arr,int x, int y,int num) {
         int old = arr[x][y];
         if(old!=num)
         {
@@ -15841,8 +15840,7 @@ class test
             
         }return arr;
     }
-    static void dfs(int [][]arr,int x,int y,int old,int num)
-    {
+    static void dfs(int [][]arr,int x,int y,int old,int num) {
         if(arr[x][y]==old)
         {
             arr[x][y]=num;

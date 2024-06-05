@@ -15757,11 +15757,9 @@ Bob is given a list of distinct numbers in the form of an array. He is asked to
 find the number of ways the numbers in the list can be arranged. 
 Your task is to help Bob in his task.
 Sample test case
-
 input=3
 1 2 3
 output=[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
-
 input=2
 0 1
 output=[[0, 1], [1, 0]]

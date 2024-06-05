@@ -15881,6 +15881,5 @@ class test
         int num=sc.nextInt();
         arr=SetNewValue(arr,x,y,num);
         System.out.println(Arrays.deepToString(arr));
-        
     }
 }

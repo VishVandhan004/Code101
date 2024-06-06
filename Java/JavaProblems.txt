@@ -15833,8 +15833,7 @@ import java.util.*;
 class test {
     static int [][] SetNewValue(int [][] arr,int x, int y,int num) {
         int old = arr[x][y];
-        if(old!=num)
-        {
+        if(old!=num) {
             dfs(arr,x,y,old,num);
             
         }

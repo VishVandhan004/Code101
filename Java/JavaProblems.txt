@@ -15830,8 +15830,7 @@ input=2 3
 output=[[3, 3, 3], [3, 3, 3]]
 
 import java.util.*;
-class test
-{
+class test{
     static int [][] SetNewValue(int [][] arr,int x, int y,int num) {
         int old = arr[x][y];
         if(old!=num)

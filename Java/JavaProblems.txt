@@ -15842,8 +15842,7 @@ class test {
     static void dfs(int [][]arr,int x,int y,int old,int num) {
         if(arr[x][y]==old) {
             arr[x][y]=num;
-            if(x>0)
-            {
+            if(x>0) {
                 dfs(arr,x-1,y,old,num);
             }
             if(y<arr[0].length-1)

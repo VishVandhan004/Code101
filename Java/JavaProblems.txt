@@ -15845,8 +15845,7 @@ class test {
             if(x>0) {
                 dfs(arr,x-1,y,old,num);
             }
-            if(y<arr[0].length-1)
-            {
+            if(y<arr[0].length-1) {
                 dfs(arr,x,y+1,old,num);
             }
             if(x<arr.length-1)

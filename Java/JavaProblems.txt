@@ -15884,7 +15884,8 @@ case=2
 input=2
 0 1
 output=[[0, 1], [1, 0]]
-mport java.util.*;
+
+import java.util.*;
 class Main
 {
     static List<List<Integer>> permutate(int arr[])

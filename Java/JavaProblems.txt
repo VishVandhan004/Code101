@@ -16016,3 +16016,21 @@ class test
 }
 
 388th Problem
+Find all the possible ways of arranging 2 boys and 1 girl on 3 chairs. 
+Constraint: Girl should not be on the middle bench.
+
+Sample test cases
+case=1
+input=3
+B1 B2 G1
+output=[[B1, B2, G1], [B2, B1, G1], [G1, B1, B2], [G1, B2, B1]]
+
+case=2
+input=3
+B2 B1 G1
+output=[[B2, B1, G1], [B1, B2, G1], [G1, B2, B1], [G1, B1, B2]]
+
+case=3
+input=3
+B1 G1 B2
+output=[[B1, B2, G1], [G1, B1, B2], [G1, B2, B1], [B2, B1, G1]]

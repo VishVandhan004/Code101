@@ -16014,3 +16014,5 @@ class test
         System.out.println(Arrays.deepToString(findDistance(matrix)));
     }
 }
+
+388th Problem

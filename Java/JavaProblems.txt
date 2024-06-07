@@ -15874,6 +15874,7 @@ class test {
     }
 }
 
+386th Problem
 Given an array nums of distinct integers, return all the possible permutations.
 
 case=1

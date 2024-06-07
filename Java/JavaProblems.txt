@@ -15933,7 +15933,6 @@ of size m*n. Using the above information, Putin want to know the distance of
 the nearest army unit from each tank. The distance is calculated in four 
 directions (horizontal or vertical), and its value between two adjacent cells 
 is 1.
-
 Sample test case
 case=1
 input=3 3
@@ -15941,7 +15940,6 @@ input=3 3
 1 1 1
 1 0 1
 output=[[3, 2, 3], [2, 1, 2], [1, 0, 1]]
-
 case=2
 input=3 3
 0 0 0
@@ -16014,6 +16012,5 @@ class test
             }
         }
         System.out.println(Arrays.deepToString(findDistance(matrix)));
-
     }
 }

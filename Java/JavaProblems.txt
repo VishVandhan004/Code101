@@ -15925,3 +15925,94 @@ class Main
         System.out.println(permutate(arr));
     }
 }
+
+387th Problem
+Putin wants to win the war against Ukraine. Russian’s tanks represented by ‘1’ 
+and Ukraine’s army units represented by ‘0’, are provided as values of a grid 
+of size m*n. Using the above information, Putin want to know the distance of 
+the nearest army unit from each tank. The distance is calculated in four 
+directions (horizontal or vertical), and its value between two adjacent cells 
+is 1.
+
+Sample test case
+case=1
+input=3 3
+1 1 1
+1 1 1
+1 0 1
+output=[[3, 2, 3], [2, 1, 2], [1, 0, 1]]
+
+case=2
+input=3 3
+0 0 0
+0 1 0
+0 0 0
+output=[[0, 0, 0], [0, 1, 0], [0, 0, 0]]
+import java.util.*;
+class test
+{
+    static int[][] findDistance(int matrix[][])
+    {
+        Queue<int[]> q=new LinkedList<>();
+        int r=matrix.length;
+        int c=matrix[0].length;
+        boolean visited[][]=new boolean[r][c];
+        for(int i=0;i<r;i++)
+        {
+            for(int j=0;j<c;j++)
+            {
+                if(matrix[i][j]==0)
+                {
+                    q.add(new int[] {i,j});
+                    visited[i][j]=true;
+                }
+            }
+        }
+        int level=0;
+        int dirs[][]={{1,0},{-1,0},{0,1},{0,-1}};
+        while(!q.isEmpty())
+        {
+            int size=q.size();
+            level=level+1;         
+            while(size-- > 0)
+            {
+                int cur[]=q.poll();
+                int currow=cur[0];
+                int curcol=cur[1];
+                for(int i=0;i<4;i++)
+                {
+                    int adjrow=currow+dirs[i][0];
+                    int adjcol=curcol+dirs[i][1];
+                    
+                    if(isValid(adjrow,adjcol,r,c) && !visited[adjrow][adjcol])
+                    {
+                        visited[adjrow][adjcol]=true;
+                        q.add(new int[] {adjrow,adjcol});
+                        matrix[adjrow][adjcol]=level;
+                    }
+                    
+                }
+            }
+        }
+        return matrix;
+    }
+    static boolean isValid(int cur_r,int cur_c,int r,int c)
+    {
+        return (cur_r>=0 && cur_r<r && cur_c>=0 && cur_c<c);
+    }
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int r=sc.nextInt();
+        int c=sc.nextInt();
+        int matrix[][]=new int[r][c];
+        for(int i=0;i<r;i++)
+        {
+            for(int j=0;j<c;j++)
+            {
+                matrix[i][j]=sc.nextInt();
+            }
+        }
+        System.out.println(Arrays.deepToString(findDistance(matrix)));
+
+    }
+}

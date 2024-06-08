@@ -16034,8 +16034,7 @@ output=[[B1, B2, G1], [G1, B1, B2], [G1, B2, B1], [B2, B1, G1]]
 
 import java.util.*;
 class test{
-    static List<List<String>> arrange(String arr[],int n)
-    {
+    static List<List<String>> arrange(String arr[],int n) {
         List<List<String>> result=new ArrayList<>();
         List<String> cur=new ArrayList<>();
         boolean visited[]=new boolean[arr.length];

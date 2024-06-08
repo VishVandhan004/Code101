@@ -16042,8 +16042,7 @@ class test {
         return result;
     }
     static void backtrack(String[] arr,List<String> cur,boolean[] visited,List<List<String>> result) {
-        if(cur.size()==arr.length)
-        {
+        if(cur.size()==arr.length) {
             if(!cur.get(1).equals("G1"))
             result.add(new ArrayList<>(cur));
             return;

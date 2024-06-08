@@ -16047,8 +16047,7 @@ class test {
             result.add(new ArrayList<>(cur));
             return;
         }
-        for(int i=0;i<arr.length;i++)
-        {
+        for(int i=0;i<arr.length;i++) {
             if(!visited[i])
             {
                 visited[i]=true;

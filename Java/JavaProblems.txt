@@ -16033,8 +16033,7 @@ B1 G1 B2
 output=[[B1, B2, G1], [G1, B1, B2], [G1, B2, B1], [B2, B1, G1]]
 
 import java.util.*;
-class test
-{
+class test{
     static List<List<String>> arrange(String arr[],int n)
     {
         List<List<String>> result=new ArrayList<>();

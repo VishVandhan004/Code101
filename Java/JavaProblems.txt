@@ -16062,6 +16062,6 @@ class test {
         int n=sc.nextInt();
         sc.nextLine();
         String arr[]=sc.nextLine().split(" ");
-         System.out.println(arrange(arr,n));
+        System.out.println(arrange(arr,n));
     }
 }

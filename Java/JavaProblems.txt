@@ -15969,8 +15969,7 @@ class test
         }
         int level=0;
         int dirs[][]={{1,0},{-1,0},{0,1},{0,-1}};
-        while(!q.isEmpty())
-        {
+        while(!q.isEmpty()) {
             int size=q.size();
             level=level+1;         
             while(size-- > 0) {

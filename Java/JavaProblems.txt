@@ -15973,8 +15973,7 @@ class test
         {
             int size=q.size();
             level=level+1;         
-            while(size-- > 0)
-            {
+            while(size-- > 0) {
                 int cur[]=q.poll();
                 int currow=cur[0];
                 int curcol=cur[1];

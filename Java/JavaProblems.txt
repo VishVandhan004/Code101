@@ -15982,7 +15982,6 @@ class test
                 {
                     int adjrow=currow+dirs[i][0];
                     int adjcol=curcol+dirs[i][1];
-                    
                     if(isValid(adjrow,adjcol,r,c) && !visited[adjrow][adjcol]) {
                         visited[adjrow][adjcol]=true;
                         q.add(new int[] {adjrow,adjcol});

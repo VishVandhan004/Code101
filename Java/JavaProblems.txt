@@ -15978,8 +15978,7 @@ class test
                 int cur[]=q.poll();
                 int currow=cur[0];
                 int curcol=cur[1];
-                for(int i=0;i<4;i++)
-                {
+                for(int i=0;i<4;i++) {
                     int adjrow=currow+dirs[i][0];
                     int adjcol=curcol+dirs[i][1];
                     if(isValid(adjrow,adjcol,r,c) && !visited[adjrow][adjcol]) {

@@ -16058,3 +16058,127 @@ class test {
         System.out.println(arrange(arr,n));
     }
 }
+Given a number n, find the nth term of fibonacci series.
+Note: Use Dynamic Programming.
+
+Sample test case
+case=3
+input=7
+output=13
+
+case=5
+input=65
+output=17167680177565
+
+import java.util.*;
+class Main {
+    public static long fib(int n,long[] arr){
+        if(n<=1) return n;
+        if(arr[n]!=0) return arr[n];
+        arr[n]= fib(n-1,arr)+fib(n-2,arr);
+        return arr[n];
+    }
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        long arr[] = new long[n+1];
+        System.out.println(fib(n,arr));
+    }
+}
+/*
+Amit and Kunal love to play with their respective toy trains. The bogies of 
+each train have a number marked on it. Amit wants to merge the bogies of these 
+two trains in an ascending order. Give the starting bogie of each of the two 
+trains in the form of a linked list, Amit has to merge the two trains and 
+return the start of the merged list. Your task is to help Amit in his task.
+Note: You must use only recursive approach
+Sample test case
+input=3
+2 3 5
+3
+2 4 5
+output=[2, 2, 3, 4, 5, 5]
+input=5
+2 3 5 7 9
+0
+output=[2, 3, 5, 7, 9]
+class Node
+{
+    int data;
+    Node next;
+    Node() {}
+    Node(int val)
+    {
+        data=val;
+        next=null;
+    }
+}
+*/
+
+import java.util.*;
+class Solution
+{
+    public Node mergeList(Node list1, Node list2)
+    {
+        // Implement your code here
+        if(list1==null) return list2;
+        if(list2==null) return list1;
+        if(list1.data <= list2.data){
+            list1.next = mergeList(list1.next,list2);
+            return list1;
+        } else {
+            list2.next = mergeList(list1,list2.next);
+            return list2;
+        }
+    }
+}
+/*
+John is an amateur thief and follows the orders given by his boss Mark. Marks 
+gives John the head of a linked list which has the sequence of houses to rob. 
+He asks John to rob the houses in the reverse order by reversing the sequence 
+of the linked list and return the head of the new list. 
+Your task is to help John in his task.
+
+Sample test case
+case=1
+input=5
+2 4 6 8 10
+output=[10, 8, 6, 4, 2]
+
+class ListNode
+{
+    int val;
+    ListNode next;
+    ListNode() {}
+    ListNode(int val)
+    {
+        this.val = val;
+    }
+    ListNode(int val, ListNode next)
+    {
+        this.val = val;
+        this.next = next;
+    }
+}
+*/
+
+import java.util.*;
+class Solution
+{
+    public ListNode reverseList(ListNode head)
+    {
+        // Implement your code here
+        ListNode prev = null;
+        ListNode current = head;
+        while(current!=null)
+        {
+            ListNode nextNode = current.next;
+            current.next = prev;
+            prev = current;
+            current = nextNode;
+        }
+        return prev;
+    }
+}
+
+

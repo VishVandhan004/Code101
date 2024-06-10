@@ -16062,12 +16062,10 @@ class test {
 389th Problem
 Given a number n, find the nth term of fibonacci series.
 Note: Use Dynamic Programming.
-
 Sample test case
 case=3
 input=7
 output=13
-
 case=5
 input=65
 output=17167680177565
@@ -16087,7 +16085,8 @@ class Main {
         System.out.println(fib(n,arr));
     }
 }
-/*
+
+390th Problem
 Amit and Kunal love to play with their respective toy trains. The bogies of 
 each train have a number marked on it. Amit wants to merge the bogies of these 
 two trains in an ascending order. Give the starting bogie of each of the two 

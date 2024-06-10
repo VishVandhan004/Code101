@@ -16139,7 +16139,6 @@ gives John the head of a linked list which has the sequence of houses to rob.
 He asks John to rob the houses in the reverse order by reversing the sequence 
 of the linked list and return the head of the new list. 
 Your task is to help John in his task.
-
 Sample test case
 case=1
 input=5
@@ -16161,8 +16160,6 @@ class ListNode
         this.next = next;
     }
 }
-*/
-
 import java.util.*;
 class Solution
 {

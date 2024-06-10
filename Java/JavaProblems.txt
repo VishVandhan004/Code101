@@ -16103,6 +16103,7 @@ input=5
 2 3 5 7 9
 0
 output=[2, 3, 5, 7, 9]
+
 class Node
 {
     int data;
@@ -16114,8 +16115,6 @@ class Node
         next=null;
     }
 }
-*/
-
 import java.util.*;
 class Solution
 {

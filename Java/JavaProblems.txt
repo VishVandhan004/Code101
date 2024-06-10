@@ -16132,7 +16132,8 @@ class Solution
         }
     }
 }
-/*
+
+391st Problem
 John is an amateur thief and follows the orders given by his boss Mark. Marks 
 gives John the head of a linked list which has the sequence of houses to rob. 
 He asks John to rob the houses in the reverse order by reversing the sequence 

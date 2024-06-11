@@ -16219,14 +16219,14 @@ class test {
         System.out.print(check(0,m,l,arr,size));
     }
 }
+
+393rd Problem
 Alex if having a string s, he wants to transform every letter individually to 
 be lowercase or uppercase to create another string. Return a list of all 
 possible strings he could create.
-
 case=1
 input=a1b2
 output=[a1b2, a1B2, A1b2, A1B2]
-
 case=2
 input=3z4
 output=[3z4, 3Z4]

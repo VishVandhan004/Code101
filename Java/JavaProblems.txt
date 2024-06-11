@@ -16232,7 +16232,7 @@ input=3z4
 output=[3z4, 3Z4]
 
 import java.util.*;
-public class StringCasePermutation {
+class test {
     public static List<String> letterCasePermutation(String s) {
         List<String> result = new ArrayList<>();
         backtrack(s.toCharArray(), 0, result);
@@ -16255,9 +16255,7 @@ public class StringCasePermutation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
-        
         List<String> permutations = letterCasePermutation(input);
-        
         System.out.println(permutations);
     }
 }

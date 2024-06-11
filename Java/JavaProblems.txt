@@ -16246,14 +16246,12 @@ public class StringCasePermutation {
         if (Character.isLetter(chars[index])) {
             chars[index] = Character.toLowerCase(chars[index]);
             backtrack(chars, index + 1, result);
-            
             chars[index] = Character.toUpperCase(chars[index]);
             backtrack(chars, index + 1, result);
         } else {
             backtrack(chars, index + 1, result);
         }
     }
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         

@@ -16179,4 +16179,55 @@ class Solution
     }
 }
 
+392nd Problem
+Peter is given a list of numbers in the form of an array. Taking only k numbers 
+at a time, he is asked to find the number of ways the numbers in the list can 
+be arranged. Your task is to help Peter in his task.
+Sample test case
+input=3
+1 2 3
+2
+output=[[1, 2], [1, 3], [2, 3]]
+Explanation: The 1st line is the number of array elements, followed by the 
+array value, followed by the value for k. Output is 3, i.e, the number of ways 
+the list can be arranged taking 2 numbers at a time.
+
+import java.util.*;
+class test {
+        static List<Integer> l = new ArrayList<>();
+        static List<List<Integer>> m = new ArrayList<>();
+        public static List<List<Integer>> check(int start,List<List<Integer>> m,List<Integer> l,int[] arr,int s){
+            if(l.size() == s){
+                m.add(new ArrayList<>(l));
+                return m;
+            }
+            for(int i=start;i<arr.length;i++){
+                l.add(arr[i]);
+                check(i+1,m,l,arr,s);
+                l.remove(l.size()-1);
+            }
+        return m;
+    }
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int size = sc.nextInt();
+        System.out.print(check(0,m,l,arr,size));
+    }
+}
+Alex if having a string s, he wants to transform every letter individually to 
+be lowercase or uppercase to create another string. Return a list of all 
+possible strings he could create.
+
+case=1
+input=a1b2
+output=[a1b2, a1B2, A1b2, A1B2]
+
+case=2
+input=3z4
+output=[3z4, 3Z4]
 

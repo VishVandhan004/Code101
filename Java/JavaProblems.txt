@@ -16243,7 +16243,6 @@ public class StringCasePermutation {
             result.add(new String(chars));
             return;
         }
-        
         if (Character.isLetter(chars[index])) {
             chars[index] = Character.toLowerCase(chars[index]);
             backtrack(chars, index + 1, result);

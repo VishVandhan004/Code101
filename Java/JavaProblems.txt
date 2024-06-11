@@ -16259,7 +16259,5 @@ public class StringCasePermutation {
         List<String> permutations = letterCasePermutation(input);
         
         System.out.println(permutations);
-        
-        scanner.close();
     }
 }

@@ -16304,7 +16304,6 @@ military installation. Each bunker contains a stash of valuable intelligence
 documents. the only constraint stopping James from breaching each of them is 
 that adjacent bunkers have security systems connected and it will trigger and 
 alert his presence if two adjacent bunkers were breached.
-
 James is provided with an integer array representing the value of the 
 intelligence documents in each bunker, he has to maximize the amount of 
 valuable information that can be retrieved without triggering the alarm system. 

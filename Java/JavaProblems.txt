@@ -16266,12 +16266,10 @@ her student Molly and ask her to tell if str2 contains a permutation of str1,
 i.e. if one of str1’s permutation is a substring of str2. If str2 contains 
 permutation of str1, Molly has to tell true, else false. 
 Your task is to help Molly in her task.
-
 Sample test case
 case=1
 input=abc abdcabb
 output=true
-
 Explanation: s2 contains one permutation of s1 ("cab").
 
 case=2

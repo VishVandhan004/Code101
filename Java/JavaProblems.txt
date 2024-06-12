@@ -16316,7 +16316,6 @@ output=4
 Explanation: Breach bunker 1 (intelligence value = 1) and then breach 
 bunker 3 (intelligence value = 3).
 Total amount he can breach = 1 + 3 = 4.
-
 case=6
 input=6
 55 3 4 110 7 35

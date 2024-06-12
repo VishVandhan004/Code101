@@ -16321,4 +16321,33 @@ input=6
 55 3 4 110 7 35
 output=200
 
-
+import java.util.Scanner;
+public class BunkerBreachSimple {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int testCase = scanner.nextInt();
+        while (testCase-- > 0) {
+            int bunkers = scanner.nextInt();
+            int[] values = new int[bunkers];
+            for (int i = 0; i < bunkers; i++) {
+                values[i] = scanner.nextInt();
+            }
+            System.out.println(maxIntelligenceSimple(values));
+        }
+    }
+    public static int maxIntelligenceSimple(int[] values) {
+        int max = 0;
+        // Iterate through each bunker
+        for (int i = 0; i < values.length; i++) {
+            // Consider stealing from the current bunker
+            int current = values[i];
+            // Check if next bunker exists and its value doesn't trigger the alarm (adjacent)
+            if (i + 1 < values.length && values[i] != values[i + 1]) {
+                current += values[i + 1]; // Add value of the next bunker if safe
+            }
+            // Update the maximum value
+            max = Math.max(max, current);
+        }
+        return max;
+    }
+}

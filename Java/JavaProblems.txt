@@ -16297,6 +16297,8 @@ class test {
         System.out.print(check(s1,s2));
     }
 }
+
+395th Problem
 James is a spy; he has to infiltrate a series of high-security bunkers along a 
 military installation. Each bunker contains a stash of valuable intelligence 
 documents. the only constraint stopping James from breaching each of them is 

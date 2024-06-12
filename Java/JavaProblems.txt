@@ -16260,6 +16260,7 @@ class test {
     }
 }
 
+394th Problem
 Andy is the class teacher of grade 8. She gives two strings str1 and str2 to 
 her student Molly and ask her to tell if str2 contains a permutation of str1, 
 i.e. if one of str1’s permutation is a substring of str2. If str2 contains 

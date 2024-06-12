@@ -16309,7 +16309,6 @@ intelligence documents in each bunker, he has to maximize the amount of
 valuable information that can be retrieved without triggering the alarm system. 
 Your task is to help James in his task.
 Sample test case
-
 case=1
 input=4
 1 2 3 1

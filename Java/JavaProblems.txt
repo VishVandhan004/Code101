@@ -16394,13 +16394,10 @@ of unsigned integer and display the result as an unsigned integer.
 E.g. 11111111111111111111111111111001 represents unsigned integer 4294967289, 
 the output should be 2684354559 which in binary format is 
 10011111111111111111111111111111 and is the reverse of the input string.
-
 Sample test case
-
 case=1
 input=11111111111111111111111111111001
 output=2684354559 
-
 case=2
 input=00000010100101000001111010011101
 output=3111659840

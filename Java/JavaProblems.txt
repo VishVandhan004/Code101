@@ -16417,6 +16417,8 @@ class test {
         System.out.println(m);
     }
 }
+
+398th Problem
 Adam is given an array which is in the shape of a triangle. He has to find the 
 minimum path sum from top to bottom of the array. 
 Your task is to help Adam in his task.

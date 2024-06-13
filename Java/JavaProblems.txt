@@ -16343,6 +16343,8 @@ class test {
         System.out.println(check(arr,m,0));
     }
 }
+
+396th Problem
 David gives a task to his student Amber. He provides an integer n, and asks 
 Amber to return the first n rows of Pascal’s triangle. In Pascal's triangle, 
 each number is the sum of the two numbers directly above it. 

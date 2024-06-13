@@ -16367,7 +16367,6 @@ class Main {
             System.out.println(row);
         }
     }
-
     public static List<List<Integer>> generatePascalTriangle(int n) {
         List<List<Integer>> pascalTriangle = new ArrayList<>();
         for (int i = 0; i < n; i++) {
@@ -16386,6 +16385,8 @@ class Main {
         return pascalTriangle;
     }
 }
+
+397th Problem
 Johnson is taking a recruitment test for the position of software engineer at 
 CodeTech software company. In the test, an input string in binary format is 
 given, this string represents unsigned integer. Johnson has to reverse the bits 

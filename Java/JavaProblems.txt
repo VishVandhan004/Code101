@@ -16321,33 +16321,124 @@ input=6
 55 3 4 110 7 35
 output=200
 
-import java.util.Scanner;
-public class BunkerBreachSimple {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int testCase = scanner.nextInt();
-        while (testCase-- > 0) {
-            int bunkers = scanner.nextInt();
-            int[] values = new int[bunkers];
-            for (int i = 0; i < bunkers; i++) {
-                values[i] = scanner.nextInt();
-            }
-            System.out.println(maxIntelligenceSimple(values));
-        }
-    }
-    public static int maxIntelligenceSimple(int[] values) {
-        int max = 0;
-        // Iterate through each bunker
-        for (int i = 0; i < values.length; i++) {
-            // Consider stealing from the current bunker
-            int current = values[i];
-            // Check if next bunker exists and its value doesn't trigger the alarm (adjacent)
-            if (i + 1 < values.length && values[i] != values[i + 1]) {
-                current += values[i + 1]; // Add value of the next bunker if safe
-            }
-            // Update the maximum value
-            max = Math.max(max, current);
-        }
+import java.util.*;
+class test {
+    public static int check(int[] arr,Map<Integer,Integer> m,int idx){
+        if(idx>=arr.length) return 0;
+        if(m.containsKey(idx)) return m.get(idx);
+        int p = arr[idx]+check(arr,m,idx+2);
+        int np = check(arr,m,idx+1);
+        int max = Math.max(p,np);
+        m.put(idx,max);
         return max;
     }
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        Map<Integer,Integer> m = new HashMap<>();
+        System.out.println(check(arr,m,0));
+    }
 }
+David gives a task to his student Amber. He provides an integer n, and asks 
+Amber to return the first n rows of Pascal’s triangle. In Pascal's triangle, 
+each number is the sum of the two numbers directly above it. 
+Your task is to help Amber in her task.
+
+Sample test case
+case=1
+input=5
+output=[[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
+
+case=2
+input=4
+output=[[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        List<List<Integer>> pascalTriangle = generatePascalTriangle(n);
+        for (List<Integer> row : pascalTriangle) {
+            System.out.println(row);
+        }
+    }
+
+    public static List<List<Integer>> generatePascalTriangle(int n) {
+        List<List<Integer>> pascalTriangle = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            List<Integer> row = new ArrayList<>();
+            row.add(1); 
+            for (int j = 1; j < i; j++) {
+                int prevSum = pascalTriangle.get(i - 1).get(j - 1);
+                int currSum = pascalTriangle.get(i - 1).get(j);
+                row.add(prevSum + currSum);
+            }
+            if (i > 0) {
+                row.add(1);
+            }
+            pascalTriangle.add(row);
+        }
+        return pascalTriangle;
+    }
+}
+Johnson is taking a recruitment test for the position of software engineer at 
+CodeTech software company. In the test, an input string in binary format is 
+given, this string represents unsigned integer. Johnson has to reverse the bits 
+of unsigned integer and display the result as an unsigned integer. 
+E.g. 11111111111111111111111111111001 represents unsigned integer 4294967289, 
+the output should be 2684354559 which in binary format is 
+10011111111111111111111111111111 and is the reverse of the input string.
+
+Sample test case
+
+case=1
+input=11111111111111111111111111111001
+output=2684354559 
+
+case=2
+input=00000010100101000001111010011101
+output=3111659840
+
+import java.util.*;
+class test {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        long m = 0;
+        for (int i=0;i<str.length();i++){
+            if(str.charAt(i)=='1'){
+                long k = Integer.valueOf(str.charAt(i));
+                m = m+Math.pow(2,i);
+            }
+        }
+        System.out.println(m);
+    }
+}
+Adam is given an array which is in the shape of a triangle. He has to find the 
+minimum path sum from top to bottom of the array. 
+Your task is to help Adam in his task.
+
+Sample test case
+
+case=1
+input=4
+3
+4 5
+7 6 8
+5 2 9 4
+output=15
+
+Explanation: 3 + 4 + 6 + 2 = 15
+
+case=2
+input=4
+2
+6 5
+3 2 3
+7 5 6 5
+output=14

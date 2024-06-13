@@ -16349,7 +16349,6 @@ David gives a task to his student Amber. He provides an integer n, and asks
 Amber to return the first n rows of Pascal’s triangle. In Pascal's triangle, 
 each number is the sum of the two numbers directly above it. 
 Your task is to help Amber in her task.
-
 Sample test case
 case=1
 input=5

@@ -16165,7 +16165,6 @@ class Solution
 {
     public ListNode reverseList(ListNode head)
     {
-        // Implement your code here
         ListNode prev = null;
         ListNode current = head;
         while(current!=null)

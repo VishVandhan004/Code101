@@ -16434,3 +16434,36 @@ input=4
 3 2 3
 7 5 6 5
 output=14
+import java.util.Scanner;
+
+public class TriangleMinimumPathSum {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the number of rows in the triangle
+        int n = scanner.nextInt();
+        int[][] triangle = new int[n][];
+
+        // Read the triangle values
+        for (int i = 0; i < n; i++) {
+            triangle[i] = new int[i + 1];
+            for (int j = 0; j < i + 1; j++) {
+                triangle[i][j] = scanner.nextInt();
+            }
+        }
+
+        // Apply dynamic programming to find the minimum path sum
+        for (int row = n - 2; row >= 0; row--) {
+            for (int col = 0; col < triangle[row].length; col++) {
+                triangle[row][col] += Math.min(triangle[row + 1][col], triangle[row + 1][col + 1]);
+            }
+        }
+
+        // The top element now contains the minimum path sum
+        int minPathSum = triangle[0][0];
+        System.out.println(minPathSum);
+
+        scanner.close();
+    }
+}

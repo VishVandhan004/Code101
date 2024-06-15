@@ -16434,9 +16434,9 @@ input=4
 3 2 3
 7 5 6 5
 output=14
-import java.util.Scanner;
 
-public class TriangleMinimumPathSum {
+import java.util.Scanner;
+class TriangleMinimumPathSum {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

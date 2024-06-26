@@ -16459,23 +16459,19 @@ class TriangleMinimumPathSum {
 }
 
 399th Problem
-/*
 Alex is having the root of a binary tree. He wants to check whether it is 
 symmetric around its center i.e., a mirror of itself. 
 Your task is to help Alex in his task.
-
           2
       /   |   \
      3    |     3
    /  \   |    /  \
   4    5  |   5    4	
-
 Sample test case
 case=1
 input=7
 2 3 3 4 5 5 4
 output=true
-
 import java.util.*;
 class TreeNode
 {
@@ -16488,7 +16484,7 @@ class TreeNode
         right = null;
     }
 }
-*/
+
 import java.util.*;
 class Solution
 {
@@ -16511,7 +16507,8 @@ class Solution
         return (left.data==right.data) && mirr(left.left,right.right) && mirr(left.right,right.left);
     }
 }
-/*
+
+400th Problem
 Albert likes uniqueness in almost everything. He has the first node of a 
 linked list having few values. He wants to replace values that are occurring 
 more than once with only one occurrence of the value. 

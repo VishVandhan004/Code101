@@ -16679,7 +16679,8 @@ class Solution
         else return searchBST(node.right,k);
     }
 }
-/*
+
+404th Problem
 Alan is given a list of values. He constructs a binary search tree using these 
 values. He is also provided with a new value.  He gives the root of BST and the 
 new value to his friend Peter and asks him to insert the new node in the BST. 

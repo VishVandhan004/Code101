@@ -16698,8 +16698,6 @@ output=[5, 3, 8, 2, 4, 6]
     3     8         =>         3     8
    / \                        / \   /
   2   4                      2   4 6	
-
-
 class TreeNode
 {
     public int data;
@@ -16711,7 +16709,6 @@ class TreeNode
         right = null;
     }
 }
-*/
 
 import java.util.*;
 class Solution

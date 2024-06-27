@@ -16643,7 +16643,6 @@ whose value equals to the target. If such a node is found, Mark has to return
 the subtree rooted with that node. If such node does not exist then he has to 
 return null. 
 Your task is to help James in his task.
-
 Sample test case
 case=1
 input=5
@@ -16657,8 +16656,6 @@ output=[3, 2, 4]
     3     8         =>         3 
    / \                        / \ 
   2   4                      2   4
-
-Solution.java
 
 class TreeNode
 {

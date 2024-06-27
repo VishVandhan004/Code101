@@ -16686,7 +16686,6 @@ values. He is also provided with a new value.  He gives the root of BST and the
 new value to his friend Peter and asks him to insert the new node in the BST. 
 Peter has to return the root of the BST after the insertion. 
 Your task is to help Peter in his task.
-
 Sample test case
 case=1
 input=5

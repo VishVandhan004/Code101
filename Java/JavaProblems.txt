@@ -16772,15 +16772,12 @@ and gives him a source string and a pattern string. He tells Peter to find if
 the pattern can be found in source string. If found he asks Peter to give the 
 stating index of the source string at which the patter is found, else return -1. 
 Your task is to help Peter in his task.
-
 Note: You should not use any string API’s.
-
 Sample test case
 case=1
 input=aefefg
 efg
 output=3
-
 case=3
 input=aefefh
 efg

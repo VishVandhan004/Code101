@@ -16719,3 +16719,189 @@ class Solution
         return node;
     }
 }
+/*
+Tom is given a list of values. He constructs a binary tree using these values. 
+He gives the root of the tree his friend Jerry and asks him to find out if the 
+tree is a valid binary search tree (BST). Jerry has to return true if it is a 
+valid binary search tree, else return false.
+Your task is to help Jerry in his task.
+
+Sample test case
+case=1
+input=3
+3 2 4
+output=true
+
+       3  
+     /   \
+    2     4
+
+class TreeNode
+{
+    public int data;
+    public TreeNode left, right;
+    public TreeNode(int data)
+    {
+        this.data = data;
+        left = null;
+        right = null;
+    }
+}
+*/
+
+import java.util.*;
+class Solution
+{
+    public boolean isValidBST(TreeNode root)
+    {
+        // Implement your code here
+        return helper(root,null,null);
+    }
+    public static boolean helper(TreeNode node, Integer lower,Integer upper){
+        if(node==null) return true;
+        int val = node.data;
+        if(lower!=null && val<=lower) return false;
+        if(upper!=null && val>=upper) return false;
+        if(!helper(node.right,val,upper)) return false;
+        if(!helper(node.left,lower,val)) return false;
+        return true;
+    }
+}
+John and Peter are friends. Peter is a keen observer of strings and can easily 
+find if a pattern is present in a string. John wants to test this skill in Peter 
+and gives him a source string and a pattern string. He tells Peter to find if 
+the pattern can be found in source string. If found he asks Peter to give the 
+stating index of the source string at which the patter is found, else return -1. 
+Your task is to help Peter in his task.
+
+Note: You should not use any string API’s.
+
+Sample test case
+case=1
+input=aefefg
+efg
+output=3
+
+case=3
+input=aefefh
+efg
+output=-1
+import java.util.*;
+class test {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+        System.out.print(check(s1,s2));
+    }
+    public static int check(String s1, String s2){
+        int len1 = s1.length();
+        int len2 = s2.length();
+        if(len2 > len1) return -1;
+        for(int i=0;i<len1-len2;i++){
+            boolean flag = true;
+            for(int j=0;j<len2;j++){
+               if(s1.charAt(i+j)!= s2.charAt(j)){
+                   flag = false;
+                   break;
+               }
+            }
+            if(flag) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+Given n non-negative integers a1, a2, ..., an, where each represents a point at 
+coordinate (i, ai). n vertical lines are drawn such that the two endpoints of 
+line i is at (i, ai) and (i, 0).
+Find two lines, which together with x-axis forms a container, such that the 
+container contains the most water. Note: You may not slant the container.
+
+for example:
+
+Input : 1 8 6 2 5 4 8 3 7
+Output : 49
+
+ 9 |
+ 8 |     |______________|_____|
+ 7 |     |              |     |
+ 6 |     |  |           |     |
+ 5 |     |  |     |     |     |
+ 4 |     |  |     |  |  |     |
+ 3 |     |  |     |  |  |  |  |
+ 2 |     |  |  |  |  |  |  |  |
+ 1 |__|__|__|__|__|__|__|__|__|
+ 0
+
+Explanation: The above vertical lines are represented by 
+array [1, 8, 6, 2, 5, 4, 8, 3, 7]. In this case, the max area of 
+water (rectangular section) the container can contain is 49.
+
+Sample Test Case
+
+case=1
+input=1 8 6 2 5 4 8 3 7
+output=49
+
+
+/*
+In a hall, the blocks are arranged in the form of a tree,
+based on the serial numbers allotted to that room.
+
+The seating arrangement is filled in the following way:
+	- left sub node data is always smaller than the current node data.
+	- right sub node data is always greater than the current node data.
+	
+You are given the root of the final tree T.
+Your task is to convert the tree T to Altered Tree such that every data
+of the original tree T is changed to the original data plus sum of all data
+greater than the original data in tree T and return the root of the Altered 
+Tree T.
+
+Sample test case
+case=1
+input=5
+5 3 8 2 4
+output=[13, 20, 8, 22, 17]
+
+       5                          5
+     /   \                      /    \
+    3     8         =>         20     8
+   / \                        /  \
+  2   4                      22   17
+
+Solution.java
+
+class TreeNode
+{
+    public int data;
+    public TreeNode left, right;
+    public TreeNode(int data)
+    {
+        this.data = data;
+        left = null;
+        right = null;
+    }
+}
+*/
+import java.util.*;
+class Solution
+{
+    int sum = 0;
+    public TreeNode bstToGst(TreeNode root)
+    {
+        // Implement your code here
+        if(root==null) return null;
+        reverse(root);
+        return root;
+    }
+    public void reverse(TreeNode root){
+        if(root==null) return;
+        reverse(root.right);
+        sum = sum+root.data;
+        root.data = sum;
+        reverse(root.left);
+    }
+}

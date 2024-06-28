@@ -16836,35 +16836,58 @@ case=1
 input=1 8 6 2 5 4 8 3 7
 output=49
 
+import java.util.*;
+class test {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int[] height = new int[n];
+        for (int i = 0; i < n; i++) {
+            height[i] = scanner.nextInt();
+        }
+        System.out.println(maxArea(height));
+    }
+    public static int maxArea(int[] height) {
+        int maxArea = 0;
+        int left = 0;
+        int right = height.length - 1;
+        while (left < right) {
+            int width = right - left;
+            int minHeight = Math.min(height[left], height[right]);
+            int area = width * minHeight;
+            maxArea = Math.max(maxArea, area);
+            // Move the pointer pointing to the shorter line inward
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        return maxArea;
+    }
+}
 
-/*
+408th Problem
 In a hall, the blocks are arranged in the form of a tree,
 based on the serial numbers allotted to that room.
-
 The seating arrangement is filled in the following way:
 	- left sub node data is always smaller than the current node data.
 	- right sub node data is always greater than the current node data.
-	
 You are given the root of the final tree T.
 Your task is to convert the tree T to Altered Tree such that every data
 of the original tree T is changed to the original data plus sum of all data
 greater than the original data in tree T and return the root of the Altered 
 Tree T.
-
 Sample test case
 case=1
 input=5
 5 3 8 2 4
 output=[13, 20, 8, 22, 17]
-
        5                          5
      /   \                      /    \
     3     8         =>         20     8
    / \                        /  \
   2   4                      22   17
-
-Solution.java
-
 class TreeNode
 {
     public int data;
@@ -16876,7 +16899,7 @@ class TreeNode
         right = null;
     }
 }
-*/
+
 import java.util.*;
 class Solution
 {

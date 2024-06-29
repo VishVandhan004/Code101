@@ -16726,7 +16726,7 @@ He gives the root of the tree his friend Jerry and asks him to find out if the
 tree is a valid binary search tree (BST). Jerry has to return true if it is a 
 valid binary search tree, else return false.
 Your task is to help Jerry in his task.
-Sample test ca
+Sample test 
 case=1
 input=3
 3 2 4

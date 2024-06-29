@@ -16871,7 +16871,7 @@ class test {
 In a hall, the blocks are arranged in the form of a tree,
 based on the serial numbers allotted to that room.
 The seating arrangement is filled in the following way:
-	- left sub node data is always smaller than the current node data.
+	 left sub node data is always smaller than the current node data.
 	- right sub node data is always greater than the current node data.
 You are given the root of the final tree T.
 Your task is to convert the tree T to Altered Tree such that every data

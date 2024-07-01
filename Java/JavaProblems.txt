@@ -16971,10 +16971,8 @@ following properties:
 	- The word can be formed with letters of S, and you can shuffle the letters 
 	as your need. You cannot use the letters more than their occurence count.
 	- The word should be equal to the reverse of it.
-	
 NOTE: Alphabets are case sensitive
 "Aa" is  not equal to "aA". The letters 'a' and 'A' are not same
-
 Sample Test Case
 
 case =1

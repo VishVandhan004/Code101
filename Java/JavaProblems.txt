@@ -16921,29 +16921,24 @@ class Solution
 
 409th Problem
 Suraj and Tom are two best friends. 
-
 Both of them have given two Strings S1 and S2 
 Suraj has given String S1 and Tom has given String S2
 Suraj is always bothered about Tom Strings and checks if his string follows 
 sub sequence of Tom strings or not 
-
 Help Suraj to solve his problem 
-
 A sub sequence of string is a new string which is formed from the original 
 string by removing some (can be none) of the characters without disturbing the 
 relative positions of the remaining characters. 
-
 Sample Test Case
-
 case=1
 input=aa
 aaaa
 output=true
-
 case=2
 input=ahga
 ahgijk
 output=false
+
 import java.util.*;
 class test {
     public static void main (String[] args) {

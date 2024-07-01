@@ -16918,3 +16918,135 @@ class Solution
         reverse(root.left);
     }
 }
+Suraj and Tom are two best friends. 
+
+Both of them have given two Strings S1 and S2 
+Suraj has given String S1 and Tom has given String S2
+Suraj is always bothered about Tom Strings and checks if his string follows 
+sub sequence of Tom strings or not 
+
+Help Suraj to solve his problem 
+
+A sub sequence of string is a new string which is formed from the original 
+string by removing some (can be none) of the characters without disturbing the 
+relative positions of the remaining characters. 
+
+Sample Test Case
+
+case=1
+input=aa
+aaaa
+output=true
+
+case=2
+input=ahga
+ahgijk
+output=false
+import java.util.*;
+class test {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.next();
+        String s2 = sc.next();
+        System.out.println(check(s1,s2));
+    }
+    public static boolean check(String s1, String s2){
+        // if(s2.contains(s1)){
+        //     return true;
+        // }
+        // return false;
+        int i=0,j=0;
+        while(i<s1.length() && j<s2.length()){
+            if(s1.charAt(i) == s2.charAt(j)){
+                i++;
+            }
+            j++;
+        }
+        return i==s1.length();
+    }
+}
+You are given a string S, consist of both lowercase and uppercase alphabets.
+
+Your task is to find out the length of the longest word W with the 
+following properties:
+	- The word should be the longest.
+	- The word can be formed with letters of S, and you can shuffle the letters 
+	as your need. You cannot use the letters more than their occurence count.
+	- The word should be equal to the reverse of it.
+	
+NOTE: Alphabets are case sensitive
+"Aa" is  not equal to "aA". The letters 'a' and 'A' are not same
+
+Sample Test Case
+
+case =1
+input =abccccdd
+output =7
+
+case =2
+input =AIbohPhObia
+output =5
+
+
+import java.util.*;
+class test {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        System.out.println(check(s));
+    }
+    public static int check(String s){
+        int[] count=new int[128];
+        for(char c:s.toCharArray()){
+            count[c]++;
+        }
+        int ans=0;
+        for(int v:count){
+            ans+=v/2*2;
+            if(ans%2==0 && v/2==1){
+                ans++;
+            }
+        }
+        return ans;
+    }
+}
+David is coordinator for arranging discussion rooms for candidate selected for 
+interviews. He is provided with list of intervals i.e., start time and end time 
+for interviews. He has to optimize the discussion rooms, to do this he merges 
+interval that overlap into a single discussion room. 
+Your task is to help David with merging these overlapping intervals.
+
+Sample Test Case
+
+case=1
+input=4
+1 3
+2 6
+8 10
+15 18
+output=[[1, 6], [8, 10], [15, 18]]
+
+case=2
+input=3
+6 8
+1 9
+2 4
+output=[[1, 9]]
+
+Mark is given a string and told to shift each of its letter to its 
+successive/ predecessive letter, for example: "abc" -> "bcd" or  "bcd" -> "abc". 
+He can keep shifting the letters to form the sequence: 
+"abc" -> "bcd" -> ... -> "xyz" or "xyz"->"abc"->"bcd".
+
+Given a list of strings which contains English alphabets, Mark has to group all 
+strings that belong to the same shifting sequence.
+
+Note: Output should be as follows, Groups should be formed as per input order
+each group should be a sorted group.
+
+Sample Test Case
+
+case =1
+input =acf dca jkl gil tvy mor gfd pqr hge
+output =[[acf, gil, mor, tvy], [dca, gfd, hge], [jkl, pqr]]
+

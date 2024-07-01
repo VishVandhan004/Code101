@@ -17036,7 +17036,6 @@ strings that belong to the same shifting sequence.
 
 Note: Output should be as follows, Groups should be formed as per input order
 each group should be a sorted group.
-
 Sample Test Case
 
 case =1

@@ -16974,15 +16974,12 @@ following properties:
 NOTE: Alphabets are case sensitive
 "Aa" is  not equal to "aA". The letters 'a' and 'A' are not same
 Sample Test Case
-
 case =1
 input =abccccdd
 output =7
-
 case =2
 input =AIbohPhObia
 output =5
-
 
 import java.util.*;
 class test {

@@ -17025,7 +17025,7 @@ input=3
 2 4
 output=[[1, 9]]
 
-
+412th Problem
 Mark is given a string and told to shift each of its letter to its 
 successive/ predecessive letter, for example: "abc" -> "bcd" or  "bcd" -> "abc". 
 He can keep shifting the letters to form the sequence: 

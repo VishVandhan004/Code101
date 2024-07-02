@@ -17084,19 +17084,16 @@ case =1
 input =acf dca jkl gil tvy mor gfd pqr hge
 output =[[acf, gil, mor, tvy], [dca, gfd, hge], [jkl, pqr]]
 
-import java.util.Scanner;
-
+import java.util.*;
 public class GroupShiftingSequences {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         // Reading the input strings
-        System.out.println("Enter the strings separated by space:");
         String input = scanner.nextLine();
         String[] strings = input.split(" ");
         // Grouping the strings
         List<List<String>> groupedSequences = groupShiftingSequences(strings);
         // Printing the grouped strings
-        System.out.println("Grouped sequences:");
         for (List<String> group : groupedSequences) {
             System.out.println(group);
         }

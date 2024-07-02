@@ -17088,7 +17088,6 @@ public class MergeIntervals {
     }
 }
 
-
 412th Problem
 Mark is given a string and told to shift each of its letter to its 
 successive/ predecessive letter, for example: "abc" -> "bcd" or  "bcd" -> "abc". 

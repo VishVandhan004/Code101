@@ -17025,6 +17025,70 @@ input=3
 2 4
 output=[[1, 9]]
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
+
+public class MergeIntervals {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Reading the number of intervals
+        System.out.println("Enter the number of intervals:");
+        int n = scanner.nextInt();
+
+        // Reading the intervals
+        int[][] intervals = new int[n][2];
+        System.out.println("Enter the intervals:");
+        for (int i = 0; i < n; i++) {
+            intervals[i][0] = scanner.nextInt();
+            intervals[i][1] = scanner.nextInt();
+        }
+
+        // Merging intervals
+        int[][] mergedIntervals = mergeIntervals(intervals);
+
+        // Printing the merged intervals
+        System.out.println("Merged intervals:");
+        for (int[] interval : mergedIntervals) {
+            System.out.println(Arrays.toString(interval));
+        }
+    }
+
+    public static int[][] mergeIntervals(int[][] intervals) {
+        if (intervals == null || intervals.length == 0) {
+            return new int[0][];
+        }
+
+        // Sort intervals by start time
+        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
+
+        List<int[]> merged = new ArrayList<>();
+        int[] currentInterval = intervals[0];
+        merged.add(currentInterval);
+
+        for (int[] interval : intervals) {
+            int currentEnd = currentInterval[1];
+            int nextStart = interval[0];
+            int nextEnd = interval[1];
+
+            if (currentEnd >= nextStart) {
+                // There is overlap, so we merge the intervals
+                currentInterval[1] = Math.max(currentEnd, nextEnd);
+            } else {
+                // No overlap, move to the next interval
+                currentInterval = interval;
+                merged.add(currentInterval);
+            }
+        }
+
+        return merged.toArray(new int[merged.size()][]);
+    }
+}
+
+
 412th Problem
 Mark is given a string and told to shift each of its letter to its 
 successive/ predecessive letter, for example: "abc" -> "bcd" or  "bcd" -> "abc". 

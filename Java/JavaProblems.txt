@@ -17093,15 +17093,12 @@ import java.util.Scanner;
 public class GroupShiftingSequences {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         // Reading the input strings
         System.out.println("Enter the strings separated by space:");
         String input = scanner.nextLine();
         String[] strings = input.split(" ");
-
         // Grouping the strings
         List<List<String>> groupedSequences = groupShiftingSequences(strings);
-
         // Printing the grouped strings
         System.out.println("Grouped sequences:");
         for (List<String> group : groupedSequences) {

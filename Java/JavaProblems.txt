@@ -17083,3 +17083,57 @@ Sample Test Case
 case =1
 input =acf dca jkl gil tvy mor gfd pqr hge
 output =[[acf, gil, mor, tvy], [dca, gfd, hge], [jkl, pqr]]
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Scanner;
+
+public class GroupShiftingSequences {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Reading the input strings
+        System.out.println("Enter the strings separated by space:");
+        String input = scanner.nextLine();
+        String[] strings = input.split(" ");
+
+        // Grouping the strings
+        List<List<String>> groupedSequences = groupShiftingSequences(strings);
+
+        // Printing the grouped strings
+        System.out.println("Grouped sequences:");
+        for (List<String> group : groupedSequences) {
+            System.out.println(group);
+        }
+    }
+
+    private static List<List<String>> groupShiftingSequences(String[] strings) {
+        HashMap<String, List<String>> map = new HashMap<>();
+
+        for (String s : strings) {
+            String key = getShiftedKey(s);
+            map.putIfAbsent(key, new ArrayList<>());
+            map.get(key).add(s);
+        }
+
+        // Sort each group and collect results
+        List<List<String>> result = new ArrayList<>();
+        for (List<String> group : map.values()) {
+            group.sort(String::compareTo);
+            result.add(group);
+        }
+
+        return result;
+    }
+
+    private static String getShiftedKey(String s) {
+        char[] chars = s.toCharArray();
+        int shift = chars[0] - 'a';
+        for (int i = 0; i < chars.length; i++) {
+            chars[i] = (char) ((chars[i] - shift + 26) % 26 + 'a');
+        }
+        return new String(chars);
+    }
+}

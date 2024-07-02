@@ -17084,10 +17084,6 @@ case =1
 input =acf dca jkl gil tvy mor gfd pqr hge
 output =[[acf, gil, mor, tvy], [dca, gfd, hge], [jkl, pqr]]
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Scanner;
 
 public class GroupShiftingSequences {

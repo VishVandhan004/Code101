@@ -17025,9 +17025,7 @@ input=3
 2 4
 output=[[1, 9]]
 
-
-import java.util.Scanner;
-
+import java.util.*;
 public class MergeIntervals {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

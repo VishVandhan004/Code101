@@ -17025,10 +17025,7 @@ input=3
 2 4
 output=[[1, 9]]
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+
 import java.util.Scanner;
 
 public class MergeIntervals {

@@ -17102,7 +17102,6 @@ public class Solution {
             map.putIfAbsent(key, new ArrayList<>());
             map.get(key).add(s);
         }
-        // Sort each group and collect results
         List<List<String>> result = new ArrayList<>();
         for (List<String> group : map.values()) {
             group.sort(String::compareTo);

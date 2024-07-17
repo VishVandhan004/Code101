@@ -17090,7 +17090,6 @@ public class GroupShiftingSequences {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         String[] strings = input.split(" ");
-        // Grouping the strings
         List<List<String>> groupedSequences = groupShiftingSequences(strings);
         // Printing the grouped strings
         for (List<String> group : groupedSequences) {

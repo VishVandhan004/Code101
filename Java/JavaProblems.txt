@@ -17026,7 +17026,7 @@ input=3
 output=[[1, 9]]
 
 import java.util.*;
-public class MergeIntervals {
+public class Solution {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         // Reading the number of intervals

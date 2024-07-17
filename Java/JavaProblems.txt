@@ -17085,7 +17085,7 @@ input =acf dca jkl gil tvy mor gfd pqr hge
 output =[[acf, gil, mor, tvy], [dca, gfd, hge], [jkl, pqr]]
 
 import java.util.*;
-public class GroupShiftingSequences {
+public class Solution {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();

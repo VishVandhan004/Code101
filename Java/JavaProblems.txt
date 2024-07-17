@@ -17029,7 +17029,6 @@ import java.util.*;
 public class Solution {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        // Reading the number of intervals
         int n = scanner.nextInt();
         // Reading the intervals
         int[][] intervals = new int[n][2];

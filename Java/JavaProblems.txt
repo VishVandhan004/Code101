@@ -17036,7 +17036,6 @@ public class Solution {
             intervals[i][1] = scanner.nextInt();
         }
         int[][] mergedIntervals = mergeIntervals(intervals);
-        // Printing the merged intervals
         for (int[] interval : mergedIntervals) {
             System.out.println(Arrays.toString(interval));
         }
@@ -17045,7 +17044,6 @@ public class Solution {
         if (intervals == null || intervals.length == 0) {
             return new int[0][];
         }
-        // Sort intervals by start time
         Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
         List<int[]> merged = new ArrayList<>();
         int[] currentInterval = intervals[0];

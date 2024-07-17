@@ -17053,7 +17053,6 @@ public class Solution {
             int nextStart = interval[0];
             int nextEnd = interval[1];
             if (currentEnd >= nextStart) {
-                // There is overlap, so we merge the intervals
                 currentInterval[1] = Math.max(currentEnd, nextEnd);
             } else {
                 // No overlap, move to the next interval

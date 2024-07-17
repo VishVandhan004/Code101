@@ -17055,7 +17055,6 @@ public class Solution {
             if (currentEnd >= nextStart) {
                 currentInterval[1] = Math.max(currentEnd, nextEnd);
             } else {
-                // No overlap, move to the next interval
                 currentInterval = interval;
                 merged.add(currentInterval);
             }

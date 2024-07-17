@@ -17088,7 +17088,6 @@ import java.util.*;
 public class GroupShiftingSequences {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        // Reading the input strings
         String input = scanner.nextLine();
         String[] strings = input.split(" ");
         // Grouping the strings

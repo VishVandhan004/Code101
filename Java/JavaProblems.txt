@@ -17111,3 +17111,96 @@ public class Solution {
         return new String(chars);
     }
 }
+
+Given a maze in the form of a binary rectangular matrix, find the shortest path’s
+ length in the maze from a given source to a given destination. The path can only
+ be constructed out of cells having value 1, and at any moment, we can only move
+ one step in one of the four directions.
+Note: If no valid path found print -1.
+
+The valid moves are:
+
+Go Top: (x, y) ——> (x – 1, y)
+Go Left: (x, y) ——> (x, y – 1)
+Go Down: (x, y) ——> (x + 1, y)
+Go Right: (x, y) ——> (x, y + 1)
+
+ Sample Testcase:1
+---------------------------------------------
+input=10 10
+1  1  1  1  1  0  0  1  1  1 
+0  1  1  1  1  1  0  1  0  1 
+0  0  1  0  1  1  1  0  0  1 
+1  0  1  1  1  0  1  1  0  1 
+0  0  0  1  0  0  0  1  0  1 
+1  0  1  1  1  0  0  1  1  0
+0  0  0  0  1  0  0  1  0  1 
+0  1  1  1  1  1  1  1  0  0 
+1  1  1  1  1  0  0  1  1  1 
+0  0  1  0  0  1  1  0  0  1 
+0 0
+7 5
+output=12
+
+Explanation:
+-------------------------
+If source = (0, 0) and destination = (7, 5), the shortest path from source to 
+destination has length 12
+
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        int[][] mat = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                mat[i][j] = sc.nextInt();
+            }
+        }
+        int start_x = sc.nextInt();
+        int start_y = sc.nextInt();
+        int end_x = sc.nextInt();
+        int end_y = sc.nextInt();
+        System.out.println(shortestPath(mat, start_x, start_y, end_x, end_y));
+    }
+
+    public static int shortestPath(int[][] mat, int start_x, int start_y, int end_x, int end_y) {
+        if (mat[start_x][start_y] == 0 || mat[end_x][end_y] == 0) {
+            return -1;
+        }
+
+        int[] rowDir = {-1, 1, 0, 0};
+        int[] colDir = {0, 0, -1, 1};
+
+        boolean[][] visited = new boolean[mat.length][mat[0].length];
+        Queue<int[]> queue = new LinkedList<>();
+        queue.add(new int[]{start_x, start_y, 0});
+        visited[start_x][start_y] = true;
+
+        while (!queue.isEmpty()) {
+            int[] current = queue.poll();
+            int x = current[0], y = current[1], dist = current[2];
+
+            if (x == end_x && y == end_y) {
+                return dist;
+            }
+
+            for (int i = 0; i < 4; i++) {
+                int newRow = x + rowDir[i];
+                int newCol = y + colDir[i];
+
+                if (isValidMove(mat, newRow, newCol, visited)) {
+                    queue.add(new int[]{newRow, newCol, dist + 1});
+                    visited[newRow][newCol] = true;
+                }
+            }
+        }
+        return -1;
+    }
+
+    private static boolean isValidMove(int[][] mat, int row, int col, boolean[][] visited) {
+        return row >= 0 && row < mat.length && col >= 0 && col < mat[0].length && mat[row][col] == 1 && !visited[row][col];
+    }
+}

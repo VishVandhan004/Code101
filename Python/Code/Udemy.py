@@ -250,4 +250,4 @@ def create_cubes(n):
     for x in range(n):
         result.append(x**3)
     return result
-create_cubes(10)
+print(create_cubes(10))

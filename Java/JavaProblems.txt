@@ -17143,7 +17143,6 @@ input=10 10
 output=12
 
 Explanation:
--------------------------
 If source = (0, 0) and destination = (7, 5), the shortest path from source to 
 destination has length 12
 

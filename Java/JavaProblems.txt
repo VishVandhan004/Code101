@@ -17142,8 +17142,7 @@ input=10 10
 7 5
 output=12
 
-If source = (0, 0) and destination = (7, 5), the shortest path from source to 
-destination has length 12
+If s
 
 import java.util.*;
 class Main {

@@ -17142,8 +17142,6 @@ input=10 10
 7 5
 output=12
 
-If s
-
 import java.util.*;
 class Main {
     public static void main(String[] args) {

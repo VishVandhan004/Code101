@@ -8,7 +8,7 @@ const port = 3000;
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
-});
+}); // dont have to type the exact path as we have dirname and fileurltopath.
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);

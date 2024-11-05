@@ -9,6 +9,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.urlencoded({ extended: true }));
+// use to parse the info we get through the form.
 
 app.get("/", (req, res) => {
 res.sendFile(__dirname + "/public/index.html");

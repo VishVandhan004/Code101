@@ -6,7 +6,7 @@ const port = 3000;
 function logger(req, res, next) {
   console.log("Request Method: ", req.method);
   console.log("Request URL: ", req.url);
-  next();
+  next(); // this shit is important, moves to the route handling.
 }
 
 app.use(logger);

@@ -17516,33 +17516,25 @@ Input Format:
 -------------
 An integer N
 N space separated integers, arr[]
-
 Output Format:
 --------------
 An integer result.
-
-
 Sample Input-1:
 ---------------
 5
 8 9 7 1 2
-
 Sample Output-1:
 ----------------
 8
-
 Explanation:
 ------------
 Sub-array [8]: Difference = 0 (a single element has no difference).
 Sub-array [9, 7, 1]: Difference = 9 - 1 = 8
-Sub-array [2]: Difference = 0 (a single element has no difference).
-
-
+Sub-array [2]: Difference = 0 (a single element has no difference)
 Sample Input-2:
 ---------------
 5
 8 1 7 9 2
-
 Sample Output-2:
 ----------------
 14

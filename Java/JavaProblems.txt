@@ -17500,3 +17500,119 @@ class test {
         return count;
     }
 }
+
+419th Problem
+A family is about to break their piggy bank to use the money for different 
+purposes. The piggy bank is represented as an array (`arr[]`) consisting of 
+`M` coins. The family needs to split the coins in the piggy bank into smaller 
+stacks (sub-arrays) such that the **sum of the differences between the maximum 
+value and the minimum value of the coins in all the stacks (sub-arrays) is 
+maximum. 
+Constraints:
+- Each value in the array can only be used once, i.e., it can belong to only 
+  one sub-array.
+- You are not allowed to change the order of the elements in the array.
+Input Format:
+-------------
+An integer N
+N space separated integers, arr[]
+
+Output Format:
+--------------
+An integer result.
+
+
+Sample Input-1:
+---------------
+5
+8 9 7 1 2
+
+Sample Output-1:
+----------------
+8
+
+Explanation:
+------------
+Sub-array [8]: Difference = 0 (a single element has no difference).
+Sub-array [9, 7, 1]: Difference = 9 - 1 = 8
+Sub-array [2]: Difference = 0 (a single element has no difference).
+
+
+Sample Input-2:
+---------------
+5
+8 1 7 9 2
+
+Sample Output-2:
+----------------
+14
+
+420th Problem
+You are tasked with calculating the minimum cost to travel between a series of 
+buildings arranged in a straight line. There are n buildings, numbered from 1 
+to n, and each building has an associated cost. 
+
+The cost represents the expense incurred when you stop at a particular building.
+
+You are allowed to jump between buildings, but the maximum jump length is limited
+to k buildings. Whenever you stop at a building, the cost of that building is 
+added to your total cost. The objective is to determine the minimum total cost 
+required to travel from the first building to the n-th (destination) building.
+
+Input Format:
+-------------
+Two space separated integers, N and K.
+N space separated integers, costs[], to reach buildings.
+
+Output Format:
+--------------
+An integer result, minimum total cost.
+
+
+Sample Input-1:
+---------------
+5 2
+4 3 9 3 1
+
+Sample Output-1:
+----------------
+7
+
+
+Sample Input-2:
+---------------
+6 3
+10 30 40 50 20 10
+
+Sample Output-2:
+----------------
+60
+
+import java.util.*;
+public class test {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        int[] costs = new int[n];
+        for (int i = 0; i < n; i++) {
+            costs[i] = sc.nextInt();
+        }
+        int minCost = calculateMinCost(n, k, costs);
+        System.out.println(minCost);
+    }
+
+    private static int calculateMinCost(int n, int k, int[] costs) {
+        int[] dp = new int[n];
+        Arrays.fill(dp, Integer.MAX_VALUE);
+        dp[0] = costs[0];
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j <= k; j++) {
+                if (i - j >= 0) {
+                    dp[i] = Math.min(dp[i], dp[i - j] + costs[i]);
+                }
+            }
+        }
+        return dp[n - 1];
+    }
+}

@@ -11,7 +11,10 @@ app.get("/", (req, res) => {
 });
 
 app.post("/submit", (req, res) => {
+  // local variable -> numLetters
+  // in the bodyparser, we will request fname,lname..
   const numLetters = req.body["fName"].length + req.body["lName"].length;
+  // the local variable will be sent to index.ejs via res.render as a variable - numberOfLetters
   res.render("index.ejs", { numberOfLetters: numLetters });
 });
 

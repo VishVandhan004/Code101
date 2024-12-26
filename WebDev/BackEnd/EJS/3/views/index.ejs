@@ -7,6 +7,7 @@
   </head>
 
   <body>
+    <%# the variable sent from index.js will be caught here by locals.numberOfLetters %>
     <% if (locals.numberOfLetters) { %>
     <h1>There are <%= numberOfLetters %> letters in your name.</h1>
     <% } else { %>

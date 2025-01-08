@@ -28,17 +28,19 @@ app.get("/", async (req, res) => {
   }
 });
 
-
+// 
 app.post("/", async (req, res) => {
   try {
     console.log(req.body);
-    const type = req.body.type;
+    const type = req.body.type; // we grab the request of activity from the solution.ejs
     const participants = req.body.participants;
+    // we grab the request of participants from the solution.ejs
     const response = await axios.get(
       `https://bored-api.appbrewery.com/filter?type=${type}&participants=${participants}`
-    );
-    const result = response.data;
+    ); // structure the API by using parameters.
+    const result = response.data; // we get the response from the Bored API in the form of data object.
     console.log(result);
+    // now based on the repsonses,activity,participants, we generate a random card .
     res.render("solution.ejs", {
       data: result[Math.floor(Math.random() * result.length)],
     });

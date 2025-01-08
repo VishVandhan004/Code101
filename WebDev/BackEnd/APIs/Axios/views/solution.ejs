@@ -34,8 +34,8 @@
       <button type="submit" class="form-submit">Go</button>
     </form>
     <section id="cards" class="cards">
+      <!-- the data sent from the solution.js will be caught here using the 'locals'. in this case, it is locals.data. -->
       <%if (locals.data) {%>
-
         <article class="card-item">
           <h2 class="card-activity">
             <%=data.activity %>
@@ -50,10 +50,8 @@
             </span>
           </div>
         </article>
-
         <%}%>
-
-
+<!-- if we don't get any kind of locals.data from the solution.js, we get an error and this error msg will be passed. -->
           <%if (locals.error) {%>
             <div id="tag-error" class="tag-error">
               <%=error%>
@@ -61,7 +59,5 @@
             <%}%>
     </section>
   </div>
-
 </body>
-
 </html>

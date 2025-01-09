@@ -32,10 +32,11 @@ app.post("/get-secret", async (req, res) => {
   }
 });
 
-// /secrets is the route we are sending the data to.. we are POSTing the data to this APIURL.. config is the bearer token we used..
+// /secrets is the route we are sending the data to.. we are POSTing the data to this APIURL.. config is the bearer token we used..  req.body will give us the score and secret as a JS object. we need to get it via req.body
 app.post("/post-secret", async (req, res) => {
   try {
     const result = await axios.post(API_URL + "/secrets", req.body, config);
+    // await means that the above line should be completed first to execute the below line.., we will get the result and it will be sent to the content as key.. to the index.ejs..
     res.render("index.ejs", { content: JSON.stringify(result.data) });
   } catch (error) {
     res.render("index.ejs", { content: JSON.stringify(error.response.data) });
@@ -43,11 +44,12 @@ app.post("/post-secret", async (req, res) => {
 });
 
 app.post("/put-secret", async (req, res) => {
+  // the req.body.id is important to get the data of the user when it has been submitted. we can easily identify/update when we know the id. so we used the req.body.id...
   const searchId = req.body.id;
   try {
     const result = await axios.put(
       API_URL + "/secrets/" + searchId,
-      req.body,
+      req.body,  // req.body means the data in the secrets and score placeholders..
       config
     );
     res.render("index.ejs", { content: JSON.stringify(result.data) });
@@ -61,7 +63,7 @@ app.post("/patch-secret", async (req, res) => {
   try {
     const result = await axios.patch(
       API_URL + "/secrets/" + searchId,
-      req.body,
+      req.body, // req.body means the data in the secrets and score placeholders...
       config
     );
     res.render("index.ejs", { content: JSON.stringify(result.data) });

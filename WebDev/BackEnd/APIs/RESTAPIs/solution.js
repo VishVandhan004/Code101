@@ -2,6 +2,7 @@ import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
 
+// import the express app and the API URL...
 const app = express();
 const port = 3000;
 const API_URL = "https://secrets-api.appbrewery.com";
@@ -12,22 +13,26 @@ const config = {
   headers: { Authorization: `Bearer ${yourBearerToken}` },
 };
 
+// express middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// it renders the index.ejs file and gets the data from the 'content' ejs tag in the form of key..
 app.get("/", (req, res) => {
   res.render("index.ejs", { content: "Waiting for data..." });
 });
 
+// it handles a POST request of the route - /get-secret using axios. put a try-catch block, and get the data as result.. convert the result from JS object to JSON using stringify.. pass the result to EJS 'content' tag in a key-value pair as key
 app.post("/get-secret", async (req, res) => {
   const searchId = req.body.id;
   try {
-    const result = await axios.get(API_URL + "/secrets/" + searchId, config);
+    const result = await axios.get(API_URL + "/secrets/" + searchId, config); // RESTFUL APIs-> GET is used here
     res.render("index.ejs", { content: JSON.stringify(result.data) });
   } catch (error) {
     res.render("index.ejs", { content: JSON.stringify(error.response.data) });
   }
 });
 
+// /secrets is the route we are sending the data to.. we are POSTing the data to this APIURL.. config is the bearer token we used..
 app.post("/post-secret", async (req, res) => {
   try {
     const result = await axios.post(API_URL + "/secrets", req.body, config);

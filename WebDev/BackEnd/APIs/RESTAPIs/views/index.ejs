@@ -108,9 +108,11 @@
   <div class="container">
     <div class="response-area">
       <p>
+        <!-- IN EJS, the below tag is used to inject content -->
         <%= content %>
       </p>
     </div>
+    <!-- even if we have 5 different http routes, we use the POST method here because we need to pass 'id' to the user. -->
     <form id="myForm" method="post">
       <label for="idInput">Id:</label>
       <input type="text" id="idInput" name="id">
@@ -122,6 +124,7 @@
       <input type="number" id="scoreInput" name="score">
 
       <label for="submit">Route:</label>
+      <!-- all these routes lead to the solution.js file where we have different route handling. -->
       <input id="get" type="submit" value="GET" formaction="/get-secret">
       <input id="post" type="submit" value="POST" formaction="/post-secret">
       <input id="put" type="submit" value="PUT" formaction="/put-secret">

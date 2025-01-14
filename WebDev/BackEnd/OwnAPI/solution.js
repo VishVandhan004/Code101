@@ -95,9 +95,11 @@ app.delete("/jokes/:id", (req, res) => {
 });
 
 //DELETE All jokes
+// it is dangerous to remove everything, so you need to have a master key to verify urself to delete all.
+// the endpoint is 'all', but you need to give masterkey to delete everything.
 app.delete("/all", (req, res) => {
-  const userKey = req.query.key;
-  if (userKey === masterKey) {
+  const userKey = req.query.key; // we request the key from the user as query param.
+  if (userKey === masterKey) { // if the user key matches with the aster key, simply empty the jokes array..
     jokes = [];
     res.sendStatus(200);
   } else {
@@ -110,7 +112,7 @@ app.delete("/all", (req, res) => {
 app.listen(port, () => {
   console.log(`Successfully started server on port ${port}.`);
 });
-
+// jokes array..
 var jokes = [
   {
     id: 1,

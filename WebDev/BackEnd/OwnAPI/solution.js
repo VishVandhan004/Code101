@@ -23,21 +23,25 @@ app.get("/jokes/:id", (req, res) => {
 });
 
 //Filter jokes by type
+// we use a query parameter in this case.
 app.get("/filter", (req, res) => {
-  const type = req.query.type;
-  const filteredActivities = jokes.filter((joke) => joke.jokeType === type);
-  res.json(filteredActivities);
+  const type = req.query.type; // query params
+  const filteredActivities = jokes.filter((joke) => joke.jokeType === type); // we check if the type of the joke is matching with the array elements or not and it displays all the relevant elements related to the query..
+  res.json(filteredActivities); // res in form of json.
 });
 
 // Post a new joke
+// in the jokes endpoint, we get the callback function to handle the request.
 app.post("/jokes", (req, res) => {
+  // below is the object.
   const newJoke = {
-    id: jokes.length + 1,
-    jokeText: req.body.text,
-    jokeType: req.body.type,
+    id: jokes.length + 1, // id is the total length of array + 1 (100+1, 101+1, and so on..)
+    jokeText: req.body.text, // we request the text using the body parser.
+    jokeType: req.body.type, // we request the type of the joke using body parser..
   };
+  // push the new joke to the array
   jokes.push(newJoke);
-  console.log(jokes.slice(-1));
+  console.log(jokes.slice(-1)); // access the last joke..
   res.json(newJoke);
 });
 

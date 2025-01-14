@@ -8,12 +8,14 @@ const masterKey = "4VGP2DN-6EWM4SJ-N6FGRHV-Z3PR3TT";
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Get a random joke
+// app.get is an express syntax.., random is the endpoint , req,res is the callback.., all the jokes are in an array of 100 elements and we generate any random joke and round it upto 2 digits using floor method, res.json is response in the format of json..
 app.get("/random", (req, res) => {
   const randomIndex = Math.floor(Math.random() * jokes.length);
   res.json(jokes[randomIndex]);
 });
 
 //Get a specific joke
+// the endpoint must include a pathparamter as well to specify the id.., we get it in a string, so we use a parseInt.., the id which we presented will be checked in the jokes.id array using find() method, if they match, the joke will be displayed..
 app.get("/jokes/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const foundJoke = jokes.find((joke) => joke.id === id);

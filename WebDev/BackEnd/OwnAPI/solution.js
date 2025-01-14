@@ -46,29 +46,32 @@ app.post("/jokes", (req, res) => {
 });
 
 //Put a joke
+// we use the path param here. after id endpoint and callback, we get the id using parseInt.
 app.put("/jokes/:id", (req, res) => {
-  const id = parseInt(req.params.id);
+  const id = parseInt(req.params.id); // id using parseint by using req.params.id
   const replacementJoke = {
-    id: id,
-    jokeText: req.body.text,
-    jokeType: req.body.type,
+    // this is object..
+    id: id, // it has id in object
+    jokeText: req.body.text, // we request the body text using body parser
+    jokeType: req.body.type, // we request the body type using body parser
   };
-
+  // we provide an id, so the below code checks and finds the id in the joke.id array. we get the index of it using the findindex method.
   const searchIndex = jokes.findIndex((joke) => joke.id === id);
-
+// the index will be used in the jokes array to replace the existing joke..
   jokes[searchIndex] = replacementJoke;
   // console.log(jokes);
   res.json(replacementJoke);
 });
 
 //Patch a joke
+// everything is same as above but we update only one param..
 app.patch("/jokes/:id", (req, res) => {
-  const id = parseInt(req.params.id);
-  const existingJoke = jokes.find((joke) => joke.id === id);
-  const replacementJoke = {
+  const id = parseInt(req.params.id);// id using parseint by using req.params.id
+  const existingJoke = jokes.find((joke) => joke.id === id); // by using the id we need to check through the whole array..
+  const replacementJoke = { // object
     id: id,
-    jokeText: req.body.text || existingJoke.jokeText,
-    jokeType: req.body.type || existingJoke.jokeType,
+    jokeText: req.body.text || existingJoke.jokeText, // it checks if there is anything in the req.body.text or it grabs the text from the existing joke and place it in joketext.
+    jokeType: req.body.type || existingJoke.jokeType, // same as above but for joketype..
   };
   const searchIndex = jokes.findIndex((joke) => joke.id === id);
   jokes[searchIndex] = replacementJoke;

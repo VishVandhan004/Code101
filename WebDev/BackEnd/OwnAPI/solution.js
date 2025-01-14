@@ -80,12 +80,11 @@ app.patch("/jokes/:id", (req, res) => {
 });
 
 //DELETE Specific joke
-//Optional Edge Case Mangement: Can you think of a situation where we might have an issue deleting
-//a specific joke out of the array? Can you think of a solution?
+// after the id endpoint and the callback, we get the id using hte req.params.id and parse it as the int and we search through the whole array using the id.. and find the index of the array as well.
 app.delete("/jokes/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const searchIndex = jokes.findIndex((joke) => joke.id === id);
-  if (searchIndex > -1) {
+  if (searchIndex > -1) { // if the search index >-1, use the splice method to remove it from the array.
     jokes.splice(searchIndex, 1);
     res.sendStatus(200);
   } else {

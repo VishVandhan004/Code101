@@ -7,7 +7,7 @@ const db = new pg.Client({
   user: "postgres",
   host: "localhost",
   database: "world",
-  password: "123456",
+  password: "postgresql2004@",
   port: 5432,
 });
 // express app
@@ -21,7 +21,7 @@ db.query("SELECT * FROM capitals", (err, res) => {
   if (err) {
     console.error("Error executing query", err.stack);
   } else {
-    quiz = res.rows;
+    quiz = res.rows; // gives rows in capitals tables..
   }
   db.end();
 });

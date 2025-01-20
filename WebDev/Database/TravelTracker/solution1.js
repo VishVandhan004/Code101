@@ -28,6 +28,7 @@ app.get("/", async (req, res) => {
     countries.push(country.country_code);
   });
   console.log(result.rows);
+  // here it gives the total countries visited.
   res.render("index.ejs", { countries: countries, total: countries.length });
   db.end();
 });

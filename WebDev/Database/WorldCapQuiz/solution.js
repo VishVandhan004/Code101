@@ -48,12 +48,13 @@ app.get("/", async (req, res) => {
 app.post("/submit", (req, res) => {
   let answer = req.body.answer.trim();
   let isCorrect = false;
-  if (currentQuestion.capital.toLowerCase() === answer.toLowerCase()) {
+  // if the answer is equal to the current question capital, then the score increases by 1.Therefore it increaes by 1 and so on , until the answer is not equal to the capital
+  if (currentQuestion.capital.toLowerCase() === answer.toLowerCase()) { // turn into lowercases..
     totalCorrect++;
     console.log(totalCorrect);
     isCorrect = true;
   }
-
+// after the prevoius question, the next question will be given by the code below..
   nextQuestion();
   res.render("index.ejs", {
     question: currentQuestion,

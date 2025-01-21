@@ -51,6 +51,7 @@ JOIN homework_submission
 ON student.id = student_id
 
 -- Many to Many --
+-- we create 2 tables and we reference the student table and class table to the enrollment table using the id..
 CREATE TABLE class (
   id SERIAL PRIMARY KEY,
   title VARCHAR(45)
@@ -62,7 +63,7 @@ CREATE TABLE enrollment (
   PRIMARY KEY (student_id, class_id)
 );
 
--- Data --
+-- Data for many-to-many--
 INSERT INTO student (first_name, last_name)
 VALUES ('Jack', 'Bauer');
 
@@ -73,11 +74,12 @@ INSERT INTO enrollment (student_id, class_id ) VALUES (1, 1), (1, 2);
 INSERT INTO enrollment (student_id ,class_id) VALUES (2, 2), (2, 3);
 
 -- Join --
+-- we are joining the enrollment table on both student and class tables using the student.id and class.id
 SELECT *
 FROM enrollment 
 JOIN student ON student.id = enrollment.student_id
 JOIN class ON class.id = enrollment.class_id;
-
+-- we are selecting only iportant columns to shorten the table..
 SELECT student.id AS id, first_name, last_name, title
 FROM enrollment 
 JOIN student ON student.id = enrollment.student_id

@@ -26,6 +26,7 @@ ON student.id = contact_detail.id
 
 
 -- Many to One --
+-- the student's id will be referenced and acts a foreign key to the student_id of homework table
 CREATE TABLE homework_submission (
   id SERIAL PRIMARY KEY,
   mark INTEGER,

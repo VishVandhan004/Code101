@@ -79,13 +79,13 @@ SELECT *
 FROM enrollment 
 JOIN student ON student.id = enrollment.student_id
 JOIN class ON class.id = enrollment.class_id;
--- we are selecting only iportant columns to shorten the table..
+-- we are selecting only important columns to shorten the table..
 SELECT student.id AS id, first_name, last_name, title
 FROM enrollment 
 JOIN student ON student.id = enrollment.student_id
 JOIN class ON class.id = enrollment.class_id;
 
--- ALIAS --
+-- ALIAS -- 
 SELECT s.id AS id, first_name, last_name, title
 FROM enrollment AS e
 JOIN student AS s ON s.id = e.student_id

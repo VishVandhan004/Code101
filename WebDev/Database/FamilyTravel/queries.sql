@@ -17,7 +17,8 @@ VALUES ('Angela', 'Yu');
 INSERT INTO contact_detail (id, tel, address)
 VALUES (1, '+123456789', '123 App Brewery Road');
 
--- Join --
+-- One-to-One Join --
+-- joins the 2 tables, based on the 'id'
 SELECT * 
 FROM student
 JOIN contact_detail

@@ -9,7 +9,7 @@ const db = new pg.Client({
   user: "postgres",
   host: "localhost",
   database: "world",
-  password: "123456",
+  password: "postgresql2004@",
   port: 5432,
 });
 db.connect();
@@ -34,9 +34,10 @@ app.get("/", async (req, res) => {
 //INSERT new country
 app.post("/add", async (req, res) => {
   const input = req.body["country"];
-
+// in this solution4.js, we want to focus on some edge cases as well. for example, Tanzania is united states of Tanzania. if you simply type the short form, it won't reflect in the world map. we need to use the WHERE LIKE FUNCTION to handle these edge cases..
   try {
     const result = await db.query(
+      // where like function...
       "SELECT country_code FROM countries WHERE LOWER(country_name) LIKE '%' || $1 || '%';",
       [input.toLowerCase()]
     );

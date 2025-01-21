@@ -18,6 +18,7 @@ db.connect();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+// create a function to track the countries visited..
 async function checkVisisted() {
   const result = await db.query("SELECT country_code FROM visited_countries");
 
@@ -27,7 +28,7 @@ async function checkVisisted() {
   });
   return countries;
 }
-
+// it has the same bullshit which the earlier 2 solution have...
 // GET home page
 app.get("/", async (req, res) => {
   const countries = await checkVisisted();
@@ -37,8 +38,9 @@ app.get("/", async (req, res) => {
 //INSERT new country
 app.post("/add", async (req, res) => {
   const input = req.body["country"];
-
+// try-catch block is used to handle errors.. such as no country exists, repeated countries
   try {
+    // this is used to handle if the country name is right or wrong..if it is right it goes to next try-catch block..
     const result = await db.query(
       "SELECT country_code FROM countries WHERE country_name = $1",
       [input]
@@ -61,9 +63,12 @@ app.post("/add", async (req, res) => {
         error: "Country has already been added, try again.",
       });
     }
-  } catch (err) {
+  }
+  // the catch block below is used to handle the cases where the country name is wrong or incorrect spelling.. 
+   catch (err) {
     console.log(err);
     const countries = await checkVisisted();
+    // the above variable checks if the country is matching with all the set of countries and if it doesn't match, it prints name doesn't exist...
     res.render("index.ejs", {
       countries: countries,
       total: countries.length,

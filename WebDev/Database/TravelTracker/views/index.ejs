@@ -7,7 +7,7 @@
   <title>Travel Tracker</title>
   <link rel="stylesheet" href="./styles/main.css">
 </head>
-<!-- this placeholder is used to add new countries and it will automatically get added to the worldmap as well.. -->
+<!-- this placeholder is used to add new countries and it will automatically get added to the worldmap as well..and if there is any error, the error will be displayed using locals.error -->
 <body>
   <form action="/add" method="post">
     <input type="text" name="country" autofocus placeholder="<%= locals.error ? error :  'Enter country name'%>">

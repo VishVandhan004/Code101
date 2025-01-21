@@ -1,19 +1,20 @@
+// importing the required express and pg packages
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
-
+// express app
 const app = express();
 const port = 3000;
-
+// postgres credentials..
 const db = new pg.Client({
   user: "postgres",
   host: "localhost",
   database: "world",
-  password: "123456",
+  password: "postgresql2004@",
   port: 5432,
 });
 db.connect();
-
+// express middleware body parser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 

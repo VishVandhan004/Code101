@@ -11,7 +11,7 @@ CREATE TABLE contact_detail (
   address TEXT
 );
 
--- Data --
+-- Data for one-to-one --
 INSERT INTO student (first_name, last_name)
 VALUES ('Angela', 'Yu');
 INSERT INTO contact_detail (id, tel, address)
@@ -34,16 +34,17 @@ CREATE TABLE homework_submission (
   student_id INTEGER REFERENCES student(id)
 );
 
--- Data --
+-- Data for one-to-many, we give marks and id of student--
 INSERT INTO homework_submission (mark, student_id)
 VALUES (98, 1), (87, 1), (88, 1)
 
 -- Join --
+-- the 1st part joins the student table with the homework table based on the student_id and id..
 SELECT *
 FROM student
 JOIN homework_submission
 ON student.id = student_id
-
+-- the 2nd part is used to shorten the table by selecting only particular columns..
 SELECT student.id, first_name, last_name, mark
 FROM student
 JOIN homework_submission

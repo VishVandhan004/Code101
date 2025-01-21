@@ -45,16 +45,19 @@ app.post("/add", async (req, res) => {
       "SELECT country_code FROM countries WHERE country_name = $1",
       [input]
     );
-
     const data = result.rows[0];
+    // it grabs the country ISO code..
     const countryCode = data.country_code;
     try {
+      // if the ISO code doesn't exist, it inserts the code..
       await db.query(
         "INSERT INTO visited_countries (country_code) VALUES ($1)",
         [countryCode]
       );
       res.redirect("/");
-    } catch (err) {
+    }
+    // if the ISO code already exists, then it will print an error.. 
+    catch (err) {
       console.log(err);
       const countries = await checkVisisted();
       res.render("index.ejs", {

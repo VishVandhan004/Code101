@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <!-- here, users are passed as the list of dictionaries and it contains the id.. -->
   <form class="tab-view tab-view-height-auto" action="/user" method="post">
     <% users.forEach(function(user) { %>
       <input type="submit" name="user" value="<%= user.id %>" id="<%= user.id %>">

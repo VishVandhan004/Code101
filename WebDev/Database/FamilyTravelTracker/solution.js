@@ -55,6 +55,7 @@ app.get("/", async (req, res) => {
     color: currentUser.color, // diff color
   });
 });
+// this comes up when the user enters the country name and selects the color..
 app.post("/add", async (req, res) => {
   const input = req.body["country"];
   const currentUser = await getCurrentUser();
@@ -72,6 +73,7 @@ app.post("/add", async (req, res) => {
         "INSERT INTO visited_countries (country_code, user_id) VALUES ($1, $2)",
         [countryCode, currentUserId]
       );
+      // it redirects back to the home page
       res.redirect("/");
     } catch (err) {
       console.log(err);
@@ -80,7 +82,7 @@ app.post("/add", async (req, res) => {
     console.log(err);
   }
 });
-
+// if the user is a new user, we can tap into it by using req.body and we need to display the new.ejs file for registration.. and the req.body.user is equal to the currentUser to show the user and the countries visited. 
 app.post("/user", async (req, res) => {
   if (req.body.add === "new") {
     res.render("new.ejs");
@@ -89,19 +91,18 @@ app.post("/user", async (req, res) => {
     res.redirect("/");
   }
 });
-
+// this is gets to the new.ejs file and gets the name and the color of the new user..
 app.post("/new", async (req, res) => {
   const name = req.body.name;
   const color = req.body.color;
-
+  // the below query is used to create and get the new user's color and name
   const result = await db.query(
     "INSERT INTO users (name, color) VALUES($1, $2) RETURNING *;",
     [name, color]
   );
-
   const id = result.rows[0].id;
+  // the id of the user will be set to the currentUserid to create a new user to the users table..
   currentUserId = id;
-
   res.redirect("/");
 });
 

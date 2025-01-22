@@ -1,10 +1,11 @@
+// import the packages for express and postgres
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
-
+// express app
 const app = express();
 const port = 3000;
-
+// postgres credentials..
 const db = new pg.Client({
   user: "postgres",
   host: "localhost",
@@ -13,27 +14,29 @@ const db = new pg.Client({
   port: 5432,
 });
 db.connect();
-
+// express middleware...
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-
+// currentuser is 1.
 let currentUserId = 1;
-
+// in the sql we created,users is a table which has id,name and color..
 let users = [
   { id: 1, name: "Angela", color: "teal" },
   { id: 2, name: "Jack", color: "powderblue" },
 ];
-
+// this is a function which we used to join 2 tables(users, visited_countries) based on a criteria(pk == fk)
 async function checkVisisted() {
   const result = await db.query(
-    "SELECT country_code FROM visited_countries JOIN users ON users.id = user_id WHERE user_id = $1; ",
+    "SELECT country_code FROM visited_countries JOIN users ON users.id = user_id WHERE user_id = $1; "
     [currentUserId]
   );
+  // we are narrowing down the query in such a way that only the country visited by a specific user will be displayed by using a $1..
   let countries = [];
   result.rows.forEach((country) => {
     countries.push(country.country_code);
   });
   return countries;
+  // we are using the for each to get the country code form the array of countries..
 }
 
 async function getCurrentUser() {

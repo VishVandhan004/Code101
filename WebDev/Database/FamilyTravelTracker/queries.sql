@@ -99,11 +99,11 @@ JOIN class c ON c.id = e.class_id;
 
 
 -- EXERCISE SOLUTION AND SETUP --
-
+-- we need to create a table and create the one-to-many relationship, and reference the id to the user_id of the 2nd table..
 DROP TABLE IF EXISTS visited_countries, users;
 
 CREATE TABLE users(
-id SERIAL PRIMARY KEY,
+id SERIAL PRIMARY KEY, -- PK
 name VARCHAR(15) UNIQUE NOT NULL,
 color VARCHAR(15)
 );
@@ -111,9 +111,9 @@ color VARCHAR(15)
 CREATE TABLE visited_countries(
 id SERIAL PRIMARY KEY,
 country_code CHAR(2) NOT NULL,
-user_id INTEGER REFERENCES users(id)
+user_id INTEGER REFERENCES users(id) --FK
 );
-
+-- insert some values into the table
 INSERT INTO users (name, color)
 VALUES ('Angela', 'teal'), ('Jack', 'powderblue');
 

@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 // currentuser is 1.
 let currentUserId = 1;
-// in the sql we created,users is a table which has id,name and color..
+// in the sql we created,users is a table which has id,name and color.. this is the users table structure..
 let users = [
   { id: 1, name: "Angela", color: "teal" },
   { id: 2, name: "Jack", color: "powderblue" },
@@ -38,21 +38,21 @@ async function checkVisisted() {
   return countries;
   // we are using the for each to get the country code form the array of countries..
 }
-
+// this function is used to get the users available and get the user based on the id..
 async function getCurrentUser() {
   const result = await db.query("SELECT * FROM users");
   users = result.rows;
   return users.find((user) => user.id == currentUserId);
 }
-
+// this is used to get the different user based on different color.
 app.get("/", async (req, res) => {
   const countries = await checkVisisted();
   const currentUser = await getCurrentUser();
   res.render("index.ejs", {
     countries: countries,
     total: countries.length,
-    users: users,
-    color: currentUser.color,
+    users: users, // diff user
+    color: currentUser.color, // diff color
   });
 });
 app.post("/add", async (req, res) => {

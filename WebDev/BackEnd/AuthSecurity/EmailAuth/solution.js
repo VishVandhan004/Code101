@@ -69,7 +69,7 @@ app.post("/login", async (req, res) => {
     ]);
     // the below if statement checks the email with the data, if it exists, go to the pwd and check if the pwd is correct or not.. if its correct , render to the secrets page.. otherwise incorrect pwd
     if (result.rows.length > 0) {
-      const user = result.rows[0];// contains all the details of the user..
+      const user = result.rows[0];// contains all the details of the user in the form of array..
       const storedPassword = user.password;
       if (password === storedPassword) {
         res.render("secrets.ejs");

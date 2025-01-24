@@ -63,13 +63,14 @@ app.post("/login", async (req, res) => {
   const password = req.body.password;
 // use try-catch block for error handling..
   try {
+    // same as the above, we check the email with the other data in table  
     const result = await db.query("SELECT * FROM users WHERE email = $1", [
       email,
     ]);
+    // the below if statement checks the email with the data, if it exists, go to the pwd and check if the pwd is correct or not.. if its correct , render to the secrets page.. otherwise incorrect pwd
     if (result.rows.length > 0) {
-      const user = result.rows[0];
+      const user = result.rows[0];// contains all the details of the user..
       const storedPassword = user.password;
-
       if (password === storedPassword) {
         res.render("secrets.ejs");
       } else {

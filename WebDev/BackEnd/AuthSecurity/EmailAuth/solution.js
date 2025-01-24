@@ -47,6 +47,7 @@ app.post("/register", async (req, res) => {
         "INSERT INTO users (email, password) VALUES ($1, $2)",
         [email, password]
       );
+      // after registering, the creds will be viewed and secrets file will be rendered..
       console.log(result);
       res.render("secrets.ejs");
     }

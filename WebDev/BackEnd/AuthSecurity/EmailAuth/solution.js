@@ -2,38 +2,38 @@
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
-
+// express app
 const app = express();
 const port = 3000;
-
+// postgres credentials..
 const db = new pg.Client({
   user: "postgres",
   host: "localhost",
   database: "secrets",
-  password: "123456",
+  password: "postgresql2004@",
   port: 5432,
 });
 db.connect();
-
+// express middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-
+// it renders the home page
 app.get("/", (req, res) => {
   res.render("home.ejs");
 });
-
+// /login route renders the login page 
 app.get("/login", (req, res) => {
   res.render("login.ejs");
 });
-
+// /register route renders the register page..
 app.get("/register", (req, res) => {
   res.render("register.ejs");
 });
-
+// in the /register, we take the /POST request to post the username and password
 app.post("/register", async (req, res) => {
   const email = req.body.username;
   const password = req.body.password;
-
+// use the try-catch block for error handling
   try {
     const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [
       email,
@@ -42,6 +42,7 @@ app.post("/register", async (req, res) => {
     if (checkResult.rows.length > 0) {
       res.send("Email already exists. Try logging in.");
     } else {
+      // we are inserting the credentials into the users table and giving them the $1 and $2 values by writing a SQL query..
       const result = await db.query(
         "INSERT INTO users (email, password) VALUES ($1, $2)",
         [email, password]

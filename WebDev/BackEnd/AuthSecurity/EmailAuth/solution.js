@@ -1,3 +1,4 @@
+// import the express packages and postgres packages
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";

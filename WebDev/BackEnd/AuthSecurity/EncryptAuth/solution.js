@@ -1,10 +1,12 @@
+// import the express, postgres and bcrypt packages from the npm
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 import bcrypt from "bcrypt";
-
+// express app
 const app = express();
 const port = 3000;
+// define the no of salt rounds as well..
 const saltRounds = 10;
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -14,7 +16,7 @@ const db = new pg.Client({
   user: "postgres",
   host: "localhost",
   database: "secrets",
-  password: "123456",
+  password: "postgresql2004@",
   port: 5432,
 });
 db.connect();

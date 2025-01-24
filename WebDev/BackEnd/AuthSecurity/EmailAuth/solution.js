@@ -35,6 +35,7 @@ app.post("/register", async (req, res) => {
   const password = req.body.password;
 // use the try-catch block for error handling
   try {
+    // firstly, we will check if the user already exists or not.. we would go through the whole table and check the emails with our present email. if it exists, put out a message, if it doesn't go for the registration..
     const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [
       email,
     ]);

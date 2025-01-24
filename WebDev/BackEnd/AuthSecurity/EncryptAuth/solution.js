@@ -78,14 +78,15 @@ app.post("/login", async (req, res) => {
       email,
     ]);
     if (result.rows.length > 0) {
-      const user = result.rows[0];
+      const user = result.rows[0]; // all the details of the user
       const storedHashedPassword = user.password;
-      //verifying the password
+      //verifying the password by comparing with the stroed pwd..
       bcrypt.compare(loginPassword, storedHashedPassword, (err, result) => {
         if (err) {
           console.error("Error comparing passwords:", err);
         } else {
           if (result) {
+            // if the pwd is right, the secrets page will be rendered..
             res.render("secrets.ejs");
           } else {
             res.send("Incorrect Password");
@@ -93,6 +94,7 @@ app.post("/login", async (req, res) => {
         }
       });
     } else {
+      // if the email doesn't exist, it shall say that the user shall not found...
       res.send("User not found");
     }
   } catch (err) {

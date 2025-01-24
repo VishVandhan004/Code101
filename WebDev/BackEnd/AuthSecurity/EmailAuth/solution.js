@@ -37,7 +37,7 @@ app.post("/register", async (req, res) => {
   try {
     // firstly, we will check if the user already exists or not.. we would go through the whole table and check the emails with our present email. if it exists, put out a message, if it doesn't go for the registration..
     const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [
-      email,
+      email, // our email will be checked with the table's data..
     ]);
 
     if (checkResult.rows.length > 0) {
@@ -56,11 +56,12 @@ app.post("/register", async (req, res) => {
     console.log(err);
   }
 });
-
+// in this /post request, we check the login credentials of the user in the /login route...
 app.post("/login", async (req, res) => {
+  // we collect the email and pwd using body parser
   const email = req.body.username;
   const password = req.body.password;
-
+// use try-catch block for error handling..
   try {
     const result = await db.query("SELECT * FROM users WHERE email = $1", [
       email,

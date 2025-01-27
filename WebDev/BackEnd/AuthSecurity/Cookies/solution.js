@@ -70,7 +70,7 @@ app.get("/secrets", (req, res) => {
     res.redirect("/login");// otherwise render the login page..
   }
 });
-
+// we are using passport as middleware here...
 app.post(
   "/login",
   passport.authenticate("local", {
@@ -147,10 +147,11 @@ passport.use(
     }
   })
 );
-
+// this is used to save the data of those who are logged in..
 passport.serializeUser((user, cb) => {
-  cb(null, user);
+  cb(null, user); // callback
 });
+// it saves the id,email of the user and we can easily get that session of the user through the above and below code
 passport.deserializeUser((user, cb) => {
   cb(null, user);
 });

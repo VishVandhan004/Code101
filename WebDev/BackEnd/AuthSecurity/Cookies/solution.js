@@ -1,21 +1,25 @@
+// we import express and postgres packages 
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
+// bcrypt is used for pwd hashing...
 import bcrypt from "bcrypt";
+// passport.js is used for authentication..
 import passport from "passport";
 import { Strategy } from "passport-local";
+// it is used for session management
 import session from "express-session";
 import env from "dotenv";
-
+// express app
 const app = express();
 const port = 3000;
 const saltRounds = 10;
 env.config();
-
+// express middleware
 app.use(
   session({
-    secret: "TOPSECRETWORD",
-    resave: false,
+    secret: "TOPSECRETWORD",// its a key to keep the session secret.. to protect login credentials..
+    resave: false, // if you want to save a session into db or not?
     saveUninitialized: true,
   })
 );
@@ -24,12 +28,12 @@ app.use(express.static("public"));
 
 app.use(passport.initialize());
 app.use(passport.session());
-
+// postgres credentials
 const db = new pg.Client({
   user: "postgres",
   host: "localhost",
   database: "secrets",
-  password: "123456",
+  password: "postgresql2004@",
   port: 5432,
 });
 db.connect();

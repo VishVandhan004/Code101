@@ -15,17 +15,19 @@ const app = express();
 const port = 3000;
 const saltRounds = 10;
 env.config();
-// express middleware
+// session initialization
 app.use(
   session({
     secret: "TOPSECRETWORD",// its a key to keep the session secret.. to protect login credentials..
     resave: false, // if you want to save a session into db or not?
-    saveUninitialized: true,
+    saveUninitialized: true, // it is related to storing the session or not
   })
 );
+// express middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+// passport usage
 app.use(passport.initialize());
 app.use(passport.session());
 // postgres credentials
@@ -58,13 +60,13 @@ app.get("/logout", (req, res) => {
     res.redirect("/");
   });
 });
-
+// if the user is authenticated then only we can show him the secrets page..
 app.get("/secrets", (req, res) => {
   // console.log(req.user);
   if (req.isAuthenticated()) {
     res.render("secrets.ejs");
   } else {
-    res.redirect("/login");
+    res.redirect("/login");// otherwise render the login page..
   }
 });
 

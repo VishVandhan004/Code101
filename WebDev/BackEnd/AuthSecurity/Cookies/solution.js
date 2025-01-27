@@ -74,11 +74,11 @@ app.get("/secrets", (req, res) => {
 app.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/secrets",
-    failureRedirect: "/login",
+    successRedirect: "/secrets", // if authentication is successful, redirect to secrets page
+    failureRedirect: "/login", // if authentication is failed, redirect to login page
   })
 );
-
+// we take the username and pwd using body parser..
 app.post("/register", async (req, res) => {
   const email = req.body.username;
   const password = req.body.password;
@@ -87,7 +87,7 @@ app.post("/register", async (req, res) => {
     const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [
       email,
     ]);
-
+// we go into the 1st row to get the user data..
     if (checkResult.rows.length > 0) {
       req.redirect("/login");
     } else {
@@ -95,6 +95,7 @@ app.post("/register", async (req, res) => {
         if (err) {
           console.error("Error hashing password:", err);
         } else {
+          // we get the email and pwd of the user..
           const result = await db.query(
             "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *",
             [email, hash]

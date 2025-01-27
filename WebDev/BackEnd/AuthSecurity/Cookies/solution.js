@@ -6,6 +6,7 @@ import pg from "pg";
 import bcrypt from "bcrypt";
 // passport.js is used for authentication..
 import passport from "passport";
+// 
 import { Strategy } from "passport-local";
 // it is used for session management
 import session from "express-session";
@@ -39,19 +40,19 @@ const db = new pg.Client({
   port: 5432,
 });
 db.connect();
-
+// it renders the home page
 app.get("/", (req, res) => {
   res.render("home.ejs");
 });
-
+// it renders the login page..
 app.get("/login", (req, res) => {
   res.render("login.ejs");
 });
-
+// it renders the register page..
 app.get("/register", (req, res) => {
   res.render("register.ejs");
 });
-
+// it renders the logout page..
 app.get("/logout", (req, res) => {
   req.logout(function (err) {
     if (err) {
@@ -110,25 +111,28 @@ app.post("/register", async (req, res) => {
     console.log(err);
   }
 });
-
+// we use the passport strategy here before the app.port. we give a function called verify , it takes 3 params.. it checks whether the user email exists in the db or not.. we type the code which we used in the login route previously.
 passport.use(
   new Strategy(async function verify(username, password, cb) {
+    // the username and password shall match with the login.ejs placeholder name attribute..
     try {
       const result = await db.query("SELECT * FROM users WHERE email = $1 ", [
         username,
       ]);
+      // we get the email of the users 
       if (result.rows.length > 0) {
-        const user = result.rows[0];
+        const user = result.rows[0];// gets the data of the user..
         const storedHashedPassword = user.password;
+        // if the passwords typed are same as in the db, it gets logged in or else fuck off..
         bcrypt.compare(password, storedHashedPassword, (err, valid) => {
           if (err) {
             //Error with password check
             console.error("Error comparing passwords:", err);
-            return cb(err);
+            return cb(err);// returning the callback
           } else {
             if (valid) {
               //Passed password check
-              return cb(null, user);
+              return cb(null, user);// returning the callback which consists of user data.
             } else {
               //Did not pass password check
               return cb(null, false);

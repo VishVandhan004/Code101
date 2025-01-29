@@ -5,12 +5,12 @@ import bcrypt from "bcrypt";
 import passport from "passport";
 import { Strategy } from "passport-local";
 import session from "express-session";
-import env from "dotenv";
+import env from "dotenv"; // import the dotenv package for using it
 
 const app = express();
 const port = 3000;
 const saltRounds = 10;
-env.config();
+env.config();// initialize it by the cmd...
 
 app.use(
   session({
@@ -26,8 +26,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 const db = new pg.Client({
-  user: process.env.PG_USER,
-  host: process.env.PG_HOST,
+  user: process.env.PG_USER, // replace it by the PG_USER
+  host: process.env.PG_HOST, // replace the host by PG_HOST and so on...
   database: process.env.PG_DATABASE,
   password: process.env.PG_PASSWORD,
   port: process.env.PG_PORT,

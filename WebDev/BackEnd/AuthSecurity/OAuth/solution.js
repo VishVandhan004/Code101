@@ -180,6 +180,7 @@ passport.use(
           );
           return cb(null, newUser.rows[0]);
         } else {
+          // user already exists...
           return cb(null, result.rows[0]);
         }
       } catch (err) {

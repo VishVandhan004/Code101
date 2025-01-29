@@ -3,7 +3,9 @@ import bodyParser from "body-parser";
 import pg from "pg";
 import bcrypt from "bcrypt";
 import passport from "passport";
+// we are importing the passport and the strategy as well
 import { Strategy } from "passport-local";
+// import the google strategy package from the passport
 import GoogleStrategy from "passport-google-oauth2";
 import session from "express-session";
 import env from "dotenv";

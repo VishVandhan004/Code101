@@ -68,19 +68,19 @@ app.get("/secrets", (req, res) => {
 // when the user clicks sign in with google,it comes here...
 app.get(
   "/auth/google",
-  passport.authenticate("google", {// we use the passport middleware here...
-    scope: ["profile", "email"],
+  passport.authenticate("google", {// we use the passport middleware here... and mention the 'google' strategy..
+    scope: ["profile", "email"], // we want the profile and email while the user logs in...
   })
 );
-
+// after signing up with google, it comes here.... we use the google strategy..
 app.get(
   "/auth/google/secrets",
   passport.authenticate("google", {
-    successRedirect: "/secrets",
+    successRedirect: "/secrets", // it goes to secrets after success..
     failureRedirect: "/login",
   })
 );
-
+// we use the normal 'local' strategy here.. using passport....
 app.post(
   "/login",
   passport.authenticate("local", {
@@ -121,7 +121,7 @@ app.post("/register", async (req, res) => {
     console.log(err);
   }
 });
-
+// local strategy....
 passport.use(
   "local",
   new Strategy(async function verify(username, password, cb) {
@@ -167,9 +167,12 @@ passport.use(
     async (accessToken, refreshToken, profile, cb) => {
       try {
         console.log(profile);
+        // after the successful sign up, we get the profile details and show it in terminal..
+        // it takes the email and stores it in the result..
         const result = await db.query("SELECT * FROM users WHERE email = $1", [
           profile.email,
         ]);
+        // we check if the email exists in the db or not... and stroe it in the newuser..
         if (result.rows.length === 0) {
           const newUser = await db.query(
             "INSERT INTO users (email, password) VALUES ($1, $2)",

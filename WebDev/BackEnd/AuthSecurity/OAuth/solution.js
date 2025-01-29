@@ -48,9 +48,9 @@ app.get("/login", (req, res) => {
 app.get("/register", (req, res) => {
   res.render("register.ejs");
 });
-
+// logout feature...
 app.get("/logout", (req, res) => {
-  req.logout(function (err) {
+  req.logout(function (err) { // req.logout works...
     if (err) {
       return next(err);
     }

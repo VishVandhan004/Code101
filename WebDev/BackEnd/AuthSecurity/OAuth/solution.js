@@ -8,16 +8,16 @@ import { Strategy } from "passport-local";
 // import the google strategy package from the passport
 import GoogleStrategy from "passport-google-oauth2";
 import session from "express-session";
-import env from "dotenv";
+import env from "dotenv";  // import the dotenv package for using it
 
 const app = express();
 const port = 3000;
 const saltRounds = 10;
-env.config();
+env.config(); // initialize it ...
 
 app.use(
   session({
-    secret: process.env.SESSION_SECRET,
+    secret: process.env.SESSION_SECRET, // replace
     resave: false,
     saveUninitialized: true,
   })
@@ -29,11 +29,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 const db = new pg.Client({
-  user: process.env.PG_USER,
-  host: process.env.PG_HOST,
-  database: process.env.PG_DATABASE,
-  password: process.env.PG_PASSWORD,
-  port: process.env.PG_PORT,
+  user: process.env.PG_USER,// replace it by the PG_USER
+  host: process.env.PG_HOST, // replace the host by PG_HOST and so on...
+  database: process.env.PG_DATABASE, // replace
+  password: process.env.PG_PASSWORD, // replace
+  port: process.env.PG_PORT, // replace
 });
 db.connect();
 
@@ -152,7 +152,9 @@ passport.use(
     }
   })
 );
-
+// we use the google strategy here 
+// we get the clientID and clientsecret form the google oauth..
+// we need the userprofileurl to get the user's profile info...
 passport.use(
   "google",
   new GoogleStrategy(

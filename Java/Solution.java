@@ -1,18 +1,26 @@
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.util.Scanner;
-public class Solution {
-public static void main(String[] args) {
-try (Scanner scanner = new Scanner(System.in)) { // Automatically closes Scanner
-// Get the hostname from the user
-System.out.print("Enter Hostname to Lookup: ");
-String hostname = scanner.nextLine();
-// Perform DNS query
-InetAddress ipAddress = InetAddress.getByName(hostname);
-// Display the result
-System.out.println("IP Address for " + hostname + ": " + ipAddress.getHostAddress());
-} catch (UnknownHostException e) {
-System.out.println("DNS resolution failed: " + e.getMessage());
-}
-}
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Solution {
+    public static boolean isAnagram(String s1, String s2){
+        s1 = s1.replace("\\s","").toLowerCase();
+        s2 = s2.replace("\\s","").toLowerCase();
+        if(s1.length() != s2.length()) return false;
+        char[] arr1 = s1.toCharArray();
+        char[] arr2 = s2.toCharArray();
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        return Arrays.equals(arr1,arr2);
+    }
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        String str1 = sc.nextLine();
+        String str2 = sc.nextLine();
+        if(isAnagram(str1,str2)){
+            System.out.println("The strings are anagrams");
+        }
+        else{
+            System.out.println("The strings are not anagrams");
+        }
+    }
 }

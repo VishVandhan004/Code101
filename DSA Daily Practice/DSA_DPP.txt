@@ -234,8 +234,7 @@ class Solution {
         for (int i = 0; i < n; i++) {
             int num = nums[i];
             // 2. "getOrDefault" checks the board. 
-            // If the number is there, get its current score. 
-            // If not, start at 0. Then add 1.
+            // If the number is there, get its current score, If not, start at 0. Then add 1.
             int currentCount = scoreboard.getOrDefault(num, 0) + 1;
             // 3. Update the board with the new score
             scoreboard.put(num, currentCount);

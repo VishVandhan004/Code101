@@ -224,3 +224,40 @@ Output: 3
 Example 2:
 Input: nums = [2,2,1,1,1,2,2]
 Output: 2
+
+import java.util.*;
+import java.util.HashMap;
+
+class Solution {
+    public int majorityElement(int[] nums) {
+        // 1. Create the scoreboard (Key = Number, Value = How many times seen)
+        HashMap<Integer, Integer> scoreboard = new HashMap<>();
+        
+        int n = nums.length;
+
+        for (int i = 0; i < n; i++) {
+            int num = nums[i];
+
+            // 2. "getOrDefault" checks the board. 
+            // If the number is there, get its current score. 
+            // If not, start at 0. Then add 1.
+            int currentCount = scoreboard.getOrDefault(num, 0) + 1;
+            
+            // 3. Update the board with the new score
+            scoreboard.put(num, currentCount);
+
+            // 4. Check right away: Did this number just "win"?
+            if (currentCount > n / 2) {
+                return num;
+            }
+        }
+        
+        return -1;
+    }
+}
+// class Solution {
+//     public int majorityElement(int[] nums) {
+//         Arrays.sort(nums);
+//         return nums[nums.length / 2];
+//     }
+// }

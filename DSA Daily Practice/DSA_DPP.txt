@@ -247,7 +247,7 @@ class Solution {
         return -1;
     }
 }
-
+SECOND APPROACH -> 
  class Solution {
      public int majorityElement(int[] nums) {
          Arrays.sort(nums);

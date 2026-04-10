@@ -227,7 +227,6 @@ Output: 2
 
 import java.util.*;
 import java.util.HashMap;
-
 class Solution {
     public int majorityElement(int[] nums) {
         // 1. Create the scoreboard (Key = Number, Value = How many times seen)

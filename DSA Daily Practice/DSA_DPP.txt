@@ -295,3 +295,20 @@ Input: nums = [5,3,6,1,12], original = 3Output: 24Explanation:
 Example 2:
 Input: nums = [2,7,9], original = 4Output: 4Explanation:
 - 4 is not found in nums. Thus, 4 is returned.
+
+class Solution {
+    public int findFinalValue(int[] nums, int original) {
+        boolean found = true;        
+        while (found) {
+            found = false; 
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] == original) {
+                    original = original * 2; 
+                    found = true;            
+                    break;                   
+                }
+            }
+        }
+        return original;
+    }
+}

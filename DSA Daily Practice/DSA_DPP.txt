@@ -254,10 +254,8 @@ SECOND APPROACH ->
      }
 }
 ---------------------------------------------------------------------------------------------------------------------
-QUESTION-11 -> 1848. Minimum Distance to the Target Element
-Attempted
-Easy
-Topics
+QUESTION-11 -> Minimum Distance to the Target Element
+cs
 premium lock icon
 Companies
 Hint

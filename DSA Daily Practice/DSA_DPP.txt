@@ -253,3 +253,4 @@ SECOND APPROACH ->
          return nums[nums.length / 2];
      }
  }
+

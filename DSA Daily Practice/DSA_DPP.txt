@@ -326,3 +326,23 @@ Example 2:
 Input: moves = "LL"
 Output: false
 Explanation: The robot moves left twice. It ends up two "moves" to the left of the origin. We return false because it is not at the origin at the end of its moves.
+
+class Solution {
+    public boolean judgeCircle(String moves) {
+        int horizontal = 0; // Tracks L and R
+        int vertical = 0;   // Tracks U and D
+        for (int i = 0; i < moves.length(); i++) {
+            char move = moves.charAt(i);
+            if (move == 'L') {
+                horizontal++;
+            } else if (move == 'R') {
+                horizontal--;
+            } else if (move == 'U') {
+                vertical++;
+            } else if (move == 'D') {
+                vertical--;
+            }
+        }
+        return (horizontal == 0 && vertical == 0);
+    }
+}

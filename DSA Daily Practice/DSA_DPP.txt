@@ -344,7 +344,7 @@ class Solution {
     }
 }
 ---------------------------------------------------------------------------------------------------------------------
-Question 14 -> 2839. Check if Strings Can be Made Equal With Operations I
+Question 14 -> Check if Strings Can be Made Equal With Operations I
 Solved
 Easy
 Topics

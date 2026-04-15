@@ -377,7 +377,7 @@ class Solution {
     }
 }
 ---------------------------------------------------------------------------------------------------------------------
-Question - 15 -> 1784. Check if Binary String Has at Most One Segment of Ones
+Question - 15 -> Check if Binary String Has at Most One Segment of Ones
 Easy
 Topics
 premium lock icon

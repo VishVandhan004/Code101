@@ -359,3 +359,20 @@ Example 2:
 Input: s1 = "abcd", s2 = "dacb"
 Output: false
 Explanation: It is not possible to make the two strings equal.
+
+class Solution {
+    public boolean canBeEqual(String s1, String s2) {
+        char[] s1Chars = s1.toCharArray();
+        if (s1Chars[0] != s2.charAt(0)) {
+            char temp = s1Chars[0];
+            s1Chars[0] = s1Chars[2];
+            s1Chars[2] = temp;
+        }
+        if (s1Chars[1] != s2.charAt(1)) {
+            char temp = s1Chars[1];
+            s1Chars[1] = s1Chars[3];
+            s1Chars[3] = temp;
+        }
+        return new String(s1Chars).equals(s2);
+    }
+}

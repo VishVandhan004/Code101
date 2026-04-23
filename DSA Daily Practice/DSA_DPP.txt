@@ -413,3 +413,17 @@ Input: n = 10
 Output: 9
 Explanation:
 reverse(10) = 01 which is 1.
+
+class Solution {
+    public int mirrorDistance(int n) {
+        // 1. Store the original value because 'n' will become 0
+        int original = n;
+        int reversed = 0;
+        while (n != 0) {
+            int lastDigit = n % 10;
+            reversed = (reversed * 10) + lastDigit;
+            n = n / 10;
+        }
+        return Math.abs(original - reversed);
+    }
+}

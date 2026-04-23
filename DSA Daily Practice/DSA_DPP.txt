@@ -412,9 +412,6 @@ reverse(25) = 52.
 Thus, the answer is abs(25 - 52) = 27.
 Example 2:
 Input: n = 10
-
 Output: 9
-
 Explanation:
-
 reverse(10) = 01 which is 1.

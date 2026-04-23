@@ -399,11 +399,7 @@ class Solution {
 }
 ---------------------------------------------------------------------------------------------------------------------
 Question 16 -> 3783. Mirror Distance of an Integer
-Easy
-Topics
-premium lock icon
-Companies
-Hint
+
 You are given an integer n.
 
 Define its mirror distance as: abs(n - reverse(n))​​​​​​​ where reverse(n) is the integer formed by reversing the digits of n.
